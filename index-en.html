@@ -203,9 +203,31 @@
         }
 
         .service-card h3 {
-            font-size: 1.25rem;
+            color: var(--cyan-accent);
+            font-size: 1.35rem;
             margin-bottom: 16px;
-            color: var(--text-main);
+            line-height: 1.4;
+        }
+
+        .project-subtitle {
+            color: var(--text-muted);
+            font-size: 1rem;
+            font-weight: 400;
+            display: block;
+            margin-top: 4px;
+        }
+
+        .project-features {
+            margin-bottom: 24px;
+            font-size: 1.05rem;
+            line-height: 1.7;
+            color: var(--text-muted);
+            padding-left: 20px;
+            text-align: left;
+        }
+
+        .project-features li {
+            margin-bottom: 12px;
         }
 
         .service-card p {
@@ -514,116 +536,116 @@
             <h2>Relevant Projects</h2>
             <div class="services-grid">
                 <div class="service-card">
-                    <h3 style="color: var(--cyan-accent); font-size: 1.25rem;">Beneficiaries Portal <span style="color: var(--text-muted); font-size: 0.9rem; font-weight: 400;">— Health & Diagnostics</span></h3>
-                    <ul style="margin-bottom: 24px; font-size: 0.9rem; line-height: 1.6; color: var(--text-muted); padding-left: 16px; text-align: left;">
-                        <li style="margin-bottom: 8px;">Sustentação e evolução técnica de APIs e microserviços para Beneficiaries Portal de grande escala.</li>
-                        <li style="margin-bottom: 8px;">Focus on maintaining highly critical legacy systems, ensuring stability, security, and performance.</li>
+                    <h3>Beneficiaries Portal <span class="project-subtitle">— Health & Diagnostics</span></h3>
+                    <ul class="project-features">
+                        <li>Sustentação e evolução técnica de APIs e microserviços para Beneficiaries Portal de grande escala.</li>
+                        <li>Focus on maintaining highly critical legacy systems, ensuring stability, security, and performance.</li>
                         <li>Implementation of asynchronous messaging flows and data persistence management.</li>
                     </ul>
                     <div class="project-tech" style="margin-top: auto;">
-                        <span class="tech-item" style="font-size: 0.75rem; padding: 4px 8px; margin-bottom: 4px;">AWS</span>
-                        <span class="tech-item" style="font-size: 0.75rem; padding: 4px 8px; margin-bottom: 4px;">Node.js</span>
-                        <span class="tech-item" style="font-size: 0.75rem; padding: 4px 8px; margin-bottom: 4px;">TypeScript</span>
-                        <span class="tech-item" style="font-size: 0.75rem; padding: 4px 8px; margin-bottom: 4px;">Kafka</span>
-                        <span class="tech-item" style="font-size: 0.75rem; padding: 4px 8px; margin-bottom: 4px;">PostgreSQL</span>
-                        <span class="tech-item" style="font-size: 0.75rem; padding: 4px 8px; margin-bottom: 4px;">MongoDB</span>
-                        <span class="tech-item" style="font-size: 0.75rem; padding: 4px 8px; margin-bottom: 4px;">TypeORM</span>
-                        <span class="tech-item" style="font-size: 0.75rem; padding: 4px 8px; margin-bottom: 4px;">Mongoose</span>
-                        <span class="tech-item" style="font-size: 0.75rem; padding: 4px 8px; margin-bottom: 4px;">Kubernetes</span>
+                        <span class="tech-item">AWS</span>
+                        <span class="tech-item">Node.js</span>
+                        <span class="tech-item">TypeScript</span>
+                        <span class="tech-item">Kafka</span>
+                        <span class="tech-item">PostgreSQL</span>
+                        <span class="tech-item">MongoDB</span>
+                        <span class="tech-item">TypeORM</span>
+                        <span class="tech-item">Mongoose</span>
+                        <span class="tech-item">Kubernetes</span>
                     </div>
                 </div>
                 <div class="service-card">
-                    <h3 style="color: var(--cyan-accent); font-size: 1.25rem;">Self-Service Channels <span style="color: var(--text-muted); font-size: 0.9rem; font-weight: 400;">— Financial Sector</span></h3>
-                    <ul style="margin-bottom: 24px; font-size: 0.9rem; line-height: 1.6; color: var(--text-muted); padding-left: 16px; text-align: left;">
-                        <li style="margin-bottom: 8px;">Software engineering and evolution of digital banking self-service channels.</li>
-                        <li style="margin-bottom: 8px;">Maintenance of microservices and integration of modern APIs with large-scale legacy systems.</li>
+                    <h3>Self-Service Channels <span class="project-subtitle">— Financial Sector</span></h3>
+                    <ul class="project-features">
+                        <li>Software engineering and evolution of digital banking self-service channels.</li>
+                        <li>Maintenance of microservices and integration of modern APIs with large-scale legacy systems.</li>
                         <li>Support in the development of mobile applications for the banking ecosystem.</li>
                     </ul>
                     <div class="project-tech" style="margin-top: auto;">
-                        <span class="tech-item" style="font-size: 0.75rem; padding: 4px 8px; margin-bottom: 4px;">Node.js</span>
-                        <span class="tech-item" style="font-size: 0.75rem; padding: 4px 8px; margin-bottom: 4px;">TypeScript</span>
-                        <span class="tech-item" style="font-size: 0.75rem; padding: 4px 8px; margin-bottom: 4px;">Node-OracleDB</span>
-                        <span class="tech-item" style="font-size: 0.75rem; padding: 4px 8px; margin-bottom: 4px;">Oracle</span>
-                        <span class="tech-item" style="font-size: 0.75rem; padding: 4px 8px; margin-bottom: 4px;">React Native</span>
+                        <span class="tech-item">Node.js</span>
+                        <span class="tech-item">TypeScript</span>
+                        <span class="tech-item">Node-OracleDB</span>
+                        <span class="tech-item">Oracle</span>
+                        <span class="tech-item">React Native</span>
                     </div>
                 </div>
                 <div class="service-card">
-                    <h3 style="color: var(--cyan-accent); font-size: 1.25rem;">Telemedicine Platform <span style="color: var(--text-muted); font-size: 0.9rem; font-weight: 400;">— Digital Health</span></h3>
-                    <ul style="margin-bottom: 24px; font-size: 0.9rem; line-height: 1.6; color: var(--text-muted); padding-left: 16px; text-align: left;">
-                        <li style="margin-bottom: 8px;">Development and evolution of the Telemedicine platform with a focus on scalability and remote care.</li>
-                        <li style="margin-bottom: 8px;">Construction of resilient APIs and dynamic interfaces for the digital health ecosystem.</li>
+                    <h3>Telemedicine Platform <span class="project-subtitle">— Digital Health</span></h3>
+                    <ul class="project-features">
+                        <li>Development and evolution of the Telemedicine platform with a focus on scalability and remote care.</li>
+                        <li>Construction of resilient APIs and dynamic interfaces for the digital health ecosystem.</li>
                         <li>Management of relational databases and cloud infrastructure.</li>
                     </ul>
                     <div class="project-tech" style="margin-top: auto;">
-                        <span class="tech-item" style="font-size: 0.75rem; padding: 4px 8px; margin-bottom: 4px;">Node.js</span>
-                        <span class="tech-item" style="font-size: 0.75rem; padding: 4px 8px; margin-bottom: 4px;">Sequelize</span>
-                        <span class="tech-item" style="font-size: 0.75rem; padding: 4px 8px; margin-bottom: 4px;">Angular</span>
-                        <span class="tech-item" style="font-size: 0.75rem; padding: 4px 8px; margin-bottom: 4px;">PostgreSQL</span>
-                        <span class="tech-item" style="font-size: 0.75rem; padding: 4px 8px; margin-bottom: 4px;">AWS</span>
+                        <span class="tech-item">Node.js</span>
+                        <span class="tech-item">Sequelize</span>
+                        <span class="tech-item">Angular</span>
+                        <span class="tech-item">PostgreSQL</span>
+                        <span class="tech-item">AWS</span>
                     </div>
                 </div>
                 <div class="service-card">
-                    <h3 style="color: var(--cyan-accent); font-size: 1.25rem;">Electronic Concierge <span style="color: var(--text-muted); font-size: 0.9rem; font-weight: 400;">— Digital Security</span></h3>
-                    <ul style="margin-bottom: 24px; font-size: 0.9rem; line-height: 1.6; color: var(--text-muted); padding-left: 16px; text-align: left;">
-                        <li style="margin-bottom: 8px;">Development of an integrated ecosystem (Web, Mobile, Desktop) for electronic concierge and access control.</li>
-                        <li style="margin-bottom: 8px;">Serverless architecture and integration of real-time security and monitoring systems.</li>
+                    <h3>Electronic Concierge <span class="project-subtitle">— Digital Security</span></h3>
+                    <ul class="project-features">
+                        <li>Development of an integrated ecosystem (Web, Mobile, Desktop) for electronic concierge and access control.</li>
+                        <li>Serverless architecture and integration of real-time security and monitoring systems.</li>
                         <li>Publishing and maintenance of cross-platform mobile apps in official stores.</li>
                     </ul>
                     <div class="project-tech" style="margin-top: auto;">
-                        <span class="tech-item" style="font-size: 0.75rem; padding: 4px 8px; margin-bottom: 4px;">Node.js</span>
-                        <span class="tech-item" style="font-size: 0.75rem; padding: 4px 8px; margin-bottom: 4px;">Sequelize</span>
-                        <span class="tech-item" style="font-size: 0.75rem; padding: 4px 8px; margin-bottom: 4px;">SQL Server</span>
-                        <span class="tech-item" style="font-size: 0.75rem; padding: 4px 8px; margin-bottom: 4px;">Docker</span>
-                        <span class="tech-item" style="font-size: 0.75rem; padding: 4px 8px; margin-bottom: 4px;">AWS</span>
-                        <span class="tech-item" style="font-size: 0.75rem; padding: 4px 8px; margin-bottom: 4px;">Ionic</span>
-                        <span class="tech-item" style="font-size: 0.75rem; padding: 4px 8px; margin-bottom: 4px;">ReactJS</span>
-                        <span class="tech-item" style="font-size: 0.75rem; padding: 4px 8px; margin-bottom: 4px;">ElectronJS</span>
+                        <span class="tech-item">Node.js</span>
+                        <span class="tech-item">Sequelize</span>
+                        <span class="tech-item">SQL Server</span>
+                        <span class="tech-item">Docker</span>
+                        <span class="tech-item">AWS</span>
+                        <span class="tech-item">Ionic</span>
+                        <span class="tech-item">ReactJS</span>
+                        <span class="tech-item">ElectronJS</span>
                     </div>
                 </div>
                 <div class="service-card">
-                    <h3 style="color: var(--cyan-accent); font-size: 1.25rem;">AMC Móvel <span style="color: var(--text-muted); font-size: 0.9rem; font-weight: 400;">— Traffic & Mobility</span></h3>
-                    <ul style="margin-bottom: 24px; font-size: 0.9rem; line-height: 1.6; color: var(--text-muted); padding-left: 16px; text-align: left;">
-                        <li style="margin-bottom: 8px;">Development of the AMC Mobile app to support traffic enforcement and services in Fortaleza.</li>
+                    <h3>AMC Móvel <span class="project-subtitle">— Traffic & Mobility</span></h3>
+                    <ul class="project-features">
+                        <li>Development of the AMC Mobile app to support traffic enforcement and services in Fortaleza.</li>
                         <li>Implementation of local persistence and data synchronization for offline operation scenarios.</li>
                     </ul>
                     <div class="project-tech" style="margin-top: auto;">
-                        <span class="tech-item" style="font-size: 0.75rem; padding: 4px 8px; margin-bottom: 4px;">Ionic</span>
-                        <span class="tech-item" style="font-size: 0.75rem; padding: 4px 8px; margin-bottom: 4px;">TypeScript</span>
-                        <span class="tech-item" style="font-size: 0.75rem; padding: 4px 8px; margin-bottom: 4px;">SQLite</span>
-                        <span class="tech-item" style="font-size: 0.75rem; padding: 4px 8px; margin-bottom: 4px;">Bitbucket</span>
+                        <span class="tech-item">Ionic</span>
+                        <span class="tech-item">TypeScript</span>
+                        <span class="tech-item">SQLite</span>
+                        <span class="tech-item">Bitbucket</span>
                     </div>
                 </div>
                 <div class="service-card">
-                    <h3 style="color: var(--cyan-accent); font-size: 1.25rem;">CRM Institucional <span style="color: var(--text-muted); font-size: 0.9rem; font-weight: 400;">— EdTech / Education</span></h3>
-                    <ul style="margin-bottom: 24px; font-size: 0.9rem; line-height: 1.6; color: var(--text-muted); padding-left: 16px; text-align: left;">
-                        <li style="margin-bottom: 8px;">Development of institutional CRM and Student Portal for full management of the academic and administrative journey.</li>
+                    <h3>CRM Institucional <span class="project-subtitle">— EdTech / Education</span></h3>
+                    <ul class="project-features">
+                        <li>Development of institutional CRM and Student Portal for full management of the academic and administrative journey.</li>
                         <li>Server environment configuration and optimization of the institution's internal data flows.</li>
                     </ul>
                     <div class="project-tech" style="margin-top: auto;">
-                        <span class="tech-item" style="font-size: 0.75rem; padding: 4px 8px; margin-bottom: 4px;">PHP</span>
-                        <span class="tech-item" style="font-size: 0.75rem; padding: 4px 8px; margin-bottom: 4px;">Laravel</span>
-                        <span class="tech-item" style="font-size: 0.75rem; padding: 4px 8px; margin-bottom: 4px;">Nginx</span>
-                        <span class="tech-item" style="font-size: 0.75rem; padding: 4px 8px; margin-bottom: 4px;">Docker</span>
-                        <span class="tech-item" style="font-size: 0.75rem; padding: 4px 8px; margin-bottom: 4px;">MySQL</span>
+                        <span class="tech-item">PHP</span>
+                        <span class="tech-item">Laravel</span>
+                        <span class="tech-item">Nginx</span>
+                        <span class="tech-item">Docker</span>
+                        <span class="tech-item">MySQL</span>
                     </div>
                 </div>
                 <div class="service-card">
-                    <h3 style="color: var(--cyan-accent); font-size: 1.25rem;">Energy Efficiency <span style="color: var(--text-muted); font-size: 0.9rem; font-weight: 400;">— Energy Sector</span></h3>
-                    <ul style="margin-bottom: 24px; font-size: 0.9rem; line-height: 1.6; color: var(--text-muted); padding-left: 16px; text-align: left;">
-                        <li style="margin-bottom: 8px;">Systems development for energy efficiency programs of major power utility companies.</li>
-                        <li style="margin-bottom: 8px;">Maintenance of highly complex legacy portals and integration of multiple database engines.</li>
+                    <h3>Energy Efficiency <span class="project-subtitle">— Energy Sector</span></h3>
+                    <ul class="project-features">
+                        <li>Systems development for energy efficiency programs of major power utility companies.</li>
+                        <li>Maintenance of highly complex legacy portals and integration of multiple database engines.</li>
                         <li>Cloud storage management and support of business rules focused on sustainability.</li>
                     </ul>
                     <div class="project-tech" style="margin-top: auto;">
-                        <span class="tech-item" style="font-size: 0.75rem; padding: 4px 8px; margin-bottom: 4px;">PHP</span>
-                        <span class="tech-item" style="font-size: 0.75rem; padding: 4px 8px; margin-bottom: 4px;">Laravel</span>
-                        <span class="tech-item" style="font-size: 0.75rem; padding: 4px 8px; margin-bottom: 4px;">CodeIgniter</span>
-                        <span class="tech-item" style="font-size: 0.75rem; padding: 4px 8px; margin-bottom: 4px;">Zend</span>
-                        <span class="tech-item" style="font-size: 0.75rem; padding: 4px 8px; margin-bottom: 4px;">PostgreSQL</span>
-                        <span class="tech-item" style="font-size: 0.75rem; padding: 4px 8px; margin-bottom: 4px;">SQL Server</span>
-                        <span class="tech-item" style="font-size: 0.75rem; padding: 4px 8px; margin-bottom: 4px;">MySQL</span>
-                        <span class="tech-item" style="font-size: 0.75rem; padding: 4px 8px; margin-bottom: 4px;">MongoDB</span>
-                        <span class="tech-item" style="font-size: 0.75rem; padding: 4px 8px; margin-bottom: 4px;">AWS</span>
+                        <span class="tech-item">PHP</span>
+                        <span class="tech-item">Laravel</span>
+                        <span class="tech-item">CodeIgniter</span>
+                        <span class="tech-item">Zend</span>
+                        <span class="tech-item">PostgreSQL</span>
+                        <span class="tech-item">SQL Server</span>
+                        <span class="tech-item">MySQL</span>
+                        <span class="tech-item">MongoDB</span>
+                        <span class="tech-item">AWS</span>
                     </div>
                 </div>
             </div>
