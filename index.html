@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Orkes - Portfólio</title>
+    <!-- Fonte sem serifa moderna -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800&display=swap" rel="stylesheet">
+    <style>
+        /* ==========================================================================
+           Reset & Variáveis
+           ========================================================================== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg-color: #000000;
+            --bg-card: #111111;
+            --cyan-accent: #00E5FF; /* Cor de destaque extraída do logo */
+            --cyan-hover: #00b8cc;
+            --text-main: #ffffff;
+            --text-muted: #a0a0a0;
+            --border-color: #222222;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        section {
+            padding: 80px 0;
+        }
+
+        h2 {
+            font-size: 2rem;
+            color: var(--cyan-accent);
+            text-align: center;
+            margin-bottom: 48px;
+            font-weight: 800;
+        }
+
+        /* ==========================================================================
+           Topo (Header)
+           ========================================================================== */
+        header {
+            padding: 100px 0 80px;
+            text-align: center;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .brand-logo {
+            margin-bottom: 24px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .brand-logo img {
+            max-width: 180px;
+            height: auto;
+            display: block;
+        }
+
+        .positioning {
+            font-size: 1.125rem;
+            color: var(--text-muted);
+            max-width: 600px;
+            margin: 0 auto 32px;
+        }
+
+        .tags-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 12px;
+            margin-bottom: 40px;
+        }
+
+        .badge-highlight {
+            background-color: transparent;
+            border: 1px solid var(--cyan-accent);
+            color: var(--cyan-accent);
+            padding: 6px 16px;
+            border-radius: 100px;
+            font-size: 0.875rem;
+            font-weight: 600;
+        }
+
+        .badge-info {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-color);
+            color: var(--text-main);
+            padding: 6px 16px;
+            border-radius: 100px;
+            font-size: 0.875rem;
+            font-weight: 500;
+        }
+
+        .tech-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 8px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .tech-item {
+            background-color: var(--bg-card);
+            color: var(--text-muted);
+            padding: 6px 12px;
+            border-radius: 6px;
+            font-size: 0.875rem;
+            font-weight: 500;
+        }
+
+        /* ==========================================================================
+           Serviços
+           ========================================================================== */
+        .services-grid {
+            display: flex;
+            flex-wrap: nowrap;
+            overflow-x: auto;
+            gap: 24px;
+            padding-bottom: 24px;
+            scroll-snap-type: x mandatory;
+            scrollbar-width: thin;
+            scrollbar-color: var(--cyan-accent) var(--bg-color);
+        }
+
+        .services-grid::-webkit-scrollbar {
+            height: 8px;
+        }
+        .services-grid::-webkit-scrollbar-track {
+            background: var(--bg-color);
+            border-radius: 4px;
+        }
+        .services-grid::-webkit-scrollbar-thumb {
+            background-color: var(--cyan-accent);
+            border-radius: 4px;
+        }
+
+        .service-card {
+            background-color: var(--bg-card);
+            padding: 32px;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+            border-left: 4px solid var(--cyan-accent);
+            transition: transform 0.3s ease, border-color 0.3s ease;
+            flex: 0 0 calc(85% - 16px);
+            scroll-snap-align: start;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .service-card:hover {
+            transform: translateY(-4px);
+            border-color: var(--cyan-accent);
+        }
+
+        .service-card h3 {
+            font-size: 1.25rem;
+            margin-bottom: 16px;
+            color: var(--text-main);
+        }
+
+        .service-card p {
+            color: var(--text-muted);
+            font-size: 1rem;
+        }
+
+        /* ==========================================================================
+           Projetos (Histórico)
+           ========================================================================== */
+        #projetos {
+            background-color: var(--bg-card);
+            border-top: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 32px;
+        }
+
+        .project-card {
+            background-color: var(--bg-color);
+            padding: 40px;
+            border-radius: 16px;
+            border: 1px solid var(--border-color);
+            transition: border-color 0.3s ease;
+        }
+
+        .project-card:hover {
+            border-color: var(--cyan-accent);
+        }
+
+        .project-header {
+            margin-bottom: 24px;
+        }
+
+        .project-title {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--text-main);
+            margin-bottom: 4px;
+        }
+
+        .project-company {
+            font-size: 0.875rem;
+            color: var(--cyan-accent);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .project-description {
+            color: var(--text-muted);
+            margin-bottom: 24px;
+            font-size: 1rem;
+        }
+
+        .project-tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .project-tech .tech-item {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-color);
+        }
+
+        /* ==========================================================================
+           Rodapé (Footer & CTA)
+           ========================================================================== */
+        footer {
+            padding: 100px 0;
+            text-align: center;
+        }
+
+        .cta-title {
+            font-size: 1.5rem;
+            margin-bottom: 32px;
+            font-weight: 600;
+        }
+
+        .cta-btn {
+            display: inline-block;
+            background-color: var(--cyan-accent);
+            color: var(--bg-color);
+            font-weight: 800;
+            font-size: 1.125rem;
+            text-decoration: none;
+            padding: 16px 40px;
+            border-radius: 100px;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        .cta-btn:hover {
+            background-color: var(--cyan-hover);
+            transform: scale(1.05);
+        }
+
+
+        
+        /* Layout do Header */
+        .header-layout {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+            max-width: 1000px;
+            margin: 0 auto 48px;
+            align-items: center;
+        }
+
+        .header-left, .header-right {
+            width: 100%;
+        }
+
+        /* Layout da Seção Sobre */
+        .sobre-layout {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .sobre-text {
+            text-align: left;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            flex: 1.2;
+        }
+
+        .sobre-image-container {
+            flex: 1;
+            display: flex;
+            align-items: stretch;
+        }
+
+        .profile-photo-large {
+            width: 100%;
+            height: 100%;
+            min-height: 350px;
+            object-fit: cover;
+            object-position: center 15%;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+            filter: grayscale(20%);
+            transition: filter 0.3s ease;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+
+        .profile-photo-large:hover {
+            filter: grayscale(0%);
+        }
+
+        /* ==========================================================================
+           Responsividade (Media Queries)
+           ========================================================================== */
+        @media (min-width: 768px) {
+            .brand-logo img {
+                max-width: 240px;
+            }
+
+            .positioning {
+                font-size: 1.25rem;
+            }
+
+            .service-card {
+                flex: 0 0 calc(45% - 12px);
+            }
+
+            .projects-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .header-layout {
+                flex-direction: row;
+                align-items: center;
+            }
+
+            .header-left {
+                flex: 1;
+            }
+
+            .header-right {
+                flex: 1.2;
+            }
+
+            .sobre-layout {
+                flex-direction: row;
+                align-items: stretch;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .service-card {
+                flex: 0 0 calc(33.3333% - 16px);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Language Toggle -->
+    <div style="position: absolute; top: 32px; right: 32px; display: flex; gap: 8px; z-index: 100;">
+        <a href="index.html" style="color: var(--cyan-accent); border: 1px solid var(--cyan-accent); padding: 4px 12px; border-radius: 100px; text-decoration: none; font-size: 0.8rem; font-weight: 600; background-color: rgba(0, 229, 255, 0.1);">PT</a>
+        <a href="index-en.html" style="color: var(--text-muted); border: 1px solid var(--border-color); padding: 4px 12px; border-radius: 100px; text-decoration: none; font-size: 0.8rem; font-weight: 600; transition: all 0.3s ease;">EN</a>
+    </div>
+
+    <!-- ETAPA 4.1: Topo -->
+    <header>
+        <div class="container">
+            <div class="header-layout">
+                <div class="header-left">
+                    <div class="brand-logo" style="flex-direction: column; margin-bottom: 0;">
+                        <img src="logo.png" alt="Orkes">
+                        <h1 style="font-size: 1.5rem; font-weight: 600; margin-top: 16px; color: var(--text-main); letter-spacing: -0.5px; text-align: center;">Orkes Consultoria em Tecnologia da Informação</h1>
+                    </div>
+                </div>
+                <div class="header-right">
+                    <div style="background-color: var(--bg-card); padding: 32px; border-radius: 12px; border: 1px solid var(--border-color); border-left: 4px solid var(--cyan-accent); text-align: left;">
+                        <h3 style="color: var(--cyan-accent); font-size: 1.75rem; margin-bottom: 4px; font-weight: 800; display: flex; align-items: center; gap: 8px;">
+                            Orkes 
+                            <span style="color: var(--text-muted); font-size: 1rem; font-weight: 400; font-style: italic;">[ór-kes] • s.f.</span>
+                        </h3>
+                        
+                        <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 16px;">
+                            <em>Do africâner <strong>orkes</strong>: orquestra.</em>
+                        </p>
+
+                        <p style="color: var(--text-muted); font-size: 1rem; margin-bottom: 12px; line-height: 1.6;">
+                            <strong style="color: var(--text-main);">1.</strong> Inspiração nascida da música (pois sou músico de orquestra...), onde diversos instrumentos exigem alinhamento e regência para gerar harmonia.
+                        </p>
+
+                        <p style="color: var(--text-muted); font-size: 1rem; margin-bottom: 0; line-height: 1.6;">
+                            <strong style="color: var(--text-main);">2.</strong> <em>Fig. (Engenharia de Software)</em> O princípio absoluto de <strong>orquestrar</strong> sistemas críticos, servidores e linhas de código para que operem em perfeita sincronia e alta performance.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="tags-container">
+                <div class="badge-highlight">Disponível para contratos PJ</div>
+                <div class="badge-info">Fortaleza, CE</div>
+                <div class="badge-info">16 anos em Dev. Sistemas</div>
+            </div>
+
+            <div style="max-width: 800px; margin: 0 auto 48px; position: relative; padding: 0 40px;">
+                <span style="position: absolute; top: -20px; left: 0; font-size: 5rem; color: var(--cyan-accent); font-family: Georgia, serif; line-height: 1; opacity: 0.3;">&ldquo;</span>
+                <p style="color: var(--text-main); font-size: 1.125rem; font-style: italic; line-height: 1.8; text-align: left; margin-bottom: 16px; position: relative; z-index: 1;">
+                    Tocar em uma orquestra exige atenção simultânea a várias frentes: ler a partitura, acompanhar a regência do maestro e ouvir o companheiro de naipe para garantir a afinação perfeita do grupo. Como trombonista, o instrumento me cobra ainda uma acurácia milimétrica na posição das notas. Essa mesma dinâmica molda a minha atuação como desenvolvedor: alinhamento constante com a liderança, colaboração contínua com os companheiros de time e atenção cirúrgica a cada linha de código, garantindo a harmonia do projeto e evitando o retrabalho.
+                </p>
+                <div style="text-align: right; color: var(--cyan-accent); font-weight: 600; font-size: 1rem;">
+                    — Fabio Souza
+                </div>
+            </div>
+
+
+        </div>
+    </header>
+
+    <!-- ETAPA 4.2: Sobre o Especialista -->
+    <section id="sobre">
+        <div class="container">
+            <h2>Sobre o Especialista</h2>
+            <div class="sobre-layout">
+                <div class="sobre-text">
+                    <div style="background-color: var(--bg-card); padding: 32px; border-radius: 12px; border: 1px solid var(--border-color); border-left: 4px solid var(--cyan-accent); text-align: left;">
+                        <p style="color: var(--text-main); margin-bottom: 24px; font-size: 1.125rem; font-weight: 500;">
+                            A <strong>Orkes</strong> é conduzida por <strong>Fabio Souza</strong>, profissional com vinte anos de atuação em Tecnologia da Informação.
+                        </p>
+                        <div style="color: var(--text-muted); font-size: 1rem; margin-bottom: 24px; line-height: 1.8;">
+                            <strong>Formação Acadêmica:</strong><br>
+                            • Pós-graduação em <span style="color: var(--cyan-accent); font-weight: 500;">Engenharia de Software</span> — Estácio de Sá (2019-2021)<br>
+                            • Graduação em <span style="color: var(--cyan-accent); font-weight: 500;">Análise e Dev. de Sistemas</span> — Ateneu (2014-2016)<br>
+                            • <span style="color: var(--cyan-accent); font-weight: 500;">Técnico em Informática</span> — CEPEP (2004)
+                        </div>
+                        <div style="color: var(--text-muted); font-size: 1rem; margin-bottom: 0; line-height: 1.6;">
+                            <strong>Trajetória Profissional:</strong><br>
+                            Uma carreira construída de forma sólida através de múltiplas camadas da tecnologia corporativa. A evolução no mercado inclui atuações como Instrutor, Suporte Técnico de Sistemas e Infraestrutura, Analista de Suporte e Desenvolvedor. Essa vivência em diferentes frentes de TI garante uma visão sistêmica privilegiada sobre a operação técnica ponta a ponta.
+                        </div>
+                    </div>
+                </div>
+                <div class="sobre-image-container">
+                    <!-- Foto de Perfil Ampla -->
+                    <img src="foto1.jpg" alt="Fabio Souza" class="profile-photo-large">
+                </div>
+        </div>
+        </div>
+    </section>
+
+    <!-- ETAPA 4.3: Projetos -->
+    <section id="servicos">
+        <div class="container">
+            <h2>Projetos Relevantes</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <h3 style="color: var(--cyan-accent); font-size: 1.25rem;">Portal de Beneficiários <span style="color: var(--text-muted); font-size: 0.9rem; font-weight: 400;">— Saúde e Diagnóstico</span></h3>
+                    <ul style="margin-bottom: 24px; font-size: 0.9rem; line-height: 1.6; color: var(--text-muted); padding-left: 16px; text-align: left;">
+                        <li style="margin-bottom: 8px;">Sustentação e evolução técnica de APIs e microserviços para Portal de Beneficiários de grande escala.</li>
+                        <li style="margin-bottom: 8px;">Foco na manutenção de sistemas legados de alta criticidade, garantindo estabilidade, segurança e performance.</li>
+                        <li>Implementação de fluxos de mensageria assíncrona e gerenciamento de persistência de dados.</li>
+                    </ul>
+                    <div class="project-tech" style="margin-top: auto;">
+                        <span class="tech-item" style="font-size: 0.75rem; padding: 4px 8px; margin-bottom: 4px;">AWS</span>
+                        <span class="tech-item" style="font-size: 0.75rem; padding: 4px 8px; margin-bottom: 4px;">Node.js</span>
+                        <span class="tech-item" style="font-size: 0.75rem; padding: 4px 8px; margin-bottom: 4px;">TypeScript</span>
+                        <span class="tech-item" style="font-size: 0.75rem; padding: 4px 8px; margin-bottom: 4px;">Kafka</span>
+                        <span class="tech-item" style="font-size: 0.75rem; padding: 4px 8px; margin-bottom: 4px;">PostgreSQL</span>
+                        <span class="tech-item" style="font-size: 0.75rem; padding: 4px 8px; margin-bottom: 4px;">MongoDB</span>
+                        <span class="tech-item" style="font-size: 0.75rem; padding: 4px 8px; margin-bottom: 4px;">TypeORM</span>
+                        <span class="tech-item" style="font-size: 0.75rem; padding: 4px 8px; margin-bottom: 4px;">Mongoose</span>
+                        <span class="tech-item" style="font-size: 0.75rem; padding: 4px 8px; margin-bottom: 4px;">Kubernetes</span>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <h3 style="color: var(--cyan-accent); font-size: 1.25rem;">Canais de Autoatendimento <span style="color: var(--text-muted); font-size: 0.9rem; font-weight: 400;">— Setor Financeiro</span></h3>
+                    <ul style="margin-bottom: 24px; font-size: 0.9rem; line-height: 1.6; color: var(--text-muted); padding-left: 16px; text-align: left;">
+                        <li style="margin-bottom: 8px;">Engenharia de software e evolução de canais digitais de autoatendimento bancário.</li>
+                        <li style="margin-bottom: 8px;">Manutenção de microserviços e integração de APIs modernas com sistemas legados de larga escala.</li>
+                        <li>Apoio no desenvolvimento de aplicações móveis para o ecossistema bancário.</li>
+                    </ul>
+                    <div class="project-tech" style="margin-top: auto;">
+                        <span class="tech-item" style="font-size: 0.75rem; padding: 4px 8px; margin-bottom: 4px;">Node.js</span>
+                        <span class="tech-item" style="font-size: 0.75rem; padding: 4px 8px; margin-bottom: 4px;">TypeScript</span>
+                        <span class="tech-item" style="font-size: 0.75rem; padding: 4px 8px; margin-bottom: 4px;">Node-OracleDB</span>
+                        <span class="tech-item" style="font-size: 0.75rem; padding: 4px 8px; margin-bottom: 4px;">Oracle</span>
+                        <span class="tech-item" style="font-size: 0.75rem; padding: 4px 8px; margin-bottom: 4px;">React Native</span>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <h3 style="color: var(--cyan-accent); font-size: 1.25rem;">Plataforma de Telemedicina <span style="color: var(--text-muted); font-size: 0.9rem; font-weight: 400;">— Saúde Digital</span></h3>
+                    <ul style="margin-bottom: 24px; font-size: 0.9rem; line-height: 1.6; color: var(--text-muted); padding-left: 16px; text-align: left;">
+                        <li style="margin-bottom: 8px;">Desenvolvimento e evolução da plataforma de Telemedicina com foco em escalabilidade e atendimento remoto.</li>
+                        <li style="margin-bottom: 8px;">Construção de APIs resilientes e interfaces dinâmicas para o ecossistema de saúde digital.</li>
+                        <li>Gerenciamento de banco de dados relacional e infraestrutura em nuvem.</li>
+                    </ul>
+                    <div class="project-tech" style="margin-top: auto;">
+                        <span class="tech-item" style="font-size: 0.75rem; padding: 4px 8px; margin-bottom: 4px;">Node.js</span>
+                        <span class="tech-item" style="font-size: 0.75rem; padding: 4px 8px; margin-bottom: 4px;">Sequelize</span>
+                        <span class="tech-item" style="font-size: 0.75rem; padding: 4px 8px; margin-bottom: 4px;">Angular</span>
+                        <span class="tech-item" style="font-size: 0.75rem; padding: 4px 8px; margin-bottom: 4px;">PostgreSQL</span>
+                        <span class="tech-item" style="font-size: 0.75rem; padding: 4px 8px; margin-bottom: 4px;">AWS</span>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <h3 style="color: var(--cyan-accent); font-size: 1.25rem;">Portaria Eletrônica <span style="color: var(--text-muted); font-size: 0.9rem; font-weight: 400;">— Segurança Digital</span></h3>
+                    <ul style="margin-bottom: 24px; font-size: 0.9rem; line-height: 1.6; color: var(--text-muted); padding-left: 16px; text-align: left;">
+                        <li style="margin-bottom: 8px;">Desenvolvimento de ecossistema integrado (Web, Mobile, Desktop) para portaria eletrônica e controle de acesso.</li>
+                        <li style="margin-bottom: 8px;">Arquitetura serverless e integração de sistemas de segurança e monitoramento em tempo real.</li>
+                        <li>Publicação e manutenção de aplicações móveis multiplataforma em lojas oficiais.</li>
+                    </ul>
+                    <div class="project-tech" style="margin-top: auto;">
+                        <span class="tech-item" style="font-size: 0.75rem; padding: 4px 8px; margin-bottom: 4px;">Node.js</span>
+                        <span class="tech-item" style="font-size: 0.75rem; padding: 4px 8px; margin-bottom: 4px;">Sequelize</span>
+                        <span class="tech-item" style="font-size: 0.75rem; padding: 4px 8px; margin-bottom: 4px;">SQL Server</span>
+                        <span class="tech-item" style="font-size: 0.75rem; padding: 4px 8px; margin-bottom: 4px;">Docker</span>
+                        <span class="tech-item" style="font-size: 0.75rem; padding: 4px 8px; margin-bottom: 4px;">AWS</span>
+                        <span class="tech-item" style="font-size: 0.75rem; padding: 4px 8px; margin-bottom: 4px;">Ionic</span>
+                        <span class="tech-item" style="font-size: 0.75rem; padding: 4px 8px; margin-bottom: 4px;">ReactJS</span>
+                        <span class="tech-item" style="font-size: 0.75rem; padding: 4px 8px; margin-bottom: 4px;">ElectronJS</span>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <h3 style="color: var(--cyan-accent); font-size: 1.25rem;">AMC Móvel <span style="color: var(--text-muted); font-size: 0.9rem; font-weight: 400;">— Trânsito e Mobilidade</span></h3>
+                    <ul style="margin-bottom: 24px; font-size: 0.9rem; line-height: 1.6; color: var(--text-muted); padding-left: 16px; text-align: left;">
+                        <li style="margin-bottom: 8px;">Desenvolvimento do aplicativo AMC Móvel para suporte à fiscalização e serviços de trânsito em Fortaleza.</li>
+                        <li>Implementação de persistência local e sincronização de dados para operação em cenários offline.</li>
+                    </ul>
+                    <div class="project-tech" style="margin-top: auto;">
+                        <span class="tech-item" style="font-size: 0.75rem; padding: 4px 8px; margin-bottom: 4px;">Ionic</span>
+                        <span class="tech-item" style="font-size: 0.75rem; padding: 4px 8px; margin-bottom: 4px;">TypeScript</span>
+                        <span class="tech-item" style="font-size: 0.75rem; padding: 4px 8px; margin-bottom: 4px;">SQLite</span>
+                        <span class="tech-item" style="font-size: 0.75rem; padding: 4px 8px; margin-bottom: 4px;">Bitbucket</span>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <h3 style="color: var(--cyan-accent); font-size: 1.25rem;">CRM Institucional <span style="color: var(--text-muted); font-size: 0.9rem; font-weight: 400;">— EdTech / Educação</span></h3>
+                    <ul style="margin-bottom: 24px; font-size: 0.9rem; line-height: 1.6; color: var(--text-muted); padding-left: 16px; text-align: left;">
+                        <li style="margin-bottom: 8px;">Desenvolvimento do CRM institucional e Portal do Aluno para gestão integral da jornada acadêmica e administrativa.</li>
+                        <li>Configuração de ambiente de servidores e otimização de fluxos de dados internos da instituição.</li>
+                    </ul>
+                    <div class="project-tech" style="margin-top: auto;">
+                        <span class="tech-item" style="font-size: 0.75rem; padding: 4px 8px; margin-bottom: 4px;">PHP</span>
+                        <span class="tech-item" style="font-size: 0.75rem; padding: 4px 8px; margin-bottom: 4px;">Laravel</span>
+                        <span class="tech-item" style="font-size: 0.75rem; padding: 4px 8px; margin-bottom: 4px;">Nginx</span>
+                        <span class="tech-item" style="font-size: 0.75rem; padding: 4px 8px; margin-bottom: 4px;">Docker</span>
+                        <span class="tech-item" style="font-size: 0.75rem; padding: 4px 8px; margin-bottom: 4px;">MySQL</span>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <h3 style="color: var(--cyan-accent); font-size: 1.25rem;">Eficiência Energética <span style="color: var(--text-muted); font-size: 0.9rem; font-weight: 400;">— Setor de Energia</span></h3>
+                    <ul style="margin-bottom: 24px; font-size: 0.9rem; line-height: 1.6; color: var(--text-muted); padding-left: 16px; text-align: left;">
+                        <li style="margin-bottom: 8px;">Desenvolvimento de sistemas para programas de eficiência energética de grandes concessionárias de energia.</li>
+                        <li style="margin-bottom: 8px;">Manutenção de portais legados de alta complexidade e integração de múltiplos motores de banco de dados.</li>
+                        <li>Gestão de armazenamento em nuvem e sustentação de regras de negócio voltadas à sustentabilidade.</li>
+                    </ul>
+                    <div class="project-tech" style="margin-top: auto;">
+                        <span class="tech-item" style="font-size: 0.75rem; padding: 4px 8px; margin-bottom: 4px;">PHP</span>
+                        <span class="tech-item" style="font-size: 0.75rem; padding: 4px 8px; margin-bottom: 4px;">Laravel</span>
+                        <span class="tech-item" style="font-size: 0.75rem; padding: 4px 8px; margin-bottom: 4px;">CodeIgniter</span>
+                        <span class="tech-item" style="font-size: 0.75rem; padding: 4px 8px; margin-bottom: 4px;">Zend</span>
+                        <span class="tech-item" style="font-size: 0.75rem; padding: 4px 8px; margin-bottom: 4px;">PostgreSQL</span>
+                        <span class="tech-item" style="font-size: 0.75rem; padding: 4px 8px; margin-bottom: 4px;">SQL Server</span>
+                        <span class="tech-item" style="font-size: 0.75rem; padding: 4px 8px; margin-bottom: 4px;">MySQL</span>
+                        <span class="tech-item" style="font-size: 0.75rem; padding: 4px 8px; margin-bottom: 4px;">MongoDB</span>
+                        <span class="tech-item" style="font-size: 0.75rem; padding: 4px 8px; margin-bottom: 4px;">AWS</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+    <!-- ETAPA 4.4: Rodapé -->
+    <footer>
+        <div class="container">
+            <h2 class="cta-title" style="color: var(--text-main); margin-bottom: 24px;">Vamos construir algo juntos?</h2>
+            <p style="color: var(--text-muted); margin-bottom: 40px; max-width: 500px; margin-left: auto; margin-right: auto;">
+                Pronto para contribuir com consultas de engenharia e desenvolvimento de sistemas críticos.
+            </p>
+            <div style="margin-bottom: 48px;">
+                <a href="mailto:contato@orkes.com.br" class="cta-btn">Entrar em Contato</a>
+            </div>
+            
+            <div style="display: flex; justify-content: center; gap: 32px; border-top: 1px solid var(--border-color); padding-top: 32px; max-width: 600px; margin: 0 auto; flex-wrap: wrap;">
+                <a href="mailto:contato@orkes.com.br" style="color: var(--text-muted); text-decoration: none; font-weight: 500; transition: color 0.3s ease;" onmouseover="this.style.color='var(--cyan-accent)'" onmouseout="this.style.color='var(--text-muted)'">
+                    contato@orkes.com.br
+                </a>
+                <a href="https://github.com/souzace" target="_blank" style="color: var(--text-muted); text-decoration: none; font-weight: 500; transition: color 0.3s ease;" onmouseover="this.style.color='var(--cyan-accent)'" onmouseout="this.style.color='var(--text-muted)'">
+                    GitHub
+                </a>
+                <a href="https://www.linkedin.com/in/souzace" target="_blank" style="color: var(--text-muted); text-decoration: none; font-weight: 500; transition: color 0.3s ease;" onmouseover="this.style.color='var(--cyan-accent)'" onmouseout="this.style.color='var(--text-muted)'">
+                    LinkedIn
+                </a>
+            </div>
+            <div style="margin-top: 40px; font-size: 0.85rem; color: #666; letter-spacing: 0.5px;">
+                Orkes Consultoria em Tecnologia da Informação • CNPJ: 41.950.774/0001-60
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
