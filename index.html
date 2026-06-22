@@ -40,7 +40,7 @@
             width: 100%;
             max-width: 1100px;
             margin: 0 auto;
-            padding: 0 24px;
+            padding: 0 16px;
         }
 
         section {
@@ -59,7 +59,7 @@
            Topo (Header)
            ========================================================================== */
         header {
-            padding: 100px 0 80px;
+            padding: 60px 0 40px;
             text-align: center;
             border-bottom: 1px solid var(--border-color);
         }
@@ -133,12 +133,40 @@
         /* ==========================================================================
            Serviços
            ========================================================================== */
+        
+        .info-card {
+            background-color: var(--bg-card);
+            padding: 24px;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+            border-left: 4px solid var(--cyan-accent);
+            text-align: left;
+        }
+
+        .quote-container {
+            max-width: 800px;
+            margin: 0 auto 48px;
+            position: relative;
+            padding: 0 16px;
+        }
+
+        .quote-text {
+            color: var(--text-main);
+            font-size: 1rem;
+            font-style: italic;
+            line-height: 1.8;
+            text-align: left;
+            margin-bottom: 16px;
+            position: relative;
+            z-index: 1;
+        }
+
         .services-grid {
             display: flex;
             flex-wrap: nowrap;
             overflow-x: auto;
-            gap: 24px;
-            padding-bottom: 24px;
+            gap: 16px;
+            padding-bottom: 16px;
             scroll-snap-type: x mandatory;
             scrollbar-width: thin;
             scrollbar-color: var(--cyan-accent) var(--bg-color);
@@ -158,12 +186,12 @@
 
         .service-card {
             background-color: var(--bg-card);
-            padding: 32px;
+            padding: 24px;
             border-radius: 12px;
             border: 1px solid var(--border-color);
             border-left: 4px solid var(--cyan-accent);
             transition: transform 0.3s ease, border-color 0.3s ease;
-            flex: 0 0 calc(85% - 16px);
+            flex: 0 0 calc(90% - 16px);
             scroll-snap-align: start;
             display: flex;
             flex-direction: column;
@@ -252,7 +280,7 @@
            Rodapé (Footer & CTA)
            ========================================================================== */
         footer {
-            padding: 100px 0;
+            padding: 60px 0;
             text-align: center;
         }
 
@@ -339,6 +367,14 @@
            Responsividade (Media Queries)
            ========================================================================== */
         @media (min-width: 768px) {
+            header { padding: 100px 0 80px; }
+            footer { padding: 100px 0; }
+            .container { padding: 0 24px; }
+            .info-card { padding: 32px; }
+            .quote-container { padding: 0 40px; }
+            .quote-text { font-size: 1.125rem; }
+            .services-grid { gap: 24px; padding-bottom: 24px; }
+            
             .brand-logo img {
                 max-width: 240px;
             }
@@ -349,6 +385,7 @@
 
             .service-card {
                 flex: 0 0 calc(45% - 12px);
+                padding: 32px;
             }
 
             .projects-grid {
@@ -400,7 +437,7 @@
                     </div>
                 </div>
                 <div class="header-right">
-                    <div style="background-color: var(--bg-card); padding: 32px; border-radius: 12px; border: 1px solid var(--border-color); border-left: 4px solid var(--cyan-accent); text-align: left;">
+                    <div class="info-card">
                         <h3 style="color: var(--cyan-accent); font-size: 1.75rem; margin-bottom: 4px; font-weight: 800; display: flex; align-items: center; gap: 8px;">
                             Orkes 
                             <span style="color: var(--text-muted); font-size: 1rem; font-weight: 400; font-style: italic;">[ór-kes] • s.f.</span>
@@ -427,9 +464,9 @@
                 <div class="badge-info">16 anos em Dev. Sistemas</div>
             </div>
 
-            <div style="max-width: 800px; margin: 0 auto 48px; position: relative; padding: 0 40px;">
+            <div class="quote-container">
                 <span style="position: absolute; top: -20px; left: 0; font-size: 5rem; color: var(--cyan-accent); font-family: Georgia, serif; line-height: 1; opacity: 0.3;">&ldquo;</span>
-                <p style="color: var(--text-main); font-size: 1.125rem; font-style: italic; line-height: 1.8; text-align: left; margin-bottom: 16px; position: relative; z-index: 1;">
+                <p class="quote-text">
                     Tocar em uma orquestra exige atenção simultânea a várias frentes: ler a partitura, acompanhar a regência do maestro e ouvir o companheiro de naipe para garantir a afinação perfeita do grupo. Como trombonista, o instrumento me cobra ainda uma acurácia milimétrica na posição das notas. Essa mesma dinâmica molda a minha atuação como desenvolvedor: alinhamento constante com a liderança, colaboração contínua com os companheiros de time e atenção cirúrgica a cada linha de código, garantindo a harmonia do projeto e evitando o retrabalho.
                 </p>
                 <div style="text-align: right; color: var(--cyan-accent); font-weight: 600; font-size: 1rem;">
@@ -447,7 +484,7 @@
             <h2>Sobre o Especialista</h2>
             <div class="sobre-layout">
                 <div class="sobre-text">
-                    <div style="background-color: var(--bg-card); padding: 32px; border-radius: 12px; border: 1px solid var(--border-color); border-left: 4px solid var(--cyan-accent); text-align: left;">
+                    <div class="info-card">
                         <p style="color: var(--text-main); margin-bottom: 24px; font-size: 1.125rem; font-weight: 500;">
                             A <strong>Orkes</strong> é conduzida por <strong>Fabio Souza</strong>, profissional com vinte anos de atuação em Tecnologia da Informação.
                         </p>
