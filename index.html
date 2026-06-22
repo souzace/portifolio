@@ -157,12 +157,21 @@
         }
 
         .tech-item {
-            background-color: var(--bg-card);
+            display: inline;
+            background: transparent;
+            padding: 0;
+            border: none;
             color: var(--text-muted);
-            padding: 6px 12px;
-            border-radius: 6px;
-            font-size: 0.875rem;
+            font-size: 0.85rem;
             font-weight: 500;
+        }
+
+        .tech-item:not(:last-child)::after {
+            content: " • ";
+            color: var(--cyan-accent);
+            opacity: 0.5;
+            margin: 0 6px;
+            font-weight: bold;
         }
 
         /* ==========================================================================
@@ -402,14 +411,39 @@
         }
 
         .project-tech {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
+            display: block;
+            margin-top: auto;
+            padding-top: 16px;
+            border-top: 1px dashed var(--border-color);
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        .project-tech::before {
+            content: "Stack: ";
+            font-weight: 600;
+            color: var(--text-main);
+            opacity: 0.6;
+            margin-right: 4px;
         }
 
         .project-tech .tech-item {
-            background-color: var(--bg-card);
-            border: 1px solid var(--border-color);
+            display: inline;
+            background: transparent;
+            padding: 0;
+            border: none;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        .tech-item:not(:last-child)::after {
+            content: " • ";
+            color: var(--cyan-accent);
+            opacity: 0.5;
+            margin: 0 6px;
+            font-weight: bold;
         }
 
         /* ==========================================================================
