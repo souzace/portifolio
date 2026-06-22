@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://orkes.com.br/sitemap.xml
