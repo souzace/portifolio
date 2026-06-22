@@ -190,6 +190,20 @@
             background-color: var(--cyan-accent);
             color: var(--bg-color);
         }
+        
+        .carousel-btn:disabled {
+            opacity: 0.3;
+            cursor: not-allowed;
+            border-color: var(--border-color);
+            color: var(--text-muted);
+            background-color: var(--bg-card);
+            box-shadow: none;
+        }
+        .carousel-btn:disabled:hover {
+            background-color: var(--bg-card);
+            color: var(--text-muted);
+        }
+        
         .carousel-btn.left { left: -12px; }
         .carousel-btn.right { right: -12px; }
         
@@ -208,7 +222,21 @@
                 height: 56px;
                 font-size: 1.5rem;
             }
-            .carousel-btn.left { left: -28px; }
+            
+        .carousel-btn:disabled {
+            opacity: 0.3;
+            cursor: not-allowed;
+            border-color: var(--border-color);
+            color: var(--text-muted);
+            background-color: var(--bg-card);
+            box-shadow: none;
+        }
+        .carousel-btn:disabled:hover {
+            background-color: var(--bg-card);
+            color: var(--text-muted);
+        }
+        
+        .carousel-btn.left { left: -28px; }
             .carousel-btn.right { right: -28px; }
         }
 
@@ -476,6 +504,20 @@
             background-color: var(--cyan-accent);
             color: var(--bg-color);
         }
+        
+        .carousel-btn:disabled {
+            opacity: 0.3;
+            cursor: not-allowed;
+            border-color: var(--border-color);
+            color: var(--text-muted);
+            background-color: var(--bg-card);
+            box-shadow: none;
+        }
+        .carousel-btn:disabled:hover {
+            background-color: var(--bg-card);
+            color: var(--text-muted);
+        }
+        
         .carousel-btn.left { left: -12px; }
         .carousel-btn.right { right: -12px; }
         
@@ -494,7 +536,21 @@
                 height: 56px;
                 font-size: 1.5rem;
             }
-            .carousel-btn.left { left: -28px; }
+            
+        .carousel-btn:disabled {
+            opacity: 0.3;
+            cursor: not-allowed;
+            border-color: var(--border-color);
+            color: var(--text-muted);
+            background-color: var(--bg-card);
+            box-shadow: none;
+        }
+        .carousel-btn:disabled:hover {
+            background-color: var(--bg-card);
+            color: var(--text-muted);
+        }
+        
+        .carousel-btn.left { left: -28px; }
             .carousel-btn.right { right: -28px; }
         }
 
@@ -642,7 +698,7 @@
                 
             </div>
             <div class="carousel-wrapper">
-                <button class="carousel-btn left" onclick="scrollProjects('left')" aria-label="Anterior">&#10094;</button>
+                <button class="carousel-btn left" disabled onclick="scrollProjects('left')" aria-label="Anterior">&#10094;</button>
                 <button class="carousel-btn right" onclick="scrollProjects('right')" aria-label="Próximo">&#10095;</button>
                 <div class="services-grid">
                 <div class="service-card">
@@ -806,6 +862,31 @@
                 grid.scrollBy({ left: scrollAmount, behavior: 'smooth' });
             }
         }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const grid = document.querySelector('.services-grid');
+            const btnLeft = document.querySelector('.carousel-btn.left');
+            const btnRight = document.querySelector('.carousel-btn.right');
+
+            if (!grid || !btnLeft || !btnRight) return;
+
+            const updateButtons = () => {
+                // Check if scrolled to the very left (with a 5px threshold for safety)
+                btnLeft.disabled = grid.scrollLeft <= 5; 
+                
+                // Check if scrolled to the very right
+                // Using Math.ceil to prevent sub-pixel rounding errors on different pixel densities
+                btnRight.disabled = Math.ceil(grid.scrollLeft + grid.clientWidth) >= grid.scrollWidth - 5;
+            };
+
+            // Listen to scroll events (works for mouse dragging, touchpad swiping, and button clicks)
+            grid.addEventListener('scroll', updateButtons);
+            // Re-calculate if user rotates device or resizes window
+            window.addEventListener('resize', updateButtons);
+            
+            // Set initial state correctly
+            updateButtons();
+        });
     </script>
 
 </body>
