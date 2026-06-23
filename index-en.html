@@ -796,10 +796,28 @@
 </head>
 <body>
 
-    <!-- Language Toggle -->
-    <div style="position: absolute; top: 32px; right: 32px; display: flex; gap: 8px; z-index: 100;">
-        <a href="index.html" style="color: var(--text-muted); border: 1px solid var(--border-color); padding: 4px 12px; border-radius: 100px; text-decoration: none; font-size: 0.8rem; font-weight: 600; transition: all 0.3s ease;">PT</a>
-        <a href="index-en.html" style="color: var(--cyan-accent); border: 1px solid var(--cyan-accent); padding: 4px 12px; border-radius: 100px; text-decoration: none; font-size: 0.8rem; font-weight: 600; background-color: rgba(0, 229, 255, 0.1);">EN</a>
+        <!-- Language Toggle Flags -->
+    <div style="position: absolute; top: 32px; right: 32px; display: flex; gap: 16px; z-index: 100; align-items: center;">
+        <a href="index.html" aria-label="Português" style="opacity:0.4; transition: transform 0.2s;" onmouseover="this.style.transform='scale(1.15)'" onmouseout="this.style.transform='scale(1)'">
+            <svg viewBox="0 0 72 48" width="30" height="20" style="border-radius: 4px; border: 1px solid rgba(255,255,255,0.2); box-shadow: 0 4px 6px rgba(0,0,0,0.5);">
+                <rect width="72" height="48" fill="#009b3a"/><polygon points="36,4 68,24 36,44 4,24" fill="#fedf00"/><circle cx="36" cy="24" r="14" fill="#002776"/>
+            </svg>
+        </a>
+        <a href="index-en.html" aria-label="English" style="transition: transform 0.2s;" onmouseover="this.style.transform='scale(1.15)'" onmouseout="this.style.transform='scale(1)'">
+            <svg viewBox="0 0 72 48" width="30" height="20" style="border-radius: 4px; border: 1px solid rgba(255,255,255,0.2); box-shadow: 0 4px 6px rgba(0,0,0,0.5);">
+                <rect width="72" height="48" fill="#bf0a30"/>
+                <rect y="6" width="72" height="5" fill="#fff"/><rect y="17" width="72" height="5" fill="#fff"/><rect y="28" width="72" height="5" fill="#fff"/><rect y="38" width="72" height="5" fill="#fff"/>
+                <rect width="34" height="26" fill="#002868"/>
+                <circle cx="8" cy="6" r="1.5" fill="#fff"/><circle cx="17" cy="6" r="1.5" fill="#fff"/><circle cx="26" cy="6" r="1.5" fill="#fff"/>
+                <circle cx="12" cy="13" r="1.5" fill="#fff"/><circle cx="21" cy="13" r="1.5" fill="#fff"/>
+                <circle cx="8" cy="20" r="1.5" fill="#fff"/><circle cx="17" cy="20" r="1.5" fill="#fff"/><circle cx="26" cy="20" r="1.5" fill="#fff"/>
+            </svg>
+        </a>
+        <a href="index-es.html" aria-label="Español" style="opacity:0.4; transition: transform 0.2s;" onmouseover="this.style.transform='scale(1.15)'" onmouseout="this.style.transform='scale(1)'">
+            <svg viewBox="0 0 72 48" width="30" height="20" style="border-radius: 4px; border: 1px solid rgba(255,255,255,0.2); box-shadow: 0 4px 6px rgba(0,0,0,0.5);">
+                <rect width="72" height="12" fill="#aa151b"/><rect y="12" width="72" height="24" fill="#f1bf00"/><rect y="36" width="72" height="12" fill="#aa151b"/><circle cx="24" cy="24" r="5" fill="#aa151b"/>
+            </svg>
+        </a>
     </div>
 
     <!-- ETAPA 4.1: Topo -->

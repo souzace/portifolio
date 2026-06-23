@@ -3,13 +3,22 @@
   <url>
     <loc>https://orkes.com.br/</loc>
     <priority>1.0</priority>
-    <xhtml:link rel="alternate" hreflang="en-US" href="https://orkes.com.br/index-en.html"/>
     <xhtml:link rel="alternate" hreflang="pt-BR" href="https://orkes.com.br/"/>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://orkes.com.br/index-en.html"/>
+    <xhtml:link rel="alternate" hreflang="es-ES" href="https://orkes.com.br/index-es.html"/>
   </url>
   <url>
     <loc>https://orkes.com.br/index-en.html</loc>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="pt-BR" href="https://orkes.com.br/"/>
     <xhtml:link rel="alternate" hreflang="en-US" href="https://orkes.com.br/index-en.html"/>
+    <xhtml:link rel="alternate" hreflang="es-ES" href="https://orkes.com.br/index-es.html"/>
+  </url>
+  <url>
+    <loc>https://orkes.com.br/index-es.html</loc>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://orkes.com.br/"/>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://orkes.com.br/index-en.html"/>
+    <xhtml:link rel="alternate" hreflang="es-ES" href="https://orkes.com.br/index-es.html"/>
   </url>
 </urlset>
