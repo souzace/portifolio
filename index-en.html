@@ -871,35 +871,73 @@
 
     <!-- ETAPA 4.2: About the Specialist -->
     <section id="sobre">
+        <style>
+            .sobre-zigzag { display: flex; flex-direction: column; gap: 80px; margin-top: 48px; }
+            .zigzag-row { display: flex; flex-direction: row; gap: 48px; align-items: center; }
+            .zigzag-row.reverse { flex-direction: row-reverse; }
+            .zigzag-photo { flex: 1; }
+            .zigzag-photo img { width: 100%; height: 380px; object-fit: cover; border-radius: 12px; border: 1px solid var(--border-color); box-shadow: 0 10px 30px rgba(0,0,0,0.5); filter: grayscale(10%); transition: filter 0.3s ease; }
+            .zigzag-photo img:hover { filter: grayscale(0%); }
+            .zigzag-text { flex: 1.2; }
+            @media (max-width: 768px) {
+                .zigzag-row, .zigzag-row.reverse { flex-direction: column; gap: 32px; }
+                .zigzag-photo img { height: 280px; }
+                .sobre-zigzag { gap: 56px; }
+            }
+        </style>
         <div class="container">
-            <h2>Why Choose Orkes</h2>
-            <div class="sobre-layout" style="display: flex; flex-direction: row; gap: 48px; align-items: stretch; margin-top: 32px;">
-                <div class="sobre-image-container" style="flex: 0 0 350px;">
-                    <img src="foto1.jpg" alt="Fabio Souza" class="profile-photo-large" style="width: 100%; height: 100%; object-fit: cover; border-radius: 12px; border: 1px solid var(--border-color); box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
-                </div>
-                <div class="sobre-text-column" style="flex: 1; display: flex; flex-direction: column; justify-content: center; gap: 32px;">
-                    <div class="info-card" style="background: var(--bg-card); padding: 32px; border-radius: 8px; border: 1px solid var(--border-color);">
-                        <p style="color: var(--text-main); margin-bottom: 24px; font-size: 1.125rem; font-weight: 500;">
+            <h2 style="text-align: center; margin-bottom: 16px;">Why Choose Orkes</h2>
+            
+            <div class="sobre-zigzag">
+                <!-- Row 1: Photo Left, Text Right -->
+                <div class="zigzag-row">
+                    <div class="zigzag-photo">
+                        <img src="foto3.jpeg" alt="Fabio Souza Developer">
+                    </div>
+                    <div class="zigzag-text">
+                        <div class="info-card" style="background: var(--bg-card); padding: 32px; border-radius: 8px; border: 1px solid var(--border-color);">
+                            <p style="color: var(--text-main); margin-bottom: 24px; font-size: 1.125rem; font-weight: 500;">
                             I am <strong>Fábio Souza</strong>, operating under my registered brand <strong>Orkes</strong>. I work independently delivering robust engineering for critical operations.
                         </p>
-                        <div style="color: var(--text-muted); font-size: 1rem; margin-bottom: 24px; line-height: 1.8;">
+                        <div style="color: var(--text-muted); font-size: 1rem; line-height: 1.8;">
                             <strong>Core Competencies:</strong><br>
                             • <span style="color: var(--cyan-accent); font-weight: 500;">Legacy System Modernization</span>: Secure updates from monoliths to scalable microservices.<br>
                             • <span style="color: var(--cyan-accent); font-weight: 500;">High-Performance APIs</span>: Resilient backends to support high traffic with zero downtime.<br>
                             • <span style="color: var(--cyan-accent); font-weight: 500;">Cloud Architecture (AWS)</span>: Cost-optimized infrastructure with high availability.
                         </div>
-                        <div style="color: var(--text-muted); font-size: 1rem; margin-bottom: 0; line-height: 1.6;">
-                            <strong>Corporate Trust:</strong><br>
-                            With 27 years of experience across multiple technology layers, from infrastructure to senior software development, I offer an end-to-end systemic vision. My focus is to shield the technical operations of B2B clients, avoid rework, and scale the business.
                         </div>
                     </div>
-                    <div class="quote-container" style="position: relative; padding: 24px; border-left: 4px solid var(--cyan-accent); background: rgba(0, 255, 204, 0.03); border-radius: 0 8px 8px 0;">
-                        <span style="position: absolute; top: -10px; left: 16px; font-size: 4rem; color: var(--cyan-accent); font-family: Georgia, serif; line-height: 1; opacity: 0.2;">&ldquo;</span>
-                        <p class="quote-text" style="font-size: 1rem; color: var(--text-main); font-style: italic; line-height: 1.8; position: relative; z-index: 1;">
+                </div>
+                
+                <!-- Row 2: Text Left, Photo Right -->
+                <div class="zigzag-row reverse">
+                    <div class="zigzag-photo">
+                        <img src="foto4.jpg" alt="Fabio Souza Trombonist" style="object-position: center 20%;">
+                    </div>
+                    <div class="zigzag-text">
+                        <div class="info-card" style="background: var(--bg-card); padding: 32px; border-radius: 8px; border: 1px solid var(--border-color);">
+                            <div style="color: var(--text-muted); font-size: 1rem; line-height: 1.6;">
+                            <strong style="color: var(--text-main); font-size: 1.125rem; display: block; margin-bottom: 12px;">Corporate Trust</strong>
+                            With 27 years of experience across multiple technology layers, from infrastructure to senior software development, I offer an end-to-end systemic vision.<br><br>My focus is to shield the technical operations of B2B clients, avoid costly rework, and prepare the technological foundation to scale the business sustainably and predictably.
+                        </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Row 3: Photo Left, Text Right -->
+                <div class="zigzag-row">
+                    <div class="zigzag-photo">
+                        <img src="foto5.jpg" alt="Orchestra Trombone" style="object-position: center 70%;">
+                    </div>
+                    <div class="zigzag-text">
+                        <div class="quote-container" style="position: relative; padding: 32px 24px; border-left: 4px solid var(--cyan-accent); background: rgba(0, 255, 204, 0.03); border-radius: 0 8px 8px 0;">
+                            <span style="position: absolute; top: 0px; left: 16px; font-size: 5rem; color: var(--cyan-accent); font-family: Georgia, serif; line-height: 1; opacity: 0.2;">&ldquo;</span>
+                            <p class="quote-text" style="font-size: 1rem; color: var(--text-main); font-style: italic; line-height: 1.8; position: relative; z-index: 1;">
                             Playing in an orchestra requires simultaneous attention on several fronts: reading the sheet music, following the conductor, and listening to your section mates to ensure the group's perfect tuning. As a trombonist, the instrument also demands millimeter accuracy in note positioning. This exact dynamic shapes my role as a developer: constant alignment with leadership, continuous collaboration with teammates, and surgical attention to every line of code, ensuring project harmony and avoiding rework.
                         </p>
                         <div style="text-align: right; color: var(--cyan-accent); font-weight: 600; font-size: 1rem;">
                             — Fabio Souza
+                        </div>
                         </div>
                     </div>
                 </div>

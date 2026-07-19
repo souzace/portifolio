@@ -1051,35 +1051,73 @@
 
     <!-- ETAPA 4.2: Sobre o Especialista -->
     <section id="sobre">
+        <style>
+            .sobre-zigzag { display: flex; flex-direction: column; gap: 80px; margin-top: 48px; }
+            .zigzag-row { display: flex; flex-direction: row; gap: 48px; align-items: center; }
+            .zigzag-row.reverse { flex-direction: row-reverse; }
+            .zigzag-photo { flex: 1; }
+            .zigzag-photo img { width: 100%; height: 380px; object-fit: cover; border-radius: 12px; border: 1px solid var(--border-color); box-shadow: 0 10px 30px rgba(0,0,0,0.5); filter: grayscale(10%); transition: filter 0.3s ease; }
+            .zigzag-photo img:hover { filter: grayscale(0%); }
+            .zigzag-text { flex: 1.2; }
+            @media (max-width: 768px) {
+                .zigzag-row, .zigzag-row.reverse { flex-direction: column; gap: 32px; }
+                .zigzag-photo img { height: 280px; }
+                .sobre-zigzag { gap: 56px; }
+            }
+        </style>
         <div class="container">
-            <h2>A minha trajetória</h2>
-            <div class="sobre-layout" style="display: flex; flex-direction: row; gap: 48px; align-items: stretch; margin-top: 32px;">
-                <div class="sobre-image-container" style="flex: 0 0 350px;">
-                    <img src="foto1.jpg" alt="Fabio Souza" class="profile-photo-large" style="width: 100%; height: 100%; object-fit: cover; border-radius: 12px; border: 1px solid var(--border-color); box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
-                </div>
-                <div class="sobre-text-column" style="flex: 1; display: flex; flex-direction: column; justify-content: center; gap: 32px;">
-                    <div class="info-card" style="background: var(--bg-card); padding: 32px; border-radius: 8px; border: 1px solid var(--border-color);">
-                        <p style="color: var(--text-main); margin-bottom: 24px; font-size: 1.125rem; font-weight: 500;">
+            <h2 style="text-align: center; margin-bottom: 16px;">A minha trajetória</h2>
+            
+            <div class="sobre-zigzag">
+                <!-- Row 1: Photo Left, Text Right -->
+                <div class="zigzag-row">
+                    <div class="zigzag-photo">
+                        <img src="foto3.jpeg" alt="Fabio Souza Developer">
+                    </div>
+                    <div class="zigzag-text">
+                        <div class="info-card" style="background: var(--bg-card); padding: 32px; border-radius: 8px; border: 1px solid var(--border-color);">
+                            <p style="color: var(--text-main); margin-bottom: 24px; font-size: 1.125rem; font-weight: 500;">
                             Sou <strong>Fábio Souza</strong>, atuando sob minha marca registrada <strong>Orkes</strong>. Trabalho de forma independente entregando engenharia robusta para operações críticas.
                         </p>
-                        <div style="color: var(--text-muted); font-size: 1rem; margin-bottom: 24px; line-height: 1.8;">
+                        <div style="color: var(--text-muted); font-size: 1rem; line-height: 1.8;">
                             <strong>Competências Principais:</strong><br>
                             • <span style="color: var(--cyan-accent); font-weight: 500;">Modernização de Sistemas Legados</span>: Atualização segura de monólitos para microsserviços escaláveis.<br>
                             • <span style="color: var(--cyan-accent); font-weight: 500;">APIs de Alta Performance</span>: Backends resilientes para suportar alto tráfego sem indisponibilidade.<br>
                             • <span style="color: var(--cyan-accent); font-weight: 500;">Arquitetura Cloud (AWS)</span>: Infraestrutura otimizada em custo e com alta disponibilidade.
                         </div>
-                        <div style="color: var(--text-muted); font-size: 1rem; margin-bottom: 0; line-height: 1.6;">
-                            <strong>Confiança Corporativa:</strong><br>
-                            Com 27 anos de vivência por múltiplas camadas da tecnologia, da infraestrutura ao desenvolvimento de software sênior, ofereço visão sistêmica de ponta a ponta. Meu foco é blindar a operação técnica de clientes B2B, evitar retrabalhos e escalar o negócio.
                         </div>
                     </div>
-                    <div class="quote-container" style="position: relative; padding: 24px; border-left: 4px solid var(--cyan-accent); background: rgba(0, 255, 204, 0.03); border-radius: 0 8px 8px 0;">
-                        <span style="position: absolute; top: -10px; left: 16px; font-size: 4rem; color: var(--cyan-accent); font-family: Georgia, serif; line-height: 1; opacity: 0.2;">&ldquo;</span>
-                        <p class="quote-text" style="font-size: 1rem; color: var(--text-main); font-style: italic; line-height: 1.8; position: relative; z-index: 1;">
+                </div>
+                
+                <!-- Row 2: Text Left, Photo Right -->
+                <div class="zigzag-row reverse">
+                    <div class="zigzag-photo">
+                        <img src="foto4.jpg" alt="Fabio Souza Trombonist" style="object-position: center 20%;">
+                    </div>
+                    <div class="zigzag-text">
+                        <div class="info-card" style="background: var(--bg-card); padding: 32px; border-radius: 8px; border: 1px solid var(--border-color);">
+                            <div style="color: var(--text-muted); font-size: 1rem; line-height: 1.6;">
+                            <strong style="color: var(--text-main); font-size: 1.125rem; display: block; margin-bottom: 12px;">Confiança Corporativa</strong>
+                            Com 27 anos de vivência por múltiplas camadas da tecnologia, da infraestrutura ao desenvolvimento de software sênior, ofereço visão sistêmica de ponta a ponta.<br><br>Meu foco é blindar a operação técnica de clientes B2B, evitar retrabalhos custosos e preparar a fundação tecnológica para escalar o negócio de forma sustentável e previsível.
+                        </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Row 3: Photo Left, Text Right -->
+                <div class="zigzag-row">
+                    <div class="zigzag-photo">
+                        <img src="foto5.jpg" alt="Orchestra Trombone" style="object-position: center 70%;">
+                    </div>
+                    <div class="zigzag-text">
+                        <div class="quote-container" style="position: relative; padding: 32px 24px; border-left: 4px solid var(--cyan-accent); background: rgba(0, 255, 204, 0.03); border-radius: 0 8px 8px 0;">
+                            <span style="position: absolute; top: 0px; left: 16px; font-size: 5rem; color: var(--cyan-accent); font-family: Georgia, serif; line-height: 1; opacity: 0.2;">&ldquo;</span>
+                            <p class="quote-text" style="font-size: 1rem; color: var(--text-main); font-style: italic; line-height: 1.8; position: relative; z-index: 1;">
                             Tocar em uma orquestra exige atenção simultânea a várias frentes: ler a partitura, acompanhar a regência do maestro e ouvir o companheiro de naipe para garantir a afinação perfeita do grupo. Como trombonista, o instrumento me cobra ainda uma acurácia milimétrica na posição das notas. Essa mesma dinâmica molda a minha atuação como desenvolvedor: alinhamento constante com a liderança, colaboração contínua com os companheiros de time e atenção cirúrgica a cada linha de código, garantindo a harmonia do projeto e evitando o retrabalho.
                         </p>
                         <div style="text-align: right; color: var(--cyan-accent); font-weight: 600; font-size: 1rem;">
                             — Fabio Souza
+                        </div>
                         </div>
                     </div>
                 </div>
