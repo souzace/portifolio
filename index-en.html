@@ -1042,7 +1042,7 @@
             .zigzag-photo img { width: 100%; height: 100%; min-height: 380px; object-fit: cover; border-radius: 12px; border: 1px solid var(--border-color); box-shadow: 0 10px 30px rgba(0,0,0,0.5); filter: grayscale(10%); transition: filter 0.3s ease; }
             .zigzag-photo img:hover { filter: grayscale(0%); }
             .zigzag-text { flex: 1.2; display: flex; flex-direction: column; }
-            .zigzag-text > div { height: 100%; display: flex; flex-direction: column; justify-content: center; }
+            .zigzag-text > div { flex: 1; display: flex; flex-direction: column; justify-content: center; }
             @media (max-width: 768px) {
                 .zigzag-row, .zigzag-row.reverse { flex-direction: column; gap: 32px; }
                 .zigzag-photo img { height: 280px; min-height: 280px; }
@@ -1095,7 +1095,7 @@
                     </div>
                     <div class="zigzag-text">
                         <div class="quote-container" style="position: relative; background: var(--bg-card); padding: 32px; border-radius: 8px; border: 1px solid var(--border-color); border-right: 4px solid var(--cyan-accent);">
-                            <span style="position: absolute; top: 0px; left: 16px; font-size: 5rem; color: var(--cyan-accent); font-family: Georgia, serif; line-height: 1; opacity: 0.2;">&ldquo;</span>
+                            <span style="position: absolute; top: 16px; left: 16px; font-size: 6rem; color: var(--cyan-accent); font-family: Georgia, serif; line-height: 1; opacity: 0.1;">&ldquo;</span>
                             <p class="quote-text" style="font-size: 1rem; color: var(--text-main); font-style: italic; line-height: 1.8; position: relative; z-index: 1;">
                             Playing in an orchestra requires simultaneous attention on several fronts: reading the sheet music, following the conductor, and listening to your section mates to ensure the group's perfect tuning. As a trombonist, the instrument also demands millimeter accuracy in note positioning. This exact dynamic shapes my role as a developer: constant alignment with leadership, continuous collaboration with teammates, and surgical attention to every line of code, ensuring project harmony and avoiding rework.
                         </p>
