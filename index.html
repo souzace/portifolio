@@ -1061,24 +1061,73 @@
 
 
 
-    <!-- ETAPA 4.3.5: Depoimentos -->
+    <!-- SECTION: Testimonials Animated -->
     <section id="depoimentos">
-        <div class="container">
+        <style>
+            .testimonial-card {
+                flex: 0 0 400px;
+                max-width: 80vw;
+                padding: 32px;
+                display: flex;
+                flex-direction: column;
+                background-color: var(--bg-card);
+                border-radius: 8px;
+                border: 1px solid var(--border-color);
+                box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+                white-space: normal;
+            }
+            .marquee-container {
+                overflow: hidden;
+                width: 100vw;
+                max-width: 100%;
+                position: relative;
+                padding: 16px 0;
+            }
+            .marquee-track {
+                display: flex;
+                width: max-content;
+                gap: 24px;
+                animation: marquee-scroll 60s linear infinite;
+            }
+            .marquee-track:hover {
+                animation-play-state: paused;
+            }
+            @keyframes marquee-scroll {
+                from { transform: translateX(0); }
+                to { transform: translateX(calc(-50% - 12px)); }
+            }
+            .marquee-container::before, .marquee-container::after {
+                content: "";
+                position: absolute;
+                top: 0;
+                width: 150px;
+                height: 100%;
+                z-index: 2;
+                pointer-events: none;
+            }
+            .marquee-container::before {
+                left: 0;
+                background: linear-gradient(to right, var(--bg-color), transparent);
+            }
+            .marquee-container::after {
+                right: 0;
+                background: linear-gradient(to left, var(--bg-color), transparent);
+            }
+            @media (max-width: 768px) {
+                .marquee-container::before, .marquee-container::after {
+                    width: 40px;
+                }
+                .testimonial-card {
+                    flex: 0 0 320px;
+                }
+            }
+        </style>
+        <div style="text-align: center;">
             <h2 style="margin-bottom: 32px;">Recomendações Profissionais</h2>
-            <div style="display: flex; flex-wrap: wrap; gap: 24px; justify-content: center;">
-                <div class="service-card" style="display: flex; flex-direction: column;">
-                    <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 24px;">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="40" height="40" fill="var(--cyan-accent)"><path d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 118.3 6.5a1.78 1.78 0 01-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0013 14.19a1.66 1.66 0 000 1.2V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.36.86 3.36 3.66z"></path></svg>
-                        <div>
-                            <h3 style="margin-bottom: 2px; font-size: 1.1rem; color: var(--text-main);">Jader Cleber</h3>
-                            <span style="color: var(--text-muted); font-size: 0.85rem;">Tech Lead @ Grupo Fleury</span>
-                        </div>
-                    </div>
-                    <p style="color: var(--text-muted); font-size: 0.95rem; font-style: italic; line-height: 1.6; flex: 1;">
-                        "Fábio é um excelente profissional. Sempre muito dedicado à resolução de problemas, encara desafios de maneira objetiva e determinada. Ampla experiência com programação e afins, capaz de determinar possíveis causas de problemas de forma completamente assertiva."
-                    </p>
-                </div>
-                <div class="service-card" style="display: flex; flex-direction: column;">
+        </div>
+        <div class="marquee-container">
+            <div class="marquee-track">
+                <div class="testimonial-card">
                     <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 24px;">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="40" height="40" fill="var(--cyan-accent)"><path d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 118.3 6.5a1.78 1.78 0 01-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0013 14.19a1.66 1.66 0 000 1.2V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.36.86 3.36 3.66z"></path></svg>
                         <div>
@@ -1087,10 +1136,34 @@
                         </div>
                     </div>
                     <p style="color: var(--text-muted); font-size: 0.95rem; font-style: italic; line-height: 1.6; flex: 1;">
-                        "Sua abordagem proativa e capacidade de enfrentar desafios com discernimento destacam-no como um profissional exemplar. É um membro de equipe valioso e confiável, que contribui significativamente para o sucesso de diversos projetos."
+                        "Trabalhar ao lado dele na 3E Engenharia foi uma experiência incrível. Além de suas qualificações técnicas, também se destaca por suas habilidades interpessoais. Sua comunicação clara contribuiu significativamente para o sucesso de diversos projetos. Sua abordagem proativa e capacidade de enfrentar desafios destacam-no como um profissional exemplar."
                     </p>
                 </div>
-                <div class="service-card" style="display: flex; flex-direction: column;">
+                <div class="testimonial-card">
+                    <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 24px;">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="40" height="40" fill="var(--cyan-accent)"><path d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 118.3 6.5a1.78 1.78 0 01-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0013 14.19a1.66 1.66 0 000 1.2V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.36.86 3.36 3.66z"></path></svg>
+                        <div>
+                            <h3 style="margin-bottom: 2px; font-size: 1.1rem; color: var(--text-main);">Dario Bennaia</h3>
+                            <span style="color: var(--text-muted); font-size: 0.85rem;">Full Stack Dev @ PagoNxt</span>
+                        </div>
+                    </div>
+                    <p style="color: var(--text-muted); font-size: 0.95rem; font-style: italic; line-height: 1.6; flex: 1;">
+                        "O Fábio é uma pessoa de personalidade excepcional, que se destaca não apenas por sua notável proficiência técnica. Demonstra habilidades sólidas em diversas tecnologias, resolve desafios complexos e compartilha generosamente seu conhecimento. Seu perfil técnico, combinado com visão abrangente, resulta em soluções notavelmente impactantes."
+                    </p>
+                </div>
+                <div class="testimonial-card">
+                    <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 24px;">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="40" height="40" fill="var(--cyan-accent)"><path d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 118.3 6.5a1.78 1.78 0 01-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0013 14.19a1.66 1.66 0 000 1.2V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.36.86 3.36 3.66z"></path></svg>
+                        <div>
+                            <h3 style="margin-bottom: 2px; font-size: 1.1rem; color: var(--text-main);">Jader Cleber</h3>
+                            <span style="color: var(--text-muted); font-size: 0.85rem;">Tech Lead @ Grupo Fleury</span>
+                        </div>
+                    </div>
+                    <p style="color: var(--text-muted); font-size: 0.95rem; font-style: italic; line-height: 1.6; flex: 1;">
+                        "Sempre muito dedicado à resolução de problemas, encara desafios de maneira objetiva e determinada. Personalidade colaborativa e flexível. Ampla experiência com programação, capaz de determinar possíveis causas de problemas que, muitas vezes, se mostraram completamente assertivas."
+                    </p>
+                </div>
+                <div class="testimonial-card">
                     <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 24px;">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="40" height="40" fill="var(--cyan-accent)"><path d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 118.3 6.5a1.78 1.78 0 01-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0013 14.19a1.66 1.66 0 000 1.2V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.36.86 3.36 3.66z"></path></svg>
                         <div>
@@ -1099,7 +1172,151 @@
                         </div>
                     </div>
                     <p style="color: var(--text-muted); font-size: 0.95rem; font-style: italic; line-height: 1.6; flex: 1;">
-                        "Um profissional excepcional em diversos aspectos, sempre focado na resolução de problemas. Sua ampla experiência em várias tecnologias o torna versátil, destacando-se tanto em sistemas legados quanto em projetos inovadores."
+                        "Profissional excepcional em diversos aspectos, focado na resolução de problemas. Sua ampla experiência em várias tecnologias o torna versátil, destacando-se tanto em sistemas legados quanto em projetos inovadores. Busca consistentemente aplicar as melhores práticas."
+                    </p>
+                </div>
+                <div class="testimonial-card">
+                    <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 24px;">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="40" height="40" fill="var(--cyan-accent)"><path d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 118.3 6.5a1.78 1.78 0 01-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0013 14.19a1.66 1.66 0 000 1.2V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.36.86 3.36 3.66z"></path></svg>
+                        <div>
+                            <h3 style="margin-bottom: 2px; font-size: 1.1rem; color: var(--text-main);">Kall-el Ano Bom</h3>
+                            <span style="color: var(--text-muted); font-size: 0.85rem;">Senior Software Developer</span>
+                        </div>
+                    </div>
+                    <p style="color: var(--text-muted); font-size: 0.95rem; font-style: italic; line-height: 1.6; flex: 1;">
+                        "Profissional com uma personalidade admirável, que se destaca pela sólida competência técnica e abordagem colaborativa. Demonstra domínio em diversas tecnologias, enfrentando desafios com eficiência. É generoso ao compartilhar conhecimento e contribuir com o time."
+                    </p>
+                </div>
+                <div class="testimonial-card">
+                    <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 24px;">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="40" height="40" fill="var(--cyan-accent)"><path d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 118.3 6.5a1.78 1.78 0 01-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0013 14.19a1.66 1.66 0 000 1.2V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.36.86 3.36 3.66z"></path></svg>
+                        <div>
+                            <h3 style="margin-bottom: 2px; font-size: 1.1rem; color: var(--text-main);">Valney Junior</h3>
+                            <span style="color: var(--text-muted); font-size: 0.85rem;">IT Security Analyst</span>
+                        </div>
+                    </div>
+                    <p style="color: var(--text-muted); font-size: 0.95rem; font-style: italic; line-height: 1.6; flex: 1;">
+                        "Considero o Fábio um grande profissional que sabe lidar sabiamente com adversidades. Destaco sua capacidade de resolver incidentes e gerir conflitos com simplicidade e serenidade. Tem empatia e profundo conhecimento técnico para entregar boas soluções."
+                    </p>
+                </div>
+                <div class="testimonial-card">
+                    <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 24px;">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="40" height="40" fill="var(--cyan-accent)"><path d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 118.3 6.5a1.78 1.78 0 01-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0013 14.19a1.66 1.66 0 000 1.2V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.36.86 3.36 3.66z"></path></svg>
+                        <div>
+                            <h3 style="margin-bottom: 2px; font-size: 1.1rem; color: var(--text-main);">Yago Oliveira</h3>
+                            <span style="color: var(--text-muted); font-size: 0.85rem;">Senior .NET Developer</span>
+                        </div>
+                    </div>
+                    <p style="color: var(--text-muted); font-size: 0.95rem; font-style: italic; line-height: 1.6; flex: 1;">
+                        "Fábio é uma pessoa com grandes habilidades. Durante o tempo em que trabalhamos juntos, sempre se mostrou prestativo... Possui ótimas habilidades em engenharia de software e sempre trabalhou com as melhores práticas profissionais e técnicas para agregar valor."
+                    </p>
+                </div>
+                <div class="testimonial-card">
+                    <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 24px;">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="40" height="40" fill="var(--cyan-accent)"><path d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 118.3 6.5a1.78 1.78 0 01-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0013 14.19a1.66 1.66 0 000 1.2V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.36.86 3.36 3.66z"></path></svg>
+                        <div>
+                            <h3 style="margin-bottom: 2px; font-size: 1.1rem; color: var(--text-main);">Rubens Filho</h3>
+                            <span style="color: var(--text-muted); font-size: 0.85rem;">Fullstack Web Developer</span>
+                        </div>
+                    </div>
+                    <p style="color: var(--text-muted); font-size: 0.95rem; font-style: italic; line-height: 1.6; flex: 1;">
+                        "Profissional dedicado, com bastante experiência no desenvolvimento de soluções para sistemas de diversos graus de complexidade, com largo conhecimento sobre tecnologias de backend, frontend e banco de dados. Comportamento proativo e visão estratégica."
+                    </p>
+                </div>
+                <div class="testimonial-card">
+                    <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 24px;">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="40" height="40" fill="var(--cyan-accent)"><path d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 118.3 6.5a1.78 1.78 0 01-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0013 14.19a1.66 1.66 0 000 1.2V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.36.86 3.36 3.66z"></path></svg>
+                        <div>
+                            <h3 style="margin-bottom: 2px; font-size: 1.1rem; color: var(--text-main);">Leandro Nascimento</h3>
+                            <span style="color: var(--text-muted); font-size: 0.85rem;">Tech Manager @ Picpay</span>
+                        </div>
+                    </div>
+                    <p style="color: var(--text-muted); font-size: 0.95rem; font-style: italic; line-height: 1.6; flex: 1;">
+                        "Trabalhar ao lado dele na 3E Engenharia foi uma experiência incrível. Além de suas qualificações técnicas, também se destaca por suas habilidades interpessoais. Sua comunicação clara contribuiu significativamente para o sucesso de diversos projetos. Sua abordagem proativa e capacidade de enfrentar desafios destacam-no como um profissional exemplar."
+                    </p>
+                </div>
+                <div class="testimonial-card">
+                    <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 24px;">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="40" height="40" fill="var(--cyan-accent)"><path d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 118.3 6.5a1.78 1.78 0 01-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0013 14.19a1.66 1.66 0 000 1.2V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.36.86 3.36 3.66z"></path></svg>
+                        <div>
+                            <h3 style="margin-bottom: 2px; font-size: 1.1rem; color: var(--text-main);">Dario Bennaia</h3>
+                            <span style="color: var(--text-muted); font-size: 0.85rem;">Full Stack Dev @ PagoNxt</span>
+                        </div>
+                    </div>
+                    <p style="color: var(--text-muted); font-size: 0.95rem; font-style: italic; line-height: 1.6; flex: 1;">
+                        "O Fábio é uma pessoa de personalidade excepcional, que se destaca não apenas por sua notável proficiência técnica. Demonstra habilidades sólidas em diversas tecnologias, resolve desafios complexos e compartilha generosamente seu conhecimento. Seu perfil técnico, combinado com visão abrangente, resulta em soluções notavelmente impactantes."
+                    </p>
+                </div>
+                <div class="testimonial-card">
+                    <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 24px;">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="40" height="40" fill="var(--cyan-accent)"><path d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 118.3 6.5a1.78 1.78 0 01-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0013 14.19a1.66 1.66 0 000 1.2V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.36.86 3.36 3.66z"></path></svg>
+                        <div>
+                            <h3 style="margin-bottom: 2px; font-size: 1.1rem; color: var(--text-main);">Jader Cleber</h3>
+                            <span style="color: var(--text-muted); font-size: 0.85rem;">Tech Lead @ Grupo Fleury</span>
+                        </div>
+                    </div>
+                    <p style="color: var(--text-muted); font-size: 0.95rem; font-style: italic; line-height: 1.6; flex: 1;">
+                        "Sempre muito dedicado à resolução de problemas, encara desafios de maneira objetiva e determinada. Personalidade colaborativa e flexível. Ampla experiência com programação, capaz de determinar possíveis causas de problemas que, muitas vezes, se mostraram completamente assertivas."
+                    </p>
+                </div>
+                <div class="testimonial-card">
+                    <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 24px;">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="40" height="40" fill="var(--cyan-accent)"><path d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 118.3 6.5a1.78 1.78 0 01-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0013 14.19a1.66 1.66 0 000 1.2V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.36.86 3.36 3.66z"></path></svg>
+                        <div>
+                            <h3 style="margin-bottom: 2px; font-size: 1.1rem; color: var(--text-main);">Demontie Costa</h3>
+                            <span style="color: var(--text-muted); font-size: 0.85rem;">Senior Software Eng. @ Efí Bank</span>
+                        </div>
+                    </div>
+                    <p style="color: var(--text-muted); font-size: 0.95rem; font-style: italic; line-height: 1.6; flex: 1;">
+                        "Profissional excepcional em diversos aspectos, focado na resolução de problemas. Sua ampla experiência em várias tecnologias o torna versátil, destacando-se tanto em sistemas legados quanto em projetos inovadores. Busca consistentemente aplicar as melhores práticas."
+                    </p>
+                </div>
+                <div class="testimonial-card">
+                    <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 24px;">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="40" height="40" fill="var(--cyan-accent)"><path d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 118.3 6.5a1.78 1.78 0 01-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0013 14.19a1.66 1.66 0 000 1.2V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.36.86 3.36 3.66z"></path></svg>
+                        <div>
+                            <h3 style="margin-bottom: 2px; font-size: 1.1rem; color: var(--text-main);">Kall-el Ano Bom</h3>
+                            <span style="color: var(--text-muted); font-size: 0.85rem;">Senior Software Developer</span>
+                        </div>
+                    </div>
+                    <p style="color: var(--text-muted); font-size: 0.95rem; font-style: italic; line-height: 1.6; flex: 1;">
+                        "Profissional com uma personalidade admirável, que se destaca pela sólida competência técnica e abordagem colaborativa. Demonstra domínio em diversas tecnologias, enfrentando desafios com eficiência. É generoso ao compartilhar conhecimento e contribuir com o time."
+                    </p>
+                </div>
+                <div class="testimonial-card">
+                    <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 24px;">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="40" height="40" fill="var(--cyan-accent)"><path d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 118.3 6.5a1.78 1.78 0 01-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0013 14.19a1.66 1.66 0 000 1.2V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.36.86 3.36 3.66z"></path></svg>
+                        <div>
+                            <h3 style="margin-bottom: 2px; font-size: 1.1rem; color: var(--text-main);">Valney Junior</h3>
+                            <span style="color: var(--text-muted); font-size: 0.85rem;">IT Security Analyst</span>
+                        </div>
+                    </div>
+                    <p style="color: var(--text-muted); font-size: 0.95rem; font-style: italic; line-height: 1.6; flex: 1;">
+                        "Considero o Fábio um grande profissional que sabe lidar sabiamente com adversidades. Destaco sua capacidade de resolver incidentes e gerir conflitos com simplicidade e serenidade. Tem empatia e profundo conhecimento técnico para entregar boas soluções."
+                    </p>
+                </div>
+                <div class="testimonial-card">
+                    <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 24px;">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="40" height="40" fill="var(--cyan-accent)"><path d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 118.3 6.5a1.78 1.78 0 01-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0013 14.19a1.66 1.66 0 000 1.2V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.36.86 3.36 3.66z"></path></svg>
+                        <div>
+                            <h3 style="margin-bottom: 2px; font-size: 1.1rem; color: var(--text-main);">Yago Oliveira</h3>
+                            <span style="color: var(--text-muted); font-size: 0.85rem;">Senior .NET Developer</span>
+                        </div>
+                    </div>
+                    <p style="color: var(--text-muted); font-size: 0.95rem; font-style: italic; line-height: 1.6; flex: 1;">
+                        "Fábio é uma pessoa com grandes habilidades. Durante o tempo em que trabalhamos juntos, sempre se mostrou prestativo... Possui ótimas habilidades em engenharia de software e sempre trabalhou com as melhores práticas profissionais e técnicas para agregar valor."
+                    </p>
+                </div>
+                <div class="testimonial-card">
+                    <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 24px;">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="40" height="40" fill="var(--cyan-accent)"><path d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 118.3 6.5a1.78 1.78 0 01-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0013 14.19a1.66 1.66 0 000 1.2V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.36.86 3.36 3.66z"></path></svg>
+                        <div>
+                            <h3 style="margin-bottom: 2px; font-size: 1.1rem; color: var(--text-main);">Rubens Filho</h3>
+                            <span style="color: var(--text-muted); font-size: 0.85rem;">Fullstack Web Developer</span>
+                        </div>
+                    </div>
+                    <p style="color: var(--text-muted); font-size: 0.95rem; font-style: italic; line-height: 1.6; flex: 1;">
+                        "Profissional dedicado, com bastante experiência no desenvolvimento de soluções para sistemas de diversos graus de complexidade, com largo conhecimento sobre tecnologias de backend, frontend e banco de dados. Comportamento proativo e visão estratégica."
                     </p>
                 </div>
             </div>
