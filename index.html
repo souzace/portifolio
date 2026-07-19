@@ -1040,10 +1040,9 @@
                         <span class="tech-item">AWS</span>
                     </div>
                 </div>
-            </div>
-            </div>
-        </div>
-    </section>
+                  </div>
+              </div>
+          </section>
 
 
 
@@ -1058,7 +1057,11 @@
             .zigzag-photo { flex: 1; position: relative; }
             .zigzag-photo img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; border-radius: 12px; border: 1px solid var(--border-color); box-shadow: 0 10px 30px rgba(0,0,0,0.5); filter: grayscale(10%); transition: filter 0.3s ease; }
             .zigzag-photo img:hover { filter: grayscale(0%); }
-            .zigzag-text { flex: 1.2; display: flex; flex-direction: column; }
+            
+            .zigzag-text { flex: 1.2; box-sizing: border-box; }
+            .zigzag-text.info-card { display: flex; flex-direction: column; justify-content: center; }
+            .zigzag-text.quote-container { display: block; }
+
             .zigzag-text > div { width: 100%; height: 100%; box-sizing: border-box; }
             @media (max-width: 768px) {
                 .zigzag-row, .zigzag-row.reverse { flex-direction: column; gap: 32px; }
@@ -1075,8 +1078,7 @@
                     <div class="zigzag-photo">
                         <img src="foto3.jpeg" alt="Fabio Souza Developer">
                     </div>
-                    <div class="zigzag-text">
-                        <div class="info-card" style="background: var(--bg-card); padding: 32px; border-radius: 8px; border: 1px solid var(--border-color); border-right: 4px solid var(--cyan-accent);">
+                    <div class="zigzag-text info-card" style="background: var(--bg-card); padding: 32px; border-radius: 8px; border: 1px solid var(--border-color); border-right: 4px solid var(--cyan-accent);">
                             <p style="color: var(--text-main); margin-bottom: 24px; font-size: 1.125rem; font-weight: 500;">
                             Sou <strong>Fábio Souza</strong>, atuando sob minha marca registrada, <strong>Orkes</strong>. Trabalho de forma independente, entregando engenharia robusta para operações críticas. (Também sou músico de orquestra nas horas vagas.)
                         </p>
@@ -1087,31 +1089,25 @@
                             • <span style="color: var(--cyan-accent); font-weight: 500;">Arquitetura Cloud (AWS)</span>: Infraestrutura otimizada em custo e com alta disponibilidade.
                         </div>
                         </div>
-                    </div>
-                </div>
-                
-                <!-- Row 2: Text Left, Photo Right -->
+                  </div>
+                  <!-- Row 2: Text Left, Photo Right -->
                 <div class="zigzag-row reverse">
                     <div class="zigzag-photo">
                         <img src="foto4.jpg" alt="Fabio Souza Trombonist" style="object-position: center 20%;">
                     </div>
-                    <div class="zigzag-text">
-                        <div class="info-card" style="background: var(--bg-card); padding: 32px; border-radius: 8px; border: 1px solid var(--border-color); border-left: 4px solid var(--cyan-accent);">
+                    <div class="zigzag-text info-card" style="background: var(--bg-card); padding: 32px; border-radius: 8px; border: 1px solid var(--border-color); border-left: 4px solid var(--cyan-accent);">
                             <div style="color: var(--text-muted); font-size: 1rem; line-height: 1.6;">
                             <strong style="color: var(--text-main); font-size: 1.125rem; display: block; margin-bottom: 12px;">Confiança e Preparo</strong>
                             Assim como subir ao palco exige anos de dedicação, a excelência técnica não acontece por acaso. Comecei meu caminho como instrutor e atuei no suporte técnico, o que me deu uma base sólida para comunicação e rápida solução de problemas. Ao longo de 27 anos na tecnologia, enfrentando múltiplas situações que deixaram cicatrizes e profundos aprendizados, construí uma visão sistêmica de ponta a ponta.<br><br>Hoje, meu foco é desenvolver soluções robustas para a operação técnica das empresas, evitando retrabalhos custosos e preparando a fundação tecnológica ideal para escalar o negócio de forma sustentável e previsível.
                         </div>
                         </div>
-                    </div>
-                </div>
-                
-                <!-- Row 3: Photo Left, Text Right -->
+                  </div>
+                  <!-- Row 3: Photo Left, Text Right -->
                 <div class="zigzag-row">
                     <div class="zigzag-photo">
                         <img src="foto5.jpg" alt="Orchestra Trombone" style="object-position: center 70%;">
                     </div>
-                    <div class="zigzag-text">
-                        <div class="quote-container" style="position: relative; background: var(--bg-card); padding: 32px; border-radius: 8px; border: 1px solid var(--border-color); border-right: 4px solid var(--cyan-accent);">
+                    <div class="zigzag-text quote-container" style="position: relative; background: var(--bg-card); padding: 32px; border-radius: 8px; border: 1px solid var(--border-color); border-right: 4px solid var(--cyan-accent);">
                             <span style="float: left; font-size: 4rem; color: var(--cyan-accent); font-family: Georgia, serif; line-height: 0.8; margin-right: 12px; margin-top: 8px; opacity: 1;">&ldquo;</span>
                             <p class="quote-text" style="font-size: 1rem; color: var(--text-main); font-style: italic; line-height: 1.8; position: relative; z-index: 1;">
                             Tocar em uma orquestra exige atenção simultânea a várias frentes: ler a partitura, acompanhar a regência do maestro e ouvir o companheiro de naipe para garantir a afinação perfeita do grupo. Como trombonista, o instrumento me cobra ainda uma acurácia milimétrica na posição das notas. Essa mesma dinâmica molda a minha atuação como desenvolvedor: alinhamento constante com a liderança, colaboração contínua com os companheiros de time e atenção cirúrgica a cada linha de código, garantindo a harmonia do projeto e evitando o retrabalho.
@@ -1121,10 +1117,9 @@
                         </div>
                         </div>
                     </div>
-                </div>
-            </div>
-        </div>
-    </section>
+                  </div>
+              </div>
+          </section>
 
     <!-- SECTION: Testimonials Animated -->
     <section id="depoimentos">
@@ -1790,10 +1785,9 @@
                     — Fabio Souza
                 </div>
         </div>
-                </div>
-            </div>
-        </div>
-    </section>
+                  </div>
+              </div>
+          </section>
 
     <!-- ETAPA 4.4: Rodapé -->
     <footer>
