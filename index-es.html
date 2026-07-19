@@ -874,31 +874,50 @@
     <section id="what-i-do" style="padding: 80px 0; border-top: 1px solid var(--border-color);">
         <div class="container">
             <h2 style="text-align: center; margin-bottom: 48px;">¿Cómo puedo ayudar?</h2>
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 32px;">
-                <div class="service-card" style="padding: 32px; text-align: left; background: var(--bg-card); border-radius: 8px; border: 1px solid var(--border-color); display: flex; flex-direction: column; gap: 16px;">
-                    <div style="margin-bottom: 8px;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="48" height="48" fill="var(--cyan-accent)"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" stroke="var(--cyan-accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></div>
-                    <h3 style="font-size: 1.25rem; color: var(--text-main); margin: 0;">Consultoría Técnica y Arquitectura</h3>
-                    <div style="color: var(--cyan-accent); font-size: 0.9rem; font-weight: 600;">Tech Lead / Fractional CTO</div>
-                    <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.6; flex: 1;">Revisión de arquitectura de software, definición de stack tecnológico, buenas prácticas y liderazgo técnico para equipos que necesitan escalar con calidad.</p>
-                    <a href="https://wa.me/5561993214539" target="_blank" style="display: inline-block; padding: 12px 24px; background: transparent; border: 1px solid var(--cyan-accent); color: var(--cyan-accent); text-decoration: none; border-radius: 4px; text-align: center; font-weight: 600; margin-top: 16px; transition: all 0.2s;">Hablemos</a>
-                </div>
-                <div class="service-card" style="padding: 32px; text-align: left; background: var(--bg-card); border-radius: 8px; border: 1px solid var(--border-color); display: flex; flex-direction: column; gap: 16px;">
-                    <div style="margin-bottom: 8px;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="48" height="48" fill="var(--cyan-accent)"><path d="M16 18l6-6-6-6M8 6l-6 6 6 6" stroke="var(--cyan-accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></div>
-                    <h3 style="font-size: 1.25rem; color: var(--text-main); margin: 0;">Desarrollo a Medida</h3>
-                    <div style="color: var(--cyan-accent); font-size: 0.9rem; font-weight: 600;">Fullstack / End-to-End</div>
-                    <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.6; flex: 1;">Creación de sistemas complejos, MVPs y APIs robustas desde cero. Mantenimiento y evolución de aplicaciones utilizando Node.js, React y ecosistema moderno.</p>
-                    <a href="https://wa.me/5561993214539" target="_blank" style="display: inline-block; padding: 12px 24px; background: transparent; border: 1px solid var(--cyan-accent); color: var(--cyan-accent); text-decoration: none; border-radius: 4px; text-align: center; font-weight: 600; margin-top: 16px; transition: all 0.2s;">Hablemos</a>
-                </div>
-                <div class="service-card" style="padding: 32px; text-align: left; background: var(--bg-card); border-radius: 8px; border: 1px solid var(--border-color); display: flex; flex-direction: column; gap: 16px;">
-                    <div style="margin-bottom: 8px;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="48" height="48" fill="var(--cyan-accent)"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" stroke="var(--cyan-accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></div>
-                    <h3 style="font-size: 1.25rem; color: var(--text-main); margin: 0;">Rendimiento y Seguridad</h3>
-                    <div style="color: var(--cyan-accent); font-size: 0.9rem; font-weight: 600;">Troubleshooting Especializado</div>
-                    <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.6; flex: 1;">Optimización de sistemas lentos, refactorización de código heredado, identificación de cuellos de botella en bases de datos y mejoras de escalabilidad.</p>
-                    <a href="https://wa.me/5561993214539" target="_blank" style="display: inline-block; padding: 12px 24px; background: transparent; border: 1px solid var(--cyan-accent); color: var(--cyan-accent); text-decoration: none; border-radius: 4px; text-align: center; font-weight: 600; margin-top: 16px; transition: all 0.2s;">Hablemos</a>
-                </div>
-            </div>
-        </div>
-    </section>
+
+              <div class="carousel-wrapper">
+                  <button class="carousel-btn left" disabled onclick="scrollCarousel(this, 'left')" aria-label="Anterior">&#10094;</button>
+                  <button class="carousel-btn right" onclick="scrollCarousel(this, 'right')" aria-label="Próximo">&#10095;</button>
+                  <div class="services-grid">
+                  
+                  <div class="service-card" style="padding: 32px; text-align: left; background: var(--bg-card); border-radius: 8px; border: 1px solid var(--border-color); display: flex; flex-direction: column; gap: 16px;">
+                      <div style="margin-bottom: 8px;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="48" height="48" fill="var(--cyan-accent)"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" stroke="var(--cyan-accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></div>
+                      <h3 style="font-size: 1.25rem; color: var(--text-main); margin: 0;">Arquitectura de Software</h3>
+                      <div style="color: var(--cyan-accent); font-size: 0.9rem; font-weight: 600;">Tech Lead / Fractional CTO</div>
+                      <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.6; flex: 1;">Diseño de arquitecturas escalables, definición de stack y liderazgo técnico para estructurar bases sólidas.</p>
+                  </div>
+                  
+                  <div class="service-card" style="padding: 32px; text-align: left; background: var(--bg-card); border-radius: 8px; border: 1px solid var(--border-color); display: flex; flex-direction: column; gap: 16px;">
+                      <div style="margin-bottom: 8px;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="48" height="48" fill="var(--cyan-accent)"><path d="M16 18l6-6-6-6M8 6l-6 6 6 6" stroke="var(--cyan-accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></div>
+                      <h3 style="font-size: 1.25rem; color: var(--text-main); margin: 0;">Desarrollo Backend</h3>
+                      <div style="color: var(--cyan-accent); font-size: 0.9rem; font-weight: 600;">APIs / Microservicios</div>
+                      <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.6; flex: 1;">Creación de sistemas complejos y APIs robustas desde cero. Desarrollo centrado en alto rendimiento y escalabilidad.</p>
+                  </div>
+                  
+                  <div class="service-card" style="padding: 32px; text-align: left; background: var(--bg-card); border-radius: 8px; border: 1px solid var(--border-color); display: flex; flex-direction: column; gap: 16px;">
+                      <div style="margin-bottom: 8px;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="48" height="48" fill="var(--cyan-accent)"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" stroke="var(--cyan-accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" stroke="var(--cyan-accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></div>
+                      <h3 style="font-size: 1.25rem; color: var(--text-main); margin: 0;">Integración B2B</h3>
+                      <div style="color: var(--cyan-accent); font-size: 0.9rem; font-weight: 600;">Sistemas / Ecosistemas</div>
+                      <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.6; flex: 1;">Conexión segura, mensajería asíncrona e intercambio de datos confiable entre plataformas corporativas.</p>
+                  </div>
+                  
+                  <div class="service-card" style="padding: 32px; text-align: left; background: var(--bg-card); border-radius: 8px; border: 1px solid var(--border-color); display: flex; flex-direction: column; gap: 16px;">
+                      <div style="margin-bottom: 8px;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="48" height="48" fill="var(--cyan-accent)"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8" stroke="var(--cyan-accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/><path d="M3 3v5h5" stroke="var(--cyan-accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></div>
+                      <h3 style="font-size: 1.25rem; color: var(--text-main); margin: 0;">Modernización de Legados</h3>
+                      <div style="color: var(--cyan-accent); font-size: 0.9rem; font-weight: 600;">Refactorización Gradual</div>
+                      <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.6; flex: 1;">Evolución de antiguos sistemas monolíticos hacia arquitecturas modernas, con cero downtime y mitigación de riesgos.</p>
+                  </div>
+                  
+                  <div class="service-card" style="padding: 32px; text-align: left; background: var(--bg-card); border-radius: 8px; border: 1px solid var(--border-color); display: flex; flex-direction: column; gap: 16px;">
+                      <div style="margin-bottom: 8px;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="48" height="48" fill="var(--cyan-accent)"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" stroke="var(--cyan-accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></div>
+                      <h3 style="font-size: 1.25rem; color: var(--text-main); margin: 0;">Rendimiento y Seguridad</h3>
+                      <div style="color: var(--cyan-accent); font-size: 0.9rem; font-weight: 600;">Troubleshooting</div>
+                      <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.6; flex: 1;">Identificación de cuellos de botella, optimización de bases de datos y parcheo de vulnerabilidades en entornos críticos.</p>
+                  </div>
+                  
+                  </div>
+              </div>
+          </section>
 
     <!-- ETAPA 4.3: Projetos -->
     <section id="servicos">
@@ -908,8 +927,8 @@
                 
             </div>
             <div class="carousel-wrapper">
-                <button class="carousel-btn left" disabled onclick="scrollProjects('left')" aria-label="Anterior">&#10094;</button>
-                <button class="carousel-btn right" onclick="scrollProjects('right')" aria-label="Próximo">&#10095;</button>
+                <button class="carousel-btn left" disabled onclick="scrollCarousel(this, 'left')" aria-label="Anterior">&#10094;</button>
+                <button class="carousel-btn right" onclick="scrollCarousel(this, 'right')" aria-label="Próximo">&#10095;</button>
                 <div class="services-grid">
                 <div class="service-card">
                     <h3>Portal de Beneficiarios <span class="project-subtitle">— Salud y Diagnóstico</span></h3>
