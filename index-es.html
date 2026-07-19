@@ -1819,8 +1819,9 @@
 
 
     <script>
-        function scrollProjects(direction) {
-            const grid = document.querySelector('.services-grid');
+        function scrollCarousel(btn, direction) {
+            const wrapper = btn.closest('.carousel-wrapper');
+            const grid = wrapper.querySelector('.services-grid');
             const scrollAmount = window.innerWidth > 768 ? grid.offsetWidth / 2 : grid.offsetWidth * 0.8;
             if (direction === 'left') {
                 grid.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
@@ -1830,28 +1831,18 @@
         }
 
         document.addEventListener('DOMContentLoaded', () => {
-            const grid = document.querySelector('.services-grid');
-            const btnLeft = document.querySelector('.carousel-btn.left');
-            const btnRight = document.querySelector('.carousel-btn.right');
-
-            if (!grid || !btnLeft || !btnRight) return;
-
-            const updateButtons = () => {
-                // Check if scrolled to the very left (with a 5px threshold for safety)
-                btnLeft.disabled = grid.scrollLeft <= 5; 
+            document.querySelectorAll('.carousel-wrapper').forEach(wrapper => {
+                const grid = wrapper.querySelector('.services-grid');
+                const leftBtn = wrapper.querySelector('.carousel-btn.left');
+                const rightBtn = wrapper.querySelector('.carousel-btn.right');
                 
-                // Check if scrolled to the very right
-                // Using Math.ceil to prevent sub-pixel rounding errors on different pixel densities
-                btnRight.disabled = Math.ceil(grid.scrollLeft + grid.clientWidth) >= grid.scrollWidth - 5;
-            };
-
-            // Listen to scroll events (works for mouse dragging, touchpad swiping, and button clicks)
-            grid.addEventListener('scroll', updateButtons);
-            // Re-calculate if user rotates device or resizes window
-            window.addEventListener('resize', updateButtons);
-            
-            // Set initial state correctly
-            updateButtons();
+                if(grid && leftBtn && rightBtn) {
+                    grid.addEventListener('scroll', () => {
+                        leftBtn.disabled = grid.scrollLeft <= 0;
+                        rightBtn.disabled = grid.scrollLeft >= (grid.scrollWidth - grid.clientWidth - 10);
+                    });
+                }
+            });
         });
     </script>
 
