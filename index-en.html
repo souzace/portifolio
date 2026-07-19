@@ -731,8 +731,10 @@
             }
 
             .sobre-layout {
-                flex-direction: row;
-                align-items: stretch;
+                display: grid;
+                grid-template-columns: 1.2fr 1fr 1fr;
+                gap: 32px;
+                align-items: start;
             }
         }
 
@@ -892,10 +894,10 @@
                     <!-- Foto de Perfil Ampla -->
                     <img src="foto1.jpg" alt="Fabio Souza" class="profile-photo-large">
                 </div>
-        </div>
+                <div class="sobre-quote-column" style="display: flex; align-items: center;">
         
-            <div class="quote-container" style="margin-top: 64px;">
-                <span style="position: absolute; top: -20px; left: 0; font-size: 5rem; color: var(--cyan-accent); font-family: Georgia, serif; line-height: 1; opacity: 0.3;">&ldquo;</span>
+            <div class="quote-container" style="padding: 0;">
+                <span style="position: absolute; top: -20px; left: 0; font-size: 4rem; color: var(--cyan-accent); font-family: Georgia, serif; line-height: 1; opacity: 0.3;">&ldquo;</span>
                 <p class="quote-text">
                     Playing in an orchestra requires simultaneous attention on several fronts: reading the sheet music, following the conductor, and listening to your section mates to ensure the group's perfect tuning. As a trombonist, the instrument also demands millimeter accuracy in note positioning. This exact dynamic shapes my role as a developer: constant alignment with leadership, continuous collaboration with teammates, and surgical attention to every line of code, ensuring project harmony and avoiding rework.
                 </p>
@@ -903,6 +905,8 @@
                     — Fabio Souza
                 </div>
             </div>
+                </div>
+        </div>
 </div>
     </section>
 
