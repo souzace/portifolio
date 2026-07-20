@@ -1107,11 +1107,11 @@
             .sobre-zigzag { display: flex; flex-direction: column; gap: 80px; margin-top: 48px; }
             .zigzag-row { display: flex; flex-direction: row; gap: 48px; align-items: stretch; }
             .zigzag-row.reverse { flex-direction: row-reverse; }
-            .zigzag-photo { flex: 1; position: relative; }
+            .zigzag-photo { flex: 0.7; position: relative; }
             .zigzag-photo img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; border-radius: 12px; border: 1px solid var(--border-color); box-shadow: 0 10px 30px rgba(0,0,0,0.5); filter: grayscale(10%); transition: filter 0.3s ease; }
             .zigzag-photo img:hover { filter: grayscale(0%); }
             
-            .zigzag-text { flex: 1.2; box-sizing: border-box; }
+            .zigzag-text { flex: 1.3; box-sizing: border-box; }
             .zigzag-text.info-card { display: flex; flex-direction: column; justify-content: center; }
             .zigzag-text.quote-container { display: block; margin: 0; }
 
@@ -1132,50 +1132,43 @@
             <h2 style="text-align: center; margin-bottom: 16px;">Sobre Mim</h2>
             
             <div class="sobre-zigzag">
-                <!-- Row 1: Photo Left, Text Right -->
-                <div class="zigzag-row">
-                    <div class="zigzag-photo">
-                        <img src="foto3.jpeg" alt="Fabio Souza Developer">
-                    </div>
-                    <div class="zigzag-text info-card" style="background: var(--bg-card); padding: 32px; border-radius: 8px; border: 1px solid var(--border-color); border-right: 4px solid var(--cyan-accent);">
-                            <p style="color: var(--text-main); margin-bottom: 24px; font-size: 1.125rem; font-weight: 500;">
-                            Por trás da <strong>Orkes</strong>, atuo como um parceiro estratégico de engenharia. O propósito da marca é claro: <strong>transformar complexidade técnica em operações corporativas seguras, escaláveis e ininterruptas.</strong> (E, sim, a inspiração vem da minha atuação como músico de orquestra).
-                        </p>
-                        <div style="color: var(--text-muted); font-size: 1rem; line-height: 1.8;">
-                            <strong>Competências Principais:</strong><br>
-                            • <span style="color: var(--cyan-accent); font-weight: 500;">Modernização de Sistemas Legados</span>: Atualização segura de monólitos para microsserviços escaláveis.<br>
-                            • <span style="color: var(--cyan-accent); font-weight: 500;">APIs de Alta Performance</span>: Backends resilientes para suportar alto tráfego sem indisponibilidade.<br>
-                            • <span style="color: var(--cyan-accent); font-weight: 500;">Arquitetura Cloud (AWS)</span>: Infraestrutura otimizada em custo e com alta disponibilidade.
-                        </div>
-                        </div>
+                  <!-- Row 1: Photo Left, Text Right -->
+                  <div class="zigzag-row">
+                      <div class="zigzag-photo">
+                          <img src="foto3.jpeg" alt="Fabio Souza Developer">
+                      </div>
+                      <div class="zigzag-text info-card" style="background: var(--bg-card); padding: 32px; border-radius: 8px; border: 1px solid var(--border-color); border-right: 4px solid var(--cyan-accent); display: flex; flex-direction: column; justify-content: center;">
+                          <p style="color: var(--text-main); margin-bottom: 16px; font-size: 1.125rem; font-weight: 500;">
+                              Sou <strong>Fábio Souza</strong>, parceiro estratégico de engenharia por trás da <strong>Orkes</strong>. O propósito da marca é transformar complexidade técnica em operações corporativas seguras, escaláveis e ininterruptas.
+                          </p>
+                          <div style="color: var(--text-muted); font-size: 1rem; line-height: 1.6;">
+                              <strong>Competências Principais:</strong> Modernização de Legados &bull; APIs de Alta Performance &bull; Arquitetura Cloud (AWS)
+                          </div>
+                      </div>
                   </div>
                   <!-- Row 2: Text Left, Photo Right -->
-                <div class="zigzag-row reverse">
-                    <div class="zigzag-photo">
-                        <img src="foto7.jpeg" alt="Fabio Souza Trombonist" style="object-position: center center;">
-                    </div>
-                    <div class="zigzag-text info-card" style="background: var(--bg-card); padding: 32px; border-radius: 8px; border: 1px solid var(--border-color); border-left: 4px solid var(--cyan-accent);">
-                            <div style="color: var(--text-muted); font-size: 1rem; line-height: 1.6;">
-                            <strong style="color: var(--text-main); font-size: 1.125rem; display: block; margin-bottom: 12px;">Visão Sistêmica & Resiliência</strong>Com 27 anos de vivência em tecnologia, construí uma visão de ponta a ponta que me permite prever falhas estruturais antes que aconteçam.<br><br>A expertise da Orkes é blindar a sua operação: eliminando gargalos de performance, evitando retrabalhos custosos e construindo a fundação ideal para o seu negócio escalar.
-                        </div>
-                        </div>
+                  <div class="zigzag-row reverse">
+                      <div class="zigzag-photo">
+                          <img src="foto7.jpeg" alt="Fabio Souza Trombonist" style="object-position: center center;">
+                      </div>
+                      <div class="zigzag-text info-card" style="background: var(--bg-card); padding: 32px; border-radius: 8px; border: 1px solid var(--border-color); border-left: 4px solid var(--cyan-accent); display: flex; flex-direction: column; justify-content: center;">
+                          <div style="color: var(--text-muted); font-size: 1rem; line-height: 1.6;">
+                              <strong style="color: var(--text-main); font-size: 1.125rem; display: block; margin-bottom: 12px;">Visão Sistêmica & Resiliência</strong>Com 27 anos de tecnologia, construí uma visão de ponta a ponta para prever falhas estruturais antes que aconteçam.<br><br>A expertise da Orkes é blindar sua operação, eliminando gargalos de performance e construindo a fundação ideal para escalar.
+                          </div>
+                      </div>
                   </div>
                   <!-- Row 3: Photo Left, Text Right -->
-                <div class="zigzag-row">
-                    <div class="zigzag-photo">
-                        <img src="foto5.jpg" alt="Orchestra Trombone" style="object-position: center 70%;">
-                    </div>
-                    <div class="zigzag-text quote-container" style="position: relative; background: var(--bg-card); padding: 32px; border-radius: 8px; border: 1px solid var(--border-color); border-right: 4px solid var(--cyan-accent);">
-                            <span style="float: left; font-size: 4rem; color: var(--cyan-accent); font-family: Georgia, serif; line-height: 0.8; margin-right: 12px; margin-top: 8px; opacity: 1;">&ldquo;</span>
-                            <p class="quote-text" style="font-size: 1rem; color: var(--text-main); font-style: italic; line-height: 1.8; position: relative; z-index: 1;">
-                            Tocar em uma orquestra exige atenção simultânea a várias frentes: ler a partitura, acompanhar a regência do maestro e ouvir o companheiro de naipe para garantir a afinação perfeita do grupo. Como trombonista, o instrumento me cobra ainda uma acurácia milimétrica na posição das notas. Essa mesma dinâmica molda a minha atuação como desenvolvedor: alinhamento constante com a liderança, colaboração contínua com os companheiros de time e atenção cirúrgica a cada linha de código, garantindo a harmonia do projeto e evitando o retrabalho.
-                        </p>
-                        <div style="text-align: right; color: var(--cyan-accent); font-weight: 600; font-size: 1rem;">
-                            — Fabio Souza
-                        </div>
-                        </div>
-                    </div>
-
+                  <div class="zigzag-row">
+                      <div class="zigzag-photo">
+                          <img src="foto5.jpg" alt="Orchestra Trombone" style="object-position: center 70%;">
+                      </div>
+                      <div class="zigzag-text quote-container" style="position: relative; background: var(--bg-card); padding: 32px; border-radius: 8px; border: 1px solid var(--border-color); border-right: 4px solid var(--cyan-accent); display: flex; flex-direction: column; justify-content: center;">
+                          <span style="position: absolute; top: 16px; left: 16px; font-size: 4rem; color: var(--cyan-accent); font-family: Georgia, serif; line-height: 0.8; opacity: 1;">&ldquo;</span>
+                          <p class="quote-text" style="font-size: 1rem; color: var(--text-main); font-style: italic; line-height: 1.6; position: relative; z-index: 1; padding-left: 32px; margin: 0;">
+                              Tocar em uma orquestra exige alinhar várias frentes para garantir a harmonia perfeita. Como trombonista, levo essa mesma dinâmica para o desenvolvimento: atenção cirúrgica a cada linha de código, alinhamento constante e foco absoluto em evitar retrabalhos.
+                          </p>
+                      </div>
+                  </div>
                   <!-- Row 4: Text Left, Photo Right (CTA) -->
                   <div class="zigzag-row reverse">
                       <div class="zigzag-photo">
@@ -1183,13 +1176,14 @@
                       </div>
                       <div class="zigzag-text info-card" style="background: var(--bg-card); padding: 32px; border-radius: 8px; border: 1px solid var(--border-color); border-left: 4px solid var(--cyan-accent); display: flex; flex-direction: column; justify-content: center; align-items: flex-start;">
                           <h3 style="color: var(--text-main); font-size: 1.4rem; margin-bottom: 16px; margin-top: 0;">Pronto para escalar sua operação?</h3>
-                          <p style="color: var(--text-muted); font-size: 1rem; line-height: 1.6; margin-bottom: 24px;">Se a sua infraestrutura técnica está gargalando o crescimento do seu negócio, é hora de agir. Vamos conversar sobre arquitetura de software, automação e como preparar sua tecnologia para o próximo nível.</p>
+                          <p style="color: var(--text-muted); font-size: 1rem; line-height: 1.6; margin-bottom: 24px;">Se a tecnologia atual gargala o crescimento do seu negócio, é hora de agir. Vamos conversar sobre como preparar sua infraestrutura para o próximo nível.</p>
                           <a href="https://wa.me/5585991634033?text=Ol%C3%A1%20F%C3%A1bio%2C%20acessei%20o%20seu%20portf%C3%B3lio%20e%20gostaria%20de%20conversar%20sobre%20como%20escalar%20minha%20opera%C3%A7%C3%A3o." target="_blank" class="cta-btn" style="display: inline-flex; align-items: center; gap: 8px; font-size: 0.95rem; padding: 12px 24px; border-radius: 4px; font-weight: 600; text-decoration: none;">
                               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
                               Falar com o Especialista
                           </a>
                       </div>
                   </div>
+              </div>
                   </div>
               </div>
           </section>

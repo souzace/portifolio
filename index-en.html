@@ -1094,11 +1094,11 @@
             .sobre-zigzag { display: flex; flex-direction: column; gap: 80px; margin-top: 48px; }
             .zigzag-row { display: flex; flex-direction: row; gap: 48px; align-items: stretch; }
             .zigzag-row.reverse { flex-direction: row-reverse; }
-            .zigzag-photo { flex: 1; position: relative; }
+            .zigzag-photo { flex: 0.7; position: relative; }
             .zigzag-photo img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; border-radius: 12px; border: 1px solid var(--border-color); box-shadow: 0 10px 30px rgba(0,0,0,0.5); filter: grayscale(10%); transition: filter 0.3s ease; }
             .zigzag-photo img:hover { filter: grayscale(0%); }
             
-            .zigzag-text { flex: 1.2; box-sizing: border-box; }
+            .zigzag-text { flex: 1.3; box-sizing: border-box; }
             .zigzag-text.info-card { display: flex; flex-direction: column; justify-content: center; }
             .zigzag-text.quote-container { display: block; margin: 0; }
 
@@ -1119,51 +1119,43 @@
             <h2 style="text-align: center; margin-bottom: 16px;">Why Choose Orkes</h2>
             
             <div class="sobre-zigzag">
-                <!-- Row 1: Photo Left, Text Right -->
-                <div class="zigzag-row">
-                    <div class="zigzag-photo">
-                        <img src="foto3.jpeg" alt="Fabio Souza Developer">
-                    </div>
-                    <div class="zigzag-text info-card" style="background: var(--bg-card); padding: 32px; border-radius: 8px; border: 1px solid var(--border-color); border-right: 4px solid var(--cyan-accent);">
-                            <p style="color: var(--text-main); margin-bottom: 24px; font-size: 1.125rem; font-weight: 500;">
-                            I am <strong>Fábio Souza</strong>, operating under my registered brand, <strong>Orkes</strong>. I work independently, delivering robust engineering for critical operations. (I am also an orchestral musician in my free time.)
-                        </p>
-                        <div style="color: var(--text-muted); font-size: 1rem; line-height: 1.8;">
-                            <strong>Core Competencies:</strong><br>
-                            • <span style="color: var(--cyan-accent); font-weight: 500;">Legacy System Modernization</span>: Secure updates from monoliths to scalable microservices.<br>
-                            • <span style="color: var(--cyan-accent); font-weight: 500;">High-Performance APIs</span>: Resilient backends to support high traffic with zero downtime.<br>
-                            • <span style="color: var(--cyan-accent); font-weight: 500;">Cloud Architecture (AWS)</span>: Cost-optimized infrastructure with high availability.
-                        </div>
-                        </div>
+                  <!-- Row 1: Photo Left, Text Right -->
+                  <div class="zigzag-row">
+                      <div class="zigzag-photo">
+                          <img src="foto3.jpeg" alt="Fabio Souza Developer">
+                      </div>
+                      <div class="zigzag-text info-card" style="background: var(--bg-card); padding: 32px; border-radius: 8px; border: 1px solid var(--border-color); border-right: 4px solid var(--cyan-accent); display: flex; flex-direction: column; justify-content: center;">
+                          <p style="color: var(--text-main); margin-bottom: 16px; font-size: 1.125rem; font-weight: 500;">
+                              I am <strong>Fábio Souza</strong>, the strategic engineering partner behind <strong>Orkes</strong>. The brand's purpose is to transform technical complexity into secure, scalable, and uninterrupted corporate operations.
+                          </p>
+                          <div style="color: var(--text-muted); font-size: 1rem; line-height: 1.6;">
+                              <strong>Core Competencies:</strong> Legacy Modernization &bull; High-Performance APIs &bull; Cloud Architecture (AWS)
+                          </div>
+                      </div>
                   </div>
                   <!-- Row 2: Text Left, Photo Right -->
-                <div class="zigzag-row reverse">
-                    <div class="zigzag-photo">
-                        <img src="foto7.jpeg" alt="Fabio Souza Trombonist" style="object-position: center center;">
-                    </div>
-                    <div class="zigzag-text info-card" style="background: var(--bg-card); padding: 32px; border-radius: 8px; border: 1px solid var(--border-color); border-left: 4px solid var(--cyan-accent);">
-                            <div style="color: var(--text-muted); font-size: 1rem; line-height: 1.6;">
-                            <strong style="color: var(--text-main); font-size: 1.125rem; display: block; margin-bottom: 12px;">Trust and Preparation</strong>
-                            Just as stepping onto the stage requires years of dedication, technical excellence doesn't happen by chance. I started my journey as an instructor and worked in technical support, which gave me a solid foundation in communication and problem-solving. Over 27 years in technology, facing multiple situations that left battle scars and profound lessons, I have built an end-to-end systemic vision.<br><br>Today, my focus is to develop robust solutions for the technical operations of businesses, avoiding costly rework and preparing the ideal technological foundation to scale sustainably and predictably.
-                        </div>
-                        </div>
+                  <div class="zigzag-row reverse">
+                      <div class="zigzag-photo">
+                          <img src="foto7.jpeg" alt="Fabio Souza Trombonist" style="object-position: center center;">
+                      </div>
+                      <div class="zigzag-text info-card" style="background: var(--bg-card); padding: 32px; border-radius: 8px; border: 1px solid var(--border-color); border-left: 4px solid var(--cyan-accent); display: flex; flex-direction: column; justify-content: center;">
+                          <div style="color: var(--text-muted); font-size: 1rem; line-height: 1.6;">
+                              <strong style="color: var(--text-main); font-size: 1.125rem; display: block; margin-bottom: 12px;">Systemic Vision & Resilience</strong>With 27 years in technology, I've built an end-to-end vision to foresee structural failures before they happen.<br><br>Orkes' expertise is to bulletproof your operation, eliminating performance bottlenecks and building the ideal foundation to scale.
+                          </div>
+                      </div>
                   </div>
                   <!-- Row 3: Photo Left, Text Right -->
-                <div class="zigzag-row">
-                    <div class="zigzag-photo">
-                        <img src="foto5.jpg" alt="Orchestra Trombone" style="object-position: center 70%;">
-                    </div>
-                    <div class="zigzag-text quote-container" style="position: relative; background: var(--bg-card); padding: 32px; border-radius: 8px; border: 1px solid var(--border-color); border-right: 4px solid var(--cyan-accent);">
-                            <span style="float: left; font-size: 4rem; color: var(--cyan-accent); font-family: Georgia, serif; line-height: 0.8; margin-right: 12px; margin-top: 8px; opacity: 1;">&ldquo;</span>
-                            <p class="quote-text" style="font-size: 1rem; color: var(--text-main); font-style: italic; line-height: 1.8; position: relative; z-index: 1;">
-                            Playing in an orchestra requires simultaneous attention on several fronts: reading the sheet music, following the conductor, and listening to your section mates to ensure the group's perfect tuning. As a trombonist, the instrument also demands millimeter accuracy in note positioning. This exact dynamic shapes my role as a developer: constant alignment with leadership, continuous collaboration with teammates, and surgical attention to every line of code, ensuring project harmony and avoiding rework.
-                        </p>
-                        <div style="text-align: right; color: var(--cyan-accent); font-weight: 600; font-size: 1rem;">
-                            — Fabio Souza
-                        </div>
-                        </div>
-                    </div>
-
+                  <div class="zigzag-row">
+                      <div class="zigzag-photo">
+                          <img src="foto5.jpg" alt="Orchestra Trombone" style="object-position: center 70%;">
+                      </div>
+                      <div class="zigzag-text quote-container" style="position: relative; background: var(--bg-card); padding: 32px; border-radius: 8px; border: 1px solid var(--border-color); border-right: 4px solid var(--cyan-accent); display: flex; flex-direction: column; justify-content: center;">
+                          <span style="position: absolute; top: 16px; left: 16px; font-size: 4rem; color: var(--cyan-accent); font-family: Georgia, serif; line-height: 0.8; opacity: 1;">&ldquo;</span>
+                          <p class="quote-text" style="font-size: 1rem; color: var(--text-main); font-style: italic; line-height: 1.6; position: relative; z-index: 1; padding-left: 32px; margin: 0;">
+                              Playing in an orchestra requires aligning multiple fronts to ensure perfect harmony. As a trombonist, I bring this dynamic to development: surgical attention to every line of code, constant alignment, and absolute focus on avoiding rework.
+                          </p>
+                      </div>
+                  </div>
                   <!-- Row 4: Text Left, Photo Right (CTA) -->
                   <div class="zigzag-row reverse">
                       <div class="zigzag-photo">
@@ -1171,13 +1163,14 @@
                       </div>
                       <div class="zigzag-text info-card" style="background: var(--bg-card); padding: 32px; border-radius: 8px; border: 1px solid var(--border-color); border-left: 4px solid var(--cyan-accent); display: flex; flex-direction: column; justify-content: center; align-items: flex-start;">
                           <h3 style="color: var(--text-main); font-size: 1.4rem; margin-bottom: 16px; margin-top: 0;">Ready to scale your operation?</h3>
-                          <p style="color: var(--text-muted); font-size: 1rem; line-height: 1.6; margin-bottom: 24px;">If your technical infrastructure is bottlenecking your business growth, it's time to act. Let's talk about software architecture, automation, and how to prepare your technology for the next level.</p>
+                          <p style="color: var(--text-muted); font-size: 1rem; line-height: 1.6; margin-bottom: 24px;">If your current technology bottlenecks your business growth, it's time to act. Let's talk about preparing your infrastructure for the next level.</p>
                           <a href="https://wa.me/5585991634033?text=Hello%20Fabio,%20I%20accessed%20your%20portfolio%20and%20would%20like%20to%20talk%20about%20scaling%20my%20operation." target="_blank" class="cta-btn" style="display: inline-flex; align-items: center; gap: 8px; font-size: 0.95rem; padding: 12px 24px; border-radius: 4px; font-weight: 600; text-decoration: none;">
                               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
                               Talk to the Expert
                           </a>
                       </div>
                   </div>
+              </div>
                   </div>
               </div>
           </section>
