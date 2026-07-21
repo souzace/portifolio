@@ -12,6 +12,12 @@
     </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+        // Fallback Client-side HTTPS Redirect
+        if (location.protocol !== 'https:' && location.hostname !== 'localhost' && location.hostname !== '127.0.0.1') {
+            location.replace(`https:${location.href.substring(location.protocol.length)}`);
+        }
+    </script>
     <title>Orkes | Information Technology Consulting</title>
     <meta name="description" content="Specialized information technology and backend services. Registered Trademark INPI (917789873). Corporate B2B services.">
     <meta name="keywords" content="software engineering, it consulting, systems development, senior developer, critical systems, software architecture, Fabio Souza">

@@ -28,7 +28,13 @@
     </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Orkes | Consultoria em Tecnologia da Informação</title>
+    <script>
+        // Fallback Client-side HTTPS Redirect
+        if (location.protocol !== 'https:' && location.hostname !== 'localhost' && location.hostname !== '127.0.0.1') {
+            location.replace(`https:${location.href.substring(location.protocol.length)}`);
+        }
+    </script>
+    <title>Orkes | Engenharia de Software e Consultoria TI</title>
     <meta name="description" content="Serviços especializados em tecnologia da informação e backend. Marca registrada no INPI (917789873). Atendimento corporativo B2B.">
     <meta name="keywords" content="engenharia de software, consultoria ti, desenvolvimento de sistemas, desenvolvedor senior, sistemas críticos, arquitetura de software, Fabio Souza">
     <meta name="author" content="Fabio Souza">
