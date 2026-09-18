@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <!-- Metade Esquerda Azul -->
+  <path d="M 50 10 L 12 22 L 12 55 C 12 78, 50 95, 50 95 Z" fill="#115074" />
+  <!-- Metade Direita Verde -->
+  <path d="M 50 10 L 88 22 L 88 55 C 88 78, 50 95, 50 95 Z" fill="#5a9e00" />
+  <!-- Letra I em branco, vazada e imponente -->
+  <text x="50" y="72" font-family="'Inter', Arial, sans-serif" font-weight="900" font-size="56" fill="#ffffff" text-anchor="middle">I</text>
+</svg>
