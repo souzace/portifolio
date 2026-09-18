@@ -18,7 +18,7 @@ spec:
     spec:
       containers:
       - name: ideal-saudeambiental
-        image: ideal-saudeambiental:local
+        image: ideal-saudeambiental:local-v2
         imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 80

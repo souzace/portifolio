@@ -1,0 +1,184 @@
+<section id="depoimentos" style="background:#fff; padding:80px 0;">
+    <style>
+        .testimonial-card {
+            flex: 0 0 380px;
+            max-width: 80vw;
+            padding: 32px;
+            display: flex;
+            flex-direction: column;
+            background-color: var(--card);
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            box-shadow: var(--shadow);
+            white-space: normal;
+        }
+        .marquee-container {
+            overflow: hidden;
+            width: 100vw;
+            max-width: 100%;
+            position: relative;
+            padding: 16px 0;
+        }
+        .marquee-track {
+            display: flex;
+            width: max-content;
+            gap: 24px;
+            align-items: stretch;
+            animation: marquee-scroll 60s linear infinite;
+        }
+        .marquee-track:hover {
+            animation-play-state: paused;
+        }
+        @keyframes marquee-scroll {
+            from { transform: translateX(0); }
+            to { transform: translateX(calc(-50% - 12px)); }
+        }
+        .marquee-container::before, .marquee-container::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            width: 120px;
+            height: 100%;
+            z-index: 2;
+            pointer-events: none;
+        }
+        .marquee-container::before {
+            left: 0;
+            background: linear-gradient(to right, #fff, transparent);
+        }
+        .marquee-container::after {
+            right: 0;
+            background: linear-gradient(to left, #fff, transparent);
+        }
+        @media (max-width: 768px) {
+            .marquee-container::before, .marquee-container::after {
+                width: 40px;
+            }
+            .testimonial-card {
+                flex: 0 0 300px;
+                padding: 24px;
+            }
+        }
+    </style>
+    <div class="container">
+        <h2 style="margin-bottom: 8px;">O que dizem nossos clientes</h2>
+        <p class="sub">Mais de 2.000 ambientes protegidos no Ceará.</p>
+    </div>
+    <div class="marquee-container">
+        <div class="marquee-track">
+            <!-- Items 1 to 4 -->
+            <div class="testimonial-card">
+                <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 20px;">
+                    <div style="width:48px;height:48px;border-radius:50%;background:var(--blue);color:#fff;display:flex;align-items:center;justify-content:center;font-size:1.2rem;font-weight:bold;">MF</div>
+                    <div>
+                        <h3 style="margin-bottom: 2px; font-size: 1.1rem; color: var(--blue);">Maria Fernanda</h3>
+                        <span style="color: var(--muted); font-size: 0.85rem;">Síndica Profissional</span>
+                    </div>
+                </div>
+                <p style="color: var(--tm); font-size: 0.95rem; font-style: italic; line-height: 1.6; flex: 1;">
+                    "A equipe da Ideal resolveu um problema gravíssimo de cupins no nosso condomínio. O atendimento foi impecável e a garantia de 5 anos nos trouxe muita tranquilidade."
+                </p>
+                <div style="color: #f5a623; font-size: 1.2rem; margin-top: 16px;">★★★★★</div>
+            </div>
+            
+            <div class="testimonial-card">
+                <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 20px;">
+                    <div style="width:48px;height:48px;border-radius:50%;background:var(--green);color:#fff;display:flex;align-items:center;justify-content:center;font-size:1.2rem;font-weight:bold;">RS</div>
+                    <div>
+                        <h3 style="margin-bottom: 2px; font-size: 1.1rem; color: var(--blue);">Restaurante Sabor Cearense</h3>
+                        <span style="color: var(--muted); font-size: 0.85rem;">Cliente Corporativo</span>
+                    </div>
+                </div>
+                <p style="color: var(--tm); font-size: 0.95rem; font-style: italic; line-height: 1.6; flex: 1;">
+                    "Como lidamos com alimentos, a sanitização e o controle de pragas precisam ser rigorosos. A Ideal Saúde Ambiental é nossa parceira de confiança há anos, sempre com laudos da ANVISA e MAPA."
+                </p>
+                <div style="color: #f5a623; font-size: 1.2rem; margin-top: 16px;">★★★★★</div>
+            </div>
+            
+            <div class="testimonial-card">
+                <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 20px;">
+                    <div style="width:48px;height:48px;border-radius:50%;background:var(--blue);color:#fff;display:flex;align-items:center;justify-content:center;font-size:1.2rem;font-weight:bold;">CE</div>
+                    <div>
+                        <h3 style="margin-bottom: 2px; font-size: 1.1rem; color: var(--blue);">Carlos Eduardo</h3>
+                        <span style="color: var(--muted); font-size: 0.85rem;">Proprietário Residencial</span>
+                    </div>
+                </div>
+                <p style="color: var(--tm); font-size: 0.95rem; font-style: italic; line-height: 1.6; flex: 1;">
+                    "Serviço rápido e sem burocracia. Acabaram com a infestação de baratas na minha casa no mesmo dia. Equipe técnica super educada e preparada."
+                </p>
+                <div style="color: #f5a623; font-size: 1.2rem; margin-top: 16px;">★★★★★</div>
+            </div>
+
+            <div class="testimonial-card">
+                <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 20px;">
+                    <div style="width:48px;height:48px;border-radius:50%;background:var(--green);color:#fff;display:flex;align-items:center;justify-content:center;font-size:1.2rem;font-weight:bold;">JM</div>
+                    <div>
+                        <h3 style="margin-bottom: 2px; font-size: 1.1rem; color: var(--blue);">Juliana Martins</h3>
+                        <span style="color: var(--muted); font-size: 0.85rem;">Gerente de Logística</span>
+                    </div>
+                </div>
+                <p style="color: var(--tm); font-size: 0.95rem; font-style: italic; line-height: 1.6; flex: 1;">
+                    "Garantimos a qualidade do nosso galpão graças às inspeções regulares da Ideal. Os laudos técnicos emitidos nos ajudam muito nas fiscalizações."
+                </p>
+                <div style="color: #f5a623; font-size: 1.2rem; margin-top: 16px;">★★★★★</div>
+            </div>
+            
+            <!-- Duplicated Items for continuous marquee -->
+            <div class="testimonial-card">
+                <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 20px;">
+                    <div style="width:48px;height:48px;border-radius:50%;background:var(--blue);color:#fff;display:flex;align-items:center;justify-content:center;font-size:1.2rem;font-weight:bold;">MF</div>
+                    <div>
+                        <h3 style="margin-bottom: 2px; font-size: 1.1rem; color: var(--blue);">Maria Fernanda</h3>
+                        <span style="color: var(--muted); font-size: 0.85rem;">Síndica Profissional</span>
+                    </div>
+                </div>
+                <p style="color: var(--tm); font-size: 0.95rem; font-style: italic; line-height: 1.6; flex: 1;">
+                    "A equipe da Ideal resolveu um problema gravíssimo de cupins no nosso condomínio. O atendimento foi impecável e a garantia de 5 anos nos trouxe muita tranquilidade."
+                </p>
+                <div style="color: #f5a623; font-size: 1.2rem; margin-top: 16px;">★★★★★</div>
+            </div>
+            
+            <div class="testimonial-card">
+                <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 20px;">
+                    <div style="width:48px;height:48px;border-radius:50%;background:var(--green);color:#fff;display:flex;align-items:center;justify-content:center;font-size:1.2rem;font-weight:bold;">RS</div>
+                    <div>
+                        <h3 style="margin-bottom: 2px; font-size: 1.1rem; color: var(--blue);">Restaurante Sabor Cearense</h3>
+                        <span style="color: var(--muted); font-size: 0.85rem;">Cliente Corporativo</span>
+                    </div>
+                </div>
+                <p style="color: var(--tm); font-size: 0.95rem; font-style: italic; line-height: 1.6; flex: 1;">
+                    "Como lidamos com alimentos, a sanitização e o controle de pragas precisam ser rigorosos. A Ideal Saúde Ambiental é nossa parceira de confiança há anos, sempre com laudos da ANVISA e MAPA."
+                </p>
+                <div style="color: #f5a623; font-size: 1.2rem; margin-top: 16px;">★★★★★</div>
+            </div>
+            
+            <div class="testimonial-card">
+                <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 20px;">
+                    <div style="width:48px;height:48px;border-radius:50%;background:var(--blue);color:#fff;display:flex;align-items:center;justify-content:center;font-size:1.2rem;font-weight:bold;">CE</div>
+                    <div>
+                        <h3 style="margin-bottom: 2px; font-size: 1.1rem; color: var(--blue);">Carlos Eduardo</h3>
+                        <span style="color: var(--muted); font-size: 0.85rem;">Proprietário Residencial</span>
+                    </div>
+                </div>
+                <p style="color: var(--tm); font-size: 0.95rem; font-style: italic; line-height: 1.6; flex: 1;">
+                    "Serviço rápido e sem burocracia. Acabaram com a infestação de baratas na minha casa no mesmo dia. Equipe técnica super educada e preparada."
+                </p>
+                <div style="color: #f5a623; font-size: 1.2rem; margin-top: 16px;">★★★★★</div>
+            </div>
+
+            <div class="testimonial-card">
+                <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 20px;">
+                    <div style="width:48px;height:48px;border-radius:50%;background:var(--green);color:#fff;display:flex;align-items:center;justify-content:center;font-size:1.2rem;font-weight:bold;">JM</div>
+                    <div>
+                        <h3 style="margin-bottom: 2px; font-size: 1.1rem; color: var(--blue);">Juliana Martins</h3>
+                        <span style="color: var(--muted); font-size: 0.85rem;">Gerente de Logística</span>
+                    </div>
+                </div>
+                <p style="color: var(--tm); font-size: 0.95rem; font-style: italic; line-height: 1.6; flex: 1;">
+                    "Garantimos a qualidade do nosso galpão graças às inspeções regulares da Ideal. Os laudos técnicos emitidos nos ajudam muito nas fiscalizações."
+                </p>
+                <div style="color: #f5a623; font-size: 1.2rem; margin-top: 16px;">★★★★★</div>
+            </div>
+        </div>
+    </div>
+</section>
