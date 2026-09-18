@@ -1,0 +1,29 @@
+services:
+  ideal:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: ideal-saudeambiental:local
+    container_name: ideal-pod
+    restart: unless-stopped
+    ports:
+      - "8081:80"
+    deploy:
+      resources:
+        limits:
+          cpus: "0.20"
+          memory: 64M
+        reservations:
+          cpus: "0.05"
+          memory: 32M
+    healthcheck:
+      test: ["CMD", "wget", "-qO-", "http://localhost/healthz"]
+      interval: 10s
+      timeout: 3s
+      retries: 3
+      start_period: 5s
+    labels:
+      app: "ideal-saudeambiental"
+      version: "1.0.0-mvp"
+      env: "local"
+      client: "ideal"

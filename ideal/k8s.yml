@@ -1,0 +1,76 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ideal-saudeambiental
+  labels:
+    app: ideal-saudeambiental
+    client: ideal
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: ideal-saudeambiental
+  template:
+    metadata:
+      labels:
+        app: ideal-saudeambiental
+        client: ideal
+    spec:
+      containers:
+      - name: ideal-saudeambiental
+        image: ideal-saudeambiental:local
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 80
+        resources:
+          limits:
+            cpu: "200m"
+            memory: "64Mi"
+          requests:
+            cpu: "50m"
+            memory: "32Mi"
+        livenessProbe:
+          httpGet:
+            path: /healthz
+            port: 80
+          initialDelaySeconds: 5
+          periodSeconds: 10
+        readinessProbe:
+          httpGet:
+            path: /healthz
+            port: 80
+          initialDelaySeconds: 5
+          periodSeconds: 10
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: ideal-saudeambiental-svc
+  labels:
+    app: ideal-saudeambiental
+spec:
+  type: ClusterIP
+  selector:
+    app: ideal-saudeambiental
+  ports:
+  - port: 80
+    targetPort: 80
+---
+apiVersion: autoscaling/v2
+kind: HorizontalPodAutoscaler
+metadata:
+  name: ideal-saudeambiental-hpa
+spec:
+  scaleTargetRef:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: ideal-saudeambiental
+  minReplicas: 1
+  maxReplicas: 5
+  metrics:
+  - type: Resource
+    resource:
+      name: cpu
+      target:
+        type: Utilization
+        averageUtilization: 70
