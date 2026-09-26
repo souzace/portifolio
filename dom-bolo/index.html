@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom Bolo - Bolos Caseiros</title>
+    <style>
+        :root {
+            --brand-orange: #F27D16;
+            --brand-brown: #1f1108;
+            --bg-color: #FFF8F0;
+            --text-color: #4A2C11;
+        }
+        body {
+            font-family: 'Georgia', serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+        header {
+            background-color: var(--brand-brown);
+            padding: 1.5rem;
+            text-align: center;
+        }
+        .logo {
+            max-width: 150px;
+            border-radius: 8px;
+        }
+        .hero {
+            text-align: center;
+            padding: 4rem 2rem;
+            /* Usando uma imagem mais caseira/rústica para o fundo */
+            background-image: linear-gradient(rgba(255,248,240,0.85), rgba(255,248,240,1)), url('photo1.webp');
+            background-size: cover;
+            background-position: center;
+        }
+        .hero h1 {
+            font-size: 3rem;
+            color: var(--brand-orange);
+            margin-bottom: 0.5rem;
+        }
+        .hero p {
+            font-size: 1.25rem;
+            max-width: 600px;
+            margin: 0 auto 2rem auto;
+            color: var(--brand-brown);
+            font-style: italic;
+        }
+        .cta-btn {
+            background-color: var(--brand-orange);
+            color: #fff;
+            padding: 1rem 2.5rem;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: bold;
+            font-family: sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: background 0.3s;
+            display: inline-block;
+        }
+        .cta-btn:hover {
+            background-color: #D9690D;
+        }
+        .services-title {
+            text-align: center;
+            font-size: 2.2rem;
+            color: var(--brand-brown);
+            margin-top: 3rem;
+            margin-bottom: -1rem;
+        }
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            padding: 4rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .service-card {
+            background: #fff;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 10px 25px rgba(74, 44, 17, 0.08);
+            text-align: center;
+        }
+        .service-card img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+        .service-card h3 {
+            color: var(--brand-orange);
+            margin: 1.5rem 0 0.5rem 0;
+            font-size: 1.5rem;
+        }
+        .service-card p {
+            padding: 0 1.5rem 1.5rem 1.5rem;
+            font-family: sans-serif;
+            font-size: 0.95rem;
+            color: var(--text-color);
+        }
+        .about-section {
+            background-color: var(--brand-brown);
+            color: #fff;
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+        .about-section h2 {
+            color: var(--brand-orange);
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        .about-section p {
+            max-width: 700px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            font-family: sans-serif;
+        }
+        footer {
+            background-color: #140b05;
+            color: #fff;
+            text-align: center;
+            padding: 2rem;
+            font-family: sans-serif;
+        }
+        footer a {
+            color: var(--brand-orange);
+            text-decoration: none;
+            font-weight: bold;
+        }
+    
+        .sticky-footer-bar {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: var(--brand-brown);
+            border-top: 2px solid var(--brand-orange);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 1rem;
+            box-shadow: 0 -4px 10px rgba(0,0,0,0.15);
+            z-index: 1000;
+            box-sizing: border-box;
+        }
+        .sticky-footer-bar {
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .sticky-footer-bar p {
+            margin: 0;
+            color: #fff;
+            font-family: sans-serif;
+            font-size: 0.85rem;
+            text-align: center;
+        }
+        .sticky-btn {
+            padding: 0.6rem 1.2rem;
+            font-size: 0.8rem;
+        }
+        @media (min-width: 600px) {
+            .sticky-footer-bar p {
+                font-size: 1rem;
+                margin-right: 1rem;
+                text-align: left;
+            }
+            .sticky-btn {
+                padding: 0.8rem 2rem;
+                font-size: 0.9rem;
+            }
+            .sticky-footer-bar {
+                flex-wrap: nowrap;
+            }
+        }
+        .sticky-btn {
+            background-color: var(--brand-orange);
+            color: #fff;
+            padding: 0.8rem 2rem;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: bold;
+            font-family: sans-serif;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            transition: background 0.3s;
+        }
+        .sticky-btn:hover {
+            background-color: #D9690D;
+        }
+        /* Add padding to body so the sticky footer doesn't hide content */
+        body {
+            padding-bottom: 80px;
+        }
+
+        .social-icon {
+            color: #fff;
+            transition: color 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            padding: 5px;
+        }
+        .social-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+        }
+
+        .social-icon:hover {
+            color: var(--brand-orange);
+        }
+</style>
+</head>
+<body>
+
+<header>
+    <img src="logomark.jpg" alt="Dom Bolo" class="logo">
+</header>
+
+<section class="hero">
+    <h1>Dom Bolo</h1>
+    <p>O autêntico sabor de casa. Bolos caseiros com produção diária, feitos com afeto e ingredientes selecionados para o seu café da tarde.</p>
+    <a href="https://www.instagram.com/dombolofortal/" target="_blank" class="cta-btn"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 8px; vertical-align: middle; position: relative; top: -1px;"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>Faça sua Encomenda</a>
+</section>
+
+<h2 class="services-title">Saindo do Forno</h2>
+<section class="services-grid">
+    <div class="service-card">
+        <!-- Imagem de bolo de milho/fubá ou caseiro -->
+        <img src="photo2.webp" alt="Bolos Tradicionais">
+        <h3>Bolos Tradicionais</h3>
+        <p>Aquele bolo fofinho de vó: milho, cenoura com chocolate, fubá e laranja. Produzidos todos os dias fresquinhos para você.</p>
+    </div>
+    <div class="service-card">
+        <!-- Imagem de bolo vulcão ou cobertura -->
+        <img src="photo3.webp" alt="Bolos Vulcão">
+        <h3>Bolos Vulcão</h3>
+        <p>Para quem ama cobertura! Massa leve artesanal com muita, mas muita cobertura de brigadeiro, leite ninho ou doce de leite.</p>
+    </div>
+    <div class="service-card">
+        <!-- Imagem de bolo de pote ou café -->
+        <img src="photo4.webp" alt="Para o Café da Tarde">
+        <h3>Bolos de Pote & Acompanhamentos</h3>
+        <p>Delícias em porções individuais perfeitas para adoçar a sua rotina ou presentear alguém especial no meio do expediente.</p>
+    </div>
+</section>
+
+<section class="about-section">
+    <h2>Nossa História</h2>
+    <p>A <strong>Dom Bolo</strong> nasceu da vontade de resgatar memórias afetivas através do paladar. Nossa produção é inteiramente artesanal e diária: quebramos os ovos, ralamos a cenoura e batemos a massa todos os dias pela manhã para garantir que seu bolo chegue morno e cheiroso na sua mesa. Sem conservantes, sem misturas prontas, apenas confeitaria de verdade.</p>
+</section>
+
+<footer>
+    <div style="margin-bottom: 2rem;">
+        <h2 style="color: var(--brand-orange); margin-bottom: 1rem;">Gostou? Peça o seu!</h2>
+        <a href="https://www.instagram.com/dombolofortal/" target="_blank" class="cta-btn" style="padding: 0.8rem 2rem; display: inline-block;"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 8px; vertical-align: middle; position: relative; top: -1px;"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>Falar no WhatsApp</a>
+    </div>
+    <div style="margin-bottom: 1.5rem;">
+        <p>Acompanhe nossas fornadas: <a href="https://www.instagram.com/dombolofortal/" target="_blank">@dombolofortal</a></p>
+    </div>
+    <div style="font-size: 0.9rem; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 1.5rem; margin-top: 2rem;">
+        <p>&copy; 2026 Dom Bolo. Todos os direitos reservados.</p>
+        <p style="margin-top: 0.5rem; font-size: 0.8rem; color: #aaa;">Desenvolvido por <a href="https://orkes.com.br" target="_blank" style="color: #aaa; text-decoration: underline;">Orkes</a></p>
+    </div>
+</footer>
+
+
+<div class="sticky-footer-bar">
+    
+    <div style="display: flex; align-items: center; gap: 15px; margin-right: 20px;">
+        <img src="avatar.jpg" alt="Chef Dom Bolo" style="width: 50px; height: 50px; border-radius: 50%; object-fit: cover; border: 2px solid var(--brand-orange);">
+        <p style="margin: 0;">Gostou dos nossos bolos? Faça sua encomenda agora mesmo!</p>
+    </div>
+
+    <div class="social-container">
+        <a href="https://wa.me/5585900000000" target="_blank" class="sticky-btn"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 8px; vertical-align: middle; position: relative; top: -1px;"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>Pedir no WhatsApp</a>
+        <a href="https://www.instagram.com/dombolofortal/" target="_blank" class="social-icon" aria-label="Instagram">
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+            </svg>
+        </a>
+    </div>
+</div>
+</body>
+
+</html>
