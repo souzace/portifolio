@@ -264,6 +264,27 @@
             background-color: #f7d154;
             transform: translateY(-2px);
         }
+
+        /* Mobile UX Fixes for Sticky Footer */
+        @media (max-width: 599px) {
+            .sticky-footer-bar {
+                padding: 10px; /* Reduce vertical footprint */
+                justify-content: center;
+                gap: 10px;
+            }
+            .sticky-text-group {
+                display: none !important; /* Hide avatar and text to save space */
+            }
+            .sticky-wa-btn {
+                flex-grow: 1; /* Make WA button fill remaining space */
+                justify-content: center;
+                padding: 0.6rem;
+            }
+            .sticky-social-btn {
+                width: 38px;
+                height: 38px;
+            }
+        }
 </style>
 </head>
 <body>
@@ -341,7 +362,7 @@
 
 <!-- Sticky Footer -->
 <div class="sticky-footer-bar">
-    <div style="display: flex; align-items: center; gap: 15px; margin-right: 20px;">
+    <div class="sticky-text-group" style="display: flex; align-items: center; gap: 15px; margin-right: 20px;">
         <div style="width: 50px; height: 50px; border-radius: 5px; overflow: hidden; border: 2px solid var(--brand-gold); flex-shrink: 0; display: inline-block;">
             <img src="avatar2.png" alt="Nilson Vieira" style="width: 100%; height: 100%; object-fit: cover; object-position: center 15%;">
         </div>
