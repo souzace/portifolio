@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nilson Vieira - Maestro, Arranjador e Compositor</title>
+    <style>
+        :root {
+            --brand-gold: #D4AF37;
+            --brand-dark: #0a0a0a;
+            --bg-color: #121212;
+            --text-main: #f5f5f5;
+            --text-muted: #a0a0a0;
+        }
+        body {
+            font-family: 'Georgia', serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+        header {
+            background-color: var(--brand-dark);
+            padding: 1.5rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+        }
+        .logo-text {
+            font-size: 1.8rem;
+            color: var(--brand-gold);
+            font-weight: bold;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+        .hero {
+            text-align: center;
+            padding: 6rem 2rem;
+            background-image: linear-gradient(rgba(10,10,10,0.85), rgba(18,18,18,1)), url('photo4.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+        .hero h1 {
+            font-size: 4rem;
+            color: var(--text-main);
+            margin-bottom: 0.5rem;
+            letter-spacing: 3px;
+        }
+        .hero h2 {
+            font-size: 1.5rem;
+            color: var(--brand-gold);
+            font-weight: normal;
+            font-style: italic;
+            margin-top: 0;
+            margin-bottom: 2rem;
+        }
+        .hero p {
+            font-size: 1.1rem;
+            max-width: 700px;
+            margin: 0 auto 3rem auto;
+            color: var(--text-muted);
+            font-family: sans-serif;
+            line-height: 1.8;
+        }
+        .cta-btn {
+            background-color: transparent;
+            color: var(--brand-gold);
+            padding: 1rem 2.5rem;
+            text-decoration: none;
+            border: 2px solid var(--brand-gold);
+            border-radius: 4px;
+            font-weight: bold;
+            font-family: sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            transition: all 0.3s ease;
+        }
+        .cta-btn:hover {
+            background-color: var(--brand-gold);
+            color: var(--brand-dark);
+        }
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            color: var(--brand-gold);
+            margin: 4rem 0 2rem 0;
+            position: relative;
+        }
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 2px;
+            background-color: var(--brand-gold);
+            margin: 15px auto 0;
+        }
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            padding: 2rem;
+            max-width: 1200px;
+            margin: 0 auto 4rem auto;
+        }
+        .card {
+            background: var(--brand-dark);
+            border-radius: 4px;
+            overflow: hidden;
+            border: 1px solid rgba(255,255,255,0.05);
+            transition: transform 0.3s;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(212, 175, 55, 0.3);
+        }
+        .card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            filter: grayscale(80%);
+            transition: filter 0.3s;
+        }
+        .card:hover img {
+            filter: grayscale(0%);
+        }
+        .card-content {
+            padding: 2rem;
+        }
+        .card h3 {
+            color: var(--brand-gold);
+            margin: 0 0 1rem 0;
+            font-size: 1.5rem;
+        }
+        .card p {
+            font-family: sans-serif;
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+        .about-section {
+            background-color: var(--brand-dark);
+            padding: 5rem 2rem;
+        }
+        .about-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        .about-content p {
+            font-size: 1.15rem;
+            line-height: 1.8;
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+        }
+        footer {
+            background-color: #050505;
+            color: var(--text-muted);
+            text-align: center;
+            padding: 3rem 2rem;
+            font-family: sans-serif;
+            border-top: 1px solid rgba(255,255,255,0.05);
+        }
+        footer a {
+            color: var(--brand-gold);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        footer a:hover {
+            color: #fff;
+        }
+        .social-links {
+            margin: 2rem 0;
+        }
+        .social-links a {
+            display: inline-block;
+            margin: 0 10px;
+            padding: 10px;
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            border-radius: 50%;
+        }
+        .social-links a:hover {
+            border-color: var(--brand-gold);
+        }
+    
+        /* Sticky Footer */
+        body {
+            padding-bottom: 80px; /* Space for the sticky footer */
+        }
+        .sticky-footer-bar {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: rgba(10, 10, 10, 0.95);
+            backdrop-filter: blur(5px);
+            border-top: 1px solid rgba(212, 175, 55, 0.3);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 10px 20px;
+            z-index: 1000;
+            box-shadow: 0 -2px 10px rgba(0,0,0,0.5);
+            flex-wrap: wrap;
+            gap: 15px;
+            box-sizing: border-box;
+        }
+        .sticky-footer-bar p {
+            margin: 0;
+            color: #fff;
+            font-family: sans-serif;
+            font-size: 0.9rem;
+            text-align: center;
+        }
+        .sticky-socials {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+        .sticky-social-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: transparent;
+            color: var(--brand-gold);
+            border: 1px solid var(--brand-gold);
+            transition: all 0.3s ease;
+        }
+        .sticky-social-btn:hover {
+            background-color: var(--brand-gold);
+            color: var(--brand-dark);
+            transform: translateY(-2px);
+        }
+        @media (min-width: 600px) {
+            .sticky-footer-bar {
+                justify-content: space-between;
+                padding: 10px 40px;
+            }
+            .sticky-footer-bar p {
+                font-size: 1rem;
+            }
+        }
+</style>
+</head>
+<body>
+
+<header>
+    <div class="logo-text">NILSON VIEIRA</div>
+</header>
+
+<section class="hero">
+    <h1>Nilson Vieira</h1>
+    <h2>Maestro, Arranjador & Compositor</h2>
+    <p>Dedicado à excelência musical. Regência de orquestras, arranjos exclusivos para os grandes intérpretes da Música Popular Brasileira e composições autorais que transcendem gerações.</p>
+    <a href="#contato" class="cta-btn">Entre em Contato</a>
+</section>
+
+<div class="about-section">
+    <div class="about-content">
+        <h2 class="section-title" style="margin-top: 0;">Sobre Mim</h2>
+        <p style="font-size: 1.3rem; color: var(--text-main); font-weight: bold;">Prazer, sou o músico Nilson Vieira!</p>
+        <p>Sou carioca, atualmente morando em Fortaleza onde presto serviço nas Forças Armadas. Uma pessoa em constante alegria que encontrou na música a verdadeira vocação.</p>
+        <p>Sou bacharel em Composição Musical pela Universidade de Brasília (UnB) e aluno do mestrado em Música pela mesma instituição, além de possuir cursos de especialização em outras áreas relacionadas à música e à docência.</p>
+        <p>Toco alguns instrumentos e atuo como regente, porém, <strong>a minha grande especialidade é criar arranjos e composições musicais</strong>. Desafios me movem: tenho boa percepção musical para encontrar soluções e descobrir novos talentos. Por ser um profissional curioso, estou em constante aprendizado.</p>
+        <p>Para você que está chegando, seja bem-vindo(a)! Aqui irei compartilhar meu trabalho, parcerias, percepções, experiências e tudo que o universo musical me permitir explorar.</p>
+    </div>
+</div>
+
+<h2 class="section-title">Portfólio & Atuação</h2>
+<section class="portfolio-grid">
+    <div class="card">
+        <img src="photo5.jpg" alt="Regência de Orquestras" style="object-position: top;">
+        <div class="card-content">
+            <h3>Regência de Orquestras</h3>
+            <p>Condução de orquestras sinfônicas e de câmara em concertos, espetáculos teatrais e gravações ao vivo, garantindo precisão e emoção em cada nota.</p>
+        </div>
+    </div>
+    <div class="card">
+        <img src="photo1.jpg" alt="Arranjos Musicais">
+        <div class="card-content">
+            <h3>Arranjos para Intérpretes</h3>
+            <p>Elaboração de arranjos vocais e instrumentais sob medida para os grandes nomes da MPB, valorizando a interpretação e a identidade do artista.</p>
+        </div>
+    </div>
+    <div class="card">
+        <img src="photo3.jpg" alt="Composições Autorais">
+        <div class="card-content">
+            <h3>Música Autoral</h3>
+            <p>Criação de trilhas, peças sinfônicas e canções que expressam sua visão artística pessoal, disponíveis nas principais plataformas de streaming.</p>
+        </div>
+    </div>
+</section>
+
+<footer id="contato">
+    <h2 style="color: var(--brand-gold); margin-bottom: 1rem; font-family: 'Georgia', serif;">Vamos criar música juntos?</h2>
+    <p>Para convites de regência, encomendas de arranjos ou parcerias musicais.</p>
+    
+    <div class="social-links">
+        <a href="https://www.instagram.com/mvnilson/" target="_blank" aria-label="Instagram">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+        </a>
+        <a href="https://www.youtube.com/@NilsonVieira" target="_blank" aria-label="YouTube">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33 2.78 2.78 0 0 0 1.94 2c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.33 29 29 0 0 0-.46-5.33z"></path><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon></svg>
+        </a>
+        <a href="https://wa.me/558597496713" target="_blank" aria-label="WhatsApp">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+        </a>
+        <a href="https://www.facebook.com/mvnilson" target="_blank" aria-label="Facebook">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+        </a>
+    </div>
+
+    <p style="margin-top: 2rem; font-size: 0.85rem;">&copy; 2026 Nilson Vieira. Todos os direitos reservados.</p>
+    <p style="margin-top: 0.5rem; font-size: 0.75rem; color: #666;">Desenvolvido por <a href="https://orkes.com.br" target="_blank" style="color: #666; text-decoration: underline;">Orkes</a></p>
+</footer>
+
+
+<!-- Sticky Footer -->
+<div class="sticky-footer-bar">
+    <p>Gostou do meu trabalho? Vamos conversar!</p>
+    <div class="sticky-socials">
+        <a href="https://wa.me/558597496713" target="_blank" class="sticky-social-btn" aria-label="WhatsApp" title="Falar no WhatsApp">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+        </a>
+        <a href="https://www.instagram.com/mvnilson/" target="_blank" class="sticky-social-btn" aria-label="Instagram" title="Seguir no Instagram">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+        </a>
+        <a href="https://www.youtube.com/@NilsonVieira" target="_blank" class="sticky-social-btn" aria-label="YouTube" title="Ver no YouTube">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33 2.78 2.78 0 0 0 1.94 2c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.33 29 29 0 0 0-.46-5.33z"></path><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon></svg>
+        </a>
+        <a href="https://www.facebook.com/mvnilson" target="_blank" class="sticky-social-btn" aria-label="Facebook" title="Curtir no Facebook">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+        </a>
+    </div>
+</div>
+</body>
+</html>
