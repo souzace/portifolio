@@ -178,7 +178,7 @@
             margin: 0 10px;
             padding: 10px;
             border: 1px solid rgba(212, 175, 55, 0.3);
-            border-radius: 5px;
+            border-radius: 5px; border: 1px solid var(--brand-gold);
         }
         .social-links a:hover {
             border-color: var(--brand-gold);
@@ -224,10 +224,10 @@
             justify-content: center;
             width: 40px;
             height: 40px;
-            border-radius: 5px;
+            border-radius: 5px; border: 1px solid var(--brand-gold);
             background-color: transparent;
             color: var(--brand-gold);
-            border: 1px solid var(--brand-gold);
+            
             transition: all 0.3s ease;
         }
         .sticky-social-btn:hover {
@@ -250,7 +250,7 @@
             color: var(--brand-dark);
             padding: 0.6rem 1.2rem;
             text-decoration: none;
-            border-radius: 5px;
+            border-radius: 5px; border: 1px solid var(--brand-gold);
             font-weight: bold;
             font-family: sans-serif;
             font-size: 0.9rem;
@@ -268,51 +268,67 @@
         /* Mobile UX Fixes for Sticky Footer */
         @media (max-width: 599px) {
             .sticky-footer-bar {
-                padding: 8px 10px;
-                justify-content: center;
-                gap: 8px;
-                flex-direction: column; /* Stack top and bottom rows compactly */
+                padding: 12px 15px;
+                flex-direction: column;
+                gap: 12px;
+                align-items: stretch;
             }
             .sticky-text-group {
                 display: flex !important;
-                gap: 10px !important;
+                gap: 12px !important;
                 margin-right: 0 !important;
                 width: 100%;
                 justify-content: center;
             }
             .sticky-text-group > div {
-                width: 35px !important;
-                height: 35px !important;
+                width: 40px !important;
+                height: 40px !important;
+                border-radius: 50% !important; /* Make it circular like Orkes */
             }
             .sticky-text-group p {
-                font-size: 0.8rem !important;
-                line-height: 1.2;
-                text-align: left;
+                font-size: 0.85rem !important;
+                font-weight: bold;
+                margin: 0;
+            }
+            .sticky-bottom-row {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                width: 100%;
             }
             .sticky-socials {
-                width: 100%;
-                justify-content: center;
-                gap: 8px;
-            }
-            .sticky-wa-btn {
-                flex-grow: 1;
-                justify-content: center;
-                padding: 0.4rem 0.6rem;
-                font-size: 0.8rem;
-            }
-            .sticky-wa-btn svg {
-                width: 16px;
-                height: 16px;
+                display: flex;
+                gap: 10px;
             }
             .sticky-social-btn {
-                width: 32px;
-                height: 32px;
+                width: auto; /* Remove fixed width to match Orkes minimal style */
+                height: auto;
+                border: none !important; /* Remove borders */
+                background: transparent !important;
+                padding: 0;
             }
             .sticky-social-btn svg {
-                width: 16px;
-                height: 16px;
+                width: 22px;
+                height: 22px;
+                color: #aaa;
+            }
+            .sticky-wa-btn {
+                margin: 0;
+                padding: 0.5rem 1rem;
+                font-size: 0.85rem;
+                border-radius: 5px; border: 1px solid var(--brand-gold);
             }
         }
+        
+        /* Desktop fix for the new wrapper */
+        @media (min-width: 600px) {
+            .sticky-bottom-row {
+                display: flex;
+                align-items: center;
+                gap: 15px;
+            }
+        }
+
 </style>
 </head>
 <body>
@@ -391,11 +407,12 @@
 <!-- Sticky Footer -->
 <div class="sticky-footer-bar">
     <div class="sticky-text-group" style="display: flex; align-items: center; gap: 15px; margin-right: 20px;">
-        <div style="width: 50px; height: 50px; border-radius: 5px; overflow: hidden; border: 2px solid var(--brand-gold); flex-shrink: 0; display: inline-block;">
+        <div style="width: 50px; height: 50px; border-radius: 5px; border: 1px solid var(--brand-gold); overflow: hidden; border: 2px solid var(--brand-gold); flex-shrink: 0; display: inline-block;">
             <img src="avatar2.png" alt="Nilson Vieira" style="width: 100%; height: 100%; object-fit: cover; object-position: center 15%;">
         </div>
         <p style="margin: 0; color: #fff; font-family: sans-serif; font-size: 0.9rem;">Gostou do meu trabalho? Vamos conversar!</p>
     </div>
+    <div class="sticky-bottom-row">
     <a href="https://wa.me/558597496713" target="_blank" class="sticky-wa-btn"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg> Falar no WhatsApp</a>
     <div class="sticky-socials">
         
@@ -409,6 +426,7 @@
             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
         </a>
     </div>
+</div>
 </div>
 </body>
 </html>
