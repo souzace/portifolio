@@ -268,21 +268,49 @@
         /* Mobile UX Fixes for Sticky Footer */
         @media (max-width: 599px) {
             .sticky-footer-bar {
-                padding: 10px; /* Reduce vertical footprint */
+                padding: 8px 10px;
                 justify-content: center;
-                gap: 10px;
+                gap: 8px;
+                flex-direction: column; /* Stack top and bottom rows compactly */
             }
             .sticky-text-group {
-                display: none !important; /* Hide avatar and text to save space */
+                display: flex !important;
+                gap: 10px !important;
+                margin-right: 0 !important;
+                width: 100%;
+                justify-content: center;
+            }
+            .sticky-text-group > div {
+                width: 35px !important;
+                height: 35px !important;
+            }
+            .sticky-text-group p {
+                font-size: 0.8rem !important;
+                line-height: 1.2;
+                text-align: left;
+            }
+            .sticky-socials {
+                width: 100%;
+                justify-content: center;
+                gap: 8px;
             }
             .sticky-wa-btn {
-                flex-grow: 1; /* Make WA button fill remaining space */
+                flex-grow: 1;
                 justify-content: center;
-                padding: 0.6rem;
+                padding: 0.4rem 0.6rem;
+                font-size: 0.8rem;
+            }
+            .sticky-wa-btn svg {
+                width: 16px;
+                height: 16px;
             }
             .sticky-social-btn {
-                width: 38px;
-                height: 38px;
+                width: 32px;
+                height: 32px;
+            }
+            .sticky-social-btn svg {
+                width: 16px;
+                height: 16px;
             }
         }
 </style>
