@@ -113,7 +113,10 @@ h1, h2, h3, .logo {
     text-align: center;
     background-color: #1a1a1a;
     /* Placeholder gradient simulating a dark metallic reflection */
-    background: linear-gradient(135deg, #0a0a0a 0%, #2a2312 100%);
+    background: linear-gradient(rgba(10,10,10,0.7), rgba(10,10,10,0.85)), url('sax_repair.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
     overflow: hidden;
 }
 .hero-content {
@@ -171,8 +174,10 @@ h1, h2, h3, .logo {
 .cta-section {
     padding: 6rem 0;
     text-align: center;
-    background: linear-gradient(rgba(10,10,10,0.9), rgba(10,10,10,0.9)), url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" opacity="0.05"><circle cx="50" cy="50" r="40" fill="%23D4AF37"/></svg>');
-    background-size: 200px;
+    background: linear-gradient(rgba(10,10,10,0.85), rgba(10,10,10,0.9)), url('brass_cta.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
     border-top: 1px solid rgba(212, 175, 55, 0.1);
     border-bottom: 1px solid rgba(212, 175, 55, 0.1);
 }
