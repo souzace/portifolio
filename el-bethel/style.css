@@ -377,3 +377,99 @@ body {
     color: #888;
     background-color: #E2E8F0;
 }
+
+/* Sticky Footer CTA */
+body {
+    padding-bottom: 80px; /* Space for the sticky footer */
+}
+.sticky-footer-bar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: var(--brand-blue);
+    color: var(--white);
+    padding: 0.8rem 1rem;
+    box-shadow: 0 -5px 20px rgba(0,0,0,0.15);
+    z-index: 1000;
+}
+.sticky-footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.sticky-left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+.sticky-avatar {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--white);
+}
+.sticky-text {
+    display: flex;
+    flex-direction: column;
+}
+.sticky-title {
+    font-weight: 700;
+    font-size: 0.95rem;
+    line-height: 1.2;
+}
+.sticky-subtitle {
+    font-size: 0.8rem;
+    color: var(--brand-light-blue);
+}
+.sticky-right {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+.sticky-social-icon {
+    color: var(--white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: color 0.3s ease;
+}
+.sticky-social-icon:hover {
+    color: var(--brand-light-blue);
+}
+.sticky-wa-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background-color: #25D366;
+    color: var(--white);
+    text-decoration: none;
+    padding: 0.6rem 1.2rem;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(37, 211, 102, 0.3);
+}
+.sticky-wa-btn:hover {
+    background-color: #1ebe57;
+    transform: translateY(-2px);
+}
+
+@media(max-width: 599px) {
+    .sticky-footer-container {
+        flex-direction: column;
+        gap: 12px;
+    }
+    .sticky-right {
+        width: 100%;
+        justify-content: space-between;
+    }
+    .sticky-wa-btn {
+        flex: 1;
+        justify-content: center;
+    }
+}
