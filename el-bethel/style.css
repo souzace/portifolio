@@ -182,7 +182,125 @@ body {
     color: #666;
 }
 
-/* Trust */
+
+/* Vitrine */
+.vitrine {
+    padding: 5rem 2rem;
+    background-color: var(--gray-bg);
+}
+.vitrine-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+.vitrine-title {
+    font-weight: 700;
+    font-size: 2.2rem;
+    color: var(--brand-blue);
+    margin-bottom: 0.5rem;
+}
+.vitrine-subtitle {
+    font-family: 'Dancing Script', cursive;
+    font-size: 1.8rem;
+    color: var(--brand-red);
+}
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+@media(min-width: 768px) {
+    .product-grid {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 2rem;
+    }
+}
+.product-card {
+    background-color: var(--white);
+    border-radius: 20px;
+    padding: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+    position: relative;
+    overflow: hidden;
+    aspect-ratio: 1;
+}
+.product-card img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+}
+.product-card:hover img {
+    transform: scale(1.05);
+}
+.product-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255,255,255,0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+.product-card:hover .product-overlay {
+    opacity: 1;
+}
+
+/* Updated Trust Layout */
+.trust {
+    padding: 0;
+    text-align: left;
+    background-color: transparent;
+    color: var(--text-dark);
+    margin: 5rem 2rem;
+}
+.trust-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--brand-blue);
+    border-radius: 40px;
+    overflow: hidden;
+    color: var(--white);
+    box-shadow: 0 15px 40px rgba(0, 86, 128, 0.2);
+}
+@media(min-width: 768px) {
+    .trust-container {
+        flex-direction: row;
+    }
+}
+.trust-image {
+    flex: 1;
+    min-height: 300px;
+}
+.trust-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.trust-content {
+    flex: 1;
+    padding: 4rem 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+@media(min-width: 768px) {
+    .trust-content {
+        padding: 4rem;
+    }
+}
+
+/* Trust Legacy */
 .trust {
     padding: 5rem 2rem;
     text-align: center;
