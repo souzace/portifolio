@@ -310,3 +310,17 @@ body {
         justify-content: center;
     }
 }
+
+/* Logo Image */
+.logo-img {
+    height: 60px;
+    width: auto;
+    background-color: var(--text-light); /* white background to match the image */
+    padding: 5px 15px;
+    border-radius: 6px;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+}
+.logo-img:hover {
+    transform: scale(1.05);
+}
