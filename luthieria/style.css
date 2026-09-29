@@ -1,0 +1,307 @@
+:root {
+    --bg-dark: #0A0A0A;
+    --bg-card: #141414;
+    --gold: #D4AF37;
+    --gold-hover: #b5952f;
+    --text-light: #E0E0E0;
+    --text-muted: #888888;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-dark);
+    color: var(--text-light);
+    font-family: 'Raleway', sans-serif;
+    line-height: 1.6;
+}
+
+h1, h2, h3, .logo {
+    font-family: 'Playfair Display', serif;
+    color: var(--gold);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+/* Header */
+.header {
+    background-color: rgba(10, 10, 10, 0.95);
+    border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 2rem;
+}
+.logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-light);
+}
+
+/* Custom Logo Styling */
+.logo {
+    font-size: 1.8rem;
+    font-weight: 400;
+    color: var(--text-light);
+    line-height: 1;
+    letter-spacing: 1px;
+}
+.logo-ton {
+    color: var(--gold);
+    font-weight: 700;
+    font-style: normal;
+}
+.logo-sub {
+    font-family: 'Raleway', sans-serif;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    color: var(--text-muted);
+}
+
+
+/* Buttons */
+.btn-outline-gold {
+    display: inline-block;
+    padding: 0.6rem 1.5rem;
+    border: 1px solid var(--gold);
+    color: var(--gold);
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+.btn-outline-gold:hover {
+    background-color: var(--gold);
+    color: var(--bg-dark);
+}
+
+.btn-solid-gold {
+    display: inline-block;
+    padding: 1rem 2rem;
+    background-color: var(--gold);
+    color: var(--bg-dark);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1rem;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(212, 175, 55, 0.2);
+}
+.btn-solid-gold:hover {
+    background-color: var(--gold-hover);
+    transform: translateY(-2px);
+}
+
+/* Hero */
+.hero {
+    position: relative;
+    padding: 8rem 0;
+    text-align: center;
+    background-color: #1a1a1a;
+    /* Placeholder gradient simulating a dark metallic reflection */
+    background: linear-gradient(135deg, #0a0a0a 0%, #2a2312 100%);
+    overflow: hidden;
+}
+.hero-content {
+    position: relative;
+    z-index: 2;
+}
+.hero h1 {
+    font-size: 3.5rem;
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+}
+.hero p {
+    font-size: 1.2rem;
+    color: var(--text-light);
+    max-width: 600px;
+    margin: 0 auto 2.5rem;
+}
+
+/* Services */
+.services {
+    padding: 5rem 0;
+}
+.section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+}
+.grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+}
+@media (min-width: 768px) {
+    .grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+.card {
+    background-color: var(--bg-card);
+    padding: 2.5rem;
+    border-radius: 8px;
+    border-left: 3px solid var(--gold);
+    transition: transform 0.3s ease;
+}
+.card:hover {
+    transform: translateY(-5px);
+}
+.card h3 {
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+}
+
+/* CTA Section */
+.cta-section {
+    padding: 6rem 0;
+    text-align: center;
+    background: linear-gradient(rgba(10,10,10,0.9), rgba(10,10,10,0.9)), url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" opacity="0.05"><circle cx="50" cy="50" r="40" fill="%23D4AF37"/></svg>');
+    background-size: 200px;
+    border-top: 1px solid rgba(212, 175, 55, 0.1);
+    border-bottom: 1px solid rgba(212, 175, 55, 0.1);
+}
+.cta-section h2 {
+    font-size: 2.2rem;
+    margin-bottom: 1rem;
+}
+.cta-section p {
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin: 0 auto 2.5rem;
+    color: var(--text-muted);
+}
+
+/* Footer */
+.footer {
+    padding: 3rem 0;
+    text-align: center;
+    font-size: 0.9rem;
+    color: var(--text-muted);
+}
+.orkes-credit {
+    margin-top: 0.5rem;
+}
+.orkes-credit a {
+    color: var(--gold);
+    text-decoration: none;
+}
+.orkes-credit a:hover {
+    text-decoration: underline;
+}
+
+/* Sticky Footer CTA */
+body {
+    padding-bottom: 80px;
+}
+.sticky-footer-bar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(10, 10, 10, 0.98);
+    border-top: 1px solid rgba(212, 175, 55, 0.2);
+    color: var(--text-light);
+    padding: 0.8rem 1rem;
+    box-shadow: 0 -5px 20px rgba(0,0,0,0.5);
+    z-index: 1000;
+}
+.sticky-footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.sticky-left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+.sticky-avatar {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--gold);
+}
+.sticky-text {
+    display: flex;
+    flex-direction: column;
+}
+.sticky-title {
+    font-family: 'Raleway', sans-serif;
+    font-weight: 600;
+    font-size: 0.95rem;
+    line-height: 1.2;
+    color: var(--text-light);
+}
+.sticky-subtitle {
+    font-family: 'Raleway', sans-serif;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+}
+.sticky-right {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+.sticky-social-icon {
+    color: var(--text-light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: color 0.3s ease;
+}
+.sticky-social-icon:hover {
+    color: var(--gold);
+}
+.sticky-wa-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background-color: transparent;
+    border: 1px solid var(--gold);
+    color: var(--gold);
+    text-decoration: none;
+    padding: 0.6rem 1.2rem;
+    border-radius: 4px;
+    font-weight: 600;
+    font-family: 'Raleway', sans-serif;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+.sticky-wa-btn:hover {
+    background-color: var(--gold);
+    color: var(--bg-dark);
+}
+
+@media(max-width: 599px) {
+    .sticky-footer-container {
+        flex-direction: column;
+        gap: 12px;
+    }
+    .sticky-right {
+        width: 100%;
+        justify-content: space-between;
+    }
+    .sticky-wa-btn {
+        flex: 1;
+        justify-content: center;
+    }
+}
