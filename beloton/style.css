@@ -324,3 +324,31 @@ body {
 .logo-img:hover {
     transform: scale(1.05);
 }
+
+/* Reverted and Improved Text Logo */
+.logo {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--gold);
+    line-height: 1;
+    letter-spacing: 1px;
+    display: inline-block;
+}
+.logo-clef {
+    font-family: 'Times New Roman', serif; /* Best fallback for musical symbols */
+    font-size: 1.2em;
+    font-weight: normal;
+    margin-right: 2px;
+    display: inline-block;
+    transform: translateY(4px);
+}
+.logo-sub {
+    font-family: 'Raleway', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: var(--text-light);
+    display: block;
+    margin-top: 4px;
+}
