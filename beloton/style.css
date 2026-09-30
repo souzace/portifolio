@@ -334,6 +334,15 @@ body {
     letter-spacing: 1px;
     display: inline-block;
 }
+
+.logo-sax {
+    fill: var(--gold);
+    width: 32px;
+    height: 32px;
+    vertical-align: middle;
+    margin-right: 6px;
+    transform: translateY(-2px);
+}
 .logo-clef {
     font-family: 'Times New Roman', serif; /* Best fallback for musical symbols */
     font-size: 1.2em;
