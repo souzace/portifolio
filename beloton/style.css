@@ -21,6 +21,7 @@ body {
 }
 
 h1, h2, h3, .logo {
+    white-space: nowrap;
     font-family: 'Playfair Display', serif;
     color: var(--gold);
 }
@@ -46,6 +47,7 @@ h1, h2, h3, .logo {
     padding: 1.5rem 2rem;
 }
 .logo {
+    white-space: nowrap;
     font-size: 1.5rem;
     font-weight: 700;
     color: var(--text-light);
@@ -53,6 +55,7 @@ h1, h2, h3, .logo {
 
 /* Custom Logo Styling */
 .logo {
+    white-space: nowrap;
     font-size: 1.8rem;
     font-weight: 400;
     color: var(--text-light);
@@ -327,6 +330,7 @@ body {
 
 /* Reverted and Improved Text Logo */
 .logo {
+    white-space: nowrap;
     font-size: 2rem;
     font-weight: 700;
     color: var(--gold);
@@ -517,7 +521,8 @@ body {
         width: 40px;
     }
     .testimonial-card {
-        flex: 0 0 320px;
+        flex: 0 0 300px;
+        min-width: 280px;
         padding: 1.5rem;
     }
 }
@@ -530,6 +535,7 @@ body {
         text-align: center;
     }
     .logo {
+    white-space: nowrap;
         font-size: 1.6rem;
     }
     .logo-sax {
@@ -541,7 +547,8 @@ body {
         letter-spacing: 2px;
     }
     .floating-notes {
-        right: 15px; /* Adjust slightly for scaled sax */
-        top: -8px;
+        right: auto;
+        left: 12px;
+        top: -6px;
     }
 }
