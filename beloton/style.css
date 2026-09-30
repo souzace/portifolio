@@ -340,7 +340,8 @@ body {
     width: 32px;
     height: 32px;
     vertical-align: middle;
-    margin-right: 6px;
+    margin-left: 6px;
+    margin-right: 0;
     transform: translateY(-2px);
 }
 .logo-clef {
