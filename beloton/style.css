@@ -366,8 +366,8 @@ body {
 /* Floating Music Notes Animation */
 .floating-notes {
     position: absolute;
-    left: 0px; /* Moved inwards closer to the sax bell */
-    top: -20px;  /* Lowered closer to the sax body */
+    left: 20px; /* Moved inwards closer to the sax bell */
+    top: -10px;  /* Lowered closer to the sax body */
     width: 30px;
     height: 30px;
     pointer-events: none;
@@ -406,13 +406,13 @@ body {
         opacity: 0.8;
     }
     50% {
-        transform: translateY(-5px) translateX(5px) scale(1);
+        transform: translateY(-5px) translateX(10px) scale(1);
     }
     80% {
         opacity: 0.8;
     }
     100% {
-        transform: translateY(-20px) translateX(-5px) scale(1.2);
+        transform: translateY(-20px) translateX(15px) scale(1.2);
         opacity: 0;
     }
 }
