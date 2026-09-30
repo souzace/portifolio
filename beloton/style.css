@@ -366,8 +366,8 @@ body {
 /* Floating Music Notes Animation */
 .floating-notes {
     position: absolute;
-    right: -10px; /* Adjust based on where the sax is */
-    top: -15px;
+    right: 5px; /* Moved inwards closer to the sax bell */
+    top: -5px;  /* Lowered closer to the sax body */
     width: 30px;
     height: 30px;
     pointer-events: none;
@@ -386,13 +386,13 @@ body {
     animation-delay: 0s;
 }
 .note-2 {
-    left: 10px;
+    left: 6px;
     font-size: 0.8rem;
     animation: floatNote 3.5s infinite ease-in;
     animation-delay: 1s;
 }
 .note-3 {
-    left: 20px;
+    left: 12px;
     animation: floatNote 3s infinite ease-in;
     animation-delay: 2s;
 }
