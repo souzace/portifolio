@@ -10,86 +10,111 @@
 </head>
 <body>
 
-    <div class="split-layout">
-        <!-- Left Fixed Side (Brand & Navigation) -->
-        <aside class="split-left">
-            <div class="left-content">
-                <img src="logomark.jpg" alt="Empório Linneo" class="logo-split">
-                <h1>O aroma fresco da tradição,<br>todos os dias.</h1>
-                <p>Pães de fermentação natural, doces artesanais e aquele café perfeito para acompanhar o seu momento.</p>
-                <div class="split-actions">
-                    <a href="https://wa.me/5585999362255" class="btn-primary" target="_blank">Pedir Delivery</a>
-                    <a href="#vitrine" class="btn-outline">Ver Cardápio</a>
-                </div>
+    <!-- Header E-commerce Style -->
+    <header class="ecommerce-header">
+        <div class="container header-inner">
+            <a href="#" class="logo-link"><img src="logomark.jpg" alt="Logo" class="ecommerce-logo"></a>
+            <div class="search-bar">
+                <input type="text" placeholder="O que você deseja provar hoje?">
             </div>
-            
-            <div class="left-footer">
-                <p>📍 Av. Lineu Machado, 875 - Jóquei Clube<br>Fortaleza - CE</p>
-                <p>🕒 Todos os dias: 06h às 21h</p>
+            <a href="https://wa.me/5585999362255" class="btn-cart">🛒 Meu Pedido</a>
+        </div>
+    </header>
+
+    <!-- Mini Hero Banner -->
+    <section class="ecommerce-hero" style="background-image: url('hero_bakery.jpg');">
+        <div class="hero-gradient"></div>
+        <div class="container hero-content">
+            <h1>Sua padaria premium,<br>na porta da sua casa.</h1>
+            <p>Pães frescos, cafés e doces entregues em até 40 minutos.</p>
+        </div>
+    </section>
+
+    <!-- Interactive Categories -->
+    <section class="categories-nav">
+        <div class="container">
+            <div class="cat-scroll">
+                <button class="cat-btn active">🥐 Pães</button>
+                <button class="cat-btn">🍰 Confeitaria</button>
+                <button class="cat-btn">☕ Cafés</button>
+                <button class="cat-btn">🧀 Frios</button>
             </div>
-        </aside>
+        </div>
+    </section>
 
-        <!-- Right Scrolling Side (Visuals & Products) -->
-        <main class="split-right">
-            <!-- Hero Image Full Height -->
-            <section class="split-hero">
-                <div class="split-hero-img" style="background-image: url('hero_bakery.jpg');"></div>
-            </section>
-
-            <!-- Bento Box / Grid de Produtos -->
-            <section id="vitrine" class="split-vitrine">
-                <h2 class="section-title-split">Nossas Especialidades</h2>
-                <div class="bento-grid">
-                    <div class="bento-item pao">
-                        <div class="bento-bg" style="background-image: url('product1.jpg');"></div>
-                        <div class="bento-overlay">
-                            <h3>Pães Artesanais</h3>
-                            <p>Fermentação de 48h</p>
-                        </div>
-                    </div>
-                    <div class="bento-item doces">
-                        <div class="bento-bg" style="background-image: url('product2.jpg');"></div>
-                        <div class="bento-overlay">
-                            <h3>Confeitaria Fina</h3>
-                            <p>Chocolate Belga</p>
-                        </div>
-                    </div>
-                    <div class="bento-item cafe">
-                        <div class="bento-bg" style="background-image: url('product3.jpg');"></div>
-                        <div class="bento-overlay">
-                            <h3>Cafés Especiais</h3>
-                            <p>Torra Perfeita</p>
-                        </div>
-                    </div>
-                    <div class="bento-item frios">
-                        <div class="bento-bg" style="background-image: url('product4.jpg');"></div>
-                        <div class="bento-overlay">
-                            <h3>Frios</h3>
-                            <p>Queijos Curados</p>
+    <!-- E-commerce Vitrine -->
+    <section class="ecommerce-products">
+        <div class="container">
+            <h2 class="section-title">Mais Pedidos da Semana</h2>
+            <div class="product-grid">
+                
+                <!-- Product Card -->
+                <div class="shop-card">
+                    <div class="shop-img" style="background-image: url('product1.jpg');"></div>
+                    <div class="shop-info">
+                        <h3>Pão Rústico de Fermentação Natural</h3>
+                        <p class="desc">Aproximadamente 500g. Casca crocante.</p>
+                        <div class="price-row">
+                            <span class="price">R$ 22,00</span>
+                            <a href="https://wa.me/5585999362255" class="btn-add">+ Add</a>
                         </div>
                     </div>
                 </div>
-            </section>
 
-            <!-- História -->
-            <section class="split-historia">
-                <div class="historia-box">
-                    <h2>A Arte do Tempo</h2>
-                    <p>No Empório Linneo, acreditamos que a boa comida não aceita atalhos. Nossa padaria nasceu do desejo de resgatar as receitas lentas e honestas.</p>
-                    <p>Nossos padeiros chegam antes do sol nascer para garantir que o croissant esteja na temperatura perfeita quando você entrar pela nossa porta.</p>
+                <div class="shop-card">
+                    <div class="shop-img" style="background-image: url('product2.jpg');"></div>
+                    <div class="shop-info">
+                        <h3>Tartelete de Frutas Vermelhas</h3>
+                        <p class="desc">Massa sablée, creme de baunilha e frutas.</p>
+                        <div class="price-row">
+                            <span class="price">R$ 18,50</span>
+                            <a href="https://wa.me/5585999362255" class="btn-add">+ Add</a>
+                        </div>
+                    </div>
                 </div>
-                <div class="historia-image" style="background-image: url('working.webp');"></div>
-            </section>
-            
-            <footer class="split-footer-bottom">
-                <p>&copy; 2026 Empório Linneo. Todos os direitos reservados.</p>
-            </footer>
-        </main>
-    </div>
 
-    <!-- Botão Flutuante WhatsApp -->
-    <a href="https://wa.me/5585999362255" class="fab-whatsapp" target="_blank" aria-label="Pedir no WhatsApp">
-        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.274.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.045.072.045.419-.1.824zm-3.423-14.416c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm.029 18.88c-1.161 0-2.305-.292-3.318-.844l-3.677.964.984-3.595c-.607-1.052-.927-2.246-.926-3.468.001-5.824 4.74-10.563 10.564-10.563 5.826 0 10.564 4.741 10.564 10.564 0 5.825-4.739 10.564-10.564 10.564z"/></svg>
-    </a>
+                <div class="shop-card">
+                    <div class="shop-img" style="background-image: url('product3.jpg');"></div>
+                    <div class="shop-info">
+                        <h3>Café Especial Torra Média</h3>
+                        <p class="desc">Pacote 250g. Notas de caramelo e nozes.</p>
+                        <div class="price-row">
+                            <span class="price">R$ 45,00</span>
+                            <a href="https://wa.me/5585999362255" class="btn-add">+ Add</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="shop-card">
+                    <div class="shop-img" style="background-image: url('product4.jpg');"></div>
+                    <div class="shop-info">
+                        <h3>Tábua de Frios Artesanal</h3>
+                        <p class="desc">Seleção do Chef para 2 pessoas.</p>
+                        <div class="price-row">
+                            <span class="price">R$ 89,00</span>
+                            <a href="https://wa.me/5585999362255" class="btn-add">+ Add</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Delivery Banner -->
+    <section class="delivery-banner">
+        <div class="container banner-inner">
+            <div class="banner-text">
+                <h2>O pão quentinho chega até você.</h2>
+                <p>Nossos motoboys possuem mochilas térmicas exclusivas para garantir que o croissant chegue desmanchando e o café pelando.</p>
+            </div>
+            <div class="banner-img" style="background-image: url('working.webp');"></div>
+        </div>
+    </section>
+
+    <footer class="ecommerce-footer">
+        <p>&copy; 2026 Empório Linneo - Av. Lineu Machado, 875 - Jóquei Clube. Todos os direitos reservados.</p>
+    </footer>
+
 </body>
 </html>
