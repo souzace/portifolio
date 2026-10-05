@@ -10,72 +10,74 @@
 </head>
 <body>
 
-    <!-- Header Transparente -->
-    <header class="masonry-header">
-        <a href="#" class="logo-link"><img src="logomark.jpg" alt="Logo" class="masonry-logo"></a>
-        <nav class="masonry-nav">
-            <a href="#galeria">Galeria</a>
-            <a href="#experiencia">Nossa Experiência</a>
-            <a href="https://wa.me/5585999362255" class="btn-reservar">Faça seu Pedido</a>
-        </nav>
+    <!-- Classic Centered Split Header -->
+    <header class="classic-header">
+        <div class="container classic-nav-container">
+            <nav class="nav-side left">
+                <a href="#cardapio">Cardápio</a>
+                <a href="#historia">Nossa Arte</a>
+            </nav>
+            <div class="nav-center">
+                <img src="logomark.jpg" alt="Logo Empório Linneo" class="logo-classic">
+            </div>
+            <nav class="nav-side right">
+                <a href="https://wa.me/5585999362255">Fazer Pedido</a>
+                <a href="#contato">Localização</a>
+            </nav>
+        </div>
     </header>
 
-    <!-- Hero Cinematográfico -->
-    <section class="masonry-hero" style="background-image: url('hero_bakery.jpg');">
-        <div class="hero-blur-overlay"></div>
-        <div class="container hero-content-center">
-            <h1>A arte de pausar.</h1>
-            <p>Mais do que uma padaria, um estilo de vida focado nos detalhes, no tempo e no verdadeiro sabor do trigo.</p>
+    <!-- Classic Elegant Hero -->
+    <section class="classic-hero">
+        <div class="classic-hero-bg" style="background-image: url('hero_bakery.jpg');"></div>
+        <div class="classic-hero-content">
+            <div class="hero-frame">
+                <h1>O aroma fresco da tradição.</h1>
+                <p>Pães de fermentação natural e doces artesanais.</p>
+                <a href="#cardapio" class="btn-classic">Conhecer o Menu</a>
+            </div>
         </div>
     </section>
 
-    <!-- Masonry Gallery (Vitrine Visual) -->
-    <section id="galeria" class="masonry-gallery">
+    <!-- Arched Vitrine (Luxury Style) -->
+    <section id="cardapio" class="classic-vitrine">
         <div class="container">
-            <h2 class="section-title-minimal">Nosso Menu Visual</h2>
+            <div class="title-wrapper">
+                <span class="subtitle">Descubra Nossas</span>
+                <h2 class="section-title-classic">Especialidades</h2>
+            </div>
             
-            <div class="masonry-grid">
+            <div class="arch-grid">
                 
-                <div class="masonry-item large" style="background-image: url('product1.jpg');">
-                    <div class="masonry-overlay">
+                <div class="arch-card">
+                    <div class="arch-img" style="background-image: url('product1.jpg');"></div>
+                    <div class="arch-text">
                         <h3>Pães Rústicos</h3>
-                        <a href="#">Ver detalhes →</a>
+                        <p>Fermentação lenta, crosta perfeita e miolo macio.</p>
                     </div>
                 </div>
 
-                <div class="masonry-item tall" style="background-image: url('product2.jpg');">
-                    <div class="masonry-overlay">
-                        <h3>Confeitaria Fina</h3>
-                        <a href="#">Ver detalhes →</a>
+                <div class="arch-card">
+                    <div class="arch-img" style="background-image: url('product2.jpg');"></div>
+                    <div class="arch-text">
+                        <h3>Confeitaria</h3>
+                        <p>A arte francesa aplicada aos doces mais afetivos.</p>
                     </div>
                 </div>
 
-                <div class="masonry-item wide" style="background-image: url('product3.jpg');">
-                    <div class="masonry-overlay">
-                        <h3>Cafés Especiais</h3>
-                        <a href="#">Ver detalhes →</a>
+                <div class="arch-card">
+                    <div class="arch-img" style="background-image: url('product3.jpg');"></div>
+                    <div class="arch-text">
+                        <h3>Cafés</h3>
+                        <p>Grãos de altitude, torrados com maestria.</p>
                     </div>
                 </div>
 
-                <div class="masonry-item standard" style="background-image: url('product4.jpg');">
-                    <div class="masonry-overlay">
-                        <h3>Charcutaria</h3>
-                        <a href="#">Ver detalhes →</a>
-                    </div>
-                </div>
-
-                <!-- Repeating some images just to fill the grid beautifully -->
-                <div class="masonry-item tall" style="background-image: url('working.webp');">
-                    <div class="masonry-overlay">
-                        <h3>Nossa Produção</h3>
-                        <a href="#">Conheça a cozinha →</a>
-                    </div>
-                </div>
-
-                <div class="masonry-item standard" style="background-image: url('hero_bakery.jpg');">
-                    <div class="masonry-overlay">
-                        <h3>O Ambiente</h3>
-                        <a href="#">Venha nos visitar →</a>
+                <div class="arch-card">
+                    <div class="arch-img" style="background-image: url('product4.jpg');"></div>
+                    <div class="arch-text">
+                        <h3>Frios</h3>
+                        <p>Acompanhamentos curados para celebrar o momento.</p>
                     </div>
                 </div>
 
@@ -83,26 +85,30 @@
         </div>
     </section>
 
-    <!-- Depoimento Destaque -->
-    <section class="testimonial-highlight">
+    <!-- Classic Historia Split -->
+    <section id="historia" class="classic-historia">
+        <div class="container historia-flex">
+            <div class="historia-image-arch" style="background-image: url('working.webp');"></div>
+            <div class="historia-content-centered">
+                <span class="subtitle">Nossa Essência</span>
+                <h2>A Arte do Tempo</h2>
+                <div class="divider"></div>
+                <p>No Empório Linneo, acreditamos que a boa comida não aceita atalhos. Nossa padaria nasceu do desejo de resgatar as receitas lentas e honestas.</p>
+                <p>Nossos padeiros chegam antes do sol nascer para garantir que o croissant esteja na temperatura perfeita quando você entrar pela nossa porta.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Formal Footer -->
+    <footer id="contato" class="classic-footer">
         <div class="container">
-            <p class="quote">"O melhor croissant que já comi fora de Paris. O Empório Linneo não é só uma padaria, é um refúgio para quem ama gastronomia de verdade."</p>
-            <span class="author">- Revista Sabores do Ceará</span>
-        </div>
-    </section>
-
-    <!-- Minimal Footer -->
-    <footer class="masonry-footer">
-        <div class="container footer-flex">
-            <div class="footer-brand">
-                <img src="logomark.jpg" alt="Logo" class="footer-logo-small">
-                <p>📍 Av. Lineu Machado, 875 - Jóquei Clube<br>Fortaleza - CE</p>
+            <img src="logomark.jpg" alt="Logo" class="footer-logo-classic">
+            <div class="footer-contact-info">
+                <p>📍 Av. Lineu Machado, 875 - Jóquei Clube, Fortaleza - CE</p>
+                <p>🕒 Aberto todos os dias das 06h às 21h</p>
+                <p>📞 WhatsApp: (85) 99936-2255</p>
             </div>
-            <div class="footer-links">
-                <a href="#">Instagram</a>
-                <a href="#">WhatsApp</a>
-                <a href="#">Como Chegar</a>
-            </div>
+            <p class="copyright">&copy; 2026 Empório Linneo. Tradição & Sabor.</p>
         </div>
     </footer>
 
