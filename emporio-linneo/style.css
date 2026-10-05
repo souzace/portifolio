@@ -227,8 +227,28 @@ h1, h2, h3, .logo {
     line-height: 1.8;
 }
 
-/* Fixed Footer (Orkes Concept) */
-.classic-footer-fixed {
+/* Regular Footer */
+.regular-footer {
+    background-color: #1a0e0a;
+    padding: 6rem 0 4rem;
+    text-align: center;
+    color: rgba(249, 243, 233, 0.6);
+}
+.regular-footer .footer-contact-info {
+    margin-bottom: 2rem;
+    line-height: 2;
+    font-size: 1.1rem;
+}
+.regular-footer .copyright {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border-top: 1px solid rgba(212, 175, 55, 0.1);
+    padding-top: 2rem;
+}
+
+/* Fixed Bottom Bar */
+.sticky-footer-bar {
     position: fixed;
     bottom: 0;
     left: 0;
@@ -321,4 +341,12 @@ h1, h2, h3, .logo {
     .hero-content-center h1 { font-size: 3rem; }
     .historia-flex { flex-direction: column; }
     .historia-image-arch { width: 100%; height: 400px; order: -1; }
+}
+
+.sticky-avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--primary);
 }
