@@ -10,90 +10,72 @@
 </head>
 <body>
 
-    <!-- Header E-commerce Style -->
-    <header class="ecommerce-header">
-        <div class="container header-inner">
-            <a href="#" class="logo-link"><img src="logomark.jpg" alt="Logo" class="ecommerce-logo"></a>
-            <div class="search-bar">
-                <input type="text" placeholder="O que você deseja provar hoje?">
-            </div>
-            <a href="https://wa.me/5585999362255" class="btn-cart">🛒 Meu Pedido</a>
-        </div>
+    <!-- Header Transparente -->
+    <header class="masonry-header">
+        <a href="#" class="logo-link"><img src="logomark.jpg" alt="Logo" class="masonry-logo"></a>
+        <nav class="masonry-nav">
+            <a href="#galeria">Galeria</a>
+            <a href="#experiencia">Nossa Experiência</a>
+            <a href="https://wa.me/5585999362255" class="btn-reservar">Faça seu Pedido</a>
+        </nav>
     </header>
 
-    <!-- Mini Hero Banner -->
-    <section class="ecommerce-hero" style="background-image: url('hero_bakery.jpg');">
-        <div class="hero-gradient"></div>
-        <div class="container hero-content">
-            <h1>Sua padaria premium,<br>na porta da sua casa.</h1>
-            <p>Pães frescos, cafés e doces entregues em até 40 minutos.</p>
+    <!-- Hero Cinematográfico -->
+    <section class="masonry-hero" style="background-image: url('hero_bakery.jpg');">
+        <div class="hero-blur-overlay"></div>
+        <div class="container hero-content-center">
+            <h1>A arte de pausar.</h1>
+            <p>Mais do que uma padaria, um estilo de vida focado nos detalhes, no tempo e no verdadeiro sabor do trigo.</p>
         </div>
     </section>
 
-    <!-- Interactive Categories -->
-    <section class="categories-nav">
+    <!-- Masonry Gallery (Vitrine Visual) -->
+    <section id="galeria" class="masonry-gallery">
         <div class="container">
-            <div class="cat-scroll">
-                <button class="cat-btn active">🥐 Pães</button>
-                <button class="cat-btn">🍰 Confeitaria</button>
-                <button class="cat-btn">☕ Cafés</button>
-                <button class="cat-btn">🧀 Frios</button>
-            </div>
-        </div>
-    </section>
-
-    <!-- E-commerce Vitrine -->
-    <section class="ecommerce-products">
-        <div class="container">
-            <h2 class="section-title">Mais Pedidos da Semana</h2>
-            <div class="product-grid">
+            <h2 class="section-title-minimal">Nosso Menu Visual</h2>
+            
+            <div class="masonry-grid">
                 
-                <!-- Product Card -->
-                <div class="shop-card">
-                    <div class="shop-img" style="background-image: url('product1.jpg');"></div>
-                    <div class="shop-info">
-                        <h3>Pão Rústico de Fermentação Natural</h3>
-                        <p class="desc">Aproximadamente 500g. Casca crocante.</p>
-                        <div class="price-row">
-                            <span class="price">R$ 22,00</span>
-                            <a href="https://wa.me/5585999362255" class="btn-add">+ Add</a>
-                        </div>
+                <div class="masonry-item large" style="background-image: url('product1.jpg');">
+                    <div class="masonry-overlay">
+                        <h3>Pães Rústicos</h3>
+                        <a href="#">Ver detalhes →</a>
                     </div>
                 </div>
 
-                <div class="shop-card">
-                    <div class="shop-img" style="background-image: url('product2.jpg');"></div>
-                    <div class="shop-info">
-                        <h3>Tartelete de Frutas Vermelhas</h3>
-                        <p class="desc">Massa sablée, creme de baunilha e frutas.</p>
-                        <div class="price-row">
-                            <span class="price">R$ 18,50</span>
-                            <a href="https://wa.me/5585999362255" class="btn-add">+ Add</a>
-                        </div>
+                <div class="masonry-item tall" style="background-image: url('product2.jpg');">
+                    <div class="masonry-overlay">
+                        <h3>Confeitaria Fina</h3>
+                        <a href="#">Ver detalhes →</a>
                     </div>
                 </div>
 
-                <div class="shop-card">
-                    <div class="shop-img" style="background-image: url('product3.jpg');"></div>
-                    <div class="shop-info">
-                        <h3>Café Especial Torra Média</h3>
-                        <p class="desc">Pacote 250g. Notas de caramelo e nozes.</p>
-                        <div class="price-row">
-                            <span class="price">R$ 45,00</span>
-                            <a href="https://wa.me/5585999362255" class="btn-add">+ Add</a>
-                        </div>
+                <div class="masonry-item wide" style="background-image: url('product3.jpg');">
+                    <div class="masonry-overlay">
+                        <h3>Cafés Especiais</h3>
+                        <a href="#">Ver detalhes →</a>
                     </div>
                 </div>
 
-                <div class="shop-card">
-                    <div class="shop-img" style="background-image: url('product4.jpg');"></div>
-                    <div class="shop-info">
-                        <h3>Tábua de Frios Artesanal</h3>
-                        <p class="desc">Seleção do Chef para 2 pessoas.</p>
-                        <div class="price-row">
-                            <span class="price">R$ 89,00</span>
-                            <a href="https://wa.me/5585999362255" class="btn-add">+ Add</a>
-                        </div>
+                <div class="masonry-item standard" style="background-image: url('product4.jpg');">
+                    <div class="masonry-overlay">
+                        <h3>Charcutaria</h3>
+                        <a href="#">Ver detalhes →</a>
+                    </div>
+                </div>
+
+                <!-- Repeating some images just to fill the grid beautifully -->
+                <div class="masonry-item tall" style="background-image: url('working.webp');">
+                    <div class="masonry-overlay">
+                        <h3>Nossa Produção</h3>
+                        <a href="#">Conheça a cozinha →</a>
+                    </div>
+                </div>
+
+                <div class="masonry-item standard" style="background-image: url('hero_bakery.jpg');">
+                    <div class="masonry-overlay">
+                        <h3>O Ambiente</h3>
+                        <a href="#">Venha nos visitar →</a>
                     </div>
                 </div>
 
@@ -101,20 +83,32 @@
         </div>
     </section>
 
-    <!-- Delivery Banner -->
-    <section class="delivery-banner">
-        <div class="container banner-inner">
-            <div class="banner-text">
-                <h2>O pão quentinho chega até você.</h2>
-                <p>Nossos motoboys possuem mochilas térmicas exclusivas para garantir que o croissant chegue desmanchando e o café pelando.</p>
-            </div>
-            <div class="banner-img" style="background-image: url('working.webp');"></div>
+    <!-- Depoimento Destaque -->
+    <section class="testimonial-highlight">
+        <div class="container">
+            <p class="quote">"O melhor croissant que já comi fora de Paris. O Empório Linneo não é só uma padaria, é um refúgio para quem ama gastronomia de verdade."</p>
+            <span class="author">- Revista Sabores do Ceará</span>
         </div>
     </section>
 
-    <footer class="ecommerce-footer">
-        <p>&copy; 2026 Empório Linneo - Av. Lineu Machado, 875 - Jóquei Clube. Todos os direitos reservados.</p>
+    <!-- Minimal Footer -->
+    <footer class="masonry-footer">
+        <div class="container footer-flex">
+            <div class="footer-brand">
+                <img src="logomark.jpg" alt="Logo" class="footer-logo-small">
+                <p>📍 Av. Lineu Machado, 875 - Jóquei Clube<br>Fortaleza - CE</p>
+            </div>
+            <div class="footer-links">
+                <a href="#">Instagram</a>
+                <a href="#">WhatsApp</a>
+                <a href="#">Como Chegar</a>
+            </div>
+        </div>
     </footer>
 
+    <!-- FAB -->
+    <a href="https://wa.me/5585999362255" class="fab-whatsapp" target="_blank" aria-label="Pedir no WhatsApp">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.274.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.045.072.045.419-.1.824zm-3.423-14.416c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm.029 18.88c-1.161 0-2.305-.292-3.318-.844l-3.677.964.984-3.595c-.607-1.052-.927-2.246-.926-3.468.001-5.824 4.74-10.563 10.564-10.563 5.826 0 10.564 4.741 10.564 10.564 0 5.825-4.739 10.564-10.564 10.564z"/></svg>
+    </a>
 </body>
 </html>
