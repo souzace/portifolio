@@ -280,7 +280,7 @@ h1, h2, h3, .logo {
 }
 .historia-img {
     height: 400px;
-    background: url('space.png') no-repeat center center/cover;
+    background-color: #4a2c20;
     border-radius: 8px;
     border: 2px solid var(--primary);
 }
