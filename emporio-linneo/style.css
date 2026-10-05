@@ -15,6 +15,7 @@
 }
 
 body {
+    padding-bottom: 80px;
     background-color: var(--bg-light);
     color: var(--text-dark);
     font-family: 'Outfit', sans-serif;
@@ -226,29 +227,70 @@ h1, h2, h3, .logo {
     line-height: 1.8;
 }
 
-/* Formal Footer */
-.classic-footer {
+/* Fixed Footer (Orkes Concept) */
+.classic-footer-fixed {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
     background-color: #1a0e0a;
-    padding: 6rem 0 2rem;
-    text-align: center;
+    border-top: 2px solid var(--primary);
+    padding: 12px 0;
+    z-index: 1000;
+    box-shadow: 0 -10px 30px rgba(0,0,0,0.5);
+}
+.footer-fixed-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2rem;
+}
+.footer-fixed-left {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+.footer-fixed-text {
+    display: flex;
+    flex-direction: column;
+}
+.ff-title {
+    color: var(--primary);
+    font-family: 'Lora', serif;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+.ff-sub {
     color: rgba(249, 243, 233, 0.6);
+    font-size: 0.85rem;
 }
-.footer-logo-classic {
-    height: 100px;
-    border-radius: 50%;
-    margin-bottom: 2rem;
-    border: 1px solid var(--primary);
-}
-.footer-contact-info {
-    margin-bottom: 3rem;
-    line-height: 2;
-}
-.copyright {
-    font-size: 0.8rem;
+.btn-footer-wa {
+    background-color: #25D366;
+    color: #fff;
+    padding: 10px 24px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: bold;
     text-transform: uppercase;
-    letter-spacing: 2px;
-    border-top: 1px solid rgba(212, 175, 55, 0.1);
-    padding-top: 2rem;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    transition: background 0.3s;
+}
+.btn-footer-wa:hover {
+    background-color: #1ebd5a;
+}
+
+@media (max-width: 768px) {
+    .footer-fixed-flex {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+    }
+    .btn-footer-wa {
+        width: 100%;
+        text-align: center;
+    }
+    body { padding-bottom: 120px; }
 }
 
 /* FAB */
