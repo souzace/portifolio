@@ -10,103 +10,82 @@
 </head>
 <body>
 
-        <!-- Header Minimalista -->
-    <nav class="nav-minimal">
-        <div class="container nav-content">
-            <a href="#vitrine" class="nav-link-dark">Especialidades</a>
-            <a href="#historia" class="nav-link-dark">Nossa Arte</a>
-            <a href="#contato" class="btn-outline-dark">Visite-nos</a>
-        </div>
-    </nav>
-
-    <!-- Título Editorial (Logo) -->
-    <section class="editorial-title">
-        <img src="logomark.jpg" alt="Empório Linneo" class="logo-editorial">
-    </section>
-
-    <!-- Hero Editorial (Split) -->
-    <section class="hero-editorial">
-        <div class="container hero-split">
-            <div class="hero-text-side">
+    <div class="split-layout">
+        <!-- Left Fixed Side (Brand & Navigation) -->
+        <aside class="split-left">
+            <div class="left-content">
+                <img src="logomark.jpg" alt="Empório Linneo" class="logo-split">
                 <h1>O aroma fresco da tradição,<br>todos os dias.</h1>
                 <p>Pães de fermentação natural, doces artesanais e aquele café perfeito para acompanhar o seu momento.</p>
-                <a href="#vitrine" class="btn-editorial">Explorar o Cardápio</a>
-            </div>
-            <div class="hero-img-side">
-                <img src="hero_bakery.jpg" alt="Pães e Café" class="hero-photo">
-            </div>
-        </div>
-    </section>
-
-        <!-- Vitrine Editorial (ZigZag) -->
-    <section id="vitrine" class="vitrine-editorial">
-        <div class="container">
-            <h2 class="section-title-dark">Nossas Especialidades</h2>
-            
-            <div class="zigzag-row">
-                <div class="zz-img" style="background-image: url('product1.jpg');"></div>
-                <div class="zz-text">
-                    <h3>Pães Artesanais</h3>
-                    <p>Fermentação natural de 48h, crosta rústica e miolo macio. O verdadeiro sabor do trigo resgatado do tempo.</p>
+                <div class="split-actions">
+                    <a href="https://wa.me/5585999362255" class="btn-primary" target="_blank">Pedir Delivery</a>
+                    <a href="#vitrine" class="btn-outline">Ver Cardápio</a>
                 </div>
             </div>
             
-            <div class="zigzag-row reverse">
-                <div class="zz-img" style="background-image: url('product2.jpg');"></div>
-                <div class="zz-text">
-                    <h3>Confeitaria Fina</h3>
-                    <p>Eclairs, tarteletes e bolos afetivos feitos com chocolate belga e frutas frescas rigorosamente selecionadas.</p>
-                </div>
-            </div>
-
-            <div class="zigzag-row">
-                <div class="zz-img" style="background-image: url('product3.jpg');"></div>
-                <div class="zz-text">
-                    <h3>Cafés Especiais</h3>
-                    <p>Grãos de torra clara e média, extraídos com perfeição para realçar as notas sensoriais em cada xícara.</p>
-                </div>
-            </div>
-
-            <div class="zigzag-row reverse">
-                <div class="zz-img" style="background-image: url('product4.jpg');"></div>
-                <div class="zz-text">
-                    <h3>Frios e Antepastos</h3>
-                    <p>Uma curadoria impecável de queijos curados, charcutaria artesanal e geleias para compartilhar.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- História & Autoridade -->
-    <section id="historia" class="historia">
-        <div class="container historia-wrapper">
-            <div class="historia-text">
-                <h2>A Arte do Tempo</h2>
-                <p>No Empório Linneo, acreditamos que a boa comida não aceita atalhos. Nossa padaria nasceu do desejo de resgatar as receitas lentas e honestas.</p>
-                <p>Nossos padeiros chegam antes do sol nascer para garantir que o croissant esteja na temperatura perfeita quando você entrar pela nossa porta. É uma mistura de técnica, ingredientes de origem e muita paixão.</p>
-            </div>
-            <div class="historia-img placeholder-baker"></div>
-        </div>
-    </section>
-
-    <!-- Footer & Infos -->
-    <footer class="footer">
-        <div class="container footer-grid">
-            <div class="footer-info">
-                <img src="logomark.jpg" alt="Logo Empório Linneo" class="logo-img-footer">
-                <p>O seu refúgio gastronômico no coração da cidade.</p>
-            </div>
-            <div class="footer-contact">
-                <h3>Visite-nos</h3>
-                <p>📍 Av. Lineu Machado, 875 - Jóquei Clube, Fortaleza - CE, 60520-101</p>
+            <div class="left-footer">
+                <p>📍 Av. Lineu Machado, 875 - Jóquei Clube<br>Fortaleza - CE</p>
                 <p>🕒 Todos os dias: 06h às 21h</p>
-                <p>📞 (85) 99936-2255</p>
             </div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2026 Empório Linneo. Todos os direitos reservados.</p>
-        </div>
-    </footer>
+        </aside>
+
+        <!-- Right Scrolling Side (Visuals & Products) -->
+        <main class="split-right">
+            <!-- Hero Image Full Height -->
+            <section class="split-hero">
+                <div class="split-hero-img" style="background-image: url('hero_bakery.jpg');"></div>
+            </section>
+
+            <!-- Bento Box / Grid de Produtos -->
+            <section id="vitrine" class="split-vitrine">
+                <h2 class="section-title-split">Nossas Especialidades</h2>
+                <div class="bento-grid">
+                    <div class="bento-item pao">
+                        <div class="bento-bg" style="background-image: url('product1.jpg');"></div>
+                        <div class="bento-overlay">
+                            <h3>Pães Artesanais</h3>
+                            <p>Fermentação de 48h</p>
+                        </div>
+                    </div>
+                    <div class="bento-item doces">
+                        <div class="bento-bg" style="background-image: url('product2.jpg');"></div>
+                        <div class="bento-overlay">
+                            <h3>Confeitaria Fina</h3>
+                            <p>Chocolate Belga</p>
+                        </div>
+                    </div>
+                    <div class="bento-item cafe">
+                        <div class="bento-bg" style="background-image: url('product3.jpg');"></div>
+                        <div class="bento-overlay">
+                            <h3>Cafés Especiais</h3>
+                            <p>Torra Perfeita</p>
+                        </div>
+                    </div>
+                    <div class="bento-item frios">
+                        <div class="bento-bg" style="background-image: url('product4.jpg');"></div>
+                        <div class="bento-overlay">
+                            <h3>Frios</h3>
+                            <p>Queijos Curados</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- História -->
+            <section class="split-historia">
+                <div class="historia-box">
+                    <h2>A Arte do Tempo</h2>
+                    <p>No Empório Linneo, acreditamos que a boa comida não aceita atalhos. Nossa padaria nasceu do desejo de resgatar as receitas lentas e honestas.</p>
+                    <p>Nossos padeiros chegam antes do sol nascer para garantir que o croissant esteja na temperatura perfeita quando você entrar pela nossa porta.</p>
+                </div>
+                <div class="historia-image" style="background-image: url('working.webp');"></div>
+            </section>
+            
+            <footer class="split-footer-bottom">
+                <p>&copy; 2026 Empório Linneo. Todos os direitos reservados.</p>
+            </footer>
+        </main>
+    </div>
 
     <!-- Botão Flutuante WhatsApp -->
     <a href="https://wa.me/5585999362255" class="fab-whatsapp" target="_blank" aria-label="Pedir no WhatsApp">
