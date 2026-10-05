@@ -1,0 +1,20 @@
+# Development / tooling
+*.py
+*.md
+!robots.txt
+
+# Docker files themselves (avoid copy recursion)
+Dockerfile
+docker-compose.yml
+.dockerignore
+k8s.yml
+
+# Client work-in-progress folder
+ideal/
+
+# Git
+.git
+.gitignore
+
+# Misc root files not needed at runtime
+Screenshot_*.png

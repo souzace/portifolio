@@ -1,0 +1,40 @@
+# docker-compose.yml — Local dev that mimics a Kubernetes Pod
+# Usage:
+#   docker compose up --build        # build + start
+#   docker compose up -d             # detached
+#   docker compose down              # stop + remove containers
+#   docker compose logs -f           # follow logs
+
+services:
+  portifolio:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: portifolio:local
+    container_name: portifolio-pod
+    restart: unless-stopped
+    ports:
+      - "8080:80"       # host:container  →  http://localhost:8080
+    # Resource limits — mirrors a k8s Pod resource block:
+    #   resources:
+    #     requests: { cpu: "50m", memory: "32Mi" }
+    #     limits:   { cpu: "200m", memory: "64Mi" }
+    deploy:
+      resources:
+        limits:
+          cpus: "0.20"
+          memory: 64M
+        reservations:
+          cpus: "0.05"
+          memory: 32M
+    healthcheck:
+      test: ["CMD", "wget", "-qO-", "http://localhost/healthz"]
+      interval: 10s
+      timeout: 3s
+      retries: 3
+      start_period: 5s
+    labels:
+      # Mirrors k8s labels / selectors
+      app: "portifolio"
+      version: "1.0.0"
+      env: "local"

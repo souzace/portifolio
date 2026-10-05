@@ -1,0 +1,295 @@
+import re
+
+with open("el-bethel/index.html", "r", encoding="utf-8") as f:
+    html = f.read()
+
+# Change logo src
+html = html.replace('logomark.jpg', 'logomark2.png')
+
+# Add Poppins font for a softer, rounder look, and maybe a cursive font for accents
+html = html.replace('family=Montserrat:wght@300;400;600;800', 'family=Poppins:wght@300;400;600;700&family=Dancing+Script:wght@600')
+
+with open("el-bethel/index.html", "w", encoding="utf-8") as f:
+    f.write(html)
+
+with open("el-bethel/style.css", "r", encoding="utf-8") as f:
+    css = f.read()
+
+# Completely overhaul the CSS
+new_css = """
+:root {
+    --brand-blue: #005680;      /* Dark blue from the top of the eye */
+    --brand-light-blue: #00A6DF; /* Light blue from the pupil */
+    --brand-red: #D81A21;       /* Red from the bottom of the eye */
+    --white: #FFFFFF;
+    --gray-bg: #F0F4F8;         /* Soft grayish-blue for backgrounds */
+    --text-dark: #333333;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: var(--white);
+    color: var(--text-dark);
+    line-height: 1.6;
+}
+
+/* Header */
+.header {
+    padding: 1rem 2rem;
+    position: sticky;
+    top: 0;
+    background-color: var(--white);
+    z-index: 100;
+    box-shadow: 0 4px 15px rgba(0, 86, 128, 0.08); /* Soft blue shadow */
+}
+.header-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.logo-img {
+    height: 70px;
+    object-fit: contain;
+}
+.nav-cta {
+    text-decoration: none;
+    background-color: var(--brand-red);
+    color: var(--white);
+    font-weight: 600;
+    font-size: 0.9rem;
+    border-radius: 30px; /* Pill shape */
+    padding: 0.6rem 1.5rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(216, 26, 33, 0.2);
+}
+.nav-cta:hover {
+    background-color: #b8141b;
+    transform: translateY(-2px);
+}
+
+/* Hero */
+.hero {
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(135deg, var(--gray-bg) 0%, var(--white) 100%);
+}
+@media(min-width: 768px) {
+    .hero {
+        flex-direction: row;
+        min-height: 70vh;
+    }
+}
+.hero-content {
+    flex: 1;
+    padding: 4rem 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+@media(min-width: 768px) {
+    .hero-content {
+        padding: 4rem 10%;
+    }
+}
+.hero-title {
+    font-weight: 700;
+    font-size: 3rem;
+    line-height: 1.2;
+    color: var(--brand-blue);
+    margin-bottom: 0.5rem;
+}
+.hero-slogan {
+    font-family: 'Dancing Script', cursive;
+    font-size: 2.2rem;
+    color: var(--brand-light-blue);
+    margin-bottom: 1.5rem;
+}
+.hero-subtitle {
+    font-weight: 400;
+    font-size: 1.1rem;
+    margin-bottom: 2.5rem;
+    color: #555;
+}
+.btn-primary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background-color: var(--brand-blue);
+    color: var(--white);
+    text-decoration: none;
+    padding: 1rem 2rem;
+    font-weight: 600;
+    border-radius: 50px;
+    width: fit-content;
+    transition: all 0.3s ease;
+    box-shadow: 0 6px 15px rgba(0, 86, 128, 0.25);
+}
+.btn-primary:hover {
+    background-color: var(--brand-light-blue);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 166, 223, 0.3);
+}
+
+.hero-image {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+}
+.placeholder-img {
+    background-color: var(--white);
+    width: 100%;
+    height: 100%;
+    min-height: 300px;
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--brand-light-blue);
+    font-weight: 600;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+
+/* Services */
+.services {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    padding: 4rem 2rem;
+    background-color: var(--white);
+    max-width: 1200px;
+    margin: 0 auto;
+}
+@media(min-width: 768px) {
+    .services {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+.service-box {
+    padding: 2.5rem 1.5rem;
+    background-color: var(--white);
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 10px 25px rgba(0, 86, 128, 0.08);
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+.service-box:hover {
+    transform: translateY(-5px);
+    border-color: var(--brand-light-blue);
+}
+.service-title {
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: var(--brand-blue);
+    margin-bottom: 1rem;
+}
+.service-desc {
+    font-weight: 400;
+    font-size: 0.95rem;
+    color: #666;
+}
+
+/* Trust */
+.trust {
+    padding: 5rem 2rem;
+    text-align: center;
+    background-color: var(--brand-blue);
+    color: var(--white);
+    border-radius: 40px;
+    margin: 2rem;
+}
+.trust-title {
+    font-weight: 700;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+.trust-subtitle {
+    font-weight: 300;
+    margin-bottom: 2.5rem;
+    opacity: 0.9;
+}
+.btn-secondary {
+    display: inline-block;
+    background-color: var(--white);
+    color: var(--brand-blue);
+    text-decoration: none;
+    padding: 1rem 2.5rem;
+    font-weight: 600;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+}
+.btn-secondary:hover {
+    background-color: var(--brand-light-blue);
+    color: var(--white);
+}
+
+/* Footer */
+.footer {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--gray-bg);
+    margin-top: 2rem;
+}
+.location-box {
+    padding: 4rem 2rem;
+    text-align: center;
+}
+.footer-title {
+    font-weight: 700;
+    color: var(--brand-blue);
+    margin-bottom: 1.5rem;
+}
+.footer-text {
+    font-weight: 400;
+    color: #555;
+    margin-bottom: 1rem;
+}
+.btn-outline {
+    display: inline-block;
+    margin-top: 1rem;
+    text-decoration: none;
+    color: var(--brand-red);
+    font-weight: 600;
+    border: 2px solid var(--brand-red);
+    padding: 0.6rem 1.5rem;
+    border-radius: 30px;
+    transition: all 0.3s ease;
+}
+.btn-outline:hover {
+    background-color: var(--brand-red);
+    color: var(--white);
+}
+.copy-box {
+    padding: 2rem;
+    text-align: center;
+    font-size: 0.85rem;
+    color: #888;
+    background-color: #E2E8F0;
+}
+"""
+
+with open("el-bethel/style.css", "w", encoding="utf-8") as f:
+    f.write(new_css)
+
+# We also need to add the hero slogan to the HTML right under the hero title
+with open("el-bethel/index.html", "r", encoding="utf-8") as f:
+    html = f.read()
+
+html = html.replace('<h1 class="hero-title">SUA VISÃO EM<br>NOSSA VISÃO</h1>', 
+                    '<h1 class="hero-title">ÓPTICA EL BETHEL</h1>\n            <div class="hero-slogan">Sua visão na nossa visão</div>')
+
+with open("el-bethel/index.html", "w", encoding="utf-8") as f:
+    f.write(html)
+
+print("Redesign applied.")
