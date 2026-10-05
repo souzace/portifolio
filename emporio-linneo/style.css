@@ -163,7 +163,7 @@ h1, h2, h3, .logo {
 }
 .arch-img {
     height: 350px;
-    border-radius: 200px 200px 0 0;
+    border-radius: 0;
     background-size: cover;
     background-position: center;
     margin-bottom: 1.5rem;
@@ -197,7 +197,7 @@ h1, h2, h3, .logo {
 .historia-image-arch {
     flex: 1;
     height: 500px;
-    border-radius: 250px 250px 0 0;
+    border-radius: 0;
     background-size: cover;
     background-position: center;
     border: 2px solid var(--primary);
