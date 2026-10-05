@@ -163,12 +163,12 @@ h1, h2, h3, .logo {
 }
 .arch-img {
     height: 350px;
-    border-radius: 0;
+    border-radius: 2px;
     background-size: cover;
     background-position: center;
     margin-bottom: 1.5rem;
-    border: 1px solid rgba(53, 28, 21, 0.1);
-    box-shadow: 0 10px 20px rgba(53, 28, 21, 0.05);
+    border: 12px solid #FDFBF7; /* Polaroid frame */
+    box-shadow: 0 15px 35px rgba(53, 28, 21, 0.15); /* Shadow for depth */
     transition: transform 0.3s;
 }
 .arch-card:hover .arch-img { transform: translateY(-10px); }
@@ -197,10 +197,11 @@ h1, h2, h3, .logo {
 .historia-image-arch {
     flex: 1;
     height: 500px;
-    border-radius: 0;
+    border-radius: 2px;
     background-size: cover;
     background-position: center;
-    border: 2px solid var(--primary);
+    border: 15px solid #FDFBF7; /* Polaroid frame */
+    box-shadow: 0 15px 35px rgba(53, 28, 21, 0.15); /* Shadow for depth */
 }
 .historia-content-centered {
     flex: 1;
