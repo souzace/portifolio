@@ -163,13 +163,13 @@ h1, h2, h3, .logo {
 }
 .arch-img {
     height: 350px;
-    border-radius: 2px;
+    border-radius: 16px;
     background-size: cover;
     background-position: center;
     margin-bottom: 1.5rem;
-    border: 12px solid #FDFBF7; /* Polaroid frame */
-    box-shadow: 0 15px 35px rgba(53, 28, 21, 0.15); /* Shadow for depth */
+    box-shadow: 0 8px 24px rgba(53, 28, 21, 0.08); /* Soft elegant shadow */
     transition: transform 0.3s;
+    border: 1px solid rgba(53, 28, 21, 0.05);
 }
 .arch-card:hover .arch-img { transform: translateY(-10px); }
 .arch-text h3 {
@@ -197,11 +197,11 @@ h1, h2, h3, .logo {
 .historia-image-arch {
     flex: 1;
     height: 500px;
-    border-radius: 2px;
+    border-radius: 16px;
     background-size: cover;
     background-position: center;
-    border: 15px solid #FDFBF7; /* Polaroid frame */
-    box-shadow: 0 15px 35px rgba(53, 28, 21, 0.15); /* Shadow for depth */
+    box-shadow: 0 8px 24px rgba(53, 28, 21, 0.08);
+    border: 1px solid rgba(53, 28, 21, 0.05);
 }
 .historia-content-centered {
     flex: 1;
