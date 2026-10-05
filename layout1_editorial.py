@@ -1,37 +1,91 @@
-:root {
-    --bg-light: #F9F3E9; /* Warm cream/kraft */
-    --bg-dark: #351C15; /* Deep coffee brown from logo */
-    --primary: #D4AF37; /* Gold from logo text */
-    --primary-hover: #B8962E;
-    --text-dark: #351C15;
-    --text-light: #FDFBF7;
-    --text-muted: #795548;
-}
+import re
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+with open("emporio-linneo/index.html", "r", encoding="utf-8") as f:
+    html = f.read()
 
-body {
-    background-color: var(--bg-light);
-    color: var(--text-dark);
-    font-family: 'Outfit', sans-serif;
-    line-height: 1.6;
-}
+# 1. New Header & Hero (Editorial Style)
+new_hero = """    <!-- Header Minimalista -->
+    <nav class="nav-minimal">
+        <div class="container nav-content">
+            <a href="#vitrine" class="nav-link-dark">Especialidades</a>
+            <a href="#historia" class="nav-link-dark">Nossa Arte</a>
+            <a href="#contato" class="btn-outline-dark">Visite-nos</a>
+        </div>
+    </nav>
 
-h1, h2, h3, .logo {
-    font-family: 'Lora', serif;
-}
+    <!-- Título Editorial (Logo) -->
+    <section class="editorial-title">
+        <img src="logomark.jpg" alt="Empório Linneo" class="logo-editorial">
+    </section>
 
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 2rem;
-}
+    <!-- Hero Editorial (Split) -->
+    <section class="hero-editorial">
+        <div class="container hero-split">
+            <div class="hero-text-side">
+                <h1>O aroma fresco da tradição,<br>todos os dias.</h1>
+                <p>Pães de fermentação natural, doces artesanais e aquele café perfeito para acompanhar o seu momento.</p>
+                <a href="#vitrine" class="btn-editorial">Explorar o Cardápio</a>
+            </div>
+            <div class="hero-img-side">
+                <img src="hero_bakery.jpg" alt="Pães e Café" class="hero-photo">
+            </div>
+        </div>
+    </section>"""
 
-/* Header Minimalista */
+html = re.sub(r'<!-- Header -->.*?</section>', new_hero, html, flags=re.DOTALL)
+
+# 2. New Vitrine (Zigzag/Asymmetrical)
+new_vitrine = """    <!-- Vitrine Editorial (ZigZag) -->
+    <section id="vitrine" class="vitrine-editorial">
+        <div class="container">
+            <h2 class="section-title-dark">Nossas Especialidades</h2>
+            
+            <div class="zigzag-row">
+                <div class="zz-img" style="background-image: url('product1.jpg');"></div>
+                <div class="zz-text">
+                    <h3>Pães Artesanais</h3>
+                    <p>Fermentação natural de 48h, crosta rústica e miolo macio. O verdadeiro sabor do trigo resgatado do tempo.</p>
+                </div>
+            </div>
+            
+            <div class="zigzag-row reverse">
+                <div class="zz-img" style="background-image: url('product2.jpg');"></div>
+                <div class="zz-text">
+                    <h3>Confeitaria Fina</h3>
+                    <p>Eclairs, tarteletes e bolos afetivos feitos com chocolate belga e frutas frescas rigorosamente selecionadas.</p>
+                </div>
+            </div>
+
+            <div class="zigzag-row">
+                <div class="zz-img" style="background-image: url('product3.jpg');"></div>
+                <div class="zz-text">
+                    <h3>Cafés Especiais</h3>
+                    <p>Grãos de torra clara e média, extraídos com perfeição para realçar as notas sensoriais em cada xícara.</p>
+                </div>
+            </div>
+
+            <div class="zigzag-row reverse">
+                <div class="zz-img" style="background-image: url('product4.jpg');"></div>
+                <div class="zz-text">
+                    <h3>Frios e Antepastos</h3>
+                    <p>Uma curadoria impecável de queijos curados, charcutaria artesanal e geleias para compartilhar.</p>
+                </div>
+            </div>
+        </div>
+    </section>"""
+
+html = re.sub(r'<!-- Vitrine de Produtos -->.*?</section>', new_vitrine, html, flags=re.DOTALL)
+
+with open("emporio-linneo/index.html", "w", encoding="utf-8") as f:
+    f.write(html)
+
+with open("emporio-linneo/style.css", "r", encoding="utf-8") as f:
+    css = f.read()
+
+# Completely replace the CSS from /* Header */ downwards to apply Editorial styles
+css_base = css[:css.find("/* Header */")]
+
+new_css = """/* Header Minimalista */
 .nav-minimal {
     padding: 2rem 0;
     background-color: var(--bg-light);
@@ -261,3 +315,9 @@ h1, h2, h3, .logo {
     .historia-wrapper { grid-template-columns: 1fr; text-align: center; }
     .historia-img { height: 300px; order: -1; }
 }
+"""
+
+with open("emporio-linneo/style.css", "w", encoding="utf-8") as f:
+    f.write(css_base + new_css)
+
+print("Editorial Layout applied.")

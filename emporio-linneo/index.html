@@ -10,69 +10,68 @@
 </head>
 <body>
 
-    <!-- Header -->
-    <header class="header">
-        <div class="container header-content">
-            <a href="#" class="logo-link">
-                <img src="logomark.jpg" alt="Empório Linneo" class="logo-img">
-            </a>
-            <div class="header-actions">
-                <a href="#cardapio" class="nav-link">Cardápio</a>
-                <a href="#encomendas" class="btn-primary">Fazer Pedido</a>
-            </div>
+        <!-- Header Minimalista -->
+    <nav class="nav-minimal">
+        <div class="container nav-content">
+            <a href="#vitrine" class="nav-link-dark">Especialidades</a>
+            <a href="#historia" class="nav-link-dark">Nossa Arte</a>
+            <a href="#contato" class="btn-outline-dark">Visite-nos</a>
         </div>
-    </header>
+    </nav>
 
-    
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="hero-overlay"></div>
-        <div class="container hero-content">
-            <h1>O aroma fresco da tradição, todos os dias.</h1>
-            <p>Pães de fermentação natural, doces artesanais e aquele café perfeito para acompanhar o seu momento.</p>
-            <div class="hero-buttons">
-                <a href="#vitrine" class="btn-primary">Conheça o Cardápio</a>
-                <a href="#historia" class="btn-outline">Nossa História</a>
+    <!-- Título Editorial (Logo) -->
+    <section class="editorial-title">
+        <img src="logomark.jpg" alt="Empório Linneo" class="logo-editorial">
+    </section>
+
+    <!-- Hero Editorial (Split) -->
+    <section class="hero-editorial">
+        <div class="container hero-split">
+            <div class="hero-text-side">
+                <h1>O aroma fresco da tradição,<br>todos os dias.</h1>
+                <p>Pães de fermentação natural, doces artesanais e aquele café perfeito para acompanhar o seu momento.</p>
+                <a href="#vitrine" class="btn-editorial">Explorar o Cardápio</a>
+            </div>
+            <div class="hero-img-side">
+                <img src="hero_bakery.jpg" alt="Pães e Café" class="hero-photo">
             </div>
         </div>
     </section>
 
-    <!-- Vitrine de Produtos -->
-    <section id="vitrine" class="vitrine">
+        <!-- Vitrine Editorial (ZigZag) -->
+    <section id="vitrine" class="vitrine-editorial">
         <div class="container">
-            <h2 class="section-title">Nossas Especialidades</h2>
-            <div class="product-grid">
-                <!-- Pães -->
-                <div class="product-card">
-                    <div class="card-img placeholder-paes"></div>
-                    <div class="card-content">
-                        <h3>Pães Artesanais</h3>
-                        <p>Fermentação natural de 48h, crosta rústica e miolo macio. O verdadeiro sabor do trigo.</p>
-                    </div>
+            <h2 class="section-title-dark">Nossas Especialidades</h2>
+            
+            <div class="zigzag-row">
+                <div class="zz-img" style="background-image: url('product1.jpg');"></div>
+                <div class="zz-text">
+                    <h3>Pães Artesanais</h3>
+                    <p>Fermentação natural de 48h, crosta rústica e miolo macio. O verdadeiro sabor do trigo resgatado do tempo.</p>
                 </div>
-                <!-- Confeitaria -->
-                <div class="product-card">
-                    <div class="card-img placeholder-doces"></div>
-                    <div class="card-content">
-                        <h3>Confeitaria Fina</h3>
-                        <p>Eclairs, tarteletes e bolos afetivos feitos com chocolate belga e frutas frescas da estação.</p>
-                    </div>
+            </div>
+            
+            <div class="zigzag-row reverse">
+                <div class="zz-img" style="background-image: url('product2.jpg');"></div>
+                <div class="zz-text">
+                    <h3>Confeitaria Fina</h3>
+                    <p>Eclairs, tarteletes e bolos afetivos feitos com chocolate belga e frutas frescas rigorosamente selecionadas.</p>
                 </div>
-                <!-- Café -->
-                <div class="product-card">
-                    <div class="card-img placeholder-cafe"></div>
-                    <div class="card-content">
-                        <h3>Cafés Especiais</h3>
-                        <p>Grãos selecionados e torrados na medida certa para acompanhar suas pausas diárias.</p>
-                    </div>
+            </div>
+
+            <div class="zigzag-row">
+                <div class="zz-img" style="background-image: url('product3.jpg');"></div>
+                <div class="zz-text">
+                    <h3>Cafés Especiais</h3>
+                    <p>Grãos de torra clara e média, extraídos com perfeição para realçar as notas sensoriais em cada xícara.</p>
                 </div>
-                <!-- Frios -->
-                <div class="product-card">
-                    <div class="card-img placeholder-frios"></div>
-                    <div class="card-content">
-                        <h3>Frios e Antepastos</h3>
-                        <p>Curadoria rigorosa de queijos curados, embutidos artesanais e geleias exclusivas.</p>
-                    </div>
+            </div>
+
+            <div class="zigzag-row reverse">
+                <div class="zz-img" style="background-image: url('product4.jpg');"></div>
+                <div class="zz-text">
+                    <h3>Frios e Antepastos</h3>
+                    <p>Uma curadoria impecável de queijos curados, charcutaria artesanal e geleias para compartilhar.</p>
                 </div>
             </div>
         </div>
