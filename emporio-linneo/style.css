@@ -35,8 +35,7 @@ h1, h2, h3, .logo {
 .header {
     background-color: var(--bg-dark);
     border-bottom: 1px solid rgba(212, 175, 55, 0.2);
-    position: sticky;
-    top: 0;
+    position: relative; /* Removed sticky so giant logo doesn't block screen on scroll */
     z-index: 100;
 }
 
@@ -182,8 +181,8 @@ h1, h2, h3, .logo {
 }
 
 .logo-img {
-    height: 70px;
-    width: 70px;
+    height: 140px;
+    width: 140px;
     border-radius: 50%;
     object-fit: cover;
     object-position: center;
@@ -354,5 +353,12 @@ h1, h2, h3, .logo {
     .historia-img {
         height: 250px;
         order: -1;
+    }
+}
+
+@media (max-width: 768px) {
+    .logo-img {
+        height: 120px;
+        width: 120px;
     }
 }
