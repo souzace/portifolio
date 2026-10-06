@@ -13,6 +13,17 @@
     <!-- Hybrid Header: Symmetrical (Prop 5) + Fixed/Immersive (Prop 4) -->
     <header class="hybrid-header">
         <div class="container classic-nav-container">
+            <button class="mobile-menu-toggle" aria-label="Abrir menu">
+                <svg viewBox="0 0 24 24" width="28" height="28" stroke="var(--primary)" stroke-width="2" fill="none"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
+            </button>
+            
+            <nav class="mobile-nav-overlay">
+                <button class="mobile-menu-close" aria-label="Fechar menu">&times;</button>
+                <a href="#cardapio" class="mobile-link">Cardápio</a>
+                <a href="#historia" class="mobile-link">Nossa Arte</a>
+                <a href="#contato" class="mobile-link">Contato</a>
+                <a href="https://wa.me/5585999362255" class="mobile-link highlight"><span class="hide-mobile">Fazer Pedido</span><span class="show-mobile">Pedir</span></a>
+            </nav>
             <nav class="nav-side left">
                 <a href="#cardapio">Cardápio</a>
                 <a href="#historia">Nossa Arte</a>
@@ -168,12 +179,25 @@
                     </a>
                 </div>
                 <a href="https://wa.me/5585999362255" target="_blank" class="btn-footer-wa">
-                    Fazer Pedido
+                    <span class="hide-mobile">Fazer Pedido</span><span class="show-mobile">Pedir</span>
                 </a>
             </div>
         </div>
     </div>
 
     
+
+    <script>
+        const toggleBtn = document.querySelector('.mobile-menu-toggle');
+        const closeBtn = document.querySelector('.mobile-menu-close');
+        const overlay = document.querySelector('.mobile-nav-overlay');
+        const links = document.querySelectorAll('.mobile-link');
+
+        if(toggleBtn && overlay) {
+            toggleBtn.addEventListener('click', () => overlay.classList.add('active'));
+            closeBtn.addEventListener('click', () => overlay.classList.remove('active'));
+            links.forEach(link => link.addEventListener('click', () => overlay.classList.remove('active')));
+        }
+    </script>
 </body>
 </html>

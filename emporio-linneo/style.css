@@ -412,3 +412,53 @@ h1, h2, h3, .logo {
     object-fit: cover;
     border: 2px solid var(--primary);
 }
+
+/* Hamburger & Mobile Menu Base */
+.mobile-menu-toggle { display: none; background: none; border: none; cursor: pointer; padding: 5px; z-index: 1001; position: absolute; left: 1rem; }
+.mobile-nav-overlay {
+    position: fixed; top: 0; left: -100%; width: 80%; max-width: 300px; height: 100vh;
+    background-color: var(--bg-dark); z-index: 2000;
+    display: flex; flex-direction: column; padding: 4rem 2rem;
+    transition: left 0.3s ease;
+    box-shadow: 2px 0 20px rgba(0,0,0,0.5);
+}
+.mobile-nav-overlay.active { left: 0; }
+.mobile-menu-close {
+    position: absolute; top: 1rem; right: 1rem; background: none; border: none;
+    color: var(--primary); font-size: 2.5rem; cursor: pointer;
+}
+.mobile-link {
+    color: var(--bg-light); text-decoration: none; font-size: 1.2rem;
+    padding: 1rem 0; border-bottom: 1px solid rgba(212, 175, 55, 0.1);
+    font-family: 'Outfit', sans-serif; text-transform: uppercase;
+}
+.mobile-link.highlight { color: var(--primary); font-weight: bold; border: none; margin-top: 1rem; }
+
+.show-mobile { display: none; }
+
+@media (max-width: 992px) {
+    .mobile-menu-toggle { display: block; }
+    .logo-hybrid { width: 90px; height: 90px; margin: 0 auto; }
+    .hybrid-header { justify-content: center; position: fixed; }
+    .hero-content-center h1 { font-size: 2.5rem; }
+    
+    /* Smart Bar Fixes */
+    .footer-fixed-flex {
+        flex-direction: row !important;
+        gap: 10px;
+        padding: 0 1rem !important;
+        text-align: left !important;
+    }
+    .footer-fixed-left { gap: 10px !important; }
+    .sticky-avatar { width: 40px !important; height: 40px !important; }
+    .ff-title { font-size: 1rem !important; }
+    .ff-sub { display: none; /* Hide subtitle to save vertical space */ }
+    
+    .btn-footer-wa { padding: 8px 16px !important; font-size: 0.8rem !important; }
+    .hide-mobile { display: none; }
+    .show-mobile { display: inline; }
+    
+    .footer-socials { display: none !important; /* hide insta on mobile sticky bar to save space */ }
+    
+    body { padding-bottom: 80px !important; } /* Restore body padding */
+}
