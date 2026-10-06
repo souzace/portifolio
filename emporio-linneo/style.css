@@ -13,6 +13,8 @@
     display: flex;
 }
 .marquee-track {
+    will-change: transform;
+    transform: translateZ(0);
     display: flex;
     gap: 2rem;
     animation: scroll-marquee 70s linear infinite;
@@ -22,8 +24,8 @@
     animation-play-state: paused;
 }
 @keyframes scroll-marquee {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(-50%); }
+    0% { transform: translateX(0) translateZ(0); }
+    100% { transform: translateX(-50%) translateZ(0); }
 }
 .testimonial-card {
     background-color: #fff;
