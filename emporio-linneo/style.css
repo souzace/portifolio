@@ -317,7 +317,7 @@ h1, h2, h3, .logo {
     left: 0;
     width: 100%;
     background-color: #1a0e0a;
-    border-top: none;
+    border-top: 2px solid var(--primary);
     padding: 12px 0;
     z-index: 1000;
     box-shadow: 0 -10px 30px rgba(0,0,0,0.5);
@@ -453,7 +453,7 @@ h1, h2, h3, .logo {
     .footer-fixed-left { gap: 10px !important; }
     .sticky-avatar { width: 40px !important; height: 40px !important; }
     .ff-title { font-size: 1rem !important; }
-    .ff-sub { display: none; /* Hide subtitle to save vertical space */ }
+    .ff-sub { display: block !important; font-size: 0.75rem !important; color: rgba(249, 243, 233, 0.6) !important; margin-top: 2px; font-weight: normal; }
     
     .btn-footer-wa { padding: 8px 16px !important; font-size: 0.8rem !important; }
     .hide-mobile { display: none; }
