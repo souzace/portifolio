@@ -285,9 +285,8 @@ h1, h2, h3, .logo {
 
 /* Regular Footer */
 .regular-footer {
-    padding-bottom: 6rem;
     background-color: #1a0e0a;
-    padding: 3rem 0 2rem;
+    padding: 3rem 0 100px !important;
     text-align: center;
     color: rgba(249, 243, 233, 0.6);
 }
@@ -472,11 +471,12 @@ h1, h2, h3, .logo {
     .historia-image-arch { min-height: 400px !important; display: block !important; }
     .ff-title { font-size: 1rem !important; margin-right: auto; }
 
-    .regular-footer {
-    padding-bottom: 6rem; padding: 2rem 0 5rem !important; } /* 5rem padding bottom ensures text is not covered by sticky footer, but removes extra spacing above it */
+    .regular-footer { padding: 2rem 0 100px !important; } /* 5rem padding bottom ensures text is not covered by sticky footer, but removes extra spacing above it */
     .regular-footer .copyright { margin-bottom: 0 !important; padding-bottom: 0 !important; }
     .orkes-credits { margin-bottom: 0 !important; }
 
     .footer-fixed-left { flex: 1; }
     .footer-fixed-right { display: flex !important; align-items: center; gap: 10px; }
 }
+
+.regular-footer { padding-bottom: 110px !important; }
