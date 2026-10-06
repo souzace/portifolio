@@ -1,3 +1,57 @@
+
+/* Testimonial Marquee */
+.testimonial-marquee-section {
+    background-color: var(--bg-light);
+    padding: 5rem 0;
+    overflow: hidden;
+    border-top: 1px solid rgba(53, 28, 21, 0.05);
+}
+.marquee-container {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+}
+.marquee-track {
+    display: flex;
+    gap: 2rem;
+    animation: scroll-marquee 20s linear infinite;
+    width: max-content;
+}
+.marquee-track:hover {
+    animation-play-state: paused;
+}
+@keyframes scroll-marquee {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+.testimonial-card {
+    background-color: #fff;
+    padding: 2.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(53, 28, 21, 0.03);
+    width: 400px;
+    border: 1px solid rgba(53, 28, 21, 0.05);
+}
+.testimonial-card p {
+    font-family: 'Lora', serif;
+    font-size: 1.15rem;
+    color: var(--bg-dark);
+    margin-bottom: 1.5rem;
+    font-style: italic;
+    line-height: 1.5;
+}
+.testimonial-card span {
+    font-family: 'Outfit', sans-serif;
+    color: var(--primary);
+    font-weight: 600;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+@media (max-width: 768px) {
+    .testimonial-card { width: 300px; padding: 1.5rem; }
+}
 :root {
     --bg-light: #F9F3E9; /* Warm cream/kraft */
     --bg-dark: #351C15; /* Deep coffee brown from logo */
@@ -230,21 +284,29 @@ h1, h2, h3, .logo {
 /* Regular Footer */
 .regular-footer {
     background-color: #1a0e0a;
-    padding: 6rem 0 4rem;
+    padding: 3rem 0 2rem;
     text-align: center;
     color: rgba(249, 243, 233, 0.6);
 }
 .regular-footer .footer-contact-info {
-    margin-bottom: 2rem;
-    line-height: 2;
-    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.8;
+    font-size: 0.95rem;
 }
 .regular-footer .copyright {
-    font-size: 0.8rem;
+    font-size: 0.75rem;
     text-transform: uppercase;
     letter-spacing: 2px;
     border-top: 1px solid rgba(212, 175, 55, 0.1);
-    padding-top: 2rem;
+    padding-top: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+.orkes-credits {
+    font-size: 0.75rem;
+    color: var(--primary);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
 /* Fixed Bottom Bar */
