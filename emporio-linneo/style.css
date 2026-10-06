@@ -15,7 +15,7 @@
 .marquee-track {
     display: flex;
     gap: 2rem;
-    animation: scroll-marquee 20s linear infinite;
+    animation: scroll-marquee 45s linear infinite;
     width: max-content;
 }
 .marquee-track:hover {
