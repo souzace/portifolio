@@ -5,7 +5,7 @@ import time
 version = str(int(time.time()))
 
 # List of all project folders
-projects = ['beloton', 'el-bethel', 'ideal', 'nilson-vieira', 'orkes', 'emporio-linneo']
+projects = ['beloton', 'el-bethel', 'ideal', 'nilson-vieira', 'orkes', 'emporio-linneo', 'alo-agua']
 
 for project in projects:
     html_path = os.path.join(project, 'index.html')
