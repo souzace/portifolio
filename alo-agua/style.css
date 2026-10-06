@@ -563,7 +563,21 @@ h1, h2, h3, h4, .brand-name {
     }
     .footer-brand { flex-direction: column; }
     
-    .st-sub { display: none; }
+    
+    .st-sub {
+        display: block !important;
+        font-size: 0.7rem !important;
+        color: #94A3B8 !important;
+        line-height: 1.1;
+    }
+    .st-title {
+        font-size: 0.85rem !important;
+    }
+    .sticky-avatar {
+        width: 40px !important;
+        height: 40px !important;
+    }
+
     .sticky-avatar { width: 38px; height: 38px; }
     .btn-sticky-wa { padding: 8px 14px; font-size: 0.85rem; }
 }
