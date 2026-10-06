@@ -402,7 +402,7 @@ h1, h2, h3, .logo {
     
     .hero-content-center h1 { font-size: 3rem; }
     .historia-flex { flex-direction: column; }
-    .historia-image-arch { width: 100%; height: 400px; order: -1; }
+    .historia-image-arch { width: 100%; min-height: 400px; order: -1; display: block; }
 }
 
 .sticky-avatar {
@@ -438,8 +438,8 @@ h1, h2, h3, .logo {
 
 @media (max-width: 992px) {
     .mobile-menu-toggle { display: block; }
-    .logo-hybrid { width: 90px; height: 90px; margin: 0 auto; }
-    .hybrid-header { justify-content: center; position: fixed; }
+    .logo-hybrid { width: 110px; height: 110px; margin: 0 auto; }
+    .classic-nav-container { justify-content: center; }
     .hero-content-center h1 { font-size: 2.5rem; }
     
     /* Smart Bar Fixes */
@@ -458,7 +458,15 @@ h1, h2, h3, .logo {
     .hide-mobile { display: none; }
     .show-mobile { display: inline; }
     
-    .footer-socials { display: none !important; /* hide insta on mobile sticky bar to save space */ }
+    .footer-socials { display: flex !important; }
     
     body { padding-bottom: 80px !important; } /* Restore body padding */
+}
+
+@media (max-width: 992px) {
+    .classic-nav-container { justify-content: center !important; }
+    .historia-image-arch { min-height: 400px !important; display: block !important; }
+    .ff-title { font-size: 1rem !important; margin-right: auto; }
+    .footer-fixed-left { flex: 1; }
+    .footer-fixed-right { display: flex !important; align-items: center; gap: 10px; }
 }
