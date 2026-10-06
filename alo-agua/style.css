@@ -595,3 +595,24 @@ h1, h2, h3, h4, .brand-name {
     margin-top: 3px;
     display: block;
 }
+
+/* Centralização do Footer Tradicional */
+.footer-container-center {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.6rem;
+}
+.footer-tagline {
+    font-size: 1rem;
+    color: #fff;
+    font-weight: 600;
+}
+.footer-address, .footer-hours {
+    font-size: 0.9rem;
+    color: #94A3B8;
+}
+.sticky-avatar {
+    object-fit: cover !important;
+}
