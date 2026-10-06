@@ -15,7 +15,7 @@
 .marquee-track {
     display: flex;
     gap: 2rem;
-    animation: scroll-marquee 45s linear infinite;
+    animation: scroll-marquee 70s linear infinite;
     width: max-content;
 }
 .marquee-track:hover {
@@ -128,8 +128,8 @@ h1, h2, h3, .logo {
     padding: 0 4rem;
 }
 .logo-hybrid {
-    width: 80px; /* Smaller to fit the fixed header elegantly */
-    height: 80px;
+    width: 120px; 
+    height: 120px;
     border-radius: 50%;
     border: 2px solid var(--primary);
     transition: transform 0.3s;
