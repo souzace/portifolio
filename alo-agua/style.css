@@ -574,3 +574,24 @@ h1, h2, h3, h4, .brand-name {
     object-fit: contain !important;
     border-radius: 8px;
 }
+
+.modern-mascot-logo {
+    width: auto !important;
+    height: 70px !important;
+    object-fit: contain !important;
+    border-radius: 6px;
+}
+.brand-name {
+    font-size: 1.6rem !important;
+    font-weight: 800 !important;
+    color: var(--dark-navy) !important;
+    line-height: 1 !important;
+}
+.brand-sub {
+    font-size: 0.8rem !important;
+    font-weight: 700 !important;
+    color: var(--primary-blue) !important;
+    letter-spacing: 1px !important;
+    margin-top: 3px;
+    display: block;
+}
