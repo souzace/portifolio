@@ -567,3 +567,10 @@ h1, h2, h3, h4, .brand-name {
     .sticky-avatar { width: 38px; height: 38px; }
     .btn-sticky-wa { padding: 8px 14px; font-size: 0.85rem; }
 }
+
+.concept-logo {
+    width: auto !important;
+    height: 60px !important;
+    object-fit: contain !important;
+    border-radius: 8px;
+}
