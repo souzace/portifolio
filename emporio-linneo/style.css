@@ -311,12 +311,13 @@ h1, h2, h3, .logo {
 
 /* Fixed Bottom Bar */
 .sticky-footer-bar {
+    padding-bottom: calc(12px + env(safe-area-inset-bottom));
     position: fixed;
     bottom: 0;
     left: 0;
     width: 100%;
     background-color: #1a0e0a;
-    border-top: 2px solid var(--primary);
+    border-top: none;
     padding: 12px 0;
     z-index: 1000;
     box-shadow: 0 -10px 30px rgba(0,0,0,0.5);
