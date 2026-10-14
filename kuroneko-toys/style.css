@@ -1047,3 +1047,38 @@ h1, h2, h3, .brand-main, .price-val {
         height: 16px;
     }
 }
+
+/* Selo Retrô STORE no canto superior direito do Header */
+.header-right-store {
+    display: flex;
+    align-items: center;
+}
+
+.store-comic-badge {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.15rem;
+    font-weight: 900;
+    letter-spacing: 3px;
+    color: #12141F;
+    background-color: #F8FAFC;
+    border: 3px solid #1E293B;
+    border-radius: 8px;
+    padding: 0.35rem 1.4rem;
+    box-shadow: 3px 3px 0px var(--kuro-orange);
+    text-transform: uppercase;
+    transition: transform 0.2s, box-shadow 0.2s;
+    user-select: none;
+}
+
+.store-comic-badge:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 5px 5px 0px var(--kuro-orange);
+}
+
+@media (max-width: 768px) {
+    .store-comic-badge {
+        font-size: 0.95rem;
+        padding: 0.25rem 0.9rem;
+        letter-spacing: 2px;
+    }
+}
