@@ -978,3 +978,72 @@ h1, h2, h3, .brand-main, .price-val {
     border-top: 2px solid var(--toys-ocean-blue) !important;
     box-shadow: 0 -10px 30px rgba(2, 132, 199, 0.3) !important;
 }
+
+/* Ícones das Redes Sociais na Barra Fixa Flutuante (Padrão Orkes) */
+.sticky-right {
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+}
+
+.sticky-socials {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+.sticky-social-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid var(--border-color);
+    color: var(--text-muted);
+    text-decoration: none;
+    transition: transform 0.2s, color 0.2s, border-color 0.2s, background 0.2s, box-shadow 0.2s;
+}
+
+.sticky-social-link:hover {
+    transform: translateY(-3px) scale(1.08);
+}
+
+.ig-link:hover {
+    color: #fff;
+    background: linear-gradient(135deg, #E1306C 0%, #C13584 100%);
+    border-color: #E1306C;
+    box-shadow: 0 0 15px rgba(225, 48, 108, 0.4);
+}
+
+.fb-link:hover {
+    color: #fff;
+    background: #1877F2;
+    border-color: #1877F2;
+    box-shadow: 0 0 15px rgba(24, 119, 242, 0.4);
+}
+
+.in-link:hover {
+    color: #fff;
+    background: #0A66C2;
+    border-color: #0A66C2;
+    box-shadow: 0 0 15px rgba(10, 102, 194, 0.4);
+}
+
+@media (max-width: 768px) {
+    .sticky-right {
+        gap: 0.6rem;
+    }
+    .sticky-socials {
+        gap: 0.4rem;
+    }
+    .sticky-social-link {
+        width: 32px;
+        height: 32px;
+    }
+    .sticky-social-link svg {
+        width: 16px;
+        height: 16px;
+    }
+}
