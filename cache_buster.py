@@ -19,6 +19,10 @@ for project in projects:
         
         # Replace with new timestamp
         new_content = re.sub(pattern, f'href="\\1?v={version}\\3"', content)
+        # Quebrar cache de imagens principais
+        img_pattern = r'src="([^"]+\.(jpg|png|webp))(\?v=[0-9.]+)?([^"]*)"'
+        content = re.sub(img_pattern, f'src="\\1?v={version}\\4"', content)
+
         
         if content != new_content:
             with open(html_path, 'w', encoding='utf-8') as f:
