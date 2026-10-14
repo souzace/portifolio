@@ -843,7 +843,7 @@ h1, h2, h3, .brand-main, .price-val {
     border: 2px solid var(--cyber-blue);
     box-shadow: 0 0 40px rgba(14, 165, 233, 0.3), 0 20px 40px rgba(0, 0, 0, 0.6);
     background: #000;
-    max-width: 420px;
+    max-width: 380px;
     transition: transform 0.3s, box-shadow 0.3s;
 }
 
