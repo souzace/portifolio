@@ -940,14 +940,37 @@ h1, h2, h3, .brand-main, .price-val {
     background: #0D0F1A !important;
 }
 
-.sticky-cat-img {
-    width: 250% !important;
-    height: 250% !important;
+.brand-avatar-circle {
+    width: 50px !important;
+    height: 50px !important;
+    border-radius: 50% !important;
     object-fit: cover !important;
-    position: absolute !important;
-    top: -125% !important;
-    left: -75% !important;
-    border-radius: 0 !important;
+    border: 2px solid var(--kuro-orange) !important;
+    box-shadow: 0 0 15px var(--kuro-orange-glow) !important;
+    flex-shrink: 0;
+}
+
+.sticky-avatar-wrap {
+    width: 56px !important;
+    height: 56px !important;
+    border-radius: 50% !important;
+    overflow: hidden !important;
+    border: 2px solid var(--kuro-orange) !important;
+    box-shadow: 0 0 15px var(--kuro-orange-glow) !important;
+    background: #11131F !important;
+    flex-shrink: 0;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+
+.sticky-cat-img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    object-position: center !important;
+    border-radius: 50% !important;
+    display: block !important;
 }
 
 /* Linha da barra fixa em Azul Oceano TOYS */
