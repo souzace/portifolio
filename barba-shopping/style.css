@@ -881,13 +881,39 @@ ul {
   border-top: 1px solid var(--color-border);
 }
 
-.testimonials-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+.testimonials-carousel-wrapper {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  padding: 10px 0;
+  -webkit-mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+  mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+}
+
+.testimonials-track {
+  display: flex;
   gap: 24px;
+  width: max-content;
+  animation: scrollTestimonials 38s linear infinite;
+}
+
+.testimonials-track:hover {
+  animation-play-state: paused;
+}
+
+@keyframes scrollTestimonials {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-50% - 12px));
+  }
 }
 
 .test-card {
+  width: 360px;
+  max-width: 85vw;
+  flex-shrink: 0;
   background-color: var(--color-bg-card);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-md);
@@ -895,6 +921,13 @@ ul {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  transition: transform 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease;
+}
+
+.test-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--color-border-gold);
+  box-shadow: var(--shadow-md);
 }
 
 .stars {
@@ -1337,9 +1370,13 @@ ul {
     gap: 4px;
   }
 
-  .testimonials-grid {
-    grid-template-columns: 1fr;
-    gap: 18px;
+  .test-card {
+    width: 300px;
+    padding: 24px 20px;
+  }
+
+  .testimonials-track {
+    animation-duration: 32s;
   }
 
   .cta-banner {
