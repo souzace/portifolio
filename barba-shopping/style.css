@@ -894,7 +894,7 @@ ul {
   display: flex;
   gap: 24px;
   width: max-content;
-  animation: scrollTestimonials 38s linear infinite;
+  animation: scrollTestimonials 68s linear infinite;
 }
 
 .testimonials-track:hover {
@@ -1376,7 +1376,7 @@ ul {
   }
 
   .testimonials-track {
-    animation-duration: 32s;
+    animation-duration: 60s;
   }
 
   .cta-banner {
