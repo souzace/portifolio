@@ -1184,9 +1184,42 @@ ul {
 }
 
 @media (max-width: 768px) {
+  .top-announcement {
+    padding: 6px 0;
+    font-size: 0.78rem;
+  }
+
+  .top-bar-inner {
+    justify-content: center;
+    gap: 10px;
+  }
+
   .top-info-left .separator,
-  .top-info-left .location-quick {
+  .top-info-left .location-quick,
+  .top-info-right {
     display: none;
+  }
+
+  .header-container {
+    padding: 2px 0;
+  }
+
+  .brand-avatar {
+    width: 42px;
+    height: 42px;
+  }
+
+  .brand-title {
+    font-size: 1.02rem;
+  }
+
+  .brand-subtitle {
+    font-size: 0.65rem;
+  }
+
+  .btn-header {
+    padding: 8px 14px;
+    font-size: 0.8rem;
   }
 
   .main-nav {
@@ -1195,32 +1228,138 @@ ul {
 
   .hero-section {
     min-height: auto;
-    padding: 60px 0 50px;
+    padding: 50px 0 45px;
   }
 
   .hero-title {
-    font-size: 2.1rem;
+    font-size: 2rem;
+    line-height: 1.2;
   }
 
   .hero-description {
-    font-size: 1rem;
+    font-size: 0.98rem;
+    margin-bottom: 26px;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 36px;
+  }
+
+  .hero-buttons .btn {
+    width: 100%;
   }
 
   .hero-stats {
     grid-template-columns: 1fr;
-    gap: 14px;
+    gap: 12px;
+  }
+
+  .stat-card {
+    padding: 10px 14px;
+    background: rgba(21, 20, 19, 0.6);
+    border-radius: var(--radius-sm);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+  }
+
+  .experience-section,
+  .services-section,
+  .combos-section,
+  .location-section,
+  .testimonials-section {
+    padding: 60px 0;
+  }
+
+  .section-header {
+    margin-bottom: 35px;
   }
 
   .section-title {
-    font-size: 1.8rem;
+    font-size: 1.75rem;
+  }
+
+  .service-category {
+    padding: 26px 20px;
+  }
+
+  .cat-title {
+    font-size: 1.25rem;
+    margin-bottom: 20px;
+  }
+
+  .service-item-main {
+    flex-wrap: wrap;
+    gap: 4px;
+  }
+
+  .service-dots {
+    display: none;
+  }
+
+  .service-name {
+    font-size: 1rem;
+    width: 100%;
+  }
+
+  .service-price {
+    font-size: 1.05rem;
+  }
+
+  .combos-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .combo-card {
+    padding: 32px 22px;
+  }
+
+  .combo-card.featured {
+    order: -1; /* Destaque primeiro no mobile */
+  }
+
+  .location-grid {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+
+  .map-frame-wrapper {
+    height: 320px;
+  }
+
+  .hours-card {
+    padding: 18px 16px;
+  }
+
+  .hours-list li {
+    flex-direction: column;
+    gap: 4px;
   }
 
   .testimonials-grid {
     grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .cta-banner {
+    padding: 60px 0;
   }
 
   .cta-banner-title {
-    font-size: 1.8rem;
+    font-size: 1.75rem;
+  }
+
+  .cta-banner .btn {
+    width: 100%;
+  }
+
+  .main-footer {
+    padding: 50px 0 115px; /* Safe space extra para não sobrepor o footer */
+  }
+
+  .sticky-footer-bar {
+    padding: 8px 0;
   }
 
   .sticky-bar-left .sticky-sub {
@@ -1229,10 +1368,41 @@ ul {
   
   .sticky-title {
     font-size: 0.85rem;
+    max-width: 150px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .sticky-avatar {
+    width: 36px;
+    height: 36px;
+  }
+
+  .sticky-social-btn {
+    display: none; /* Simplifica o sticky bar no mobile estreito */
   }
 
   .btn-sticky {
-    padding: 8px 14px;
-    font-size: 0.82rem;
+    padding: 9px 16px;
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 380px) {
+  .hero-title {
+    font-size: 1.75rem;
+  }
+
+  .brand-title {
+    font-size: 0.92rem;
+  }
+
+  .btn-header {
+    display: none; /* Deixa foco no logo no topo e no botão do sticky bar */
+  }
+
+  .sticky-title {
+    max-width: 120px;
   }
 }
