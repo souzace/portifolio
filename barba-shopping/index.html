@@ -17,7 +17,7 @@
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   
-  <link rel="stylesheet" href="style.css?v=1792104841">
+  <link rel="stylesheet" href="style.css?v=1792105410">
 </head>
 <body>
 
@@ -54,7 +54,6 @@
           <li><a href="#servicos">Serviços</a></li>
           <li><a href="#combos">Combos & Clube</a></li>
           <li><a href="#horarios">Horários</a></li>
-          <li><a href="#localizacao">Localização</a></li>
         </ul>
       </nav>
     </div>
@@ -338,81 +337,57 @@
       </div>
     </section>
 
-    <!-- Horários e Localização -->
-    <section class="location-section" id="localizacao">
+    <!-- Horários de Funcionamento (Working Hours) -->
+    <section class="hours-section" id="horarios">
       <div class="container">
-        <div class="location-grid">
-          <div class="location-info-col">
-            <span class="section-tag">COMO CHEGAR & HORÁRIOS</span>
-            <h2 class="section-title">Facilidade e Conveniência no Henrique Jorge</h2>
+        <div class="hours-box-wrapper">
+          <div class="section-header text-center">
+            <span class="section-tag">ATENDIMENTO & AGENDA</span>
+            <h2 class="section-title">Horários de Funcionamento</h2>
             <div class="gold-divider"></div>
-            
-            <p class="location-text">
-              Estamos na principal avenida comercial do bairro, próximo ao Jóquei Clube e Pici, com estacionamento facilitado na porta para sua total comodidade.
+            <p class="section-subtitle">
+              Atendimento pontual com agendamento prioritário ou por ordem de chegada.
             </p>
+          </div>
 
-            <div class="hours-card" id="horarios">
-              <h3 class="hours-title"><i class="fa-solid fa-clock text-gold"></i> Horários de Funcionamento</h3>
-              <ul class="hours-list">
-                <li>
-                  <span class="day">Segunda a Sexta-feira:</span>
-                  <span class="time">08:30 às 12:00 e 14:00 às 19:00</span>
-                </li>
-                <li>
-                  <span class="day">Sábado:</span>
-                  <span class="time">08:00 às 18:00 (Direto)</span>
-                </li>
-                <li>
-                  <span class="day">Domingo:</span>
-                  <span class="time text-muted">Fechado para descanso</span>
-                </li>
-              </ul>
+          <div class="hours-cards-grid">
+            <div class="hours-block">
+              <div class="hours-icon-badge">
+                <i class="fa-solid fa-briefcase text-gold"></i>
+              </div>
+              <h3 class="hours-block-title">Segunda a Sexta</h3>
+              <p class="hours-block-time">08:30 às 12:00</p>
+              <span class="hours-block-interval">Intervalo de almoço</span>
+              <p class="hours-block-time">14:00 às 19:00</p>
+              <span class="hours-tag-status"><i class="fa-solid fa-circle-check"></i> Turno manhã e tarde</span>
             </div>
 
-            <div class="address-details">
-              <div class="addr-item">
-                <i class="fa-solid fa-location-dot addr-icon"></i>
-                <div>
-                  <strong>Endereço:</strong>
-                  <p>Av. Lineu Machado, 848 - Henrique Jorge, Fortaleza - CE, 60510-104</p>
-                </div>
+            <div class="hours-block featured-hours">
+              <div class="hours-highlight-pill">MAIS CONCORRIDO</div>
+              <div class="hours-icon-badge">
+                <i class="fa-solid fa-calendar-day text-gold"></i>
               </div>
-              <div class="addr-item">
-                <i class="fa-solid fa-phone addr-icon"></i>
-                <div>
-                  <strong>Telefone / WhatsApp:</strong>
-                  <p>(85) 99830-5733 | (85) 3235-7834</p>
-                </div>
-              </div>
-              <div class="addr-item">
-                <i class="fa-brands fa-instagram addr-icon"></i>
-                <div>
-                  <strong>Instagram Oficial:</strong>
-                  <p><a href="https://www.instagram.com/barbashopping/" target="_blank" rel="noopener noreferrer" class="insta-link">@barbashopping</a></p>
-                </div>
-              </div>
+              <h3 class="hours-block-title">Sábado</h3>
+              <p class="hours-block-time highlighted">08:00 às 18:00</p>
+              <span class="hours-block-interval">Atendimento direto sem intervalo</span>
+              <span class="hours-tag-status"><i class="fa-solid fa-bolt"></i> Recomenda-se agendar antes</span>
             </div>
 
-            <div class="location-actions">
-              <a href="https://maps.google.com/?q=Av.+Lineu+Machado,+848+-+Henrique+Jorge,+Fortaleza+-+CE" target="_blank" rel="noopener noreferrer" class="btn btn-gold">
-                <i class="fa-solid fa-diamond-turn-right"></i> Abrir no Google Maps / Waze
-              </a>
+            <div class="hours-block">
+              <div class="hours-icon-badge">
+                <i class="fa-solid fa-mug-hot text-gold"></i>
+              </div>
+              <h3 class="hours-block-title">Domingo</h3>
+              <p class="hours-block-time text-muted">Fechado</p>
+              <span class="hours-block-interval">Descanso da equipe e manutenção</span>
+              <span class="hours-tag-status status-closed"><i class="fa-solid fa-ban"></i> Sem expediente</span>
             </div>
           </div>
 
-          <div class="location-map-col">
-            <div class="map-frame-wrapper">
-              <iframe 
-                title="Mapa de Localização Barba Shopping"
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3981.3323067300315!2d-38.58327932402127!3d-3.7607759432654316!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7c74c10a3013897%3A0xe543fa0271764eb8!2sAv.%20Lineu%20Machado%2C%20848%20-%20Henrique%20Jorge%2C%20Fortaleza%20-%20CE%2C%2060510-104!5e0!3m2!1spt-BR!2sbr!4v1714500000000!5m2!1spt-BR!2sbr" 
-                width="100%" 
-                height="450" 
-                style="border:0;" 
-                allowfullscreen="" 
-                loading="lazy" 
-                referrerpolicy="no-referrer-when-downgrade">
-              </iframe>
-            </div>
+          <div class="hours-footer-note text-center">
+            <p>
+              <i class="fa-solid fa-location-dot text-gold"></i> Av. Lineu Machado, 848 - Henrique Jorge, Fortaleza &bull; <i class="fa-solid fa-phone text-gold"></i> (85) 3235-7834
+            </p>
           </div>
         </div>
       </div>
@@ -608,7 +583,6 @@
           <li><a href="#servicos">Tabela de Serviços</a></li>
           <li><a href="#combos">Combos & Assinatura</a></li>
           <li><a href="#horarios">Horários de Atendimento</a></li>
-          <li><a href="#localizacao">Onde Estamos</a></li>
         </ul>
       </div>
 

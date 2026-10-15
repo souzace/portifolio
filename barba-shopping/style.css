@@ -767,125 +767,125 @@ ul {
 }
 
 /* ==========================================================================
-   Location & Hours Section
+   Working Hours Section (Horários de Funcionamento)
    ========================================================================== */
-.location-section {
+.hours-section {
   padding: 90px 0;
   background-color: #100f0d;
   border-top: 1px solid var(--color-border);
 }
 
-.location-grid {
+.hours-box-wrapper {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.hours-cards-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 50px;
-  align-items: center;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-bottom: 35px;
 }
 
-.location-text {
-  font-size: 1.05rem;
-  color: var(--color-text-secondary);
-  margin-bottom: 28px;
-}
-
-.hours-card {
+.hours-block {
   background-color: var(--color-bg-card);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-md);
-  padding: 24px;
-  margin-bottom: 28px;
+  padding: 36px 24px;
+  text-align: center;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: var(--transition);
 }
 
-.hours-title {
-  font-family: var(--font-display);
-  font-size: 1.15rem;
-  color: #ffffff;
-  margin-bottom: 16px;
+.hours-block:hover {
+  transform: translateY(-4px);
+  border-color: var(--color-border-gold);
+  box-shadow: var(--shadow-md);
+}
+
+.hours-block.featured-hours {
+  background: linear-gradient(180deg, #1e1913 0%, #151413 100%);
+  border: 2px solid var(--color-gold);
+  box-shadow: var(--shadow-gold);
+}
+
+.hours-highlight-pill {
+  position: absolute;
+  top: -12px;
+  background: var(--color-gold-gradient);
+  color: #12100e;
+  font-family: var(--font-accent);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  padding: 3px 12px;
+  border-radius: var(--radius-full);
+}
+
+.hours-icon-badge {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: rgba(203, 163, 88, 0.12);
   display: flex;
   align-items: center;
-  gap: 10px;
+  justify-content: center;
+  font-size: 1.3rem;
+  margin-bottom: 18px;
 }
 
-.hours-list {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-
-.hours-list li {
-  display: flex;
-  justify-content: space-between;
-  font-size: 0.92rem;
-  border-bottom: 1px dashed rgba(255, 255, 255, 0.08);
-  padding-bottom: 8px;
-}
-
-.hours-list li:last-child {
-  border-bottom: none;
-  padding-bottom: 0;
-}
-
-.hours-list .day {
+.hours-block-title {
+  font-family: var(--font-display);
+  font-size: 1.3rem;
   color: #ffffff;
-  font-weight: 500;
+  margin-bottom: 12px;
 }
 
-.hours-list .time {
+.hours-block-time {
+  font-family: var(--font-accent);
+  font-size: 1.25rem;
+  font-weight: 700;
   color: var(--color-gold-bright);
-  font-weight: 600;
+  line-height: 1.3;
 }
 
-.address-details {
-  display: flex;
-  flex-direction: column;
-  gap: 18px;
-  margin-bottom: 30px;
-}
-
-.addr-item {
-  display: flex;
-  align-items: flex-start;
-  gap: 14px;
-}
-
-.addr-icon {
-  font-size: 1.2rem;
-  color: var(--color-gold);
-  margin-top: 4px;
-}
-
-.addr-item strong {
-  display: block;
-  font-size: 0.9rem;
+.hours-block-time.highlighted {
+  font-size: 1.45rem;
   color: #ffffff;
-  margin-bottom: 2px;
 }
 
-.addr-item p {
-  font-size: 0.9rem;
-  color: var(--color-text-secondary);
+.hours-block-interval {
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+  margin: 6px 0;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
 
-.insta-link {
-  color: var(--color-gold);
+.hours-tag-status {
+  margin-top: 18px;
+  font-size: 0.78rem;
+  color: #55e691;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
   font-weight: 600;
 }
 
-.insta-link:hover {
-  text-decoration: underline;
+.hours-tag-status.status-closed {
+  color: var(--color-text-muted);
 }
 
-.map-frame-wrapper {
-  border-radius: var(--radius-lg);
-  overflow: hidden;
-  border: 1px solid var(--color-border);
-  box-shadow: var(--shadow-md);
-  height: 450px;
-}
-
-.map-frame-wrapper iframe {
-  width: 100%;
-  height: 100%;
+.hours-footer-note {
+  background-color: rgba(21, 20, 19, 0.7);
+  border: 1px dashed var(--color-border-gold);
+  border-radius: var(--radius-md);
+  padding: 16px 20px;
+  color: var(--color-text-secondary);
+  font-size: 0.95rem;
 }
 
 /* ==========================================================================
@@ -1368,22 +1368,13 @@ ul {
     order: -1; /* Destaque primeiro no mobile */
   }
 
-  .location-grid {
+  .hours-cards-grid {
     grid-template-columns: 1fr;
-    gap: 36px;
+    gap: 20px;
   }
 
-  .map-frame-wrapper {
-    height: 320px;
-  }
-
-  .hours-card {
-    padding: 18px 16px;
-  }
-
-  .hours-list li {
-    flex-direction: column;
-    gap: 4px;
+  .hours-block {
+    padding: 28px 20px;
   }
 
   .test-card {
