@@ -1463,7 +1463,28 @@ ul {
   }
 
   .team-img-wrap {
-    height: 220px;
+    height: 250px;
+  }
+
+  .team-card-content {
+    padding: 22px 18px;
+  }
+
+  .team-card-title {
+    font-size: 1.18rem;
+  }
+
+  .team-meta {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .team-cta-box {
+    padding: 20px 16px;
+  }
+
+  .team-cta-box .btn {
+    width: 100%;
   }
 
   .section-header {
