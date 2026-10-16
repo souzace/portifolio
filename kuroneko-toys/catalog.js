@@ -8,9 +8,9 @@
  */
 
 const CATALOG_CONFIG = {
-    // Alterne para true quando o cliente fornecer a URL do WooCommerce/API na Hostinger
-    USE_EXTERNAL_API: false,
-    API_ENDPOINT: 'https://kuronekotoys.com.br/wp-json/wc/v3/products',
+    // Modo API ativo: Consumindo o mock server local do WooCommerce na porta 8086
+    USE_EXTERNAL_API: true,
+    API_ENDPOINT: 'http://localhost:8086/wp-json/wc/v3/products',
     WHATSAPP_NUMBER: '558592828087',
 };
 
