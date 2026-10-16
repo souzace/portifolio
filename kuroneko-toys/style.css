@@ -358,6 +358,160 @@ h1, h2, h3, .brand-main, .price-val {
     margin: 0 auto;
 }
 
+/* Dynamic Catalog Controls */
+.catalog-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1.5rem;
+    margin-bottom: 2.5rem;
+    flex-wrap: wrap;
+}
+
+.catalog-filters {
+    display: flex;
+    gap: 0.8rem;
+    flex-wrap: wrap;
+}
+
+.catalog-filter-btn {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--border-color);
+    color: var(--text-muted);
+    padding: 0.6rem 1.2rem;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 0.85rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.catalog-filter-btn:hover {
+    color: #fff;
+    border-color: var(--kuro-orange);
+    background: rgba(249, 115, 22, 0.1);
+}
+
+.catalog-filter-btn.active {
+    background: linear-gradient(135deg, var(--kuro-orange) 0%, #EA580C 100%);
+    color: #fff;
+    border-color: var(--kuro-orange);
+    box-shadow: 0 0 15px var(--kuro-orange-glow);
+}
+
+.catalog-search-wrap {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 50px;
+    padding: 0.6rem 1.2rem;
+    min-width: 280px;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.catalog-search-wrap:focus-within {
+    border-color: var(--cyber-blue);
+    box-shadow: 0 0 15px rgba(14, 165, 233, 0.3);
+}
+
+.catalog-search-wrap svg {
+    color: var(--text-muted);
+}
+
+.catalog-search-wrap input {
+    background: transparent;
+    border: none;
+    color: #fff;
+    font-size: 0.85rem;
+    outline: none;
+    width: 100%;
+}
+
+.catalog-search-wrap input::placeholder {
+    color: var(--text-muted);
+}
+
+/* Status Pills & Card Details */
+.status-pill {
+    font-size: 0.72rem;
+    font-weight: 800;
+    padding: 0.25rem 0.65rem;
+    border-radius: 50px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.status-available {
+    background: rgba(34, 197, 94, 0.15);
+    color: #4ade80;
+    border: 1px solid rgba(34, 197, 94, 0.3);
+}
+
+.status-low_stock {
+    background: rgba(234, 88, 12, 0.15);
+    color: #fb923c;
+    border: 1px solid rgba(234, 88, 12, 0.4);
+}
+
+.status-preorder {
+    background: rgba(14, 165, 233, 0.15);
+    color: #38bdf8;
+    border: 1px solid rgba(14, 165, 233, 0.4);
+}
+
+.card-stock-alert {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: #DC2626;
+    color: #fff;
+    font-size: 0.68rem;
+    font-weight: 800;
+    padding: 0.2rem 0.6rem;
+    border-radius: 50px;
+    text-transform: uppercase;
+    animation: pulseAlert 2s infinite;
+}
+
+@keyframes pulseAlert {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.85; transform: scale(0.97); }
+}
+
+.card-real-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.catalog-empty-state {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 4rem 2rem;
+    background: var(--bg-card);
+    border: 1px dashed var(--border-color);
+    border-radius: 20px;
+}
+
+.catalog-empty-state .empty-icon {
+    font-size: 3rem;
+    display: block;
+    margin-bottom: 1rem;
+}
+
+.catalog-empty-state h4 {
+    font-size: 1.3rem;
+    color: #fff;
+    margin-bottom: 0.5rem;
+}
+
+.catalog-empty-state p {
+    color: var(--text-muted);
+    margin-bottom: 1.5rem;
+}
+
 .drops-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));

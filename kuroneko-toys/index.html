@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css?v=1792112619">
+    <link rel="stylesheet" href="style.css?v=1792184823">
 </head>
 <body class="dark-theme">
 
@@ -111,87 +111,23 @@
                 <p class="section-subtitle">Peças selecionadas a dedo. Unidades limitadas — garanta antes que o estoque zere!</p>
             </div>
 
-            <div class="drops-grid">
-                <!-- Card 1: One Piece -->
-                <div class="product-card">
-                    <div class="card-badge anime-shonen">One Piece</div>
-                    <div class="card-image-box">
-                        <span class="placeholder-emoji">🏴‍☠️</span>
-                        <div class="card-tags-overlay">
-                            <span class="mini-tag">Escala 22cm</span>
-                            <span class="mini-tag">Caixa Original</span>
-                        </div>
-                    </div>
-                    <div class="card-info">
-                        <h3 class="product-name">Monkey D. Luffy — Gear 5 Sun God</h3>
-                        <p class="product-specs">PVC de alta fidelidade • Linha Grandista • Efeitos translúcidos</p>
-                        <div class="card-price-row">
-                            <div class="price-box">
-                                <span class="price-val">R$ 289,90</span>
-                                <span class="price-installments">em até 3x sem juros</span>
-                            </div>
-                        </div>
-                        <div class="card-actions">
-                            <a href="https://wa.me/558592828087?text=Ol%C3%A1!%20Quero%20garantir%20o%20Luffy%20Gear%205%20Sun%20God!" target="_blank" class="btn-buy-card">
-                                <span>Garantir no WhatsApp</span>
-                            </a>
-                        </div>
-                    </div>
+            <!-- Barra Dinâmica de Filtros e Busca Rápida -->
+            <div class="catalog-controls">
+                <div class="catalog-filters">
+                    <button class="catalog-filter-btn active" data-filter="all">Todos os Drops</button>
+                    <button class="catalog-filter-btn" data-filter="shonen">⚔️ Shonen / Animes</button>
+                    <button class="catalog-filter-btn" data-filter="gamer">🎮 Games & Mecha</button>
+                    <button class="catalog-filter-btn" data-filter="ghibli">🐾 Kuro Neko & Ghibli</button>
                 </div>
+                <div class="catalog-search-wrap">
+                    <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                    <input type="text" id="catalog-search-input" placeholder="Buscar personagem, anime, escala..." aria-label="Buscar produto no catálogo">
+                </div>
+            </div>
 
-                <!-- Card 2: Demon Slayer -->
-                <div class="product-card">
-                    <div class="card-badge anime-kimetsu">Demon Slayer</div>
-                    <div class="card-image-box">
-                        <span class="placeholder-emoji">⚔️</span>
-                        <div class="card-tags-overlay">
-                            <span class="mini-tag">Escala 18cm</span>
-                            <span class="mini-tag">Edição Especial</span>
-                        </div>
-                    </div>
-                    <div class="card-info">
-                        <h3 class="product-name">Kamado Tanjiro — Hinokami Kagura</h3>
-                        <p class="product-specs">Rica em detalhes • Chamas de fogo esculpidas • Base de suporte</p>
-                        <div class="card-price-row">
-                            <div class="price-box">
-                                <span class="price-val">R$ 249,90</span>
-                                <span class="price-installments">em até 3x sem juros</span>
-                            </div>
-                        </div>
-                        <div class="card-actions">
-                            <a href="https://wa.me/558592828087?text=Ol%C3%A1!%20Quero%20garantir%20o%20Tanjiro%20Hinokami%20Kagura!" target="_blank" class="btn-buy-card">
-                                <span>Garantir no WhatsApp</span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Card 3: Dragon Ball -->
-                <div class="product-card">
-                    <div class="card-badge anime-dbz">Dragon Ball Z</div>
-                    <div class="card-image-box">
-                        <span class="placeholder-emoji">💥</span>
-                        <div class="card-tags-overlay">
-                            <span class="mini-tag">Escala 25cm</span>
-                            <span class="mini-tag">Original Banpresto</span>
-                        </div>
-                    </div>
-                    <div class="card-info">
-                        <h3 class="product-name">Son Goku Super Saiyan 3 — Masterlise</h3>
-                        <p class="product-specs">Pintura fosca premium • Textura dos músculos e cabelo clássico</p>
-                        <div class="card-price-row">
-                            <div class="price-box">
-                                <span class="price-val">R$ 349,90</span>
-                                <span class="price-installments">em até 3x sem juros</span>
-                            </div>
-                        </div>
-                        <div class="card-actions">
-                            <a href="https://wa.me/558592828087?text=Ol%C3%A1!%20Quero%20garantir%20o%20Goku%20SSJ3%20Masterlise!" target="_blank" class="btn-buy-card">
-                                <span>Garantir no WhatsApp</span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
+            <!-- Grid Renderizado Dinamicamente via catalog.js (API / Hostinger Ready) -->
+            <div class="drops-grid" id="catalog-grid">
+                <!-- Os produtos serão renderizados automaticamente pelo catalog.js -->
             </div>
         </div>
     </section>
@@ -331,5 +267,7 @@
         </div>
     </div>
 
+    <!-- Dynamic Catalog Engine (API / Hostinger Ready) -->
+    <script src="catalog.js"></script>
 </body>
 </html>
