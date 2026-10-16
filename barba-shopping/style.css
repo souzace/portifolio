@@ -537,6 +537,141 @@ ul {
 }
 
 /* ==========================================================================
+   Team Section (Nossa Equipe em Ação)
+   ========================================================================== */
+.team-section {
+  padding: 90px 0;
+  background-color: #0e0d0b;
+  border-top: 1px solid var(--color-border);
+}
+
+.team-showcase-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px;
+  margin-bottom: 40px;
+}
+
+.team-card {
+  background-color: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  transition: var(--transition);
+  display: flex;
+  flex-direction: column;
+}
+
+.team-card:hover {
+  transform: translateY(-6px);
+  border-color: var(--color-border-gold);
+  box-shadow: var(--shadow-md);
+}
+
+.team-img-wrap {
+  position: relative;
+  width: 100%;
+  height: 280px;
+  overflow: hidden;
+  background-color: #050505;
+}
+
+.team-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.team-card:hover .team-img {
+  transform: scale(1.04);
+}
+
+.team-badge-real,
+.team-badge-pro {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  padding: 6px 14px;
+  border-radius: var(--radius-full);
+  font-family: var(--font-accent);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  backdrop-filter: blur(8px);
+}
+
+.team-badge-real {
+  background: rgba(18, 140, 126, 0.9);
+  color: #ffffff;
+  border: 1px solid rgba(85, 230, 145, 0.4);
+}
+
+.team-badge-pro {
+  background: rgba(203, 163, 88, 0.9);
+  color: #12100e;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.team-card-content {
+  padding: 28px 24px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.team-card-title {
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 12px;
+}
+
+.team-card-desc {
+  font-size: 0.92rem;
+  color: var(--color-text-secondary);
+  line-height: 1.6;
+  margin-bottom: 20px;
+  flex-grow: 1;
+}
+
+.team-meta {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  padding-top: 16px;
+  border-top: 1px solid var(--color-border);
+  font-size: 0.82rem;
+  color: #ffffff;
+}
+
+.team-meta span {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.team-cta-box {
+  background-color: var(--color-bg-card);
+  border: 1px dashed var(--color-border-gold);
+  border-radius: var(--radius-md);
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.team-cta-box p {
+  color: var(--color-text-secondary);
+  font-size: 1.05rem;
+}
+
+/* ==========================================================================
    Services Section (Tabela de Serviços)
    ========================================================================== */
 .services-section {
@@ -1313,11 +1448,21 @@ ul {
   }
 
   .experience-section,
+  .team-section,
   .services-section,
   .combos-section,
-  .location-section,
+  .hours-section,
   .testimonials-section {
     padding: 60px 0;
+  }
+
+  .team-showcase-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .team-img-wrap {
+    height: 220px;
   }
 
   .section-header {
