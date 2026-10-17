@@ -862,109 +862,124 @@ ul {
 }
 
 .experience-image-col {
+  position: relative;
   display: flex;
-  flex-direction: column;
-  gap: 24px;
+  align-items: center;
   justify-content: center;
 }
 
-/* Card Fundador Sávio no topo */
-.savio-founder-card {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-  background: #FFFFFF;
-  border: 1px solid var(--border-light);
-  border-left: 5px solid var(--brand-red);
-  border-radius: var(--radius-md);
-  padding: 18px 24px;
-  box-shadow: var(--shadow-card);
-  transition: var(--transition);
+/* Retrato Vertical do Fundador Sávio */
+.savio-vertical-portrait-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 440px;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: 0 20px 45px rgba(28, 30, 36, 0.16);
+  border: 4px solid #FFFFFF;
+  background: #F1F5F9;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
 
-.savio-founder-card:hover {
-  transform: translateY(-3px);
-  box-shadow: var(--shadow-hover);
+.savio-vertical-portrait-wrapper:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 26px 55px rgba(28, 30, 36, 0.22);
 }
 
-.savio-founder-photo {
-  width: 86px;
-  height: 86px;
-  border-radius: 50%;
+.savio-vertical-img {
+  width: 100%;
+  height: 580px;
   object-fit: cover;
-  border: 3px solid var(--brand-red);
-  box-shadow: 0 6px 16px rgba(201, 28, 28, 0.2);
-  flex-shrink: 0;
+  object-position: top center;
+  display: block;
 }
 
-.savio-founder-badge {
-  display: flex;
-  flex-direction: column;
+/* Card Flutuante / Overlay no rodapé da foto */
+.savio-portrait-overlay-card {
+  position: absolute;
+  bottom: 18px;
+  left: 18px;
+  right: 18px;
+  background: rgba(255, 255, 255, 0.94);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  border-left: 4px solid var(--brand-red);
+  border-radius: var(--radius-md);
+  padding: 18px 22px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
 }
 
-.founder-badge-role {
+.portrait-role {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
   font-size: 0.75rem;
   font-weight: 800;
-  color: var(--brand-blue);
   text-transform: uppercase;
+  color: var(--brand-blue);
   letter-spacing: 0.08em;
   margin-bottom: 2px;
 }
 
-.founder-badge-name {
+.portrait-name {
   font-family: var(--font-display);
-  font-size: 1.25rem;
+  font-size: 1.35rem;
   font-weight: 800;
   color: var(--text-main);
   line-height: 1.2;
 }
 
-.founder-badge-desc {
-  font-size: 0.85rem;
+.portrait-tagline {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 0.88rem;
   color: var(--text-muted);
-  margin-top: 4px;
-  font-weight: 500;
+  line-height: 1.45;
+  margin: 6px 0 12px;
 }
 
-/* Card Prato Picanha na Brasa abaixo */
-.savio-dish-card {
-  position: relative;
-  border-radius: var(--radius-lg);
-  overflow: hidden;
-  box-shadow: var(--shadow-card);
-  border: 4px solid #FFFFFF;
-}
-
-.exp-main-img {
-  width: 100%;
-  height: 320px;
-  object-fit: cover;
-  display: block;
-  transition: transform 0.5s ease;
-}
-
-.savio-dish-card:hover .exp-main-img {
-  transform: scale(1.04);
-}
-
-.savio-dish-tag {
-  position: absolute;
-  bottom: 16px;
-  left: 16px;
-  background: rgba(15, 23, 42, 0.85);
-  backdrop-filter: blur(8px);
-  color: #FFFFFF;
-  font-size: 0.85rem;
-  font-weight: 700;
-  padding: 8px 16px;
-  border-radius: 50px;
-  display: inline-flex;
-  align-items: center;
+.portrait-pills {
+  display: flex;
+  flex-wrap: wrap;
   gap: 8px;
 }
 
-.savio-dish-tag i {
-  color: #F59E0B;
+.portrait-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.74rem;
+  font-weight: 700;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-light);
+  color: var(--brand-red);
+  padding: 4px 10px;
+  border-radius: 50px;
+}
+
+@media (max-width: 992px) {
+  .savio-vertical-img {
+    height: 480px;
+  }
+}
+
+@media (max-width: 640px) {
+  .savio-vertical-portrait-wrapper {
+    max-width: 100%;
+  }
+
+  .savio-vertical-img {
+    height: 420px;
+  }
+
+  .savio-portrait-overlay-card {
+    position: static;
+    border-radius: 0 0 var(--radius-lg) var(--radius-lg);
+    border-left: none;
+    border-top: 3px solid var(--brand-red);
+    padding: 16px 18px;
+  }
 }
 
 /* ==========================================================================
