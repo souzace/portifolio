@@ -246,6 +246,29 @@ ul {
   gap: 12px;
 }
 
+.mobile-menu-toggle {
+  display: none;
+  background: #FFFFFF;
+  border: 1px solid var(--border-light);
+  color: var(--brand-blue);
+  font-size: 1.25rem;
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-sm);
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: var(--transition);
+  box-shadow: var(--shadow-sm);
+}
+
+.mobile-menu-toggle:hover,
+.mobile-menu-toggle:focus {
+  background: var(--bg-surface);
+  color: var(--brand-red);
+  border-color: var(--brand-red);
+}
+
 /* ==========================================================================
    Botões e Ações de Conversão
    ========================================================================== */
@@ -1077,7 +1100,7 @@ ul {
 }
 
 /* ==========================================================================
-   Responsividade Mobile
+   Responsividade Mobile Completa (UX/UI Polish)
    ========================================================================== */
 @media (max-width: 992px) {
   .hero-grid,
@@ -1107,23 +1130,189 @@ ul {
   }
 }
 
-@media (max-width: 640px) {
-  .hero-title {
-    font-size: 2.3rem;
+@media (max-width: 860px) {
+  .mobile-menu-toggle {
+    display: inline-flex;
   }
+
   .nav-menu {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 280px;
+    height: 100vh;
+    background: #FFFFFF;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 80px 28px 40px;
+    box-shadow: -10px 0 30px rgba(0, 0, 0, 0.15);
+    transition: right 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    z-index: 999;
+    gap: 20px;
+  }
+
+  .nav-menu.mobile-open {
+    right: 0;
+  }
+
+  .nav-link {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--text-main);
+    width: 100%;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--border-light);
+  }
+
+  .nav-link:hover,
+  .nav-link.active {
+    color: var(--brand-red);
+    padding-left: 6px;
+  }
+}
+
+@media (max-width: 640px) {
+  .top-bar-inner {
+    flex-direction: column;
+    gap: 6px;
+    text-align: center;
+    padding: 6px 0;
+  }
+
+  .top-contacts {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    font-size: 0.78rem;
+    flex-wrap: wrap;
+  }
+
+  .brand-logo-img {
+    width: 44px;
+    height: 44px;
+  }
+
+  .brand-title {
+    font-size: 1.15rem;
+  }
+
+  .brand-tagline {
+    font-size: 0.68rem;
+  }
+
+  .header-cta-btn {
     display: none;
   }
+
+  .hero-section {
+    padding: 50px 0 60px;
+  }
+
+  .hero-title {
+    font-size: 2.1rem;
+    line-height: 1.22;
+  }
+
+  .hero-subtitle {
+    font-size: 1rem;
+    margin-bottom: 28px;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .hero-actions .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .hero-trust-bar {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    text-align: center;
+  }
+
+  .hero-floating-card {
+    position: static;
+    margin-top: 16px;
+    width: 100%;
+    box-sizing: border-box;
+    justify-content: center;
+  }
+
+  /* Menu Filter Bar: Native App Scroll Pill Experience */
+  .menu-filter-nav {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 14px;
+    gap: 8px;
+    margin-bottom: 30px;
+    scrollbar-width: none;
+  }
+
+  .menu-filter-nav::-webkit-scrollbar {
+    display: none;
+  }
+
+  .menu-filter-btn {
+    white-space: nowrap;
+    padding: 10px 18px;
+    font-size: 0.88rem;
+    flex-shrink: 0;
+  }
+
   .menu-grid {
     grid-template-columns: 1fr;
+    gap: 20px;
   }
+
+  .unit-card-content {
+    padding: 24px 20px 28px;
+  }
+
+  .unit-photo {
+    height: 220px;
+  }
+
+  .unit-actions-row {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .unit-actions-row .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .events-banner {
+    padding: 30px 20px;
+  }
+
+  .events-actions .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .careers-card-light {
+    padding: 28px 20px;
+  }
+
   .form-row {
     grid-template-columns: 1fr;
   }
+
+  .form-group input,
+  .form-group select {
+    font-size: 16px; /* Impede auto-zoom do Safari iOS */
+  }
+
   .footer-grid {
     grid-template-columns: 1fr;
-  }
-  .top-contacts {
-    display: none;
+    gap: 36px;
   }
 }
