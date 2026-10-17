@@ -122,52 +122,54 @@ document.addEventListener('DOMContentLoaded', () => {
 
 function initMobileNav() {
   const toggleBtn = document.getElementById('mobile-menu-toggle');
-  const navMenu = document.querySelector('.nav-menu');
+  const drawer = document.getElementById('mobile-drawer');
+  const closeBtn = document.getElementById('mobile-drawer-close');
   const backdrop = document.getElementById('mobile-nav-backdrop');
-  const navLinks = document.querySelectorAll('.nav-link');
+  const drawerLinks = document.querySelectorAll('.mobile-drawer-link');
 
-  if (!toggleBtn || !navMenu) return;
+  if (!toggleBtn || !drawer) return;
 
-  function setMenuState(open) {
+  function setDrawer(open) {
     if (open) {
-      navMenu.classList.add('mobile-open');
+      drawer.classList.add('open');
       if (backdrop) backdrop.classList.add('active');
       toggleBtn.setAttribute('aria-expanded', 'true');
       document.body.style.overflow = 'hidden';
-      const icon = toggleBtn.querySelector('i');
-      if (icon) icon.className = 'fa-solid fa-xmark';
     } else {
-      navMenu.classList.remove('mobile-open');
+      drawer.classList.remove('open');
       if (backdrop) backdrop.classList.remove('active');
       toggleBtn.setAttribute('aria-expanded', 'false');
       document.body.style.overflow = '';
-      const icon = toggleBtn.querySelector('i');
-      if (icon) icon.className = 'fa-solid fa-bars';
     }
   }
 
   toggleBtn.addEventListener('click', (e) => {
     e.stopPropagation();
-    const isOpen = navMenu.classList.contains('mobile-open');
-    setMenuState(!isOpen);
+    setDrawer(true);
   });
 
-  if (backdrop) {
-    backdrop.addEventListener('click', () => {
-      setMenuState(false);
+  if (closeBtn) {
+    closeBtn.addEventListener('click', () => {
+      setDrawer(false);
     });
   }
 
-  navLinks.forEach(link => {
+  if (backdrop) {
+    backdrop.addEventListener('click', () => {
+      setDrawer(false);
+    });
+  }
+
+  drawerLinks.forEach(link => {
     link.addEventListener('click', () => {
-      setMenuState(false);
+      setDrawer(false);
     });
   });
 
-  // Fecha o menu ao pressionar Escape
+  // Fecha a gaveta com a tecla Escape
   document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && navMenu.classList.contains('mobile-open')) {
-      setMenuState(false);
+    if (e.key === 'Escape' && drawer.classList.contains('open')) {
+      setDrawer(false);
     }
   });
 }
