@@ -11,7 +11,7 @@ const MENU_ITEMS = [
     serves: 'Serve 3 a 4 pessoas',
     desc: 'Corte nobre com capa de gordura perfeita, fatiada na hora e servida em chapa fumegante com sal grosso. Acompanha baião de dois com queijo coalho, macaxeira frita crocante, farofa na manteiga e vinagrete da casa.',
     price: 'R$ 139,90',
-    icon: '🥩'
+    image: 'img/hero_picanha.jpg'
   },
   {
     category: 'carnes',
@@ -20,7 +20,7 @@ const MENU_ITEMS = [
     serves: 'Serve 2 a 3 pessoas',
     desc: 'Carne macia e suculenta grelhada no braseiro no ponto de sua preferência. Acompanha baião de dois, feijão-verde cremoso, batata frita e farofa d’água.',
     price: 'R$ 119,90',
-    icon: '🔥'
+    image: 'img/hero_picanha.jpg'
   },
   {
     category: 'carnes',
@@ -29,7 +29,7 @@ const MENU_ITEMS = [
     serves: 'Serve 2 a 3 pessoas',
     desc: 'Maturada na casa, puxada na manteiga da terra, fatiada com cebola roxa dourada, acompanhada de macaxeira cozida ou frita e feijão tropeiro.',
     price: 'R$ 98,90',
-    icon: '🍖'
+    image: 'img/hero_picanha.jpg'
   },
   {
     category: 'carnes',
@@ -38,7 +38,7 @@ const MENU_ITEMS = [
     serves: 'Serve 2 a 3 pessoas',
     desc: 'Extremamente macia e suculenta, selada no braseiro e fatiada fina. Acompanha arroz branco ou baião, purê de macaxeira e vinagrete.',
     price: 'R$ 108,90',
-    icon: '🥩'
+    image: 'img/hero_picanha.jpg'
   },
   {
     category: 'pizzas',
@@ -47,7 +47,7 @@ const MENU_ITEMS = [
     serves: '8 fatias grandes',
     desc: 'A famosa receita da casa: massa artesanal fina e crocante, molho de tomate rústico, queijo mussarela derretido, tiras generosas de picanha grelhada na brasa, cebola roxa e orégano.',
     price: 'R$ 68,90',
-    icon: '🍕'
+    image: 'img/prato_pizza_picanha.jpg'
   },
   {
     category: 'pizzas',
@@ -56,7 +56,7 @@ const MENU_ITEMS = [
     serves: '8 fatias grandes',
     desc: 'Mussarela, carne de sol desfiada temperada, queijo coalho tostado em cubos, cebola caramelizada e toque de manteiga da terra.',
     price: 'R$ 62,90',
-    icon: '🧀'
+    image: 'img/prato_pizza_picanha.jpg'
   },
   {
     category: 'mar',
@@ -65,7 +65,7 @@ const MENU_ITEMS = [
     serves: 'Serve 2 a 3 pessoas',
     desc: 'Filé de peixe nobre grelhado, coberto com banana frita em fatias, molho branco aveludado e gratinado ao forno com bastante queijo.',
     price: 'R$ 96,90',
-    icon: '🐟'
+    image: 'img/prato_peixe_delicia.jpg'
   },
   {
     category: 'mar',
@@ -74,7 +74,7 @@ const MENU_ITEMS = [
     serves: 'Serve 2 pessoas',
     desc: 'Grelhada na brasa, pele crocante e carne úmida temperada com ervas finas e limão taiti. Acompanha baião de dois e salada colorida.',
     price: 'R$ 79,90',
-    icon: '🐠'
+    image: 'img/prato_peixe_delicia.jpg'
   },
   {
     category: 'mar',
@@ -83,7 +83,7 @@ const MENU_ITEMS = [
     serves: 'Porção para compartilhar',
     desc: 'Camarões selecionados dourados no azeite com lâminas de alho frito crocante e cheiro-verde fresco. Acompanha fatias de limão e molho rosé.',
     price: 'R$ 64,90',
-    icon: '🦐'
+    image: 'img/prato_peixe_delicia.jpg'
   },
   {
     category: 'boteco',
@@ -92,7 +92,7 @@ const MENU_ITEMS = [
     serves: '12 unidades',
     desc: 'Seleção dos petiscos mais famosos: bolinhas de queijo coalho, carne de sol, camarão e bacalhau com casquinha crocante e recheio cremoso.',
     price: 'R$ 44,90',
-    icon: '🧆'
+    image: 'img/prato_petiscos.jpg'
   },
   {
     category: 'boteco',
@@ -101,7 +101,7 @@ const MENU_ITEMS = [
     serves: 'Serve 3 a 4 pessoas',
     desc: 'Batatas fritas sequinhas e crocantes cobertas com queijo cheddar cremoso derretido e pedaços crocantes de bacon artesanal.',
     price: 'R$ 42,90',
-    icon: '🍟'
+    image: 'img/prato_petiscos.jpg'
   },
   {
     category: 'boteco',
@@ -110,7 +110,7 @@ const MENU_ITEMS = [
     serves: 'Individual',
     desc: 'Ampla carta de cervejas e chopp servido na caneca ultracongelada a -2°C para acompanhar sua carne na brasa.',
     price: 'A partir de R$ 9,90',
-    icon: '🍺'
+    image: 'img/prato_petiscos.jpg'
   }
 ];
 
@@ -133,8 +133,8 @@ function initMenuFilters() {
     menuGrid.innerHTML = filtered.map(item => `
       <div class="menu-item-card-light" data-category="${item.category}">
         <div class="menu-item-header">
+          <img src="${item.image}" alt="${item.title}" class="menu-item-img" loading="lazy">
           <span class="menu-item-badge">${item.badge}</span>
-          <span class="menu-item-icon">${item.icon}</span>
         </div>
         <div class="menu-item-body">
           <h3 class="menu-item-title">${item.title}</h3>
