@@ -123,43 +123,51 @@ document.addEventListener('DOMContentLoaded', () => {
 function initMobileNav() {
   const toggleBtn = document.getElementById('mobile-menu-toggle');
   const navMenu = document.querySelector('.nav-menu');
+  const backdrop = document.getElementById('mobile-nav-backdrop');
   const navLinks = document.querySelectorAll('.nav-link');
 
   if (!toggleBtn || !navMenu) return;
 
-  toggleBtn.addEventListener('click', () => {
-    const isOpen = navMenu.classList.toggle('mobile-open');
-    toggleBtn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-    const icon = toggleBtn.querySelector('i');
-    if (icon) {
-      if (isOpen) {
-        icon.className = 'fa-solid fa-xmark';
-      } else {
-        icon.className = 'fa-solid fa-bars';
-      }
+  function setMenuState(open) {
+    if (open) {
+      navMenu.classList.add('mobile-open');
+      if (backdrop) backdrop.classList.add('active');
+      toggleBtn.setAttribute('aria-expanded', 'true');
+      document.body.style.overflow = 'hidden';
+      const icon = toggleBtn.querySelector('i');
+      if (icon) icon.className = 'fa-solid fa-xmark';
+    } else {
+      navMenu.classList.remove('mobile-open');
+      if (backdrop) backdrop.classList.remove('active');
+      toggleBtn.setAttribute('aria-expanded', 'false');
+      document.body.style.overflow = '';
+      const icon = toggleBtn.querySelector('i');
+      if (icon) icon.className = 'fa-solid fa-bars';
     }
+  }
+
+  toggleBtn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    const isOpen = navMenu.classList.contains('mobile-open');
+    setMenuState(!isOpen);
   });
+
+  if (backdrop) {
+    backdrop.addEventListener('click', () => {
+      setMenuState(false);
+    });
+  }
 
   navLinks.forEach(link => {
     link.addEventListener('click', () => {
-      if (navMenu.classList.contains('mobile-open')) {
-        navMenu.classList.remove('mobile-open');
-        toggleBtn.setAttribute('aria-expanded', 'false');
-        const icon = toggleBtn.querySelector('i');
-        if (icon) icon.className = 'fa-solid fa-bars';
-      }
+      setMenuState(false);
     });
   });
 
-  // Fecha o menu ao clicar fora dele
-  document.addEventListener('click', (e) => {
-    if (navMenu.classList.contains('mobile-open')) {
-      if (!navMenu.contains(e.target) && !toggleBtn.contains(e.target)) {
-        navMenu.classList.remove('mobile-open');
-        toggleBtn.setAttribute('aria-expanded', 'false');
-        const icon = toggleBtn.querySelector('i');
-        if (icon) icon.className = 'fa-solid fa-bars';
-      }
+  // Fecha o menu ao pressionar Escape
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && navMenu.classList.contains('mobile-open')) {
+      setMenuState(false);
     }
   });
 }
