@@ -862,14 +862,109 @@ ul {
 }
 
 .experience-image-col {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  justify-content: center;
+}
+
+/* Card Fundador Sávio no topo */
+.savio-founder-card {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  background: #FFFFFF;
+  border: 1px solid var(--border-light);
+  border-left: 5px solid var(--brand-red);
+  border-radius: var(--radius-md);
+  padding: 18px 24px;
+  box-shadow: var(--shadow-card);
+  transition: var(--transition);
+}
+
+.savio-founder-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-hover);
+}
+
+.savio-founder-photo {
+  width: 86px;
+  height: 86px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--brand-red);
+  box-shadow: 0 6px 16px rgba(201, 28, 28, 0.2);
+  flex-shrink: 0;
+}
+
+.savio-founder-badge {
+  display: flex;
+  flex-direction: column;
+}
+
+.founder-badge-role {
+  font-size: 0.75rem;
+  font-weight: 800;
+  color: var(--brand-blue);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 2px;
+}
+
+.founder-badge-name {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--text-main);
+  line-height: 1.2;
+}
+
+.founder-badge-desc {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-top: 4px;
+  font-weight: 500;
+}
+
+/* Card Prato Picanha na Brasa abaixo */
+.savio-dish-card {
   position: relative;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-card);
+  border: 4px solid #FFFFFF;
 }
 
 .exp-main-img {
   width: 100%;
-  border-radius: var(--radius-lg);
-  box-shadow: var(--shadow-card);
-  border: 4px solid #FFFFFF;
+  height: 320px;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.savio-dish-card:hover .exp-main-img {
+  transform: scale(1.04);
+}
+
+.savio-dish-tag {
+  position: absolute;
+  bottom: 16px;
+  left: 16px;
+  background: rgba(15, 23, 42, 0.85);
+  backdrop-filter: blur(8px);
+  color: #FFFFFF;
+  font-size: 0.85rem;
+  font-weight: 700;
+  padding: 8px 16px;
+  border-radius: 50px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.savio-dish-tag i {
+  color: #F59E0B;
 }
 
 /* ==========================================================================
