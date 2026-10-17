@@ -1097,6 +1097,27 @@ ul {
   border-top: 1px solid rgba(255, 255, 255, 0.08);
   color: #6B7280;
   font-size: 0.85rem;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: center;
+}
+
+.orkes-credits {
+  font-size: 0.82rem;
+  color: #9CA3AF;
+}
+
+.orkes-link {
+  color: #FFFFFF;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  transition: var(--transition);
+}
+
+.orkes-link:hover {
+  color: var(--brand-red);
+  text-decoration: underline;
 }
 
 /* ==========================================================================
