@@ -118,6 +118,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initMobileNav();
   initMenuFilters();
   initCareersForm();
+  initTestimonialsSlider();
 });
 
 function initMobileNav() {
@@ -238,4 +239,117 @@ function initCareersForm() {
       form.reset();
     }
   });
+}
+
+function initTestimonialsSlider() {
+  const cards = document.querySelectorAll('.testimonial-card');
+  const dots = document.querySelectorAll('.slider-dot');
+  const prevBtn = document.getElementById('slider-prev-btn');
+  const nextBtn = document.getElementById('slider-next-btn');
+
+  if (!cards.length) return;
+
+  let currentIndex = 0;
+  let autoplayTimer = null;
+  const SLOW_INTERVAL = 6500; // Intervalo calmo para leitura confortável
+
+  function showSlide(index) {
+    if (index < 0) {
+      index = cards.length - 1;
+    } else if (index >= cards.length) {
+      index = 0;
+    }
+
+    currentIndex = index;
+
+    cards.forEach((card, i) => {
+      if (i === currentIndex) {
+        card.classList.add('active');
+      } else {
+        card.classList.remove('active');
+      }
+    });
+
+    dots.forEach((dot, i) => {
+      if (i === currentIndex) {
+        dot.classList.add('active');
+      } else {
+        dot.classList.remove('active');
+      }
+    });
+  }
+
+  function startAutoplay() {
+    stopAutoplay();
+    autoplayTimer = setInterval(() => {
+      showSlide(currentIndex + 1);
+    }, SLOW_INTERVAL);
+  }
+
+  function stopAutoplay() {
+    if (autoplayTimer) {
+      clearInterval(autoplayTimer);
+      autoplayTimer = null;
+    }
+  }
+
+  if (prevBtn) {
+    prevBtn.addEventListener('click', () => {
+      showSlide(currentIndex - 1);
+      startAutoplay();
+    });
+  }
+
+  if (nextBtn) {
+    nextBtn.addEventListener('click', () => {
+      showSlide(currentIndex + 1);
+      startAutoplay();
+    });
+  }
+
+  dots.forEach(dot => {
+    dot.addEventListener('click', () => {
+      const idx = parseInt(dot.getAttribute('data-index') || '0', 10);
+      showSlide(idx);
+      startAutoplay();
+    });
+  });
+
+  // Pausa ao passar o mouse para leitura
+  const sliderContainer = document.querySelector('.testimonials-slider-container');
+  if (sliderContainer) {
+    sliderContainer.addEventListener('mouseenter', stopAutoplay);
+    sliderContainer.addEventListener('mouseleave', startAutoplay);
+  }
+
+  // Suporte a swipe por toque no mobile
+  let touchStartX = 0;
+  let touchEndX = 0;
+
+  if (sliderContainer) {
+    sliderContainer.addEventListener('touchstart', (e) => {
+      touchStartX = e.changedTouches[0].screenX;
+      stopAutoplay();
+    }, { passive: true });
+
+    sliderContainer.addEventListener('touchend', (e) => {
+      touchEndX = e.changedTouches[0].screenX;
+      handleSwipe();
+      startAutoplay();
+    }, { passive: true });
+  }
+
+  function handleSwipe() {
+    const diff = touchEndX - touchStartX;
+    if (Math.abs(diff) > 40) {
+      if (diff < 0) {
+        showSlide(currentIndex + 1); // Swipe esquerda -> próximo
+      } else {
+        showSlide(currentIndex - 1); // Swipe direita -> anterior
+      }
+    }
+  }
+
+  showSlide(0);
+  startAutoplay();
 }
