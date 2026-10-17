@@ -1462,29 +1462,43 @@ ul {
 
 .sticky-avatar-wrap {
   position: relative;
-  width: 46px;
-  height: 46px;
+  width: 48px;
+  height: 48px;
   flex-shrink: 0;
+}
+
+.sticky-avatar-circle {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 2px solid var(--brand-red);
+  box-shadow: 0 4px 10px rgba(201, 28, 28, 0.25);
+  background: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .sticky-avatar {
   width: 100%;
   height: 100%;
-  border-radius: 50%;
   object-fit: cover;
-  border: 2px solid var(--brand-red);
-  box-shadow: 0 4px 10px rgba(201, 28, 28, 0.2);
+  object-position: 50% 20%; /* Foco no rosto do Sávio */
+  transform: scale(1.48); /* Zoom de destaque no rosto */
+  display: block;
 }
 
 .sticky-status-dot {
   position: absolute;
-  bottom: 1px;
-  right: 1px;
-  width: 12px;
-  height: 12px;
+  bottom: 0px;
+  right: 0px;
+  width: 13px;
+  height: 13px;
   background-color: #22C55E;
-  border: 2px solid #FFFFFF;
+  border: 2.5px solid #FFFFFF;
   border-radius: 50%;
+  z-index: 2;
 }
 
 .sticky-text {
