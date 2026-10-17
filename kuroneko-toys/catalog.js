@@ -8,9 +8,9 @@
  */
 
 const CATALOG_CONFIG = {
-    // Modo API ativo: Consumindo o mock server local do WooCommerce na porta 8086
+    // Conectado ao WordPress / WooCommerce Headless Real (Docker na porta 8087)
     USE_EXTERNAL_API: true,
-    API_ENDPOINT: 'http://localhost:8086/wp-json/wc/v3/products',
+    API_ENDPOINT: 'http://localhost:8087/wp-json/kuroneko/v1/catalog',
     WHATSAPP_NUMBER: '558592828087',
 };
 
@@ -135,21 +135,33 @@ class KuroNekoCatalog {
                 const data = await response.json();
                 
                 // Normaliza formato caso venha de WooCommerce
-                this.products = data.map(item => ({
-                    id: item.id,
-                    name: item.name,
-                    category: item.categories?.[0]?.name || 'Colecionável',
-                    universe: this.mapCategoryToUniverse(item.categories?.[0]?.name),
-                    scale: item.attributes?.find(a => a.name === 'Escala')?.options?.[0] || 'Original',
-                    tag: item.tags?.[0]?.name || 'Importado',
-                    price: parseFloat(item.price || item.regular_price || 0),
-                    installments: 'em até 3x sem juros',
-                    badge: 'anime-shonen',
-                    status: item.stock_quantity > 0 ? 'available' : 'out_of_stock',
-                    statusLabel: item.stock_quantity > 0 ? 'Em Estoque' : 'Esgotado',
-                    image: item.images?.[0]?.src || '🎮',
-                    description: item.short_description?.replace(/<[^>]+>/g, '') || item.description?.replace(/<[^>]+>/g, '') || ''
-                }));
+                this.products = data.map(item => {
+                    const rawCat = (item.categories?.[0]?.name || 'Colecionável').replace(/&amp;/g, '&');
+                    const universe = this.mapCategoryToUniverse(rawCat);
+                    const badgeClass = universe === 'ghibli' ? 'anime-ghibli' : (universe === 'gamer' ? 'anime-gamer' : 'anime-shonen');
+                    const rawName = (item.name || '').replace(/&amp;/g, '&');
+                    const rawDesc = (item.short_description || item.description || '')
+                        .replace(/<[^>]+>/g, '')
+                        .replace(/&amp;/g, '&')
+                        .replace(/&#8211;/g, '—')
+                        .replace(/&#8212;/g, '—');
+
+                    return {
+                        id: item.id,
+                        name: rawName,
+                        category: rawCat,
+                        universe: universe,
+                        scale: item.attributes?.find(a => a.name === 'Escala')?.options?.[0] || 'Original',
+                        tag: item.tags?.[0]?.name || 'Colecionável',
+                        price: parseFloat(item.price || item.regular_price || 0),
+                        installments: 'em até 3x sem juros',
+                        badge: badgeClass,
+                        status: item.stock_quantity > 0 ? (item.stock_quantity <= 2 ? 'low_stock' : 'available') : 'out_of_stock',
+                        statusLabel: item.stock_quantity > 0 ? (item.stock_quantity <= 2 ? `Últimas ${item.stock_quantity} Unidades` : 'Pronta Entrega') : 'Esgotado',
+                        image: item.images?.[0]?.src || (universe === 'ghibli' ? '🍃' : (universe === 'gamer' ? '🎮' : '⚔️')),
+                        description: rawDesc
+                    };
+                });
             } catch (err) {
                 console.warn('Fallback para produtos mock locais devido ao erro da API:', err);
                 this.products = MOCK_PRODUCTS;
