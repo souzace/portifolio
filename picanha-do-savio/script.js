@@ -1,30 +1,7 @@
 /**
- * Picanha do Sávio - Interatividade & Gerenciamento de Unidades
+ * Picanha do Sávio - Script de Interatividade & Cardápio Modular
+ * Adaptado ao Novo Layout Luminoso
  */
-
-const UNITS_DATA = {
-  joquei: {
-    name: 'Unidade Jóquei Clube',
-    address: 'Av. Lineu Machado, 790 – Jóquei Clube, Fortaleza - CE',
-    phone: '(85) 3017-4007',
-    phoneRaw: '558530174007',
-    hours: 'Terça a Domingo: 11h às 23h30',
-    mapsUrl: 'https://maps.google.com/?q=Av.+Lineu+Machado,+790+-+Jóquei+Clube,+Fortaleza+-+CE',
-    anotaUrl: 'https://cardapio.anota.ai/m/picanhadosavio-jockey',
-    whatsapp: 'https://wa.me/558530174007?text=Ol%C3%A1%20Picanha%20do%20S%C3%A1vio%20(J%C3%B3quei)!%20Gostaria%20de%20fazer%20uma%20reserva%20ou%20tirar%20uma%20d%C3%BAvida.'
-  },
-  bonsucesso: {
-    name: 'Unidade Bonsucesso',
-    address: 'Rua Manuel Antônio Leite, 336 – Bonsucesso, Fortaleza - CE',
-    phone: '(85) 3233-4007',
-    phoneRaw: '558532334007',
-    whatsappRaw: '5585985885215',
-    hours: 'Segunda a Domingo: 11h às 23h',
-    mapsUrl: 'https://maps.google.com/?q=Rua+Manuel+Antônio+Leite,+336+-+Bonsucesso,+Fortaleza+-+CE',
-    anotaUrl: 'https://cardapio.anota.ai/m/picanhadosavio-bonsucesso',
-    whatsapp: 'https://wa.me/5585985885215?text=Ol%C3%A1%20Picanha%20do%20S%C3%A1vio%20(Bonsucesso)!%20Gostaria%20de%20fazer%20uma%20reserva%20ou%20fazer%20um%20pedido.'
-  }
-};
 
 const MENU_ITEMS = [
   {
@@ -38,10 +15,10 @@ const MENU_ITEMS = [
   },
   {
     category: 'carnes',
-    badge: 'Tradicional',
+    badge: 'Mais Pedido',
     title: 'Picanha Nacional Especial',
     serves: 'Serve 2 a 3 pessoas',
-    desc: 'Carne macia e suculenta grelhada no braseiro de carvão mineral no ponto de sua preferência. Acompanha baião de dois, feijão-verde cremoso, batata frita e farofa d’água.',
+    desc: 'Carne macia e suculenta grelhada no braseiro no ponto de sua preferência. Acompanha baião de dois, feijão-verde cremoso, batata frita e farofa d’água.',
     price: 'R$ 119,90',
     icon: '🔥'
   },
@@ -74,7 +51,7 @@ const MENU_ITEMS = [
   },
   {
     category: 'pizzas',
-    badge: 'Mais Pedida',
+    badge: 'Tradicional Cearense',
     title: 'Pizza Sertaneja com Coalho',
     serves: '8 fatias grandes',
     desc: 'Mussarela, carne de sol desfiada temperada, queijo coalho tostado em cubos, cebola caramelizada e toque de manteiga da terra.',
@@ -92,7 +69,7 @@ const MENU_ITEMS = [
   },
   {
     category: 'mar',
-    badge: 'Grelhado',
+    badge: 'Grelhado Fresco',
     title: 'Tilápia Inteira Desossada',
     serves: 'Serve 2 pessoas',
     desc: 'Grelhada na brasa, pele crocante e carne úmida temperada com ervas finas e limão taiti. Acompanha baião de dois e salada colorida.',
@@ -154,7 +131,7 @@ function initMenuFilters() {
       : MENU_ITEMS.filter(item => item.category === category);
 
     menuGrid.innerHTML = filtered.map(item => `
-      <div class="menu-item-card" data-category="${item.category}">
+      <div class="menu-item-card-light" data-category="${item.category}">
         <div class="menu-item-header">
           <span class="menu-item-badge">${item.badge}</span>
           <span class="menu-item-icon">${item.icon}</span>
@@ -165,7 +142,7 @@ function initMenuFilters() {
           <p class="menu-item-desc">${item.desc}</p>
           <div class="menu-item-footer">
             <span class="menu-item-price">${item.price}</span>
-            <a href="#unidades" class="btn btn-outline btn-sm">Pedir na Unidade</a>
+            <a href="#unidades" class="btn btn-outline-red btn-sm">Pedir na Unidade</a>
           </div>
         </div>
       </div>
@@ -199,8 +176,8 @@ function initCareersForm() {
     if (feedback) {
       feedback.style.display = 'block';
       feedback.innerHTML = `
-        <div style="background: rgba(34, 197, 94, 0.15); border: 1px solid #22C55E; color: #4ADE80; padding: 14px; border-radius: 6px; font-size: 0.9rem;">
-          <i class="fa-solid fa-check-circle"></i> Obrigado, <strong>${nome}</strong>! Sua inscrição para <strong>${vaga} (${unidade})</strong> foi registrada com sucesso no banco de talentos do Picanha do Sávio. Nossa gerência entrará em contato!
+        <div style="background: #EFF6FF; border: 1.5px solid #1E3A8A; color: #1E3A8A; padding: 16px; border-radius: 8px; font-size: 0.95rem; font-weight: 600;">
+          <i class="fa-solid fa-check-circle" style="color: #22C55E;"></i> Obrigado, <strong>${nome}</strong>! Sua candidatura para <strong>${vaga} (${unidade})</strong> foi registrada com sucesso no banco de talentos do Picanha do Sávio. Nossa gerência entrará em contato!
         </div>
       `;
       form.reset();

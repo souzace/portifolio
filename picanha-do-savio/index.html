@@ -3,13 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Picanha do Sávio | Tradição em Churrasco & Culinária Cearense em Fortaleza</title>
-  <meta name="description" content="Picanha do Sávio: A picanha na brasa mais tradicional de Fortaleza. Cortes nobres, baião de dois, pizzas artesanais e frutos do mar nas unidades Jóquei Clube e Bonsucesso. Faça seu pedido!">
+  <title>Picanha do Sávio | Tradição em Carnes Nobres, Pizzas e Culinária Cearense</title>
+  <meta name="description" content="Picanha do Sávio: A tradicional picanha na brasa de Fortaleza. Cortes selecionados, baião de dois, pizzas artesanais e frutos do mar nas unidades Jóquei Clube e Bonsucesso.">
   
   <!-- Favicon -->
-  <link rel="icon" type="image/jpeg" href="img/logo.jpg">
+  <link rel="icon" type="image/jpeg" href="img/logo_original.jpg">
 
-  <!-- Google Fonts -->
+  <!-- Google Fonts: Playfair Display + Plus Jakarta Sans + Cinzel -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -21,25 +21,26 @@
 </head>
 <body>
 
-  <!-- Top Announcement Bar (Duas Unidades com rota e telefone direto) -->
-  <aside class="top-bar" aria-label="Informações das Unidades">
+  <!-- Top Announcement Bar (Vermelho Oficial Sávio) -->
+  <aside class="top-bar" aria-label="Informações de Atendimento">
     <div class="container top-bar-inner">
-      <div class="top-bar-badge">
+      <div class="top-status">
         <span class="pulse-dot"></span>
-        <span>Atendimento no Salão & Delivery em Fortaleza</span>
+        <span>Salão Aberto para Almoço & Jantar • Delivery Próprio em Fortaleza</span>
       </div>
-      <div class="top-units">
-        <span class="top-unit-item">
-          <i class="fa-solid fa-location-dot"></i> Jóquei Clube: (85) 3017-4007
-        </span>
-        <span class="top-unit-item">
-          <i class="fa-solid fa-location-dot"></i> Bonsucesso: (85) 3233-4007
-        </span>
+      <div class="top-contacts">
+        <a href="tel:+558530174007" class="top-contact-item">
+          <i class="fa-solid fa-phone"></i> Jóquei: (85) 3017-4007
+        </a>
+        <span style="opacity: 0.5;">|</span>
+        <a href="tel:+558532334007" class="top-contact-item">
+          <i class="fa-solid fa-phone"></i> Bonsucesso: (85) 3233-4007
+        </a>
       </div>
     </div>
   </aside>
 
-  <!-- Header / Navegação -->
+  <!-- Header Luminoso & Navegação -->
   <header class="main-header">
     <div class="container header-inner">
       <a href="#" class="brand-wrapper" aria-label="Picanha do Sávio Home">
@@ -53,140 +54,155 @@
       <nav class="nav-menu" aria-label="Menu Principal">
         <a href="#unidades" class="nav-link">Unidades</a>
         <a href="#cardapio" class="nav-link">Cardápio</a>
-        <a href="#historia" class="nav-link">Nossa História</a>
+        <a href="#experiencia" class="nav-link">Nossa Casa</a>
+        <a href="#eventos" class="nav-link">Comemorações</a>
         <a href="#trabalhe-conosco" class="nav-link">Trabalhe Conosco</a>
       </nav>
 
       <div class="header-cta-group">
         <a href="#unidades" class="btn btn-primary btn-sm">
-          <i class="fa-solid fa-fire"></i> Pedir Agora
+          <i class="fa-solid fa-motorcycle"></i> Pedir Delivery
         </a>
       </div>
     </div>
   </header>
 
-  <!-- Hero Section (A Picanha na Brasa) -->
+  <!-- Hero Section Bifocal (Inspirado em Cabaña del Primo & Fogo de Chão) -->
   <section class="hero-section" id="inicio">
-    <div class="hero-bg-overlay"></div>
-    <img src="img/hero_picanha.jpg" alt="Picanha suculenta na brasa do Sávio" class="hero-bg-img">
-    
-    <div class="container hero-content">
-      <div class="hero-pill">
-        <i class="fa-solid fa-award"></i> Tradição & Fartura em Fortaleza
-      </div>
-      <h1 class="hero-title">
-        A Verdadeira <span>Picanha na Brasa</span> de Fortaleza.
-      </h1>
-      <p class="hero-subtitle">
-        Cortes selecionados selados no braseiro incandescente, servidos com o autêntico baião de dois com queijo coalho tostado, macaxeira frita crocante e atendimento caloroso para toda a família.
-      </p>
-      
-      <div class="hero-actions">
-        <a href="#cardapio" class="btn btn-primary">
-          <i class="fa-solid fa-utensils"></i> Conhecer o Cardápio
-        </a>
-        <a href="#unidades" class="btn btn-outline">
-          <i class="fa-solid fa-motorcycle"></i> Pedido Online Sem Taxas
-        </a>
-      </div>
+    <div class="container">
+      <div class="hero-grid">
+        <div class="hero-content">
+          <div class="hero-pill">
+            <i class="fa-solid fa-fire"></i> Tradição & Fartura Cearense
+          </div>
+          <h1 class="hero-title">
+            O Braseiro Mais Querido de Fortaleza na <span>Mesa da Sua Família</span>.
+          </h1>
+          <p class="hero-subtitle">
+            Cortes selecionados de picanha argentina e nacional selados com respeito ao ponto na brasa viva, servidos com o autêntico baião cremoso de queijo coalho tostado, macaxeira frita crocante e pizzas artesanais.
+          </p>
+          
+          <div class="hero-actions">
+            <a href="#unidades" class="btn btn-primary">
+              <i class="fa-solid fa-bag-shopping"></i> Pedir Online Sem Taxas
+            </a>
+            <a href="#cardapio" class="btn btn-outline-blue">
+              <i class="fa-solid fa-utensils"></i> Conhecer o Cardápio
+            </a>
+          </div>
 
-      <div class="hero-highlights">
-        <div class="highlight-item">
-          <span class="highlight-number">2</span>
-          <span class="highlight-label">Unidades Físicas em Fortaleza</span>
+          <div class="hero-trust-bar">
+            <div class="trust-item">
+              <span class="trust-number">2</span>
+              <span class="trust-label">Unidades Físicas em Fortaleza</span>
+            </div>
+            <div class="trust-item">
+              <span class="trust-number">+10 Anos</span>
+              <span class="trust-label">De Tradição Gastronômica</span>
+            </div>
+            <div class="trust-item">
+              <span class="trust-number">4.8★</span>
+              <span class="trust-label">Avaliação dos Clientes</span>
+            </div>
+          </div>
         </div>
-        <div class="highlight-item">
-          <span class="highlight-number">100%</span>
-          <span class="highlight-label">Cortes Nobres Selecionados</span>
-        </div>
-        <div class="highlight-item">
-          <span class="highlight-number">Fartura</span>
-          <span class="highlight-label">Pratos Feitos para Compartilhar</span>
+
+        <div class="hero-image-wrapper">
+          <img src="img/hero_picanha.jpg" alt="Picanha Suculenta na Brasa do Sávio" class="hero-main-image">
+          <div class="hero-floating-card">
+            <div class="floating-icon">
+              <i class="fa-solid fa-award"></i>
+            </div>
+            <div class="floating-text">
+              <h4>Picanha Fatiada na Hora</h4>
+              <p>Com baião de dois & queijo coalho</p>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Seletor de Unidades Interativo (Jóquei Clube vs. Bonsucesso) -->
+  <!-- Seletor de Unidades (Inspirado em Sal e Brasa) -->
   <section class="units-section" id="unidades">
     <div class="container">
       <div class="section-header">
         <span class="section-tag">Onde Estamos</span>
-        <h2 class="section-title">Escolha a Unidade Mais Próxima</h2>
-        <p class="section-desc">Ambientes amplos, arejados, espaço para toda a família, telões para transmissão de jogos e delivery ágil para a sua região.</p>
+        <h2 class="section-title">Escolha Sua Unidade de Preferência</h2>
+        <p class="section-desc">Espaços amplos, confortáveis, arejados e climatizados para reunir a família, comemorar aniversários e saborear a melhor carne na brasa de Fortaleza.</p>
       </div>
 
       <div class="units-grid">
         <!-- Unidade Jóquei Clube -->
-        <div class="unit-card" id="card-joquei">
-          <span class="unit-badge">Polo Gastronômico</span>
-          <h3 class="unit-name">Unidade Jóquei Clube</h3>
+        <div class="unit-card-light" id="card-joquei">
+          <span class="unit-card-badge">Polo Jóquei Clube</span>
+          <h3 class="unit-title">Unidade Jóquei Clube</h3>
           <p class="unit-address">
-            <i class="fa-solid fa-map-pin"></i>
+            <i class="fa-solid fa-location-dot"></i>
             <span>Av. Lineu Machado, 790 – Jóquei Clube, Fortaleza - CE</span>
           </p>
 
-          <div class="unit-details">
-            <div class="unit-detail-row">
+          <div class="unit-info-list">
+            <div class="unit-info-item">
               <i class="fa-regular fa-clock"></i>
               <span>Terça a Domingo: 11h às 23h30</span>
             </div>
-            <div class="unit-detail-row">
+            <div class="unit-info-item">
               <i class="fa-solid fa-phone"></i>
-              <span>(85) 3017-4007</span>
+              <span>Telefone: (85) 3017-4007</span>
             </div>
-            <div class="unit-detail-row">
-              <i class="fa-solid fa-users"></i>
-              <span>Salão Amplo • Espaço Família • Happy Hour</span>
+            <div class="unit-info-item">
+              <i class="fa-solid fa-tv"></i>
+              <span>Telões de Futebol • Espaço Família • Almoço e Jantar</span>
             </div>
           </div>
 
-          <div class="unit-actions">
-            <a href="https://cardapio.anota.ai/m/picanhadosavio-jockey" target="_blank" class="btn btn-anota btn-sm">
-              <i class="fa-solid fa-bag-shopping"></i> Pedir Delivery (Anota AI)
+          <div class="unit-actions-row">
+            <a href="https://cardapio.anota.ai/m/picanhadosavio-jockey" target="_blank" class="btn btn-primary btn-sm">
+              <i class="fa-solid fa-motorcycle"></i> Pedir no Anota AI
             </a>
-            <a href="https://wa.me/558530174007?text=Ol%C3%A1%20Picanha%20do%20S%C3%A1vio%20(J%C3%B3quei)!%20Gostaria%20de%20fazer%20uma%20reserva." target="_blank" class="btn btn-outline btn-sm">
+            <a href="https://wa.me/558530174007?text=Ol%C3%A1%20Picanha%20do%20S%C3%A1vio%20(J%C3%B3quei)!%20Gostaria%20de%20fazer%20uma%20reserva." target="_blank" class="btn btn-outline-blue btn-sm">
               <i class="fa-brands fa-whatsapp"></i> Reservar Mesa
             </a>
-            <a href="https://maps.google.com/?q=Av.+Lineu+Machado,+790+-+Jóquei+Clube,+Fortaleza+-+CE" target="_blank" class="btn btn-outline btn-sm">
-              <i class="fa-solid fa-location-arrow"></i> Ver Rota
+            <a href="https://maps.google.com/?q=Av.+Lineu+Machado,+790+-+Jóquei+Clube,+Fortaleza+-+CE" target="_blank" class="btn btn-outline-red btn-sm">
+              <i class="fa-solid fa-location-arrow"></i> Rota no Maps
             </a>
           </div>
         </div>
 
         <!-- Unidade Bonsucesso -->
-        <div class="unit-card" id="card-bonsucesso">
-          <span class="unit-badge">Tradicional</span>
-          <h3 class="unit-name">Unidade Bonsucesso</h3>
+        <div class="unit-card-light" id="card-bonsucesso">
+          <span class="unit-card-badge">Tradicional Bonsucesso</span>
+          <h3 class="unit-title">Unidade Bonsucesso</h3>
           <p class="unit-address">
-            <i class="fa-solid fa-map-pin"></i>
+            <i class="fa-solid fa-location-dot"></i>
             <span>Rua Manuel Antônio Leite, 336 – Bonsucesso, Fortaleza - CE</span>
           </p>
 
-          <div class="unit-details">
-            <div class="unit-detail-row">
+          <div class="unit-info-list">
+            <div class="unit-info-item">
               <i class="fa-regular fa-clock"></i>
               <span>Segunda a Domingo: 11h às 23h00</span>
             </div>
-            <div class="unit-detail-row">
+            <div class="unit-info-item">
               <i class="fa-solid fa-phone"></i>
-              <span>(85) 3233-4007 / (85) 98588-5215</span>
+              <span>Telefone: (85) 3233-4007 / WhatsApp: (85) 98588-5215</span>
             </div>
-            <div class="unit-detail-row">
-              <i class="fa-solid fa-users"></i>
-              <span>Cerveja Trincando • Almoço Farto • Noite de Pizzas</span>
+            <div class="unit-info-item">
+              <i class="fa-solid fa-beer-mug-empty"></i>
+              <span>Chopp Trincando • Noite de Pizzas • Picanha Farta</span>
             </div>
           </div>
 
-          <div class="unit-actions">
-            <a href="https://cardapio.anota.ai/m/picanhadosavio-bonsucesso" target="_blank" class="btn btn-anota btn-sm">
-              <i class="fa-solid fa-bag-shopping"></i> Pedir Delivery (Anota AI)
+          <div class="unit-actions-row">
+            <a href="https://cardapio.anota.ai/m/picanhadosavio-bonsucesso" target="_blank" class="btn btn-primary btn-sm">
+              <i class="fa-solid fa-motorcycle"></i> Pedir no Anota AI
             </a>
-            <a href="https://wa.me/5585985885215?text=Ol%C3%A1%20Picanha%20do%20S%C3%A1vio%20(Bonsucesso)!%20Gostaria%20de%20fazer%20um%20pedido%20ou%20reserva." target="_blank" class="btn btn-outline btn-sm">
+            <a href="https://wa.me/5585985885215?text=Ol%C3%A1%20Picanha%20do%20S%C3%A1vio%20(Bonsucesso)!%20Gostaria%20de%20fazer%20um%20pedido%20ou%20reserva." target="_blank" class="btn btn-outline-blue btn-sm">
               <i class="fa-brands fa-whatsapp"></i> Reservar Mesa
             </a>
-            <a href="https://maps.google.com/?q=Rua+Manuel+Antônio+Leite,+336+-+Bonsucesso,+Fortaleza+-+CE" target="_blank" class="btn btn-outline btn-sm">
-              <i class="fa-solid fa-location-arrow"></i> Ver Rota
+            <a href="https://maps.google.com/?q=Rua+Manuel+Antônio+Leite,+336+-+Bonsucesso,+Fortaleza+-+CE" target="_blank" class="btn btn-outline-red btn-sm">
+              <i class="fa-solid fa-location-arrow"></i> Rota no Maps
             </a>
           </div>
         </div>
@@ -194,13 +210,13 @@
     </div>
   </section>
 
-  <!-- Cardápio Visual e Interativo -->
+  <!-- Cardápio Visual Modular (Cards Brancos sobre Areia Suave) -->
   <section class="menu-section" id="cardapio">
     <div class="container">
       <div class="section-header">
         <span class="section-tag">Nossa Gastronomia</span>
-        <h2 class="section-title">O Melhor da Brasa & Tradição</h2>
-        <p class="section-desc">Porções fartas preparadas para compartilhar. Da clássica picanha aos frutos do mar cearenses e as nossas famosas pizzas artesanais.</p>
+        <h2 class="section-title">O Cardápio Completo da Casa</h2>
+        <p class="section-desc">Pratos fartos e receitas tradicionais feitas para compartilhar. Da icônica picanha na chapa aos frutos do mar cearenses e as premiadas pizzas artesanais.</p>
       </div>
 
       <!-- Filtros por Categoria -->
@@ -209,7 +225,7 @@
           <i class="fa-solid fa-layer-group"></i> Todos os Pratos
         </button>
         <button class="menu-filter-btn" data-filter="carnes">
-          <i class="fa-solid fa-fire"></i> Picanhas & Cortes na Brasa
+          <i class="fa-solid fa-fire"></i> Picanhas & Carnes na Brasa
         </button>
         <button class="menu-filter-btn" data-filter="pizzas">
           <i class="fa-solid fa-pizza-slice"></i> Forno de Pizzas Artesanais
@@ -229,83 +245,118 @@
     </div>
   </section>
 
-  <!-- Nossa História & Tradição (Valor Institucional) -->
-  <section class="story-section" id="historia">
+  <!-- A Experiência do Sávio & Nossa História -->
+  <section class="experience-section" id="experiencia">
     <div class="container">
-      <div class="story-grid">
-        <div class="story-content">
-          <span class="section-tag">Legado & Paixão</span>
+      <div class="experience-grid">
+        <div class="experience-content">
+          <span class="section-tag">Tradição & Respeito ao Ponto</span>
           <h2>A Tradição do <span>Sávio</span> na Mesa do Cearense</h2>
-          <p class="story-p">
-            O <strong>Picanha do Sávio</strong> nasceu da paixão genuína pelo braseiro bem feito, pelo carinho com a culinária regional e pela crença de que sentar-se à mesa é o momento mais sagrado de união entre amigos e famílias.
+          <p class="experience-p">
+            O <strong>Picanha do Sávio</strong> nasceu da paixão autêntica pelo braseiro bem feito, pelo carinho com a culinária regional e pela certeza de que sentar-se à mesa é o momento mais especial de união entre amigos e famílias.
           </p>
-          <p class="story-p">
-            Com muito trabalho, dedicação e um padrão inegociável na escolha de cada peça de picanha, o que começou como uma churrascaria de bairro conquistou o paladar de Fortaleza e expandiu para duas grandes unidades — no <strong>Jóquei Clube</strong> e no <strong>Bonsucesso</strong>.
+          <p class="experience-p">
+            Com dedicação incansável e um padrão rigoroso na seleção de cada peça de carne, a churrascaria conquistou os fortalezenses e consolidou sua presença com duas grandes unidades completas — no <strong>Jóquei Clube</strong> e no <strong>Bonsucesso</strong>.
           </p>
 
-          <blockquote class="story-quote">
+          <blockquote class="experience-quote">
             "Aqui a carne é selada com respeito ao ponto, a farofa é crocante na manteiga e a nossa casa é uma extensão da sua família."
           </blockquote>
 
-          <div class="story-features">
-            <div class="story-feature-card">
-              <i class="fa-solid fa-gem"></i>
-              <h4>Cortes Nobres Certificados</h4>
-              <p>Trabalhamos com carnes nobres de fornecedores de primeira linha para garantir suculência máxima.</p>
+          <div class="experience-features">
+            <div class="exp-feature-box">
+              <i class="fa-solid fa-fire-burner"></i>
+              <h4>Cortes Nobres Selecionados</h4>
+              <p>Carnes de primeira linha maturadas e fatiadas no ponto certo de suculência.</p>
             </div>
-            <div class="story-feature-card">
+            <div class="exp-feature-box">
               <i class="fa-solid fa-heart"></i>
-              <h4>Ambiente Acolhedor</h4>
-              <p>Espaço planejado para almoços dominicais, comemoração de aniversários e happy hour descontraído.</p>
+              <h4>Atendimento Acolhedor</h4>
+              <p>Espaço planejado para almoços de domingo, comemorações e confraternizações.</p>
             </div>
           </div>
         </div>
 
-        <div class="story-image-box">
-          <img src="img/hero_picanha.jpg" alt="Tradição do Churrasco do Sávio" class="story-main-img">
+        <div class="experience-image-col">
+          <img src="img/hero_picanha.jpg" alt="A Experiência Gastronômica do Picanha do Sávio" class="exp-main-img">
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Selo de Canal Oficial & Segurança (Combate aos 3 perfis e golpes) -->
+  <!-- Comemorações, Aniversários e Espaço Família (Inspirado em Fogo de Chão) -->
+  <section class="events-section" id="eventos">
+    <div class="container">
+      <div class="events-banner">
+        <div class="events-info">
+          <span class="section-tag">Comemorações Especiais</span>
+          <h3>Celebre Seu Aniversário ou Evento no Sávio</h3>
+          <p>
+            Temos a estrutura perfeita para receber grupos de amigos, famílias e confraternizações corporativas de 10 a 60 pessoas. Reserve mesas com antecedência e garanta uma experiência inesquecível.
+          </p>
+
+          <div class="events-perks">
+            <div class="event-perk-item">
+              <i class="fa-solid fa-check-circle"></i> Mesas reservadas e preparadas para a sua turma
+            </div>
+            <div class="event-perk-item">
+              <i class="fa-solid fa-check-circle"></i> Cardápio sob medida com chapas fartas e combos de pizzas
+            </div>
+            <div class="event-perk-item">
+              <i class="fa-solid fa-check-circle"></i> Espaço amplo e ventilado nas duas unidades
+            </div>
+          </div>
+
+          <a href="https://wa.me/558530174007?text=Ol%C3%A1%20Picanha%20do%20S%C3%A1vio!%20Gostaria%20de%20agendar%20uma%20comemora%C3%A7%C3%A3o%20ou%20reserva%20para%20grupo." target="_blank" class="btn btn-secondary">
+            <i class="fa-brands fa-whatsapp"></i> Falar com o Gerente de Reservas
+          </a>
+        </div>
+
+        <div style="text-align: center;">
+          <img src="img/logo_original.jpg" alt="Selo de Qualidade Sávio" style="max-width: 240px; margin: 0 auto; border-radius: 50%; box-shadow: var(--shadow-card); border: 4px solid #FFFFFF;">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Selo de Canal Oficial & Segurança (Azul Nobre) -->
   <section class="official-badge-section">
     <div class="container official-inner">
       <div class="official-content">
         <i class="fa-solid fa-shield-halved official-icon"></i>
         <div>
-          <h4 class="official-title">Canal Oficial e Seguro do Restaurante</h4>
-          <p class="official-desc">Acesse nossos perfis e contatos verificados. Evite golpes e perfis falsos.</p>
+          <h4 class="official-title">Canal Oficial e Seguro da Marca</h4>
+          <p class="official-desc">Acesse nossos perfis e contatos verificados em Fortaleza. Evite perfis falsos e golpes.</p>
         </div>
       </div>
       <div>
-        <a href="https://www.instagram.com/picanhadosavio/" target="_blank" class="btn btn-outline btn-sm">
+        <a href="https://www.instagram.com/picanhadosavio/" target="_blank" class="btn btn-outline-red" style="background: #FFFFFF; color: var(--brand-red); border-color: #FFFFFF;">
           <i class="fa-brands fa-instagram"></i> Perfil Oficial Verificado @picanhadosavio
         </a>
       </div>
     </div>
   </section>
 
-  <!-- Módulo Trabalhe Conosco (Banco de Talentos Institucional) -->
+  <!-- Módulo Trabalhe Conosco (Banco de Talentos) -->
   <section class="careers-section" id="trabalhe-conosco">
     <div class="container">
-      <div class="careers-card">
+      <div class="careers-card-light">
         <div class="careers-info">
           <span class="section-tag">Carreira & Oportunidades</span>
           <h3>Faça Parte da Nossa Equipe</h3>
           <p>
-            O Picanha do Sávio está em constante crescimento. Se você é apaixonado por gastronomia, excelência em atendimento e quer construir carreira em uma das marcas mais tradicionais de Fortaleza, envie seus dados para o nosso banco de talentos oficial.
+            O Picanha do Sávio está em constante expansão. Se você é apaixonado por atendimento acolhedor, gastronomia de brasa e quer crescer em uma empresa sólida em Fortaleza, cadastre seu currículo no nosso banco de talentos oficial.
           </p>
 
           <div class="careers-perks">
             <div class="perk-item">
-              <i class="fa-solid fa-check"></i> Ambiente de trabalho respeitoso e dinâmico
+              <i class="fa-solid fa-check"></i> Ambiente de trabalho dinâmico e respeitoso
             </div>
             <div class="perk-item">
               <i class="fa-solid fa-check"></i> Oportunidade real de crescimento profissional
             </div>
             <div class="perk-item">
-              <i class="fa-solid fa-check"></i> Vagas para Unidade Jóquei Clube e Bonsucesso
+              <i class="fa-solid fa-check"></i> Vagas para Unidades Jóquei Clube e Bonsucesso
             </div>
           </div>
         </div>
@@ -347,7 +398,7 @@
 
           <div class="form-group">
             <label for="cand-resumo">Conte brevemente sobre sua experiência</label>
-            <textarea id="cand-resumo" class="form-control" rows="3" placeholder="Restaurantes onde já trabalhou, especialidades ou vontade de aprender..."></textarea>
+            <textarea id="cand-resumo" class="form-control" rows="3" placeholder="Restaurantes onde já atuou, especialidades ou vontade de aprender..."></textarea>
           </div>
 
           <button type="submit" class="btn btn-primary">
@@ -360,7 +411,7 @@
     </div>
   </section>
 
-  <!-- Footer Institucional -->
+  <!-- Footer Institucional Elegante -->
   <footer class="main-footer">
     <div class="container">
       <div class="footer-grid">
@@ -368,12 +419,12 @@
           <div class="brand-wrapper" style="margin-bottom: 16px;">
             <img src="img/logo_original.jpg" alt="Picanha do Sávio" class="brand-logo-img">
             <div class="brand-text-block">
-              <span class="brand-title">PICANHA DO SÁVIO</span>
-              <span class="brand-tagline">Churrascos, Pizzas e Peixes</span>
+              <span class="brand-title" style="color: #FFFFFF;">PICANHA DO SÁVIO</span>
+              <span class="brand-tagline" style="color: #F87171;">Churrascos, Pizzas e Peixes</span>
             </div>
           </div>
-          <p style="color: var(--text-secondary); font-size: 0.88rem; line-height: 1.6;">
-            A melhor picanha na brasa de Fortaleza. Atendimento de excelência, fartura e tradição cearense para a sua família e amigos.
+          <p style="color: #9CA3AF; font-size: 0.9rem; line-height: 1.6;">
+            A tradicional picanha na brasa de Fortaleza. Atendimento caloroso, cortes nobres e fartura cearense para toda a sua família.
           </p>
         </div>
 
@@ -382,7 +433,8 @@
           <ul class="footer-links">
             <li><a href="#unidades">Nossas Unidades</a></li>
             <li><a href="#cardapio">Cardápio Completo</a></li>
-            <li><a href="#historia">Nossa História</a></li>
+            <li><a href="#experiencia">Nossa Casa</a></li>
+            <li><a href="#eventos">Comemorações</a></li>
             <li><a href="#trabalhe-conosco">Banco de Talentos</a></li>
           </ul>
         </div>
@@ -392,20 +444,20 @@
           <ul class="footer-links">
             <li><strong>Jóquei Clube:</strong> Av. Lineu Machado, 790</li>
             <li>Tel: (85) 3017-4007</li>
-            <li style="margin-top: 10px;"><strong>Bonsucesso:</strong> R. Manuel Antônio Leite, 336</li>
-            <li>Tel: (85) 3233-4007</li>
+            <li style="margin-top: 12px;"><strong>Bonsucesso:</strong> R. Manuel Antônio Leite, 336</li>
+            <li>Tel: (85) 3233-4007 / (85) 98588-5215</li>
           </ul>
         </div>
 
         <div class="footer-col">
           <h4>Delivery & Redes</h4>
-          <p style="color: var(--text-secondary); font-size: 0.85rem; margin-bottom: 14px;">
-            Faça seu pedido direto pelo Anota AI ou WhatsApp sem taxas abusivas:
+          <p style="color: #9CA3AF; font-size: 0.88rem; margin-bottom: 16px;">
+            Peça direto pelo Anota AI ou WhatsApp sem taxas abusivas:
           </p>
-          <a href="#unidades" class="btn btn-anota btn-sm" style="margin-bottom: 12px; width: 100%;">
+          <a href="#unidades" class="btn btn-primary btn-sm" style="margin-bottom: 12px; width: 100%;">
             <i class="fa-solid fa-motorcycle"></i> Pedir pelo Anota AI
           </a>
-          <a href="https://www.instagram.com/picanhadosavio/" target="_blank" class="btn btn-outline btn-sm" style="width: 100%;">
+          <a href="https://www.instagram.com/picanhadosavio/" target="_blank" class="btn btn-outline-red" style="background: transparent; color: #FFFFFF; border-color: rgba(255,255,255,0.2); width: 100%;">
             <i class="fa-brands fa-instagram"></i> @picanhadosavio
           </a>
         </div>
