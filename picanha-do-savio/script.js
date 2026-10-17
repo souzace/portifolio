@@ -20,7 +20,7 @@ const MENU_ITEMS = [
     serves: 'Serve 2 a 3 pessoas',
     desc: 'Carne macia e suculenta grelhada no braseiro no ponto de sua preferência. Acompanha baião de dois, feijão-verde cremoso, batata frita e farofa d’água.',
     price: 'R$ 119,90',
-    image: 'img/hero_picanha.jpg'
+    image: 'img/prato_picanha_nacional.jpg'
   },
   {
     category: 'carnes',
@@ -29,7 +29,7 @@ const MENU_ITEMS = [
     serves: 'Serve 2 a 3 pessoas',
     desc: 'Maturada na casa, puxada na manteiga da terra, fatiada com cebola roxa dourada, acompanhada de macaxeira cozida ou frita e feijão tropeiro.',
     price: 'R$ 98,90',
-    image: 'img/hero_picanha.jpg'
+    image: 'img/prato_carne_sol.jpg'
   },
   {
     category: 'carnes',
@@ -38,7 +38,7 @@ const MENU_ITEMS = [
     serves: 'Serve 2 a 3 pessoas',
     desc: 'Extremamente macia e suculenta, selada no braseiro e fatiada fina. Acompanha arroz branco ou baião, purê de macaxeira e vinagrete.',
     price: 'R$ 108,90',
-    image: 'img/hero_picanha.jpg'
+    image: 'img/prato_maminha.jpg'
   },
   {
     category: 'pizzas',
@@ -56,7 +56,7 @@ const MENU_ITEMS = [
     serves: '8 fatias grandes',
     desc: 'Mussarela, carne de sol desfiada temperada, queijo coalho tostado em cubos, cebola caramelizada e toque de manteiga da terra.',
     price: 'R$ 62,90',
-    image: 'img/prato_pizza_picanha.jpg'
+    image: 'img/prato_pizza_sertaneja.jpg'
   },
   {
     category: 'mar',
@@ -74,7 +74,7 @@ const MENU_ITEMS = [
     serves: 'Serve 2 pessoas',
     desc: 'Grelhada na brasa, pele crocante e carne úmida temperada com ervas finas e limão taiti. Acompanha baião de dois e salada colorida.',
     price: 'R$ 79,90',
-    image: 'img/prato_peixe_delicia.jpg'
+    image: 'img/prato_tilapia.jpg'
   },
   {
     category: 'mar',
@@ -83,7 +83,7 @@ const MENU_ITEMS = [
     serves: 'Porção para compartilhar',
     desc: 'Camarões selecionados dourados no azeite com lâminas de alho frito crocante e cheiro-verde fresco. Acompanha fatias de limão e molho rosé.',
     price: 'R$ 64,90',
-    image: 'img/prato_peixe_delicia.jpg'
+    image: 'img/prato_camarao.jpg'
   },
   {
     category: 'boteco',
@@ -101,7 +101,7 @@ const MENU_ITEMS = [
     serves: 'Serve 3 a 4 pessoas',
     desc: 'Batatas fritas sequinhas e crocantes cobertas com queijo cheddar cremoso derretido e pedaços crocantes de bacon artesanal.',
     price: 'R$ 42,90',
-    image: 'img/prato_petiscos.jpg'
+    image: 'img/prato_batata_cheddar.jpg'
   },
   {
     category: 'boteco',
@@ -110,7 +110,7 @@ const MENU_ITEMS = [
     serves: 'Individual',
     desc: 'Ampla carta de cervejas e chopp servido na caneca ultracongelada a -2°C para acompanhar sua carne na brasa.',
     price: 'A partir de R$ 9,90',
-    image: 'img/prato_petiscos.jpg'
+    image: 'img/prato_chopp.jpg'
   }
 ];
 
