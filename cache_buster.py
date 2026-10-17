@@ -12,23 +12,23 @@ for project in projects:
     if os.path.exists(html_path):
         with open(html_path, 'r', encoding='utf-8') as f:
             content = f.read()
-        
-        # Match style.css without or with an existing version query
-        # This regex matches href="style.css" or href="style.css?v=..."
-        pattern = r'href="(style\.css)(\?v=[0-9.]+)?([^"]*)"'
-        
-        # Replace with new timestamp
-        new_content = re.sub(pattern, f'href="\\1?v={version}\\3"', content)
-        # Quebrar cache de imagens principais
-        img_pattern = r'src="([^"]+\.(jpg|png|webp))(\?v=[0-9.]+)?([^"]*)"'
-        content = re.sub(img_pattern, f'src="\\1?v={version}\\4"', content)
+        # 1. Match style.css without or with an existing version query
+        pattern_css = r'href="(style\.css)(\?v=[0-9.]+)?([^"]*)"'
+        new_content = re.sub(pattern_css, f'href="\\1?v={version}\\3"', content)
 
+        # 2. Match script.js without or with an existing version query
+        pattern_js = r'src="(script\.js)(\?v=[0-9.]+)?([^"]*)"'
+        new_content = re.sub(pattern_js, f'src="\\1?v={version}\\3"', new_content)
         
+        # 3. Quebrar cache de imagens principais no HTML (src="...jpg/png/webp")
+        img_pattern = r'src="([^"]+\.(?:jpg|jpeg|png|webp))(\?v=[0-9.]+)?([^"]*)"'
+        new_content = re.sub(img_pattern, f'src="\\1?v={version}\\3"', new_content)
+
         if content != new_content:
             with open(html_path, 'w', encoding='utf-8') as f:
                 f.write(new_content)
             print(f"Updated cache-buster in {html_path}")
         else:
-            print(f"No changes needed or style.css not found in {html_path}")
+            print(f"No changes needed in {html_path}")
 
 print("Cache busting script completed.")
