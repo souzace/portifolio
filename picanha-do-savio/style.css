@@ -914,6 +914,115 @@ ul {
 }
 
 /* ==========================================================================
+   Seção de Identidade Visual & Estudo de Marcas
+   ========================================================================== */
+.identity-showcase-section {
+  padding: 90px 0;
+  background: #0B0C10;
+  border-top: 1px solid var(--border-gold);
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.identity-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+
+.identity-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  transition: var(--transition-smooth);
+  display: flex;
+  flex-direction: column;
+}
+
+.identity-card:hover {
+  border-color: var(--accent-gold);
+  transform: translateY(-6px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.6), 0 0 20px rgba(217, 155, 67, 0.2);
+}
+
+.identity-img-box {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  background: #000;
+  overflow: hidden;
+}
+
+.identity-img-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.identity-card:hover .identity-img-box img {
+  transform: scale(1.05);
+}
+
+.identity-badge {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  background: rgba(13, 14, 18, 0.85);
+  backdrop-filter: blur(8px);
+  border: 1px solid var(--border-gold);
+  color: var(--accent-gold);
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 4px;
+  text-transform: uppercase;
+}
+
+.identity-body {
+  padding: 22px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.identity-body h3 {
+  font-family: var(--font-serif);
+  font-size: 1.25rem;
+  color: #fff;
+  margin-bottom: 8px;
+}
+
+.identity-body p {
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+  margin-bottom: 16px;
+  flex-grow: 1;
+}
+
+.palette-row {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.palette-swatch {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  display: inline-block;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+}
+
+.palette-labels {
+  font-family: monospace;
+  font-size: 0.72rem;
+  color: var(--text-muted);
+}
+
+/* ==========================================================================
    Responsividade Mobile
    ========================================================================== */
 @media (max-width: 992px) {
@@ -940,7 +1049,8 @@ ul {
     grid-template-columns: 1fr;
     gap: 30px;
   }
-  .menu-grid {
+  .menu-grid,
+  .identity-grid {
     grid-template-columns: repeat(2, 1fr);
   }
   .footer-grid {
@@ -955,7 +1065,8 @@ ul {
   .nav-menu {
     display: none;
   }
-  .menu-grid {
+  .menu-grid,
+  .identity-grid {
     grid-template-columns: 1fr;
   }
   .form-row {
@@ -968,3 +1079,4 @@ ul {
     display: none;
   }
 }
+
