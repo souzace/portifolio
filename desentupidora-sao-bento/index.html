@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desentupidora São Bento | Plantão 24h em Fortaleza e Região</title>
+    <meta name="description" content="Desentupidora São Bento em Fortaleza. Atendimento imediato 24h para residências, condomínios e empresas. Orçamento sem surpresas, visita grátis e chegada em 30 min.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,600;0,700;0,800;0,900;1,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- TOP EMERGENCY ALERT BAR -->
+    <div class="emergency-bar">
+        <div class="container emergency-content">
+            <span class="live-pulse"></span>
+            <span class="emergency-text">🚨 <strong>PLANTÃO DE EMERGÊNCIA 24H:</strong> Equipes volantes em Fortaleza e Região Metropolitana</span>
+            <a href="tel:+5585986042721" class="emergency-call-btn">LIGAR AGORA: (85) 98604-2721</a>
+        </div>
+    </div>
+
+    <!-- MAIN NAVBAR -->
+    <header class="main-header">
+        <div class="container header-container">
+            <a href="#" class="brand-logo">
+                <div class="brand-badge">
+                    <span class="brand-sub">DESENTUPIDORA</span>
+                    <span class="brand-main">SÃO BENTO</span>
+                </div>
+            </a>
+            
+            <nav class="nav-links">
+                <a href="#servicos">Serviços</a>
+                <a href="#como-funciona">Como Funciona</a>
+                <a href="#b2b">Condomínios & Empresas</a>
+                <a href="#transparencia">Anti-Golpe</a>
+                <a href="#depoimentos">Avaliações</a>
+            </nav>
+
+            <div class="header-actions">
+                <a href="https://wa.me/5585986042721?text=Ol%C3%A1!%20Preciso%20de%20um%20or%C3%A7amento%20urgente%20de%20desentupimento." target="_blank" rel="noopener" class="btn btn-primary btn-pulse">
+                    <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2zm5.82 14.15c-.24.67-1.39 1.28-1.92 1.36-.5.08-1.15.11-3.69-.94-2.73-1.12-4.49-3.9-4.63-4.08-.14-.19-1.11-1.48-1.11-2.82s.7-2 1-2.27c.24-.22.53-.33.77-.33.24 0 .47.01.67.02.21.01.49-.08.77.58.28.67.97 2.37 1.05 2.54.08.17.14.38.03.6-.11.22-.17.36-.33.55-.17.19-.36.42-.51.57-.17.17-.35.35-.15.7.2.35.89 1.47 1.91 2.38 1.31 1.17 2.42 1.53 2.76 1.7.35.17.55.14.75-.09.2-.23.86-1 1.09-1.35.23-.35.46-.29.77-.17.32.11 2.02.95 2.37 1.12.35.17.58.26.67.41.08.15.08.87-.16 1.54z"/></svg>
+                    <span>Falar no WhatsApp</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="hero-section">
+        <div class="hero-overlay"></div>
+        <div class="container hero-content">
+            <div class="hero-left">
+                <div class="hero-badge">
+                    <span class="clock-icon">⏱️</span> Chegamos em até 30 minutos em Fortaleza
+                </div>
+                <h1 class="hero-title">
+                    Desentupimento Rápido, Limpo e <span class="highlight">Sem Surpresas na Conta.</span>
+                </h1>
+                <p class="hero-desc">
+                    Atendimento emergencial 24h em residências, condomínios, restaurantes e indústrias. Preço justo, visita técnica gratuita e garantia formal de 90 dias por escrito.
+                </p>
+
+                <!-- SERVICE SWITCHER TABS -->
+                <div class="tab-switcher">
+                    <button class="tab-btn active" onclick="switchHeroMode('b2c')">🏠 Para Sua Casa / Apto</button>
+                    <button class="tab-btn" onclick="switchHeroMode('b2b')">🏢 Para Condomínios & Empresas</button>
+                </div>
+
+                <!-- DYNAMIC CTA BOX -->
+                <div id="b2c-content" class="cta-action-box">
+                    <div class="cta-action-header">
+                        <strong>Urgência Residencial:</strong> Ralos, pias, vasos sanitários e caixas de gordura.
+                    </div>
+                    <div class="hero-cta-buttons">
+                        <a href="https://wa.me/5585986042721?text=Ol%C3%A1,%20estou%20com%20um%20entupimento%20na%20minha%20casa/apto%20e%20preciso%20de%20atendimento%20urgente!" target="_blank" rel="noopener" class="btn btn-primary btn-lg">
+                            Chamar Técnico Agora
+                        </a>
+                        <a href="tel:+5585986042721" class="btn btn-secondary btn-lg">
+                            📞 (85) 98604-2721
+                        </a>
+                    </div>
+                    <div class="trust-checks">
+                        <span>✓ Visita e orçamento sem custo</span>
+                        <span>✓ Preço combinado antes de começar</span>
+                        <span>✓ Não quebramos pisos ou paredes</span>
+                    </div>
+                </div>
+
+                <div id="b2b-content" class="cta-action-box" style="display: none;">
+                    <div class="cta-action-header">
+                        <strong>Soluções Corporativas:</strong> Caminhão de hidrojateamento, sucção a vácuo, limpa-fossa e contratos com laudo técnico.
+                    </div>
+                    <div class="hero-cta-buttons">
+                        <a href="https://wa.me/5585986042721?text=Ol%C3%A1,%20gostaria%20de%20um%20or%C3%A7amento%20para%20meu%20condom%C3%ADnio/empresa." target="_blank" rel="noopener" class="btn btn-primary btn-lg">
+                            Solicitar Proposta B2B
+                        </a>
+                        <a href="tel:+5585986042721" class="btn btn-secondary btn-lg">
+                            📞 Plantão Corporativo
+                        </a>
+                    </div>
+                    <div class="trust-checks">
+                        <span>✓ Emissão de Nota Fiscal</span>
+                        <span>✓ Licenciamento e descarte legal</span>
+                        <span>✓ Atendimento preventivo e emergencial</span>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="hero-right">
+                <div class="card-highlight-promo">
+                    <div class="promo-badge-top">ATENDIMENTO IMEDIATO</div>
+                    <div class="promo-body">
+                        <div class="brand-circle">
+                            <span class="circle-title">SÃO BENTO</span>
+                            <span class="circle-sub">DESENTUPIDORA</span>
+                        </div>
+                        <h3>Fortaleza & Região Metropolitana</h3>
+                        <p class="promo-text">Técnicos de prontidão 24 horas por dia, 7 dias por semana, inclusive feriados e finais de semana.</p>
+                        
+                        <div class="fast-calculator">
+                            <label for="bairro-select">Consulte o tempo para o seu bairro:</label>
+                            <div class="calc-input-group">
+                                <select id="bairro-select" onchange="calcularTempo()">
+                                    <option value="">Selecione seu bairro...</option>
+                                    <option value="Aldeota / Meireles">Aldeota / Meireles</option>
+                                    <option value="São Bento / Messejana">São Bento / Messejana</option>
+                                    <option value="Cocó / Papicu">Cocó / Papicu</option>
+                                    <option value="Fátima / Benfica">Fátima / Benfica</option>
+                                    <option value="Parquelândia / Monte Castelo">Parquelândia / Monte Castelo</option>
+                                    <option value="Maraponga / Mondubim">Maraponga / Mondubim</option>
+                                    <option value="Eusébio / Aquiraz">Eusébio / Aquiraz</option>
+                                    <option value="Caucaia / Outras Regiões">Caucaia / Outras Regiões</option>
+                                </select>
+                            </div>
+                            <div id="tempo-resposta" class="tempo-box">
+                                🚗 Selecione seu bairro para ver o tempo estimado de chegada.
+                            </div>
+                        </div>
+
+                        <div class="promo-phone-cta">
+                            <span>Central Direta de Plantão:</span>
+                            <a href="tel:+5585986042721" class="phone-big">(85) 98604-2721</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ANTI-SCAM BANNER (O GRANDE DIFERENCIAL) -->
+    <section id="transparencia" class="anti-scam-section">
+        <div class="container">
+            <div class="anti-scam-card">
+                <div class="scam-icon">🛡️</div>
+                <div class="scam-content">
+                    <h3>SEU DINHEIRO PROTEGIDO: Cuidado com o "Golpe do Metro"</h3>
+                    <p>
+                        Muitas empresas cobram valores absurdos cobrando "por metro de cabo inserido" sem avisar antes. 
+                        Na <strong>Desentupidora São Bento</strong>, nós valorizamos o respeito ao cliente: <strong>avaliamos o local, passamos o valor final exato antes de ligar qualquer máquina e você só paga após o serviço concluído e testado.</strong>
+                    </p>
+                </div>
+                <div class="scam-badge-tag">
+                    <span>100% TRANSPARENTE</span>
+                    <strong>Zero Surpresas</strong>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICES GRID -->
+    <section id="servicos" class="services-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">NOSSAS ESPECIALIDADES</span>
+                <h2 class="section-title">Serviços Especializados em Desobstrução</h2>
+                <p class="section-subtitle">Equipamentos rotativos de alta tecnologia K-50 / K-500 e hidrojateamento que resolvem sem quebrar nada.</p>
+            </div>
+
+            <div class="services-grid">
+                <!-- Card 1 -->
+                <div class="service-card">
+                    <div class="service-icon">🚽</div>
+                    <h3>Desentupimento de Vasos Sanitários</h3>
+                    <p>Remoção de obstruções causadas por objetos, tecidos ou resíduos com maquinário específico, preservando a cerâmica e as juntas.</p>
+                    <ul class="service-features">
+                        <li>Sem quebra ou danos ao vaso</li>
+                        <li>Higienização no local</li>
+                        <li>Solução rápida e discreta</li>
+                    </ul>
+                    <a href="https://wa.me/5585986042721?text=Ol%C3%A1!%20Preciso%20desentupir%20um%20vaso%20sanit%C3%A1rio." class="service-link">Desentupir Vaso →</a>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="service-card">
+                    <div class="service-icon">🚿</div>
+                    <h3>Pias, Ralos e Lavatórios</h3>
+                    <p>Desobstrução de gordura acumulada, restos de alimentos e fios de cabelo na tubulação de cozinhas, lavanderias e banheiros.</p>
+                    <ul class="service-features">
+                        <li>Restauração do fluxo total</li>
+                        <li>Eliminação do mau cheiro</li>
+                        <li>Sondas flexíveis de precisão</li>
+                    </ul>
+                    <a href="https://wa.me/5585986042721?text=Ol%C3%A1!%20Preciso%20desentupir%20uma%20pia%20ou%20ralo." class="service-link">Desentupir Pia/Ralo →</a>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="service-card">
+                    <div class="service-icon">🛢️</div>
+                    <h3>Caixas de Gordura & Esgoto</h3>
+                    <p>Raspagem profunda e limpeza completa das paredes das caixas de gordura e ramais de esgoto residenciais ou de comércios.</p>
+                    <ul class="service-features">
+                        <li>Desobstrução preventiva e corretiva</li>
+                        <li>Descarte ambientalmente correto</li>
+                        <li>Acaba com retorno de água suja</li>
+                    </ul>
+                    <a href="https://wa.me/5585986042721?text=Ol%C3%A1!%20Preciso%20de%20limpeza%20de%20caixa%20de%20gordura/esgoto." class="service-link">Limpar Caixa de Gordura →</a>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="service-card">
+                    <div class="service-icon">🚛</div>
+                    <h3>Limpa Fossa & Sucção a Vácuo</h3>
+                    <p>Caminhões equipados com bombas de sucção potente para esgotamento de fossas sépticas, negras e sumidouros.</p>
+                    <ul class="service-features">
+                        <li>Capacidade para grandes volumes</li>
+                        <li>Transporte com certificação</li>
+                        <li>Ideal para casas e sítios</li>
+                    </ul>
+                    <a href="https://wa.me/5585986042721?text=Ol%C3%A1!%20Gostaria%20de%20um%20or%C3%A7amento%20para%20Limpa%20Fossa." class="service-link">Orçar Limpa Fossa →</a>
+                </div>
+
+                <!-- Card 5 -->
+                <div class="service-card">
+                    <div class="service-icon">🌊</div>
+                    <h3>Hidrojateamento de Alta Pressão</h3>
+                    <p>Jatos d'água pressurizados para desincrustação profunda em tubulações industriais, galerias pluviais e redes de condomínios.</p>
+                    <ul class="service-features">
+                        <li>Limpeza 100% interna dos tubos</li>
+                        <li>Sem utilização de químicos agressivos</li>
+                        <li>Vazão restaurada de fábrica</li>
+                    </ul>
+                    <a href="https://wa.me/5585986042721?text=Ol%C3%A1!%20Preciso%20de%20servi%C3%A7o%20de%20Hidrojateamento." class="service-link">Orçar Hidrojateamento →</a>
+                </div>
+
+                <!-- Card 6 -->
+                <div class="service-card">
+                    <div class="service-icon">🏢</div>
+                    <h3>Contratos para Condomínios</h3>
+                    <p>Manutenção preventiva programada para colunas prediais, barriletes e caixas coletoras para síndicos e administradoras.</p>
+                    <ul class="service-features">
+                        <li>Plantão prioritário de emergência</li>
+                        <li>Emissão de Laudo Técnico e NF</li>
+                        <li>Redução de custos com emergências</li>
+                    </ul>
+                    <a href="https://wa.me/5585986042721?text=Ol%C3%A1!%20Sou%20s%C3%ADndico/administrador%20e%20gostaria%20de%20uma%20proposta%20para%20condom%C3%ADnio." class="service-link">Proposta para Condomínio →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- HOW IT WORKS STEP BY STEP -->
+    <section id="como-funciona" class="how-it-works">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">SIMPLES E DIRETO</span>
+                <h2 class="section-title">Como Funciona o Nosso Atendimento?</h2>
+                <p class="section-subtitle">Do primeiro clique até a solução definitiva em menos de 1 hora.</p>
+            </div>
+
+            <div class="steps-grid">
+                <div class="step-card">
+                    <div class="step-num">1</div>
+                    <h4>Chamada Rápida</h4>
+                    <p>Você clica no botão do WhatsApp ou liga para nossa central informando seu bairro e o problema.</p>
+                </div>
+
+                <div class="step-card">
+                    <div class="step-num">2</div>
+                    <h4>Chegada em 30 min</h4>
+                    <p>A equipe volante mais próxima de você em Fortaleza ou RMF se desloca com o maquinário completo.</p>
+                </div>
+
+                <div class="step-card">
+                    <div class="step-num">3</div>
+                    <h4>Diagnóstico & Valor Fixo</h4>
+                    <p>O técnico avalia o local e passa o valor fechado antes de qualquer intervenção. Você aprova com tranquilidade.</p>
+                </div>
+
+                <div class="step-card">
+                    <div class="step-num">4</div>
+                    <h4>Execução e Garantia</h4>
+                    <p>Desobstrução limpa, teste de fluxo com água corrente e entrega do certificado de garantia de 90 dias.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- B2B DEDICATED SECTION -->
+    <section id="b2b" class="b2b-section">
+        <div class="container b2b-container">
+            <div class="b2b-text">
+                <span class="badge-accent">SETOR CORPORATIVO & PREDIAL</span>
+                <h2>Soluções Estruturadas para Síndicos, Restaurantes e Indústrias</h2>
+                <p>
+                    Evite paradas na sua cozinha comercial ou transtornos com retorno de esgoto nos apartamentos do piso térreo. 
+                    A <strong>Desentupidora São Bento</strong> conta com frota pesada, documentação completa e corpo técnico qualificado para atender com rapidez máxima.
+                </p>
+                <div class="b2b-items">
+                    <div class="b2b-item">
+                        <span class="check-icon">✓</span>
+                        <div>
+                            <strong>Limpeza de Colunas e Caixas de Passagem</strong>
+                            <span>Desobstrução de prumadas verticais e horizontais em edifícios de todos os portes.</span>
+                        </div>
+                    </div>
+                    <div class="b2b-item">
+                        <span class="check-icon">✓</span>
+                        <div>
+                            <strong>Laudos Técnicos e Certificados Ambientais</strong>
+                            <span>Descarte em locais devidamente licenciados com emissão de manifesto e nota fiscal.</span>
+                        </div>
+                    </div>
+                    <div class="b2b-item">
+                        <span class="check-icon">✓</span>
+                        <div>
+                            <strong>Plantão de Resposta Imediata para Contratos</strong>
+                            <span>Atendimento preferencial sem custos adicionais aos finais de semana e madrugadas.</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="b2b-action">
+                    <a href="https://wa.me/5585986042721?text=Ol%C3%A1,%20gostaria%20de%20agendar%20uma%20visita%20t%C3%A9cnica%20gratuita%20no%20meu%20condom%C3%ADnio/empresa." target="_blank" rel="noopener" class="btn btn-primary btn-lg">
+                        Agendar Vistoria Técnica Gratuita
+                    </a>
+                </div>
+            </div>
+
+            <div class="b2b-highlight-card">
+                <div class="b2b-card-inner">
+                    <h3>Precisa de Contrato de Manutenção Preventiva?</h3>
+                    <p>Garanta que sua tubulação nunca transborde. Nossos planos preventivos reduzem até 85% dos chamados de emergência.</p>
+                    <ul class="b2b-perks">
+                        <li>Descontos progressivos por volume</li>
+                        <li>Vistorias semestrais programadas</li>
+                        <li>Suporte 24h dedicado via canal direto</li>
+                    </ul>
+                    <a href="tel:+5585986042721" class="btn btn-secondary w-full">Falar com Gerente Técnico</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section id="depoimentos" class="testimonials-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">QUEM JÁ CONTRATOU RECOMENDA</span>
+                <h2 class="section-title">Clientes Satisfeitos em Fortaleza</h2>
+                <p class="section-subtitle">Veja a experiência de quem chamou a Desentupidora São Bento na hora do aperto.</p>
+            </div>
+
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <p class="test-text">"O vaso do banheiro principal entupiu num domingo de almoço com a família em casa. Liguei desesperada e em menos de 35 minutos o técnico já estava aqui na Aldeota. Preço justo, super educado e não sujou nada!"</p>
+                    <div class="test-author">
+                        <div class="avatar-circle">MC</div>
+                        <div>
+                            <strong>Mariana Cavalcante</strong>
+                            <span>Residencial — Aldeota</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <p class="test-text">"Sou síndico de um prédio com 48 apartamentos em Messejana. A prumada do esgoto começou a voltar no térreo à meia-noite. A São Bento veio com o caminhão e desobstruiu na hora. Salvaram nosso condomínio!"</p>
+                    <div class="test-author">
+                        <div class="avatar-circle">RL</div>
+                        <div>
+                            <strong>Roberto Linhares</strong>
+                            <span>Síndico — Messejana</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <p class="test-text">"O melhor foi a transparência. Já caí no golpe de pagar por metro com outra empresa e paguei um absurdo. A São Bento me deu o valor fixo antes de começar e cumpriu à risca. Recomendo de olhos fechados."</p>
+                    <div class="test-author">
+                        <div class="avatar-circle">AS</div>
+                        <div>
+                            <strong>Antônio Silva</strong>
+                            <span>Comerciante — Parquelândia</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ SECTION -->
+    <section class="faq-section">
+        <div class="container faq-container">
+            <div class="section-header">
+                <span class="section-tag">DÚVIDAS FREQUENTES</span>
+                <h2 class="section-title">Perguntas Comuns sobre Nossos Serviços</h2>
+            </div>
+
+            <div class="faq-list">
+                <details class="faq-item">
+                    <summary>Quanto custa um desentupimento?</summary>
+                    <div class="faq-answer">
+                        O valor varia de acordo com a gravidade, localização da tubulação e o maquinário necessário. No entanto, <strong>nossa visita técnica e orçamento são 100% gratuitos</strong>. O técnico examina o local e informa o valor fechado antes de iniciar qualquer trabalho.
+                    </div>
+                </details>
+
+                <details class="faq-item">
+                    <summary>Vocês cobram por metro de cabo?</summary>
+                    <div class="faq-answer">
+                        <strong>Não!</strong> Repudiamos a prática abusiva do "golpe do metro". Nossos orçamentos são transparentes com preço fechado pelo serviço ou teto máximo pré-acordado.
+                    </div>
+                </details>
+
+                <details class="faq-item">
+                    <summary>É preciso quebrar pisos ou azulejos?</summary>
+                    <div class="faq-answer">
+                        Em 99% dos casos <strong>não quebramos nada</strong>. Nossos equipamentos de roto-rooter rotativo K-50 e K-500 e cabos espirais flexíveis fazem curvas de 90° e realizam a raspagem interna das tubulações preservando pisos e paredes.
+                    </div>
+                </details>
+
+                <details class="faq-item">
+                    <summary>Qual é a garantia do serviço?</summary>
+                    <div class="faq-answer">
+                        Oferecemos até <strong>90 dias de garantia formal</strong> por escrito com emissão de nota fiscal para residências, condomínios e empresas.
+                    </div>
+                </details>
+
+                <details class="faq-item">
+                    <summary>Quais regiões vocês atendem?</summary>
+                    <div class="faq-answer">
+                        Cobrimos <strong>todos os bairros de Fortaleza</strong> (Aldeota, Meireles, Messejana, São Bento, Papicu, Centro, Parquelândia, Maraponga, etc.) e cidades da Região Metropolitana como Caucaia, Eusébio, Aquiraz e Maracanaú.
+                    </div>
+                </details>
+            </div>
+        </div>
+    </section>
+
+    <!-- BOTTOM CTA BANNER -->
+    <section class="final-cta">
+        <div class="container final-cta-container">
+            <div class="final-cta-text">
+                <h2>O esgoto voltou ou a pia parou?</h2>
+                <p>Nossa equipe mais próxima já pode estar a caminho da sua casa ou empresa.</p>
+            </div>
+            <div class="final-cta-btns">
+                <a href="https://wa.me/5585986042721?text=Ol%C3%A1!%20Preciso%20de%20um%20t%C3%A9cnico%20de%20urg%C3%AAncia%20agora." target="_blank" rel="noopener" class="btn btn-primary btn-lg">
+                    Chamar no WhatsApp Agora
+                </a>
+                <a href="tel:+5585986042721" class="btn btn-secondary btn-lg">
+                    Ligar (85) 98604-2721
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="main-footer">
+        <div class="container footer-content">
+            <div class="footer-col">
+                <div class="brand-badge brand-badge-small">
+                    <span class="brand-sub">DESENTUPIDORA</span>
+                    <span class="brand-main">SÃO BENTO</span>
+                </div>
+                <p class="footer-desc">Referência em desobstrução, hidrojateamento e esgotamento sanitário em Fortaleza e Região Metropolitana. Atendimento 24 horas.</p>
+                <div class="footer-social">
+                    <a href="https://www.instagram.com/desentupidora_saobento_oficial" target="_blank" rel="noopener" class="social-link">Instagram Oficial</a>
+                </div>
+            </div>
+
+            <div class="footer-col">
+                <h4>Serviços</h4>
+                <ul>
+                    <li><a href="#servicos">Desentupimento de Vasos</a></li>
+                    <li><a href="#servicos">Pias e Ralos</a></li>
+                    <li><a href="#servicos">Caixas de Gordura</a></li>
+                    <li><a href="#servicos">Limpa Fossa a Vácuo</a></li>
+                    <li><a href="#servicos">Hidrojateamento Industrial</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Atendimento</h4>
+                <ul>
+                    <li><strong>Plantão:</strong> 24 Horas / 7 dias</li>
+                    <li><strong>Telefone:</strong> (85) 98604-2721</li>
+                    <li><strong>WhatsApp:</strong> (85) 98604-2721</li>
+                    <li><strong>Área de Cobertura:</strong> Fortaleza, Eusébio, Caucaia e RMF</li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Compromisso</h4>
+                <div class="guarantee-box">
+                    <span class="g-shield">🛡️</span>
+                    <div>
+                        <strong>Garantia de 90 Dias</strong>
+                        <span>Serviço executado com qualidade, nota fiscal e respeito ao consumidor.</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="container bottom-flex">
+                <p>© 2026 Desentupidora São Bento. Todos os direitos reservados. Fortaleza - CE.</p>
+                <p class="dev-by">Desenvolvido com alta performance por <a href="../" target="_blank">Orkes</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- STICKY MOBILE EMERGENCY BAR -->
+    <div class="sticky-mobile-bar">
+        <a href="tel:+5585986042721" class="sticky-btn sticky-call">
+            <span class="icon">📞</span>
+            <span>Ligar 24h</span>
+        </a>
+        <a href="https://wa.me/5585986042721?text=Ol%C3%A1!%20Preciso%20de%20um%20or%C3%A7amento%20urgente%20de%20desentupimento." target="_blank" rel="noopener" class="sticky-btn sticky-wa">
+            <span class="icon">💬</span>
+            <span>WhatsApp Urgente</span>
+        </a>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
