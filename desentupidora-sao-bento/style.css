@@ -1,21 +1,25 @@
 /* ==========================================================================
    DESENTUPIDORA SÃO BENTO — DESIGN SYSTEM INSPIRADO NO PROJETO 'IDEAL'
-   Paleta limpa, agradável aos olhos, profissional e de alta confiança:
-   --bg: #F0F7FD (fundo suave azulado de saneamento e água limpa)
-   --blue: #115074 / #0E3B56 (azul corporativo sólido)
-   --green: #25D366 / #16A34A (verde de conversão e WhatsApp)
-   --amber: #D97706 / #B45309 (detalhes discretos de alerta e chapéu do mascote)
-   --card: #FFFFFF (cartões limpos com bordas suaves)
-   --border: #CBE2F4 (bordas delicadas sem peso visual)
-   --tm: #1E293B (texto escuro com ótima legibilidade)
+   Paleta refinada com a cor Marrom Institucional (extraída de sb1.png):
+   --brown: #391612 (marrom profundo e distinto da marca)
+   --brown-light: #52231E (marrom para hover e toques secundários)
+   --brown-surface: #F8F2F1 (fundo sutil com matiz quente)
+   --bg: #F8FAFC / #F2F6FA (fundo suave, limpo e descansado para os olhos)
+   --green: #16A34A (verde de conversão e aprovação)
+   --whatsapp: #25D366 (verde WhatsApp oficial)
+   --card: #FFFFFF (cartões limpos e nítidos)
+   --border: #E2E8F0 (bordas delicadas sem peso visual)
+   --tm: #0F172A (texto escuro com ótima legibilidade)
    --muted: #475569 (texto de apoio suave)
    ========================================================================== */
 
 :root {
-    --bg: #F0F7FD;
-    --blue: #115074;
-    --blue-dark: #0A324A;
-    --blue-light: #E1EFFB;
+    --bg: #F4F8FC;
+    --brown: #391612;
+    --brown-light: #4E211B;
+    --brown-surface: #FBF6F5;
+    --blue-accent: #115074;
+    --blue-light: #EBF3FA;
     --card: #FFFFFF;
     --green: #16A34A;
     --green-hover: #15803D;
@@ -24,9 +28,10 @@
     --amber: #D97706;
     --tm: #0F172A;
     --muted: #475569;
-    --border: #D0E3F3;
-    --shadow: 0 4px 18px rgba(17, 80, 116, 0.08);
-    --shadow-hover: 0 10px 25px rgba(17, 80, 116, 0.14);
+    --border: #DCE6F0;
+    --border-card: #E5EDF5;
+    --shadow: 0 4px 18px rgba(57, 22, 18, 0.06);
+    --shadow-hover: 0 10px 25px rgba(57, 22, 18, 0.12);
     --radius-sm: 6px;
     --radius-md: 12px;
     --radius-lg: 16px;
@@ -60,13 +65,14 @@ body {
 }
 
 /* ==========================================================================
-   TOP BAR (SUBTLE & SOOTHING)
+   TOP BAR (BROWN COLOR IN THE TOP)
    ========================================================================== */
 .top-bar {
-    background-color: #0E3B56;
+    background-color: var(--brown);
     color: #FFFFFF;
     font-size: 0.85rem;
     padding: 8px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
 }
 
 .top-bar-flex {
@@ -159,13 +165,13 @@ body {
     object-fit: contain;
     position: relative;
     z-index: 2;
-    filter: drop-shadow(0 8px 16px rgba(17, 80, 116, 0.15));
+    filter: drop-shadow(0 8px 16px rgba(57, 22, 18, 0.15));
 }
 
 .mascot-halo {
     position: absolute;
     inset: 10px;
-    background: radial-gradient(circle, var(--blue-light) 0%, transparent 70%);
+    background: radial-gradient(circle, var(--brown-surface) 0%, transparent 70%);
     border-radius: 50%;
     z-index: 1;
 }
@@ -175,7 +181,7 @@ body {
     font-size: 0.75rem;
     font-weight: 800;
     letter-spacing: 3px;
-    color: var(--blue);
+    color: var(--brown);
     display: block;
     margin-bottom: 2px;
 }
@@ -184,7 +190,7 @@ body {
     font-family: 'Montserrat', sans-serif;
     font-size: 2.1rem;
     font-weight: 900;
-    color: var(--blue-dark);
+    color: var(--brown);
     line-height: 1.1;
     letter-spacing: 0.5px;
     margin-bottom: 6px;
@@ -196,11 +202,11 @@ body {
     font-weight: 500;
 }
 
-/* INFO CARD (IDENTICAL TO IDEAL STYLE) */
+/* INFO CARD (BROWN CARD LINE) */
 .info-card {
     background-color: var(--bg);
-    border: 1px solid var(--border);
-    border-left: 5px solid var(--blue);
+    border: 1px solid var(--border-card);
+    border-left: 5px solid var(--brown);
     border-radius: var(--radius-md);
     padding: 30px;
     box-shadow: var(--shadow);
@@ -213,8 +219,9 @@ body {
 }
 
 .card-status-badge {
-    background-color: var(--blue-light);
-    color: var(--blue);
+    background-color: var(--brown-surface);
+    color: var(--brown);
+    border: 1px solid rgba(57, 22, 18, 0.15);
     font-size: 0.75rem;
     font-weight: 700;
     padding: 4px 10px;
@@ -228,7 +235,7 @@ body {
 .info-card h3 {
     font-size: 1.45rem;
     font-weight: 800;
-    color: var(--blue);
+    color: var(--brown);
     line-height: 1.3;
 }
 
@@ -295,14 +302,14 @@ body {
 
 .btn-phone {
     background-color: #FFFFFF;
-    color: var(--blue);
+    color: var(--brown);
     border: 1px solid var(--border);
     box-shadow: var(--shadow);
 }
 
 .btn-phone:hover {
-    background-color: var(--blue-light);
-    border-color: var(--blue);
+    background-color: var(--brown-surface);
+    border-color: var(--brown);
 }
 
 .btn-large {
@@ -310,7 +317,7 @@ body {
     font-size: 1.05rem;
 }
 
-/* TAGS ROW (LIKE IDEAL) */
+/* TAGS ROW (WITH BROWN ACCENT) */
 .tags-row {
     display: flex;
     flex-wrap: wrap;
@@ -334,14 +341,14 @@ body {
 }
 
 .tag-primary {
-    background-color: var(--blue);
+    background-color: var(--brown);
     color: #FFFFFF;
-    border-color: var(--blue);
+    border-color: var(--brown);
     font-weight: 700;
 }
 
 /* ==========================================================================
-   SECTIONS COMMON
+   SECTIONS COMMON (TITLES IN BROWN)
    ========================================================================== */
 section {
     padding: 65px 0;
@@ -349,7 +356,7 @@ section {
 
 h2 {
     font-size: 1.9rem;
-    color: var(--blue);
+    color: var(--brown);
     text-align: center;
     margin-bottom: 10px;
     font-weight: 800;
@@ -366,7 +373,7 @@ h2 {
 }
 
 /* ==========================================================================
-   SECTION 1: CAROUSEL TRACK (HORIZONTALLY SCROLLABLE LIKE IDEAL)
+   SECTION 1: CAROUSEL TRACK (CARD LINES & TITLES IN BROWN)
    ========================================================================== */
 #servicos {
     background-color: var(--bg);
@@ -385,8 +392,8 @@ h2 {
     height: 44px;
     border-radius: 50%;
     background: #FFFFFF;
-    border: 2px solid var(--blue);
-    color: var(--blue);
+    border: 2px solid var(--brown);
+    color: var(--brown);
     font-size: 1.4rem;
     font-weight: bold;
     display: flex;
@@ -399,7 +406,7 @@ h2 {
 }
 
 .carousel-btn:hover:not(:disabled) {
-    background: var(--blue);
+    background: var(--brown);
     color: #FFFFFF;
 }
 
@@ -442,7 +449,7 @@ h2 {
     padding: 28px;
     border-radius: var(--radius-md);
     border: 1px solid var(--border);
-    border-top: 4px solid var(--blue);
+    border-top: 4px solid var(--brown);
     flex: 0 0 calc(85% - 18px);
     scroll-snap-align: start;
     display: flex;
@@ -482,8 +489,9 @@ h2 {
 .slide-tag {
     font-size: 0.75rem;
     font-weight: 700;
-    color: var(--blue);
-    background-color: var(--blue-light);
+    color: var(--brown);
+    background-color: var(--brown-surface);
+    border: 1px solid rgba(57, 22, 18, 0.12);
     padding: 3px 8px;
     border-radius: 4px;
 }
@@ -491,7 +499,7 @@ h2 {
 .service-slide h3 {
     font-size: 1.15rem;
     font-weight: 800;
-    color: var(--blue);
+    color: var(--brown);
     margin-bottom: 4px;
 }
 
@@ -513,7 +521,7 @@ h2 {
 .slide-cta {
     font-size: 0.88rem;
     font-weight: 700;
-    color: var(--blue);
+    color: var(--brown);
     text-decoration: none;
     display: inline-flex;
     align-items: center;
@@ -527,10 +535,10 @@ h2 {
 }
 
 /* ==========================================================================
-   SECTION 2: SETORES ATENDIDOS (LIKE IDEAL)
+   SECTION 2: SETORES ATENDIDOS (CARD LINES & TITLES IN BROWN)
    ========================================================================== */
 #setores {
-    background-color: #EBF4FA;
+    background-color: #EBF2F8;
     border-top: 1px solid var(--border);
     border-bottom: 1px solid var(--border);
 }
@@ -552,6 +560,7 @@ h2 {
     padding: 32px 26px;
     border-radius: var(--radius-md);
     border: 1px solid var(--border);
+    border-top: 3px solid var(--brown);
     box-shadow: var(--shadow);
     transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
@@ -559,7 +568,7 @@ h2 {
 .setor-card:hover {
     transform: translateY(-3px);
     box-shadow: var(--shadow-hover);
-    border-color: var(--blue);
+    border-color: var(--brown);
 }
 
 .setor-label {
@@ -575,7 +584,7 @@ h2 {
 .setor-card h3 {
     font-size: 1.25rem;
     font-weight: 800;
-    color: var(--blue);
+    color: var(--brown);
     margin-bottom: 14px;
 }
 
@@ -596,7 +605,7 @@ h2 {
 
 .setor-card ul li::before {
     content: "•";
-    color: var(--blue);
+    color: var(--brown);
     font-size: 1.4rem;
     position: absolute;
     left: 4px;
@@ -604,7 +613,7 @@ h2 {
 }
 
 /* ==========================================================================
-   SECTION 3: SOBRE NÓS & DIFERENCIAIS
+   SECTION 3: SOBRE NÓS & DIFERENCIAIS (CARD LINES & TITLES IN BROWN)
    ========================================================================== */
 #sobre {
     background-color: #FFFFFF;
@@ -628,7 +637,7 @@ h2 {
     padding: 28px;
     border-radius: var(--radius-md);
     border: 1px solid var(--border);
-    border-left: 4px solid var(--blue);
+    border-left: 4px solid var(--brown);
     box-shadow: var(--shadow);
 }
 
@@ -646,7 +655,7 @@ h2 {
 .sobre-card h3 {
     font-size: 1.1rem;
     font-weight: 800;
-    color: var(--blue);
+    color: var(--brown);
 }
 
 .sobre-card p {
@@ -679,10 +688,10 @@ h2 {
     box-shadow: var(--shadow);
 }
 
-.pill-blue {
+.pill-brown {
     background: #FFFFFF;
-    border: 2px solid var(--blue);
-    color: var(--blue);
+    border: 2px solid var(--brown);
+    color: var(--brown);
     font-weight: 700;
     font-size: 0.9rem;
     padding: 10px 20px;
@@ -715,6 +724,7 @@ h2 {
     padding: 26px;
     border-radius: var(--radius-md);
     border: 1px solid var(--border);
+    border-top: 3px solid var(--brown);
     box-shadow: var(--shadow);
     display: flex;
     flex-direction: column;
@@ -738,7 +748,7 @@ h2 {
 .dep-author strong {
     display: block;
     font-size: 0.95rem;
-    color: var(--blue);
+    color: var(--brown);
 }
 
 .dep-author span {
@@ -747,10 +757,10 @@ h2 {
 }
 
 /* ==========================================================================
-   ACTION CALLOUT
+   ACTION CALLOUT (WITH BROWN GRADIENT)
    ========================================================================== */
 .action-banner {
-    background: linear-gradient(135deg, var(--blue) 0%, var(--blue-dark) 100%);
+    background: linear-gradient(135deg, var(--brown) 0%, #250E0B 100%);
     color: #FFFFFF;
     padding: 50px 0;
 }
@@ -767,6 +777,7 @@ h2 {
     font-size: 1.5rem;
     font-weight: 800;
     margin-bottom: 6px;
+    color: #FFFFFF;
 }
 
 .action-banner p {
@@ -814,7 +825,7 @@ footer {
     font-family: 'Montserrat', sans-serif;
     font-size: 1.05rem;
     font-weight: 900;
-    color: var(--blue);
+    color: var(--brown);
 }
 
 .f-sub {
@@ -831,7 +842,7 @@ footer {
 
 .f-insta {
     display: inline-block;
-    color: var(--blue);
+    color: var(--brown);
     font-weight: 700;
     font-size: 0.85rem;
     text-decoration: none;
@@ -844,7 +855,7 @@ footer {
 .footer-links h4, .footer-contact h4 {
     font-size: 1rem;
     font-weight: 800;
-    color: var(--blue);
+    color: var(--brown);
     margin-bottom: 14px;
 }
 
@@ -863,7 +874,7 @@ footer {
 }
 
 .footer-links ul li a:hover {
-    color: var(--blue);
+    color: var(--brown);
 }
 
 .footer-contact p {
@@ -889,7 +900,7 @@ footer {
 }
 
 .footer-bottom-flex a {
-    color: var(--blue);
+    color: var(--brown);
     font-weight: 700;
     text-decoration: none;
 }
@@ -907,7 +918,7 @@ footer {
     backdrop-filter: blur(8px);
     border-top: 1px solid var(--border);
     padding: 12px 0;
-    box-shadow: 0 -4px 20px rgba(17, 80, 116, 0.12);
+    box-shadow: 0 -4px 20px rgba(57, 22, 18, 0.10);
 }
 
 .s-bar-flex {
@@ -945,7 +956,7 @@ footer {
 .s-title {
     display: block;
     font-size: 0.92rem;
-    color: var(--blue);
+    color: var(--brown);
     font-weight: 700;
 }
 
@@ -975,12 +986,13 @@ footer {
 
 .s-btn-phone {
     background: var(--bg);
-    color: var(--blue);
+    color: var(--brown);
     border: 1px solid var(--border);
 }
 
 .s-btn-phone:hover {
-    background: var(--blue-light);
+    background: var(--brown-surface);
+    border-color: var(--brown);
 }
 
 .s-btn-wa {
