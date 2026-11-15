@@ -135,12 +135,18 @@ body {
         text-align: center;
         gap: 6px;
     }
+    .top-info {
+        white-space: normal;
+        text-align: center;
+        justify-content: center;
+        line-height: 1.35;
+    }
     .top-text-desktop {
         display: none !important;
     }
     .top-text-mobile {
         display: inline !important;
-        font-size: 0.78rem;
+        font-size: 0.76rem;
         letter-spacing: -0.2px;
     }
     .top-notice-badge {
