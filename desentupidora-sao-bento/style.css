@@ -26,6 +26,8 @@
     --whatsapp: #25D366;
     --whatsapp-hover: #1EBE5D;
     --amber: #D97706;
+    --client-yellow: #FFE500;
+    --client-yellow-alt: #F4D00C;
     --tm: #0F172A;
     --muted: #475569;
     --border: #DCE6F0;
@@ -219,17 +221,18 @@ body {
 }
 
 .card-status-badge {
-    background-color: var(--brown-surface);
-    color: var(--brown);
-    border: 1px solid rgba(57, 22, 18, 0.15);
+    background-color: var(--brown);
+    color: var(--client-yellow);
+    border: 1px solid rgba(255, 229, 0, 0.3);
     font-size: 0.75rem;
-    font-weight: 700;
-    padding: 4px 10px;
+    font-weight: 800;
+    padding: 4px 12px;
     border-radius: 4px;
     display: inline-block;
     margin-bottom: 8px;
-    letter-spacing: 0.5px;
+    letter-spacing: 0.6px;
     text-transform: uppercase;
+    box-shadow: 0 2px 6px rgba(57, 22, 18, 0.15);
 }
 
 .info-card h3 {
@@ -342,9 +345,9 @@ body {
 
 .tag-primary {
     background-color: var(--brown);
-    color: #FFFFFF;
+    color: var(--client-yellow);
     border-color: var(--brown);
-    font-weight: 700;
+    font-weight: 800;
 }
 
 /* ==========================================================================
@@ -488,12 +491,13 @@ h2 {
 
 .slide-tag {
     font-size: 0.75rem;
-    font-weight: 700;
-    color: var(--brown);
-    background-color: var(--brown-surface);
-    border: 1px solid rgba(57, 22, 18, 0.12);
-    padding: 3px 8px;
+    font-weight: 800;
+    color: var(--client-yellow);
+    background-color: var(--brown);
+    border: 1px solid rgba(255, 229, 0, 0.25);
+    padding: 4px 10px;
     border-radius: 4px;
+    letter-spacing: 0.3px;
 }
 
 .service-slide h3 {
@@ -574,11 +578,14 @@ h2 {
 .setor-label {
     font-size: 0.75rem;
     font-weight: 800;
-    color: var(--green);
+    color: var(--client-yellow);
+    background-color: var(--brown);
+    padding: 4px 10px;
+    border-radius: 4px;
     text-transform: uppercase;
-    letter-spacing: 1px;
-    display: block;
-    margin-bottom: 6px;
+    letter-spacing: 0.8px;
+    display: inline-block;
+    margin-bottom: 10px;
 }
 
 .setor-card h3 {
@@ -689,10 +696,10 @@ h2 {
 }
 
 .pill-brown {
-    background: #FFFFFF;
+    background: var(--brown);
     border: 2px solid var(--brown);
-    color: var(--brown);
-    font-weight: 700;
+    color: var(--client-yellow);
+    font-weight: 800;
     font-size: 0.9rem;
     padding: 10px 20px;
     border-radius: 4px;
@@ -1084,11 +1091,12 @@ footer {
     position: absolute;
     top: 12px;
     left: 12px;
-    background: rgba(57, 22, 18, 0.88);
+    background: var(--brown);
+    border: 1px solid rgba(255, 229, 0, 0.3);
     backdrop-filter: blur(4px);
-    color: #FFFFFF;
+    color: var(--client-yellow);
     font-size: 0.72rem;
-    font-weight: 700;
+    font-weight: 800;
     padding: 4px 10px;
     border-radius: 4px;
     letter-spacing: 0.5px;
