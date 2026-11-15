@@ -1294,3 +1294,20 @@ footer {
     background: var(--brown-surface);
     border-color: var(--brown);
 }
+
+.s-desc-phone {
+    text-decoration: none;
+    color: var(--muted);
+    font-weight: 600;
+    transition: color 0.2s ease;
+    display: inline-block;
+}
+
+.s-desc-phone:hover {
+    color: var(--brown);
+    text-decoration: underline;
+}
+
+.s-btn-wa svg {
+    flex-shrink: 0;
+}
