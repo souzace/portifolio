@@ -1250,3 +1250,47 @@ footer {
 .s-btn-icon-only:hover svg {
     stroke: #FFFFFF;
 }
+
+/* ==========================================================================
+   EXCLUSIVE ICON BOXES (LIKE IDEAL PROJECT DESIGN SYSTEM)
+   ========================================================================== */
+.exclusive-icon-box {
+    width: 52px;
+    height: 52px;
+    border-radius: var(--radius-md);
+    background: var(--bg);
+    border: 1.5px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 8px rgba(57, 22, 18, 0.05);
+    transition: all 0.25s ease;
+    flex-shrink: 0;
+}
+
+.service-slide:hover .exclusive-icon-box {
+    background: var(--brown-surface);
+    border-color: var(--brown);
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(57, 22, 18, 0.12);
+}
+
+.exclusive-icon-box svg {
+    transition: transform 0.25s ease;
+}
+
+.service-slide:hover .exclusive-icon-box svg {
+    transform: translateY(-1px);
+}
+
+.exclusive-icon-box.icon-sm {
+    width: 44px;
+    height: 44px;
+    border-radius: var(--radius-sm);
+    background: #FFFFFF;
+}
+
+.sobre-card:hover .exclusive-icon-box.icon-sm {
+    background: var(--brown-surface);
+    border-color: var(--brown);
+}
