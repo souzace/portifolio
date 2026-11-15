@@ -1113,3 +1113,69 @@ footer {
     color: var(--muted);
     line-height: 1.5;
 }
+
+/* ==========================================================================
+   INSTAGRAM BUTTONS STYLING
+   ========================================================================== */
+.top-insta {
+    background: rgba(255, 255, 255, 0.18);
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+}
+
+.top-insta:hover {
+    background: rgba(255, 255, 255, 0.32);
+    color: #FFFFFF;
+}
+
+.btn-insta {
+    background-color: #FFFFFF;
+    color: #C13584;
+    border: 1px solid rgba(193, 53, 132, 0.3);
+    box-shadow: var(--shadow);
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 700;
+}
+
+.btn-insta svg {
+    stroke: #C13584;
+}
+
+.btn-insta:hover {
+    background: linear-gradient(45deg, #F58529, #D62976, #962FBF, #4F5BD5);
+    color: #FFFFFF;
+    border-color: transparent;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(214, 41, 118, 0.35);
+}
+
+.btn-insta:hover svg {
+    stroke: #FFFFFF;
+}
+
+.s-btn-insta {
+    background: #FFFFFF;
+    color: #C13584;
+    border: 1px solid rgba(193, 53, 132, 0.25);
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-weight: 700;
+}
+
+.s-btn-insta svg {
+    stroke: #C13584;
+}
+
+.s-btn-insta:hover {
+    background: linear-gradient(45deg, #F58529, #D62976, #962FBF);
+    color: #FFFFFF;
+    border-color: transparent;
+}
+
+.s-btn-insta:hover svg {
+    stroke: #FFFFFF;
+}
