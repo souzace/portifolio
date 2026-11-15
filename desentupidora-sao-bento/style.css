@@ -1187,3 +1187,66 @@ footer {
 .s-btn-insta:hover svg {
     stroke: #FFFFFF;
 }
+
+/* TOP NOTICE BADGE */
+.top-notice-badge {
+    background: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: var(--client-yellow);
+    font-size: 0.8rem;
+    font-weight: 700;
+    padding: 3px 12px;
+    border-radius: 50px;
+}
+
+/* AVATAR THUMB (FOCUS ON FACE) */
+.s-avatar-thumb {
+    width: 44px;
+    height: 44px;
+    background: var(--brown-surface);
+    border: 2px solid var(--brown);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    flex-shrink: 0;
+    box-shadow: 0 2px 8px rgba(57, 22, 18, 0.2);
+}
+
+.s-avatar-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* INSTAGRAM ICON ONLY BUTTON */
+.s-btn-icon-only {
+    padding: 10px;
+    width: 42px;
+    height: 42px;
+    justify-content: center;
+    border-radius: 50%;
+    background: #FFFFFF;
+    color: #C13584;
+    border: 1.5px solid rgba(193, 53, 132, 0.35);
+    box-shadow: 0 2px 8px rgba(193, 53, 132, 0.15);
+    transition: all 0.25s ease;
+}
+
+.s-btn-icon-only:hover {
+    background: linear-gradient(45deg, #F58529, #D62976, #962FBF);
+    border-color: transparent;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 14px rgba(214, 41, 118, 0.35);
+}
+
+.s-btn-icon-only svg {
+    stroke: #C13584;
+    transition: stroke 0.2s ease;
+}
+
+.s-btn-icon-only:hover svg {
+    stroke: #FFFFFF;
+}
