@@ -706,61 +706,138 @@ h2 {
     box-shadow: var(--shadow);
 }
 
+
 /* ==========================================================================
-   SECTION 4: DEPOIMENTOS
+   SECTION 4: DEPOIMENTOS (MARQUEE SLIDER IDENTICAL TO IDEAL PROJECT)
    ========================================================================== */
 #depoimentos {
     background-color: var(--bg);
     border-top: 1px solid var(--border);
+    padding: 70px 0;
+    overflow: hidden;
 }
 
-.depoimentos-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 20px;
+.marquee-container {
+    overflow: hidden;
+    width: 100vw;
+    max-width: 100%;
+    position: relative;
+    padding: 16px 0 20px;
 }
 
-@media (min-width: 768px) {
-    .depoimentos-grid {
-        grid-template-columns: repeat(3, 1fr);
-    }
+.marquee-container::before, .marquee-container::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 120px;
+    height: 100%;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.marquee-container::before {
+    left: 0;
+    background: linear-gradient(to right, var(--bg), transparent);
+}
+
+.marquee-container::after {
+    right: 0;
+    background: linear-gradient(to left, var(--bg), transparent);
+}
+
+.marquee-track {
+    display: flex;
+    width: max-content;
+    gap: 24px;
+    align-items: stretch;
+    animation: marquee-scroll 50s linear infinite;
+}
+
+.marquee-track:hover {
+    animation-play-state: paused;
+}
+
+@keyframes marquee-scroll {
+    from { transform: translateX(0); }
+    to { transform: translateX(calc(-50% - 12px)); }
 }
 
 .depoimento-card {
+    flex: 0 0 380px;
+    max-width: 85vw;
     background: #FFFFFF;
-    padding: 26px;
+    padding: 30px;
     border-radius: var(--radius-md);
-    border: 1px solid var(--border);
-    border-top: 3px solid var(--brown);
+    border: 1px solid var(--border-card);
+    border-top: 4px solid var(--brown);
     box-shadow: var(--shadow);
     display: flex;
     flex-direction: column;
+    white-space: normal;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
-.dep-stars {
-    color: #F59E0B;
+.depoimento-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-hover);
+}
+
+.dep-card-header {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 16px;
+}
+
+.dep-avatar {
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     font-size: 1.1rem;
-    margin-bottom: 12px;
+    font-weight: 800;
+    flex-shrink: 0;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.dep-name {
+    font-size: 1.05rem;
+    font-weight: 800;
+    color: var(--brown);
+    margin-bottom: 2px;
+}
+
+.dep-role {
+    font-size: 0.82rem;
+    color: var(--muted);
+    font-weight: 500;
 }
 
 .dep-text {
     font-size: 0.92rem;
-    color: var(--muted);
+    color: var(--tm);
     font-style: italic;
     line-height: 1.6;
-    margin-bottom: 18px;
+    margin-bottom: 16px;
     flex-grow: 1;
 }
 
-.dep-author strong {
-    display: block;
-    font-size: 0.95rem;
-    color: var(--brown);
+.dep-stars {
+    color: #F59E0B;
+    font-size: 1.15rem;
+    letter-spacing: 2px;
 }
 
-.dep-author span {
-    font-size: 0.8rem;
-    color: #94A3B8;
+@media (max-width: 768px) {
+    .marquee-container::before, .marquee-container::after {
+        width: 40px;
+    }
+    .depoimento-card {
+        flex: 0 0 300px;
+        padding: 22px;
+    }
 }
 
 /* ==========================================================================
