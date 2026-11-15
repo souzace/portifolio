@@ -1388,3 +1388,84 @@ footer {
 .s-btn-wa svg {
     flex-shrink: 0;
 }
+
+/* ==========================================================================
+   QUICK PROBLEM SELECTOR CHIPS & PAYMENT MICRO-BADGES
+   ========================================================================== */
+.quick-problem-area {
+    margin-bottom: 18px;
+    padding-top: 14px;
+    border-top: 1px dashed var(--border);
+}
+
+.quick-title {
+    display: block;
+    font-size: 0.8rem;
+    font-weight: 800;
+    color: var(--brown);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 8px;
+}
+
+.problem-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.chip-btn {
+    background: #FFFFFF;
+    border: 1px solid var(--border);
+    color: var(--tm);
+    font-size: 0.82rem;
+    font-weight: 600;
+    padding: 6px 12px;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
+}
+
+.chip-btn:hover {
+    background: var(--brown);
+    color: var(--client-yellow);
+    border-color: var(--brown);
+    transform: translateY(-1px);
+    box-shadow: 0 3px 8px rgba(57, 22, 18, 0.15);
+}
+
+.trust-micro-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 12px;
+    margin-top: 16px;
+    padding-top: 12px;
+    border-top: 1px solid var(--border);
+}
+
+.t-badge {
+    font-size: 0.78rem;
+    color: var(--muted);
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.w-full {
+    width: 100%;
+}
+
+/* DRAG TO SCROLL CURSORS */
+.services-track {
+    cursor: grab;
+    user-select: none;
+}
+
+.services-track.is-dragging {
+    cursor: grabbing;
+    scroll-snap-type: none; /* smooth drag without snap resistance during drag */
+}
