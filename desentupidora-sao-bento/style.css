@@ -175,7 +175,7 @@ body {
 .header-layout {
     display: flex;
     flex-direction: column;
-    gap: 36px;
+    gap: 32px;
     align-items: center;
     margin-bottom: 36px;
 }
@@ -185,58 +185,77 @@ body {
         flex-direction: row;
         align-items: center;
         justify-content: space-between;
+        gap: 40px;
     }
 }
 
-/* LOGO & MASCOTE AREA */
+/* LOGO & MASCOTE AREA (BALANCED HERO SCALE) */
 .logo-area {
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
     flex: 1;
+    max-width: 440px;
 }
 
 .mascot-frame {
     position: relative;
-    width: 150px;
-    height: 150px;
-    margin-bottom: 16px;
+    width: 170px;
+    height: 170px;
+    margin-bottom: 14px;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
 .mascot-img {
-    width: 140px;
-    height: 140px;
+    width: 160px;
+    height: 160px;
     object-fit: contain;
     position: relative;
     z-index: 2;
-    filter: drop-shadow(0 8px 16px rgba(57, 22, 18, 0.15));
+    filter: drop-shadow(0 10px 22px rgba(57, 22, 18, 0.18));
+    transition: transform 0.3s ease;
+}
+
+.mascot-img:hover {
+    transform: scale(1.04);
 }
 
 .mascot-halo {
     position: absolute;
-    inset: 10px;
-    background: radial-gradient(circle, var(--brown-surface) 0%, transparent 70%);
+    inset: 0;
+    background: radial-gradient(circle, rgba(255, 229, 0, 0.25) 0%, rgba(57, 22, 18, 0.05) 55%, transparent 75%);
     border-radius: 50%;
     z-index: 1;
 }
 
+@media (min-width: 820px) {
+    .mascot-frame {
+        width: 220px;
+        height: 220px;
+        margin-bottom: 16px;
+    }
+    .mascot-img {
+        width: 210px;
+        height: 210px;
+    }
+}
+
 .logo-tag {
     font-family: 'Montserrat', sans-serif;
-    font-size: 0.75rem;
+    font-size: 0.8rem;
     font-weight: 800;
     letter-spacing: 3px;
     color: var(--brown);
     display: block;
-    margin-bottom: 2px;
+    margin-bottom: 3px;
 }
 
 .logo-name {
     font-family: 'Montserrat', sans-serif;
-    font-size: 2.1rem;
+    font-size: 2.2rem;
     font-weight: 900;
     color: var(--brown);
     line-height: 1.1;
@@ -245,9 +264,79 @@ body {
 }
 
 .logo-sub {
-    font-size: 0.85rem;
+    font-size: 0.88rem;
     color: var(--muted);
     font-weight: 500;
+}
+
+/* LOGO TRUST & CONTACT POD */
+.logo-trust-pod {
+    margin-top: 18px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+}
+
+.hero-rating {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: #FFFFFF;
+    border: 1px solid var(--border);
+    padding: 5px 14px;
+    border-radius: 50px;
+    box-shadow: 0 2px 6px rgba(57, 22, 18, 0.05);
+}
+
+.hero-stars {
+    color: #F59E0B;
+    font-size: 0.95rem;
+    letter-spacing: 1px;
+}
+
+.hero-rating-text {
+    font-size: 0.8rem;
+    color: var(--muted);
+    font-weight: 500;
+}
+
+.hero-rating-text strong {
+    color: var(--brown);
+    font-weight: 800;
+}
+
+.hero-quick-phone {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--brown);
+    text-decoration: none;
+    font-size: 0.88rem;
+    font-weight: 700;
+    background: var(--brown-surface);
+    border: 1px solid rgba(57, 22, 18, 0.18);
+    padding: 8px 18px;
+    border-radius: 50px;
+    transition: all 0.25s ease;
+}
+
+.hero-quick-phone:hover {
+    background: var(--brown);
+    color: var(--client-yellow);
+    border-color: var(--brown);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(57, 22, 18, 0.18);
+}
+
+.hero-fleet-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.76rem;
+    color: var(--muted);
+    font-weight: 600;
 }
 
 /* INFO CARD (BROWN CARD LINE) */
@@ -256,9 +345,9 @@ body {
     border: 1px solid var(--border-card);
     border-left: 5px solid var(--brown);
     border-radius: var(--radius-md);
-    padding: 30px;
+    padding: 28px 30px;
     box-shadow: var(--shadow);
-    flex: 1.35;
+    flex: 1.25;
     width: 100%;
 }
 
@@ -1571,8 +1660,8 @@ footer {
 }
 
 .problem-chips {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
     gap: 8px;
 }
 
@@ -1582,14 +1671,16 @@ footer {
     color: var(--tm);
     font-size: 0.82rem;
     font-weight: 600;
-    padding: 6px 12px;
+    padding: 8px 12px;
     border-radius: 50px;
     text-decoration: none;
     transition: all 0.2s ease;
     display: inline-flex;
     align-items: center;
+    justify-content: center;
     gap: 6px;
     box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
+    white-space: nowrap;
 }
 
 .chip-btn:hover {
@@ -1748,6 +1839,23 @@ footer {
     }
     .logo-name {
         font-size: 1.85rem;
+    }
+    .logo-trust-pod {
+        margin-top: 14px;
+        gap: 8px;
+    }
+    .hero-rating {
+        padding: 4px 12px;
+    }
+    .hero-rating-text {
+        font-size: 0.76rem;
+    }
+    .hero-quick-phone {
+        padding: 7px 16px;
+        font-size: 0.82rem;
+    }
+    .hero-fleet-pill {
+        font-size: 0.72rem;
     }
     .info-card {
         padding: 20px 16px;
