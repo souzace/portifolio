@@ -16,7 +16,9 @@
             --muted: #64748B;
             --brand-brown: #391612;
             --brand-yellow: #FFE500;
-            --wa-green: #25D366;
+            --wa-green: #199B4D;
+            --wa-gradient: linear-gradient(135deg, #20BA5A 0%, #169346 100%);
+            --insta-rose: #E1306C;
             --wa-bubble: #E7FFDB;
             --li-blue: #0A66C2;
             --fb-blue: #1877F2;
@@ -418,16 +420,37 @@
 
         <div class="grid-previews">
             
-            <!-- WHATSAPP PREVIEW -->
+            <!-- WHATSAPP PREVIEW (BANNER 1.91:1) -->
             <div class="preview-card">
                 <div class="preview-label">
-                    <span>WhatsApp Preview</span>
-                    <svg viewBox="0 0 24 24" fill="#25D366"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2zm5.82 14.15c-.24.67-1.39 1.28-1.92 1.36-.5.08-1.15.11-3.69-.94-2.73-1.12-4.49-3.9-4.63-4.08-.14-.19-1.11-1.48-1.11-2.82s.7-2 1-2.27c.24-.22.53-.33.77-.33.24 0 .47.01.67.02.21.01.49-.08.77.58.28.67.97 2.37 1.05 2.54.08.17.14.38.03.6-.11.22-.17.36-.33.55-.17.19-.36.42-.51.57-.17.17-.35.35-.15.7.2.35.89 1.47 1.91 2.38 1.31 1.17 2.42 1.53 2.76 1.7.35.17.55.14.75-.09.2-.23.86-1 1.09-1.35.23-.35.46-.29.77-.17.32.11 2.02.95 2.37 1.12.35.17.58.26.67.41.08.15.08.87-.16 1.54z"/></svg>
+                    <span>WhatsApp Large Card (1200x630)</span>
+                    <svg viewBox="0 0 24 24" fill="#199B4D"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2zm5.82 14.15c-.24.67-1.39 1.28-1.92 1.36-.5.08-1.15.11-3.69-.94-2.73-1.12-4.49-3.9-4.63-4.08-.14-.19-1.11-1.48-1.11-2.82s.7-2 1-2.27c.24-.22.53-.33.77-.33.24 0 .47.01.67.02.21.01.49-.08.77.58.28.67.97 2.37 1.05 2.54.08.17.14.38.03.6-.11.22-.17.36-.33.55-.17.19-.36.42-.51.57-.17.17-.35.35-.15.7.2.35.89 1.47 1.91 2.38 1.31 1.17 2.42 1.53 2.76 1.7.35.17.55.14.75-.09.2-.23.86-1 1.09-1.35.23-.35.46-.29.77-.17.32.11 2.02.95 2.37 1.12.35.17.58.26.67.41.08.15.08.87-.16 1.54z"/></svg>
                 </div>
                 <div class="wa-box">
                     <div class="wa-bubble">
                         <div class="wa-card">
                             <img src="img/og-banner.png" alt="OG Image Preview" class="wa-img">
+                            <div class="wa-info">
+                                <div class="wa-title">Desentupidora São Bento | Fortaleza e Região Metropolitana</div>
+                                <div class="wa-desc">Desentupidora em Fortaleza e Região Metropolitana. Atendimento em 30 min, esgoto, pias e ralos. Orçamento 100% grátis!</div>
+                                <div class="wa-domain">orkes.com.br</div>
+                            </div>
+                        </div>
+                        <div class="wa-link-text">https://orkes.com.br/desentupidora-sao-bento/</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- WHATSAPP COMPACT / SQUARE (1:1) PREVIEW -->
+            <div class="preview-card">
+                <div class="preview-label">
+                    <span>WhatsApp Square Thumbnail (600x600)</span>
+                    <svg viewBox="0 0 24 24" fill="#199B4D"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2zm5.82 14.15c-.24.67-1.39 1.28-1.92 1.36-.5.08-1.15.11-3.69-.94-2.73-1.12-4.49-3.9-4.63-4.08-.14-.19-1.11-1.48-1.11-2.82s.7-2 1-2.27c.24-.22.53-.33.77-.33.24 0 .47.01.67.02.21.01.49-.08.77.58.28.67.97 2.37 1.05 2.54.08.17.14.38.03.6-.11.22-.17.36-.33.55-.17.19-.36.42-.51.57-.17.17-.35.35-.15.7.2.35.89 1.47 1.91 2.38 1.31 1.17 2.42 1.53 2.76 1.7.35.17.55.14.75-.09.2-.23.86-1 1.09-1.35.23-.35.46-.29.77-.17.32.11 2.02.95 2.37 1.12.35.17.58.26.67.41.08.15.08.87-.16 1.54z"/></svg>
+                </div>
+                <div class="wa-box">
+                    <div class="wa-bubble">
+                        <div class="wa-card">
+                            <img src="img/og-square.png" alt="OG Square Image Preview" class="wa-img" style="aspect-ratio: 1/1; object-fit: cover;">
                             <div class="wa-info">
                                 <div class="wa-title">Desentupidora São Bento | Fortaleza e Região Metropolitana</div>
                                 <div class="wa-desc">Desentupidora em Fortaleza e Região Metropolitana. Atendimento em 30 min, esgoto, pias e ralos. Orçamento 100% grátis!</div>
@@ -524,9 +547,14 @@
                         <td class="status-ok">✓ 118 chars (&lt; 125 chars recomendados)</td>
                     </tr>
                     <tr>
-                        <td><code>og:image</code></td>
+                        <td><code>og:image (Banner)</code></td>
                         <td>https://orkes.com.br/desentupidora-sao-bento/img/og-banner.png</td>
                         <td class="status-ok">✓ 1200 x 630 px (Proporção Exata 1.91:1)</td>
+                    </tr>
+                    <tr>
+                        <td><code>og:image (Square)</code></td>
+                        <td>https://orkes.com.br/desentupidora-sao-bento/img/og-square.png</td>
+                        <td class="status-ok">✓ 600 x 600 px (Proporção 1:1 WhatsApp)</td>
                     </tr>
                     <tr>
                         <td><code>og:url</code></td>

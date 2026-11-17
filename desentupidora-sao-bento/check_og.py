@@ -6,13 +6,17 @@ class OGChecker(HTMLParser):
     def __init__(self):
         super().__init__()
         self.meta = {}
+        self.images = []
 
     def handle_starttag(self, tag, attrs):
         if tag == "meta":
             d = dict(attrs)
             key = d.get("property") or d.get("name")
             if key and "content" in d:
-                self.meta[key] = d["content"]
+                if key == "og:image":
+                    self.images.append(d["content"])
+                if key not in self.meta:
+                    self.meta[key] = d["content"]
 
 def main():
     parser = OGChecker()
@@ -50,6 +54,9 @@ def main():
                 status = f"⚠️ [ATENÇÃO: > {max_len} chars]"
                 all_ok = False
             print(f"{status} {tag:20} -> {val[:60]}... {length_info}")
+            if tag == "og:image" and len(parser.images) > 1:
+                for idx, extra_img in enumerate(parser.images[1:], 2):
+                    print(f"   ↳ {f'og:image [{idx}]':17} -> {extra_img[:60]}...")
 
     print("=" * 65)
     if all_ok:
