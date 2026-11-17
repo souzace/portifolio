@@ -23,8 +23,17 @@
     --card: #FFFFFF;
     --green: #16A34A;
     --green-hover: #15803D;
-    --whatsapp: #25D366;
-    --whatsapp-hover: #1EBE5D;
+    --whatsapp: #199B4D;
+    --whatsapp-hover: #148039;
+    --whatsapp-gradient: linear-gradient(135deg, #20BA5A 0%, #169346 100%);
+    --whatsapp-shadow: 0 4px 14px rgba(25, 155, 77, 0.32);
+    --whatsapp-shadow-hover: 0 6px 20px rgba(25, 155, 77, 0.44);
+    --insta: #E1306C;
+    --insta-hover: #C13584;
+    --insta-gradient: linear-gradient(135deg, #F58529 0%, #E1306C 50%, #C13584 100%);
+    --insta-subtle-bg: rgba(225, 48, 108, 0.08);
+    --insta-subtle-border: rgba(225, 48, 108, 0.22);
+    --insta-shadow: 0 4px 14px rgba(225, 48, 108, 0.28);
     --amber: #D97706;
     --client-yellow: #FFE500;
     --client-yellow-alt: #F4D00C;
@@ -329,15 +338,15 @@ body {
 }
 
 .btn-whatsapp {
-    background-color: var(--whatsapp);
+    background: var(--whatsapp-gradient, var(--whatsapp));
     color: #FFFFFF;
-    box-shadow: 0 4px 14px rgba(37, 211, 102, 0.35);
+    box-shadow: var(--whatsapp-shadow);
 }
 
 .btn-whatsapp:hover {
-    background-color: var(--whatsapp-hover);
+    background: var(--whatsapp-hover);
     transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(37, 211, 102, 0.45);
+    box-shadow: var(--whatsapp-shadow-hover);
 }
 
 .btn-phone {
@@ -968,15 +977,37 @@ footer {
 }
 
 .f-insta {
-    display: inline-block;
-    color: var(--brown);
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--insta-subtle-bg);
+    border: 1px solid var(--insta-subtle-border);
+    color: var(--insta);
     font-weight: 700;
     font-size: 0.85rem;
+    padding: 7px 16px;
+    border-radius: 50px;
     text-decoration: none;
+    transition: all 0.25s ease;
+    margin-top: 6px;
+}
+
+.f-insta svg {
+    flex-shrink: 0;
+    stroke: var(--insta);
+    transition: stroke 0.25s ease;
 }
 
 .f-insta:hover {
-    text-decoration: underline;
+    background: var(--insta-gradient);
+    border-color: transparent;
+    color: #FFFFFF;
+    transform: translateY(-1px);
+    box-shadow: var(--insta-shadow);
+}
+
+.f-insta:hover svg {
+    stroke: #FFFFFF;
 }
 
 .footer-links h4, .footer-contact h4 {
@@ -1123,25 +1154,44 @@ footer {
 }
 
 .sfb-insta {
-    color: #C13584;
+    width: 44px;
+    height: 44px;
+    box-sizing: border-box;
+    border-radius: 50%;
+    background: #FFFFFF;
+    border: 1.5px solid var(--insta-subtle-border);
+    color: var(--insta);
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: transform 0.2s ease, color 0.2s ease;
+    box-shadow: 0 2px 8px rgba(225, 48, 108, 0.12);
+    transition: all 0.25s ease;
     flex-shrink: 0;
     text-decoration: none;
 }
 
+.sfb-insta svg {
+    transition: transform 0.25s ease, stroke 0.25s ease;
+    stroke: var(--insta);
+}
+
 .sfb-insta:hover {
-    transform: scale(1.1);
-    color: #962FBF;
+    background: var(--insta-gradient);
+    border-color: transparent;
+    color: #FFFFFF;
+    transform: scale(1.08) translateY(-1px);
+    box-shadow: var(--insta-shadow);
+}
+
+.sfb-insta:hover svg {
+    stroke: #FFFFFF;
 }
 
 .sfb-cta {
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    background: var(--whatsapp);
+    background: var(--whatsapp-gradient, var(--whatsapp));
     color: #FFFFFF;
     font-weight: 800;
     font-size: 0.95rem;
@@ -1149,14 +1199,14 @@ footer {
     padding: 10px 22px;
     border-radius: var(--radius-sm);
     transition: all 0.25s ease;
-    box-shadow: 0 4px 14px rgba(37, 211, 102, 0.35);
+    box-shadow: var(--whatsapp-shadow);
     white-space: nowrap;
 }
 
 .sfb-cta:hover {
     background: var(--whatsapp-hover);
     transform: translateY(-2px);
-    box-shadow: 0 6px 18px rgba(37, 211, 102, 0.45);
+    box-shadow: var(--whatsapp-shadow-hover);
 }
 
 /* RESPONSIVE MOBILE BEHAVIOR (EXACT TO IDEAL MEDIA QUERY) */
@@ -1196,8 +1246,8 @@ footer {
         box-sizing: border-box;
         border-radius: 50%;
         background: #FFFFFF;
-        border: 1px solid var(--border);
-        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+        border: 1.5px solid var(--insta-subtle-border);
+        box-shadow: 0 2px 8px rgba(225, 48, 108, 0.12);
     }
     .sfb-avatar {
         width: 44px;
@@ -1328,9 +1378,9 @@ footer {
 
 .btn-insta {
     background-color: #FFFFFF;
-    color: #C13584;
-    border: 1px solid rgba(193, 53, 132, 0.3);
-    box-shadow: var(--shadow);
+    color: var(--insta);
+    border: 1px solid var(--insta-subtle-border);
+    box-shadow: 0 2px 8px rgba(225, 48, 108, 0.12);
     display: inline-flex;
     align-items: center;
     gap: 8px;
@@ -1338,15 +1388,15 @@ footer {
 }
 
 .btn-insta svg {
-    stroke: #C13584;
+    stroke: var(--insta);
 }
 
 .btn-insta:hover {
-    background: linear-gradient(45deg, #F58529, #D62976, #962FBF, #4F5BD5);
+    background: var(--insta-gradient);
     color: #FFFFFF;
     border-color: transparent;
     transform: translateY(-2px);
-    box-shadow: 0 6px 18px rgba(214, 41, 118, 0.35);
+    box-shadow: var(--insta-shadow);
 }
 
 .btn-insta:hover svg {
@@ -1355,8 +1405,8 @@ footer {
 
 .s-btn-insta {
     background: #FFFFFF;
-    color: #C13584;
-    border: 1px solid rgba(193, 53, 132, 0.25);
+    color: var(--insta);
+    border: 1px solid var(--insta-subtle-border);
     display: inline-flex;
     align-items: center;
     gap: 6px;
@@ -1364,11 +1414,11 @@ footer {
 }
 
 .s-btn-insta svg {
-    stroke: #C13584;
+    stroke: var(--insta);
 }
 
 .s-btn-insta:hover {
-    background: linear-gradient(45deg, #F58529, #D62976, #962FBF);
+    background: var(--insta-gradient);
     color: #FFFFFF;
     border-color: transparent;
 }
