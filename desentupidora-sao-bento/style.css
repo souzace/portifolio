@@ -1032,6 +1032,22 @@ footer {
     text-decoration: none;
 }
 
+.orkes-credits {
+    font-size: 0.82rem;
+    color: var(--muted);
+}
+
+.orkes-link {
+    color: var(--brown);
+    font-weight: 700;
+    text-decoration: underline;
+    transition: color 0.2s ease;
+}
+
+.orkes-link:hover {
+    color: var(--client-yellow);
+}
+
 /* ==========================================================================
    STICKY FOOTER BAR (.sfb) — 100% IDENTICAL TO IDEAL ARCHITECTURE
    ========================================================================== */
