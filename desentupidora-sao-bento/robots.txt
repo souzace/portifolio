@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://desentupidorasaobento.com.br/sitemap.xml
+Sitemap: https://orkes.com.br/desentupidora-sao-bento/sitemap.xml

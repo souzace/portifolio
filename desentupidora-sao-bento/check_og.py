@@ -25,7 +25,7 @@ def main():
 
     required_tags = [
         ("og:title", 60),
-        ("og:description", 165),
+        ("og:description", 125),
         ("og:image", None),
         ("og:url", None),
         ("og:type", None),
@@ -33,7 +33,7 @@ def main():
         ("og:locale", None),
         ("twitter:card", None),
         ("twitter:title", 60),
-        ("twitter:description", 165),
+        ("twitter:description", 125),
         ("twitter:image", None),
     ]
 
