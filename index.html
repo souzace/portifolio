@@ -767,26 +767,11 @@
                 height: 400px;
             }
         }
-
         /* ==========================================================================
            Showcase Interativo de Soluções Web & Device Modal
            ========================================================================== */
-        .portfolio-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 24px;
-        }
-
-        @media (max-width: 992px) {
-            .portfolio-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-
-        @media (max-width: 640px) {
-            .portfolio-grid {
-                grid-template-columns: 1fr;
-            }
+        .portfolio-slider {
+            padding-bottom: 24px;
         }
 
         .portfolio-card {
@@ -798,6 +783,21 @@
             flex-direction: column;
             transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
             position: relative;
+            flex: 0 0 calc(85% - 16px);
+            scroll-snap-align: start;
+            box-sizing: border-box;
+        }
+
+        @media (min-width: 768px) {
+            .portfolio-card {
+                flex: 0 0 calc(46% - 12px);
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .portfolio-card {
+                flex: 0 0 calc(33.3333% - 16px);
+            }
         }
 
         .portfolio-card:hover {
@@ -934,7 +934,7 @@
             background: rgba(0, 229, 255, 0.1);
         }
 
-        /* Modal Overlay & Device Frames */
+/* Modal Overlay & Device Frames */
         .device-modal-overlay {
             position: fixed;
             top: 0;
@@ -1665,161 +1665,295 @@
                     Aplicações web sob medida, alta velocidade, Core Web Vitals 100/100 e funis de conversão desenvolvidos com engenharia pura e sem peso morto. Teste ao vivo nas versões Desktop e Mobile.
                 </p>
             </div>
-            <div class="portfolio-grid">
-                <div class="portfolio-card">
-                    <div class="portfolio-header">
-                        <img src="desentupidora-sao-bento/logomark.jpeg" alt="Desentupidora São Bento" class="portfolio-logo">
-                        <div class="portfolio-title-wrap">
-                            <h3 class="portfolio-client-name">Desentupidora São Bento</h3>
-                            <span class="portfolio-niche-badge">Emergência 24h &amp; Google Ads</span>
+            <div class="carousel-wrapper">
+                <button class="carousel-btn left" disabled onclick="scrollCarousel(this, 'left')" aria-label="Anterior">&#10094;</button>
+                <button class="carousel-btn right" onclick="scrollCarousel(this, 'right')" aria-label="Próximo">&#10095;</button>
+                <div class="services-grid portfolio-slider">
+                    <div class="portfolio-card">
+                        <div class="portfolio-header">
+                            <img src="desentupidora-sao-bento/logomark.jpeg" alt="Desentupidora São Bento" class="portfolio-logo">
+                            <div class="portfolio-title-wrap">
+                                <h3 class="portfolio-client-name">Desentupidora São Bento</h3>
+                                <span class="portfolio-niche-badge">Emergência 24h &amp; Google Ads</span>
+                            </div>
+                        </div>
+                        <p class="portfolio-desc">Landing page de alta conversão para serviços emergenciais 24h. Otimizada para campanhas Google Ads, com funil de clique único para ligação telefônica e WhatsApp.</p>
+                        <div class="portfolio-metrics">
+                            <span class="metric-pill highlight">100 Core Vitals</span><span class="metric-pill">TTFB &lt; 50ms</span><span class="metric-pill">SEO Local Schema.org</span><span class="metric-pill">Mobile-First</span>
+                        </div>
+                        <div class="portfolio-actions">
+                            <button class="btn-preview btn-desktop" onclick="openDevicePreview('desentupidora-sao-bento/', 'Desentupidora São Bento', 'desentupidora-sao-bento/logomark.jpeg', 'desktop')">
+                                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
+                                Desktop
+                            </button>
+                            <button class="btn-preview btn-mobile" onclick="openDevicePreview('desentupidora-sao-bento/', 'Desentupidora São Bento', 'desentupidora-sao-bento/logomark.jpeg', 'mobile')">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg>
+                                Mobile
+                            </button>
+                            <a href="desentupidora-sao-bento/" target="_blank" class="btn-external-link" title="Abrir em nova aba">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                            </a>
                         </div>
                     </div>
-                    <p class="portfolio-desc">Landing page de alta conversão para serviços emergenciais 24h. Otimizada para campanhas Google Ads, com funil de clique único para ligação telefônica e WhatsApp.</p>
-                    <div class="portfolio-metrics">
-                        <span class="metric-pill highlight">100 Core Vitals</span><span class="metric-pill">TTFB &lt; 50ms</span><span class="metric-pill">SEO Local Schema.org</span><span class="metric-pill">Mobile-First</span>
-                    </div>
-                    <div class="portfolio-actions">
-                        <button class="btn-preview btn-desktop" onclick="openDevicePreview('desentupidora-sao-bento/', 'Desentupidora São Bento', 'desentupidora-sao-bento/logomark.jpeg', 'desktop')">
-                            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
-                            Desktop
-                        </button>
-                        <button class="btn-preview btn-mobile" onclick="openDevicePreview('desentupidora-sao-bento/', 'Desentupidora São Bento', 'desentupidora-sao-bento/logomark.jpeg', 'mobile')">
-                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg>
-                            Mobile
-                        </button>
-                        <a href="desentupidora-sao-bento/" target="_blank" class="btn-external-link" title="Abrir em nova aba">
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
-                        </a>
-                    </div>
-                </div>
-                <div class="portfolio-card">
-                    <div class="portfolio-header">
-                        <img src="beloton/logomark.png" alt="Beloton Luthieria" class="portfolio-logo">
-                        <div class="portfolio-title-wrap">
-                            <h3 class="portfolio-client-name">Beloton Luthieria</h3>
-                            <span class="portfolio-niche-badge">Luthieria &amp; Instrumentos Finos</span>
+                    <div class="portfolio-card">
+                        <div class="portfolio-header">
+                            <img src="beloton/logomark.png" alt="Beloton Luthieria" class="portfolio-logo">
+                            <div class="portfolio-title-wrap">
+                                <h3 class="portfolio-client-name">Beloton Luthieria</h3>
+                                <span class="portfolio-niche-badge">Luthieria &amp; Instrumentos Finos</span>
+                            </div>
+                        </div>
+                        <p class="portfolio-desc">Plataforma digital para oficina especializada em saxofones e instrumentos de sopro. Identidade visual refinada, design sonoro e valorização do artesanato de alto padrão.</p>
+                        <div class="portfolio-metrics">
+                            <span class="metric-pill highlight">100 Core Vitals</span><span class="metric-pill">Design Responsivo</span><span class="metric-pill">Zero CMS Bloat</span><span class="metric-pill">Estética Sonora</span>
+                        </div>
+                        <div class="portfolio-actions">
+                            <button class="btn-preview btn-desktop" onclick="openDevicePreview('beloton/', 'Beloton Luthieria', 'beloton/logomark.png', 'desktop')">
+                                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
+                                Desktop
+                            </button>
+                            <button class="btn-preview btn-mobile" onclick="openDevicePreview('beloton/', 'Beloton Luthieria', 'beloton/logomark.png', 'mobile')">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg>
+                                Mobile
+                            </button>
+                            <a href="beloton/" target="_blank" class="btn-external-link" title="Abrir em nova aba">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                            </a>
                         </div>
                     </div>
-                    <p class="portfolio-desc">Plataforma digital para oficina especializada em saxofones e instrumentos de sopro. Identidade visual refinada, design sonoro e valorização do artesanato de alto padrão.</p>
-                    <div class="portfolio-metrics">
-                        <span class="metric-pill highlight">100 Core Vitals</span><span class="metric-pill">Design Responsivo</span><span class="metric-pill">Zero CMS Bloat</span><span class="metric-pill">Estética Sonora</span>
-                    </div>
-                    <div class="portfolio-actions">
-                        <button class="btn-preview btn-desktop" onclick="openDevicePreview('beloton/', 'Beloton Luthieria', 'beloton/logomark.png', 'desktop')">
-                            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
-                            Desktop
-                        </button>
-                        <button class="btn-preview btn-mobile" onclick="openDevicePreview('beloton/', 'Beloton Luthieria', 'beloton/logomark.png', 'mobile')">
-                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg>
-                            Mobile
-                        </button>
-                        <a href="beloton/" target="_blank" class="btn-external-link" title="Abrir em nova aba">
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
-                        </a>
-                    </div>
-                </div>
-                <div class="portfolio-card">
-                    <div class="portfolio-header">
-                        <img src="kuroneko-toys/avatar-and-logo.png" alt="Kuro Neko Toys" class="portfolio-logo">
-                        <div class="portfolio-title-wrap">
-                            <h3 class="portfolio-client-name">Kuro Neko Toys</h3>
-                            <span class="portfolio-niche-badge">Colecionáveis &amp; Catálogo Geek</span>
+                    <div class="portfolio-card">
+                        <div class="portfolio-header">
+                            <img src="kuroneko-toys/avatar-and-logo.png" alt="Kuro Neko Toys" class="portfolio-logo">
+                            <div class="portfolio-title-wrap">
+                                <h3 class="portfolio-client-name">Kuro Neko Toys</h3>
+                                <span class="portfolio-niche-badge">Colecionáveis &amp; Catálogo Geek</span>
+                            </div>
+                        </div>
+                        <p class="portfolio-desc">Vitrine digital para loja de colecionáveis, action figures e cultura pop japonesa com micro-interações reativas e roteamento direto para vendas.</p>
+                        <div class="portfolio-metrics">
+                            <span class="metric-pill">Catálogo Dinâmico</span><span class="metric-pill">Micro-interações</span><span class="metric-pill highlight">Mobile-Ready</span><span class="metric-pill">Carregamento Rápido</span>
+                        </div>
+                        <div class="portfolio-actions">
+                            <button class="btn-preview btn-desktop" onclick="openDevicePreview('kuroneko-toys/', 'Kuro Neko Toys', 'kuroneko-toys/avatar-and-logo.png', 'desktop')">
+                                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
+                                Desktop
+                            </button>
+                            <button class="btn-preview btn-mobile" onclick="openDevicePreview('kuroneko-toys/', 'Kuro Neko Toys', 'kuroneko-toys/avatar-and-logo.png', 'mobile')">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg>
+                                Mobile
+                            </button>
+                            <a href="kuroneko-toys/" target="_blank" class="btn-external-link" title="Abrir em nova aba">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                            </a>
                         </div>
                     </div>
-                    <p class="portfolio-desc">Vitrine digital para loja de colecionáveis, action figures e cultura pop japonesa com micro-interações reativas e roteamento direto para vendas.</p>
-                    <div class="portfolio-metrics">
-                        <span class="metric-pill">Catálogo Dinâmico</span><span class="metric-pill">Micro-interações</span><span class="metric-pill highlight">Mobile-Ready</span><span class="metric-pill">Carregamento Rápido</span>
-                    </div>
-                    <div class="portfolio-actions">
-                        <button class="btn-preview btn-desktop" onclick="openDevicePreview('kuroneko-toys/', 'Kuro Neko Toys', 'kuroneko-toys/avatar-and-logo.png', 'desktop')">
-                            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
-                            Desktop
-                        </button>
-                        <button class="btn-preview btn-mobile" onclick="openDevicePreview('kuroneko-toys/', 'Kuro Neko Toys', 'kuroneko-toys/avatar-and-logo.png', 'mobile')">
-                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg>
-                            Mobile
-                        </button>
-                        <a href="kuroneko-toys/" target="_blank" class="btn-external-link" title="Abrir em nova aba">
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
-                        </a>
-                    </div>
-                </div>
-                <div class="portfolio-card">
-                    <div class="portfolio-header">
-                        <img src="picanha-do-savio/avatar.png" alt="Picanha do Sávio" class="portfolio-logo">
-                        <div class="portfolio-title-wrap">
-                            <h3 class="portfolio-client-name">Picanha do Sávio</h3>
-                            <span class="portfolio-niche-badge">Gastronomia &amp; Delivery</span>
+                    <div class="portfolio-card">
+                        <div class="portfolio-header">
+                            <img src="picanha-do-savio/avatar.png" alt="Picanha do Sávio" class="portfolio-logo">
+                            <div class="portfolio-title-wrap">
+                                <h3 class="portfolio-client-name">Picanha do Sávio</h3>
+                                <span class="portfolio-niche-badge">Gastronomia &amp; Delivery</span>
+                            </div>
+                        </div>
+                        <p class="portfolio-desc">Cardápio digital e apresentação gastronômica para restaurante de carnes nobres e frutos do mar, com fotos de alta resolução otimizadas e funil direto de pedidos.</p>
+                        <div class="portfolio-metrics">
+                            <span class="metric-pill">Cardápio Digital</span><span class="metric-pill">Mídia Otimizada</span><span class="metric-pill highlight">Funil WhatsApp</span><span class="metric-pill">UX Fluida</span>
+                        </div>
+                        <div class="portfolio-actions">
+                            <button class="btn-preview btn-desktop" onclick="openDevicePreview('picanha-do-savio/', 'Picanha do Sávio', 'picanha-do-savio/avatar.png', 'desktop')">
+                                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
+                                Desktop
+                            </button>
+                            <button class="btn-preview btn-mobile" onclick="openDevicePreview('picanha-do-savio/', 'Picanha do Sávio', 'picanha-do-savio/avatar.png', 'mobile')">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg>
+                                Mobile
+                            </button>
+                            <a href="picanha-do-savio/" target="_blank" class="btn-external-link" title="Abrir em nova aba">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                            </a>
                         </div>
                     </div>
-                    <p class="portfolio-desc">Cardápio digital e apresentação gastronômica para restaurante de carnes nobres e frutos do mar, com fotos de alta resolução otimizadas e funil direto de pedidos.</p>
-                    <div class="portfolio-metrics">
-                        <span class="metric-pill">Cardápio Digital</span><span class="metric-pill">Mídia Otimizada</span><span class="metric-pill highlight">Funil WhatsApp</span><span class="metric-pill">UX Fluida</span>
-                    </div>
-                    <div class="portfolio-actions">
-                        <button class="btn-preview btn-desktop" onclick="openDevicePreview('picanha-do-savio/', 'Picanha do Sávio', 'picanha-do-savio/avatar.png', 'desktop')">
-                            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
-                            Desktop
-                        </button>
-                        <button class="btn-preview btn-mobile" onclick="openDevicePreview('picanha-do-savio/', 'Picanha do Sávio', 'picanha-do-savio/avatar.png', 'mobile')">
-                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg>
-                            Mobile
-                        </button>
-                        <a href="picanha-do-savio/" target="_blank" class="btn-external-link" title="Abrir em nova aba">
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
-                        </a>
-                    </div>
-                </div>
-                <div class="portfolio-card">
-                    <div class="portfolio-header">
-                        <img src="barba-shopping/img/avatar.jpg" alt="Barba Shopping" class="portfolio-logo">
-                        <div class="portfolio-title-wrap">
-                            <h3 class="portfolio-client-name">Barba Shopping</h3>
-                            <span class="portfolio-niche-badge">Barbearia &amp; Estética Masculina</span>
+                    <div class="portfolio-card">
+                        <div class="portfolio-header">
+                            <img src="barba-shopping/img/avatar.jpg" alt="Barba Shopping" class="portfolio-logo">
+                            <div class="portfolio-title-wrap">
+                                <h3 class="portfolio-client-name">Barba Shopping</h3>
+                                <span class="portfolio-niche-badge">Barbearia &amp; Estética Masculina</span>
+                            </div>
+                        </div>
+                        <p class="portfolio-desc">Website institucional para barbearia com apresentação de equipe profissional, tabela clara de serviços e botão direto de agendamento online.</p>
+                        <div class="portfolio-metrics">
+                            <span class="metric-pill">Tabela de Preços</span><span class="metric-pill">Equipe em Destaque</span><span class="metric-pill highlight">SEO Local</span><span class="metric-pill">Alta Conversão</span>
+                        </div>
+                        <div class="portfolio-actions">
+                            <button class="btn-preview btn-desktop" onclick="openDevicePreview('barba-shopping/', 'Barba Shopping', 'barba-shopping/img/avatar.jpg', 'desktop')">
+                                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
+                                Desktop
+                            </button>
+                            <button class="btn-preview btn-mobile" onclick="openDevicePreview('barba-shopping/', 'Barba Shopping', 'barba-shopping/img/avatar.jpg', 'mobile')">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg>
+                                Mobile
+                            </button>
+                            <a href="barba-shopping/" target="_blank" class="btn-external-link" title="Abrir em nova aba">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                            </a>
                         </div>
                     </div>
-                    <p class="portfolio-desc">Website institucional para barbearia com apresentação de equipe profissional, tabela clara de serviços e botão direto de agendamento online.</p>
-                    <div class="portfolio-metrics">
-                        <span class="metric-pill">Tabela de Preços</span><span class="metric-pill">Equipe em Destaque</span><span class="metric-pill highlight">SEO Local</span><span class="metric-pill">Alta Conversão</span>
-                    </div>
-                    <div class="portfolio-actions">
-                        <button class="btn-preview btn-desktop" onclick="openDevicePreview('barba-shopping/', 'Barba Shopping', 'barba-shopping/img/avatar.jpg', 'desktop')">
-                            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
-                            Desktop
-                        </button>
-                        <button class="btn-preview btn-mobile" onclick="openDevicePreview('barba-shopping/', 'Barba Shopping', 'barba-shopping/img/avatar.jpg', 'mobile')">
-                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg>
-                            Mobile
-                        </button>
-                        <a href="barba-shopping/" target="_blank" class="btn-external-link" title="Abrir em nova aba">
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
-                        </a>
-                    </div>
-                </div>
-                <div class="portfolio-card">
-                    <div class="portfolio-header">
-                        <img src="emporio-linneo/logomark.jpg" alt="Empório Linnéo" class="portfolio-logo">
-                        <div class="portfolio-title-wrap">
-                            <h3 class="portfolio-client-name">Empório Linnéo</h3>
-                            <span class="portfolio-niche-badge">Confeitaria Artesanal &amp; Varejo</span>
+                    <div class="portfolio-card">
+                        <div class="portfolio-header">
+                            <img src="emporio-linneo/logomark.jpg" alt="Empório Linnéo" class="portfolio-logo">
+                            <div class="portfolio-title-wrap">
+                                <h3 class="portfolio-client-name">Empório Linnéo</h3>
+                                <span class="portfolio-niche-badge">Confeitaria Artesanal &amp; Varejo</span>
+                            </div>
+                        </div>
+                        <p class="portfolio-desc">Escaparate digital acolhedor para confeitaria artesanal e produtos gourmet. Design intimista pensado para atrair pedidos locais e encomendas especiais.</p>
+                        <div class="portfolio-metrics">
+                            <span class="metric-pill">Vitrine de Produtos</span><span class="metric-pill">Design Acolhedor</span><span class="metric-pill highlight">Zero Frameworks</span><span class="metric-pill">Navegação Leve</span>
+                        </div>
+                        <div class="portfolio-actions">
+                            <button class="btn-preview btn-desktop" onclick="openDevicePreview('emporio-linneo/', 'Empório Linnéo', 'emporio-linneo/logomark.jpg', 'desktop')">
+                                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
+                                Desktop
+                            </button>
+                            <button class="btn-preview btn-mobile" onclick="openDevicePreview('emporio-linneo/', 'Empório Linnéo', 'emporio-linneo/logomark.jpg', 'mobile')">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg>
+                                Mobile
+                            </button>
+                            <a href="emporio-linneo/" target="_blank" class="btn-external-link" title="Abrir em nova aba">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                            </a>
                         </div>
                     </div>
-                    <p class="portfolio-desc">Escaparate digital acolhedor para confeitaria artesanal e produtos gourmet. Design intimista pensado para atrair pedidos locais e encomendas especiais.</p>
-                    <div class="portfolio-metrics">
-                        <span class="metric-pill">Vitrine de Produtos</span><span class="metric-pill">Design Acolhedor</span><span class="metric-pill highlight">Zero Frameworks</span><span class="metric-pill">Navegação Leve</span>
+                    <div class="portfolio-card">
+                        <div class="portfolio-header">
+                            <img src="ideal/assets/logo.png" alt="Ideal Saúde Ambiental" class="portfolio-logo">
+                            <div class="portfolio-title-wrap">
+                                <h3 class="portfolio-client-name">Ideal Saúde Ambiental</h3>
+                                <span class="portfolio-niche-badge">Dedetização &amp; Saúde Ambiental</span>
+                            </div>
+                        </div>
+                        <p class="portfolio-desc">Plataforma corporativa para empresa com 28 anos de liderança em desinsetização, desratização e controle biológico de pragas com certificação ANVISA.</p>
+                        <div class="portfolio-metrics">
+                            <span class="metric-pill highlight">28 Anos de Mercado</span><span class="metric-pill">Certificação ANVISA</span><span class="metric-pill">Orçamento B2B</span><span class="metric-pill">SEO Regional</span>
+                        </div>
+                        <div class="portfolio-actions">
+                            <button class="btn-preview btn-desktop" onclick="openDevicePreview('ideal/', 'Ideal Saúde Ambiental', 'ideal/assets/logo.png', 'desktop')">
+                                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
+                                Desktop
+                            </button>
+                            <button class="btn-preview btn-mobile" onclick="openDevicePreview('ideal/', 'Ideal Saúde Ambiental', 'ideal/assets/logo.png', 'mobile')">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg>
+                                Mobile
+                            </button>
+                            <a href="ideal/" target="_blank" class="btn-external-link" title="Abrir em nova aba">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                            </a>
+                        </div>
                     </div>
-                    <div class="portfolio-actions">
-                        <button class="btn-preview btn-desktop" onclick="openDevicePreview('emporio-linneo/', 'Empório Linnéo', 'emporio-linneo/logomark.jpg', 'desktop')">
-                            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
-                            Desktop
-                        </button>
-                        <button class="btn-preview btn-mobile" onclick="openDevicePreview('emporio-linneo/', 'Empório Linnéo', 'emporio-linneo/logomark.jpg', 'mobile')">
-                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg>
-                            Mobile
-                        </button>
-                        <a href="emporio-linneo/" target="_blank" class="btn-external-link" title="Abrir em nova aba">
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
-                        </a>
+                    <div class="portfolio-card">
+                        <div class="portfolio-header">
+                            <img src="el-bethel/logomark2.png" alt="Óptica El Bethel" class="portfolio-logo">
+                            <div class="portfolio-title-wrap">
+                                <h3 class="portfolio-client-name">Óptica El Bethel</h3>
+                                <span class="portfolio-niche-badge">Óptica &amp; Saúde Visual</span>
+                            </div>
+                        </div>
+                        <p class="portfolio-desc">Vitrine digital de armações e atendimento clínico personalizado com envio rápido de receitas médicas e orçamento instantâneo via WhatsApp.</p>
+                        <div class="portfolio-metrics">
+                            <span class="metric-pill">Catálogo de Armações</span><span class="metric-pill highlight">Envio de Receitas</span><span class="metric-pill">Atendimento Ágil</span><span class="metric-pill">Mobile-First</span>
+                        </div>
+                        <div class="portfolio-actions">
+                            <button class="btn-preview btn-desktop" onclick="openDevicePreview('el-bethel/', 'Óptica El Bethel', 'el-bethel/logomark2.png', 'desktop')">
+                                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
+                                Desktop
+                            </button>
+                            <button class="btn-preview btn-mobile" onclick="openDevicePreview('el-bethel/', 'Óptica El Bethel', 'el-bethel/logomark2.png', 'mobile')">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg>
+                                Mobile
+                            </button>
+                            <a href="el-bethel/" target="_blank" class="btn-external-link" title="Abrir em nova aba">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="portfolio-card">
+                        <div class="portfolio-header">
+                            <img src="dom-bolo/logomark.jpg" alt="Dom Bolo" class="portfolio-logo">
+                            <div class="portfolio-title-wrap">
+                                <h3 class="portfolio-client-name">Dom Bolo</h3>
+                                <span class="portfolio-niche-badge">Bolos Caseiros &amp; Confeitaria</span>
+                            </div>
+                        </div>
+                        <p class="portfolio-desc">Cardápio digital visual de bolos caseiros e encomendas para eventos, focado em captação de clientes da região e conversão rápida.</p>
+                        <div class="portfolio-metrics">
+                            <span class="metric-pill">Cardápio Visual</span><span class="metric-pill">Encomendas Rápidas</span><span class="metric-pill highlight">SEO de Bairro</span><span class="metric-pill">Zero Bloat</span>
+                        </div>
+                        <div class="portfolio-actions">
+                            <button class="btn-preview btn-desktop" onclick="openDevicePreview('dom-bolo/', 'Dom Bolo', 'dom-bolo/logomark.jpg', 'desktop')">
+                                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
+                                Desktop
+                            </button>
+                            <button class="btn-preview btn-mobile" onclick="openDevicePreview('dom-bolo/', 'Dom Bolo', 'dom-bolo/logomark.jpg', 'mobile')">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg>
+                                Mobile
+                            </button>
+                            <a href="dom-bolo/" target="_blank" class="btn-external-link" title="Abrir em nova aba">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="portfolio-card">
+                        <div class="portfolio-header">
+                            <img src="alo-agua/logomark.png" alt="Alô Água &amp; Gás" class="portfolio-logo">
+                            <div class="portfolio-title-wrap">
+                                <h3 class="portfolio-client-name">Alô Água &amp; Gás</h3>
+                                <span class="portfolio-niche-badge">Delivery Rápido &amp; Utilidades</span>
+                            </div>
+                        </div>
+                        <p class="portfolio-desc">Interface direta de pedidos para distribuidora de água mineral e gás, com botões de chamada rápida e confirmação instantânea de entrega.</p>
+                        <div class="portfolio-metrics">
+                            <span class="metric-pill highlight">Pedido em 1 Clique</span><span class="metric-pill">Alta Disponibilidade</span><span class="metric-pill">Performance 100</span><span class="metric-pill">Foco Local</span>
+                        </div>
+                        <div class="portfolio-actions">
+                            <button class="btn-preview btn-desktop" onclick="openDevicePreview('alo-agua/', 'Alô Água &amp; Gás', 'alo-agua/logomark.png', 'desktop')">
+                                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
+                                Desktop
+                            </button>
+                            <button class="btn-preview btn-mobile" onclick="openDevicePreview('alo-agua/', 'Alô Água &amp; Gás', 'alo-agua/logomark.png', 'mobile')">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg>
+                                Mobile
+                            </button>
+                            <a href="alo-agua/" target="_blank" class="btn-external-link" title="Abrir em nova aba">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="portfolio-card">
+                        <div class="portfolio-header">
+                            <img src="nilson-vieira/avatar2.png" alt="Nilson Vieira" class="portfolio-logo">
+                            <div class="portfolio-title-wrap">
+                                <h3 class="portfolio-client-name">Nilson Vieira</h3>
+                                <span class="portfolio-niche-badge">Maestro, Arranjador &amp; Compositor</span>
+                            </div>
+                        </div>
+                        <p class="portfolio-desc">Portfólio artístico e catálogo de partituras e arranjos orquestrais para um dos grandes maestros e compositores da música brasileira.</p>
+                        <div class="portfolio-metrics">
+                            <span class="metric-pill highlight">Catálogo Musical</span><span class="metric-pill">Partituras Digitais</span><span class="metric-pill">Áudio Integrado</span><span class="metric-pill">Design Sóbrio</span>
+                        </div>
+                        <div class="portfolio-actions">
+                            <button class="btn-preview btn-desktop" onclick="openDevicePreview('nilson-vieira/', 'Nilson Vieira', 'nilson-vieira/avatar2.png', 'desktop')">
+                                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
+                                Desktop
+                            </button>
+                            <button class="btn-preview btn-mobile" onclick="openDevicePreview('nilson-vieira/', 'Nilson Vieira', 'nilson-vieira/avatar2.png', 'mobile')">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg>
+                                Mobile
+                            </button>
+                            <a href="nilson-vieira/" target="_blank" class="btn-external-link" title="Abrir em nova aba">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
