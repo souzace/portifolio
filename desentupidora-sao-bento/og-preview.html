@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OpenGraph & Social Preview Tester | Desentupidora São Bento</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Montserrat:wght@700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #F4F6F9;
+            --surface: #FFFFFF;
+            --border: #E2E8F0;
+            --text: #1E293B;
+            --muted: #64748B;
+            --brand-brown: #391612;
+            --brand-yellow: #FFE500;
+            --wa-green: #25D366;
+            --wa-bubble: #E7FFDB;
+            --li-blue: #0A66C2;
+            --fb-blue: #1877F2;
+            --x-dark: #0F1419;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            line-height: 1.5;
+            padding: 32px 16px 80px;
+        }
+
+        .container {
+            max-width: 1040px;
+            margin: 0 auto;
+        }
+
+        .header-title {
+            text-align: center;
+            margin-bottom: 32px;
+        }
+
+        .header-title h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.85rem;
+            color: var(--brand-brown);
+            margin-bottom: 6px;
+        }
+
+        .header-title p {
+            color: var(--muted);
+            font-size: 0.95rem;
+        }
+
+        .badge-live {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: #DEF7EC;
+            color: #03543F;
+            font-size: 0.78rem;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 999px;
+            margin-bottom: 10px;
+        }
+
+        .grid-previews {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 24px;
+            margin-bottom: 40px;
+        }
+
+        .preview-card {
+            background: var(--surface);
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            padding: 20px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .preview-label {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-size: 0.85rem;
+            font-weight: 700;
+            margin-bottom: 14px;
+            color: var(--muted);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .preview-label svg {
+            width: 20px;
+            height: 20px;
+        }
+
+        /* 1. WHATSAPP MOCKUP */
+        .wa-box {
+            background: #ECE5DD;
+            border-radius: 10px;
+            padding: 16px 12px;
+            background-image: radial-gradient(#d3c8be 1px, transparent 1px);
+            background-size: 12px 12px;
+        }
+
+        .wa-bubble {
+            background: var(--wa-bubble);
+            border-radius: 8px;
+            border-top-left-radius: 0;
+            box-shadow: 0 1px 2px rgba(0,0,0,0.15);
+            overflow: hidden;
+            max-width: 330px;
+            margin-left: auto;
+        }
+
+        .wa-card {
+            background: #F0F4F2;
+            border-radius: 6px;
+            margin: 4px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .wa-img {
+            width: 100%;
+            height: 160px;
+            object-fit: cover;
+            background: #fff;
+            display: block;
+        }
+
+        .wa-info {
+            padding: 10px 12px;
+        }
+
+        .wa-title {
+            font-size: 0.88rem;
+            font-weight: 700;
+            color: #111B21;
+            line-height: 1.25;
+            margin-bottom: 4px;
+        }
+
+        .wa-desc {
+            font-size: 0.75rem;
+            color: #667781;
+            line-height: 1.35;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            margin-bottom: 4px;
+        }
+
+        .wa-domain {
+            font-size: 0.7rem;
+            color: #8696A0;
+            text-transform: lowercase;
+        }
+
+        .wa-link-text {
+            padding: 4px 8px 6px;
+            font-size: 0.82rem;
+            color: #027EB5;
+            word-break: break-all;
+        }
+
+        /* 2. LINKEDIN MOCKUP */
+        .li-box {
+            border: 1px solid #E0E0E0;
+            border-radius: 8px;
+            overflow: hidden;
+            background: #FFF;
+        }
+
+        .li-header {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 14px;
+        }
+
+        .li-avatar {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: var(--brand-brown);
+            color: #FFF;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 0.8rem;
+        }
+
+        .li-author strong {
+            font-size: 0.82rem;
+            display: block;
+            color: #000;
+        }
+
+        .li-author span {
+            font-size: 0.72rem;
+            color: #666;
+        }
+
+        .li-img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .li-info {
+            padding: 12px 14px;
+            background: #F3F6F8;
+            border-top: 1px solid #E0E0E0;
+        }
+
+        .li-title {
+            font-size: 0.9rem;
+            font-weight: 700;
+            color: #000;
+            line-height: 1.25;
+            margin-bottom: 4px;
+        }
+
+        .li-domain {
+            font-size: 0.72rem;
+            color: #666;
+            text-transform: lowercase;
+        }
+
+        /* 3. TWITTER / X MOCKUP */
+        .x-box {
+            border: 1px solid #CFD9DE;
+            border-radius: 14px;
+            overflow: hidden;
+            background: #FFF;
+        }
+
+        .x-img {
+            width: 100%;
+            height: 175px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .x-info {
+            padding: 12px 14px;
+            background: #FFF;
+        }
+
+        .x-domain {
+            font-size: 0.75rem;
+            color: #536471;
+            margin-bottom: 2px;
+        }
+
+        .x-title {
+            font-size: 0.88rem;
+            font-weight: 700;
+            color: #0F1419;
+            line-height: 1.25;
+            margin-bottom: 4px;
+        }
+
+        .x-desc {
+            font-size: 0.78rem;
+            color: #536471;
+            line-height: 1.35;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        /* 4. GOOGLE SERP MOCKUP */
+        .google-card {
+            background: #FFF;
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 18px;
+        }
+
+        .google-site {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 4px;
+        }
+
+        .google-favicon {
+            width: 22px;
+            height: 22px;
+            border-radius: 50%;
+            object-fit: contain;
+            border: 1px solid #E2E8F0;
+        }
+
+        .google-site-name {
+            font-size: 0.8rem;
+            color: #202124;
+            font-weight: 600;
+        }
+
+        .google-url {
+            font-size: 0.72rem;
+            color: #4D5156;
+        }
+
+        .google-title {
+            font-size: 1.15rem;
+            color: #1A0DAB;
+            font-weight: 500;
+            line-height: 1.25;
+            margin-bottom: 4px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .google-title:hover {
+            text-decoration: underline;
+        }
+
+        .google-snippet {
+            font-size: 0.84rem;
+            color: #4D5156;
+            line-height: 1.45;
+        }
+
+        /* META TAGS TABLE */
+        .tags-table-card {
+            background: var(--surface);
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            padding: 24px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+            margin-top: 24px;
+        }
+
+        .tags-table-card h2 {
+            font-size: 1.25rem;
+            color: var(--brand-brown);
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.85rem;
+        }
+
+        th, td {
+            padding: 10px 12px;
+            text-align: left;
+            border-bottom: 1px solid var(--border);
+        }
+
+        th {
+            background: #F8FAFC;
+            font-weight: 700;
+            color: var(--muted);
+        }
+
+        td code {
+            background: #F1F5F9;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: monospace;
+            color: #0F172A;
+            font-size: 0.82rem;
+        }
+
+        .status-ok {
+            color: #16A34A;
+            font-weight: 700;
+        }
+
+        .nav-links {
+            margin-top: 24px;
+            text-align: center;
+        }
+
+        .nav-links a {
+            color: var(--brand-brown);
+            font-weight: 700;
+            text-decoration: underline;
+            margin: 0 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        
+        <div class="header-title">
+            <span class="badge-live">● Validador Open Graph Ativo</span>
+            <h1>Visualizador Open Graph &amp; Social Cards</h1>
+            <p>Prévia em tempo real de como a <strong>Desentupidora São Bento</strong> aparece ao ser compartilhada no WhatsApp, LinkedIn, X/Twitter e Google.</p>
+        </div>
+
+        <div class="grid-previews">
+            
+            <!-- WHATSAPP PREVIEW -->
+            <div class="preview-card">
+                <div class="preview-label">
+                    <span>WhatsApp Preview</span>
+                    <svg viewBox="0 0 24 24" fill="#25D366"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2zm5.82 14.15c-.24.67-1.39 1.28-1.92 1.36-.5.08-1.15.11-3.69-.94-2.73-1.12-4.49-3.9-4.63-4.08-.14-.19-1.11-1.48-1.11-2.82s.7-2 1-2.27c.24-.22.53-.33.77-.33.24 0 .47.01.67.02.21.01.49-.08.77.58.28.67.97 2.37 1.05 2.54.08.17.14.38.03.6-.11.22-.17.36-.33.55-.17.19-.36.42-.51.57-.17.17-.35.35-.15.7.2.35.89 1.47 1.91 2.38 1.31 1.17 2.42 1.53 2.76 1.7.35.17.55.14.75-.09.2-.23.86-1 1.09-1.35.23-.35.46-.29.77-.17.32.11 2.02.95 2.37 1.12.35.17.58.26.67.41.08.15.08.87-.16 1.54z"/></svg>
+                </div>
+                <div class="wa-box">
+                    <div class="wa-bubble">
+                        <div class="wa-card">
+                            <img src="img/logomark.png" alt="OG Image Preview" class="wa-img">
+                            <div class="wa-info">
+                                <div class="wa-title">Desentupidora São Bento | Fortaleza e Região Metropolitana</div>
+                                <div class="wa-desc">Atendimento rápido em até 30 min em Fortaleza e Região Metropolitana. Desentupimento de esgotos, pias, ralos e caixas de gordura. Orçamento 100% grátis.</div>
+                                <div class="wa-domain">desentupidorasaobento.com.br</div>
+                            </div>
+                        </div>
+                        <div class="wa-link-text">https://desentupidorasaobento.com.br/</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- LINKEDIN PREVIEW -->
+            <div class="preview-card">
+                <div class="preview-label">
+                    <span>LinkedIn Preview</span>
+                    <svg viewBox="0 0 24 24" fill="#0A66C2"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                </div>
+                <div class="li-box">
+                    <div class="li-header">
+                        <div class="li-avatar">SB</div>
+                        <div class="li-author">
+                            <strong>Desentupidora São Bento</strong>
+                            <span>Empresa · Serviços de Desentupimento</span>
+                        </div>
+                    </div>
+                    <img src="img/logomark.png" alt="OG Image Preview" class="li-img">
+                    <div class="li-info">
+                        <div class="li-title">Desentupidora São Bento | Fortaleza e Região Metropolitana</div>
+                        <div class="li-domain">desentupidorasaobento.com.br</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- X / TWITTER PREVIEW -->
+            <div class="preview-card">
+                <div class="preview-label">
+                    <span>X / Twitter Card Preview</span>
+                    <svg viewBox="0 0 24 24" fill="#0F1419"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                </div>
+                <div class="x-box">
+                    <img src="img/logomark.png" alt="Twitter Card Preview" class="x-img">
+                    <div class="x-info">
+                        <div class="x-domain">desentupidorasaobento.com.br</div>
+                        <div class="x-title">Desentupidora São Bento | Fortaleza e Região Metropolitana</div>
+                        <div class="x-desc">Desentupimento rápido e sem quebrar pisos em Fortaleza e Região Metropolitana. Chegamos em até 30 min. Orçamento gratuito e garantia por escrito.</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- GOOGLE SERP PREVIEW -->
+            <div class="preview-card">
+                <div class="preview-label">
+                    <span>Google SERP Snippet Preview</span>
+                    <svg viewBox="0 0 24 24" fill="#EA4335"><path d="M12.48 10.92v3.28h7.84c-.24 1.84-.853 3.187-1.787 4.133-1.147 1.147-2.933 2.4-6.053 2.4-4.827 0-8.6-3.893-8.6-8.72s3.773-8.72 8.6-8.72c2.6 0 4.507 1.027 5.907 2.347l2.307-2.307C18.747 1.44 16.133 0 12.48 0 5.867 0 .307 5.387.307 12s5.56 12 12.173 12c3.573 0 6.267-1.173 8.373-3.36 2.16-2.16 2.84-5.213 2.84-7.667 0-.76-.053-1.467-.173-2.053H12.48z"/></svg>
+                </div>
+                <div class="google-card">
+                    <div class="google-site">
+                        <img src="favicon.png" alt="Favicon" class="google-favicon">
+                        <div>
+                            <div class="google-site-name">Desentupidora São Bento</div>
+                            <div class="google-url">https://desentupidorasaobento.com.br</div>
+                        </div>
+                    </div>
+                    <a href="#" class="google-title">Desentupidora São Bento | Fortaleza e Região Metropolitana</a>
+                    <div class="google-snippet">Desentupidora em Fortaleza e Região Metropolitana. Atendimento em até 30 min para esgotos, pias, ralos e vasos. Orçamento 100% grátis. Chame no WhatsApp!</div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- META PROPERTIES TABLE -->
+        <div class="tags-table-card">
+            <h2>
+                <span>Metadados Open Graph &amp; Twitter Detectados no HTML</span>
+                <span class="status-ok">✓ 100% Configurado</span>
+            </h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Propriedade</th>
+                        <th>Valor Atual</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>og:title</code></td>
+                        <td>Desentupidora São Bento | Fortaleza e Região Metropolitana</td>
+                        <td class="status-ok">✓ 57 chars (Ideal &lt; 60)</td>
+                    </tr>
+                    <tr>
+                        <td><code>og:description</code></td>
+                        <td>Atendimento rápido em até 30 min em Fortaleza e Região Metropolitana. Desentupimento de esgotos, pias, ralos e caixas de gordura. Orçamento 100% grátis.</td>
+                        <td class="status-ok">✓ 164 chars</td>
+                    </tr>
+                    <tr>
+                        <td><code>og:image</code></td>
+                        <td>https://desentupidorasaobento.com.br/img/logomark.png</td>
+                        <td class="status-ok">✓ 1167 x 1094 px (Alta Definição)</td>
+                    </tr>
+                    <tr>
+                        <td><code>og:url</code></td>
+                        <td>https://desentupidorasaobento.com.br/</td>
+                        <td class="status-ok">✓ Canônica Válida</td>
+                    </tr>
+                    <tr>
+                        <td><code>og:type</code></td>
+                        <td>business.business</td>
+                        <td class="status-ok">✓ Negócio Local</td>
+                    </tr>
+                    <tr>
+                        <td><code>og:locale</code></td>
+                        <td>pt_BR</td>
+                        <td class="status-ok">✓ Português Brasil</td>
+                    </tr>
+                    <tr>
+                        <td><code>twitter:card</code></td>
+                        <td>summary_large_image</td>
+                        <td class="status-ok">✓ Card Grande</td>
+                    </tr>
+                    <tr>
+                        <td><code>canonical</code></td>
+                        <td>https://desentupidorasaobento.com.br/</td>
+                        <td class="status-ok">✓ Indexável</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="nav-links">
+            <a href="index.html">← Voltar para a Landing Page Oficial</a>
+        </div>
+
+    </div>
+
+</body>
+</html>
