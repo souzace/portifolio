@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120">
+  <rect width="120" height="120" rx="24" fill="#0d2b30"/>
+  <circle cx="60" cy="60" r="48" fill="#13383f"/>
+  <!-- Health Cross with Heart Form in Coral and Teal -->
+  <path d="M52 35 h16 v17 h17 v16 h-17 v17 h-16 v-17 h-17 v-16 h17 z" fill="#00b4b6"/>
+  <path d="M60 48 c4-8 16-6 18 3 2 9-10 17-18 22 -8-5-20-13-18-22 2-9 14-11 18-3 z" fill="#ff4d5a" opacity="0.95"/>
+  <circle cx="60" cy="58" r="4" fill="#ffffff"/>
+</svg>

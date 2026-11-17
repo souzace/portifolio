@@ -1300,7 +1300,128 @@
             }
         }
 
-    </style>
+    
+        /* Technical Details Modal for Enterprise Cases */
+        .tech-modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: 99999;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 16px;
+            box-sizing: border-box;
+            opacity: 0;
+            transition: opacity 0.25s ease;
+        }
+
+        .tech-modal-overlay.open {
+            display: flex;
+            opacity: 1;
+        }
+
+        .tech-modal-content {
+            position: relative;
+            z-index: 10;
+            width: 100%;
+            max-width: 680px;
+            max-height: 90vh;
+            background: #141414;
+            border: 1px solid #282828;
+            border-radius: 16px;
+            box-shadow: 0 25px 70px rgba(0,0,0,0.9);
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        .tech-modal-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 14px 20px;
+            background: #181818;
+            border-bottom: 1px solid #262626;
+            gap: 16px;
+        }
+
+        .tech-modal-body {
+            padding: 24px;
+            overflow-y: auto;
+            -webkit-overflow-scrolling: touch;
+            color: var(--text-main);
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .tech-modal-section-title {
+            font-size: 0.82rem;
+            text-transform: uppercase;
+            letter-spacing: 1.2px;
+            color: var(--cyan-accent);
+            font-weight: 700;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .tech-modal-bullets {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .tech-modal-bullets li {
+            position: relative;
+            padding-left: 22px;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            color: #d1d5db;
+        }
+
+        .tech-modal-bullets li::before {
+            content: "▹";
+            position: absolute;
+            left: 2px;
+            top: 0;
+            color: var(--cyan-accent);
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+
+        .tech-modal-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .btn-preview.btn-tech {
+            flex: 1;
+            display: inline-flex !important;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        @media (max-width: 768px) {
+            .tech-modal-content {
+                max-height: 94vh;
+            }
+            .tech-modal-body {
+                padding: 18px 16px;
+                gap: 16px;
+            }
+        }
+
+</style>
     <!-- Entity SEO / Local Business Data -->
     <script type="application/ld+json">
 {
@@ -1514,167 +1635,160 @@
           </div>
           </section>
 
-    <!-- ETAPA 4.3: Projetos -->
-    <section id="servicos">
+        <!-- ETAPA 4.3: Casos de Sucesso Corporativos (Backend & Cloud) -->
+    <section id="servicos" style="padding: 80px 0; border-top: 1px solid var(--border-color); background: var(--bg-color);">
         <div class="container">
-            <div style="text-align: center; margin-bottom: 32px;">
-                <h2 style="margin-bottom: 8px;">Casos de Sucesso</h2>
-                
+            <div style="text-align: center; margin-bottom: 48px;">
+                <div style="display: inline-flex; align-items: center; gap: 8px; color: var(--cyan-accent); font-size: 0.85rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 12px; background: rgba(0, 229, 255, 0.08); padding: 6px 16px; border-radius: 20px; border: 1px solid rgba(0, 229, 255, 0.2);">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="8" rx="2" ry="2"></rect><rect x="2" y="14" width="20" height="8" rx="2" ry="2"></rect><line x1="6" y1="6" x2="6.01" y2="6"></line><line x1="6" y1="18" x2="6.01" y2="18"></line></svg>
+                    Sistemas Críticos &amp; Microsserviços
+                </div>
+                <h2 style="margin-bottom: 12px; font-size: 2rem;">Casos de Sucesso Enterprise</h2>
+                <p style="color: var(--text-muted); font-size: 1.05rem; max-width: 680px; margin: 0 auto; line-height: 1.6;">
+                    Arquiteturas distribuídas, alta concorrência e sustentação de microsserviços de missão crítica em grandes marcas do mercado.
+                </p>
             </div>
             <div class="carousel-wrapper">
-                <button class="carousel-btn left" disabled onclick="scrollCarousel(this, 'left')" aria-label="Anterior">&#10094;</button>
-                <button class="carousel-btn right" onclick="scrollCarousel(this, 'right')" aria-label="Próximo">&#10095;</button>
-                <div class="services-grid">
-                <div class="service-card">
-                    <h3>Casas Bahia Pay <span class="project-subtitle">— Crédito Direto ao Consumidor (CDC &amp; FIDC)</span></h3>
-                    <ul class="project-features">
-                        <li>Desenvolvimento e sustentação de microsserviços em ambiente distribuído para operações de crédito (CDC) e FIDC.</li>
-                        <li>Modernização técnica de serviços incluindo migração para Node.js 24 e migração de integrações AWS SDK v2 para v3.</li>
-                        <li>Uso de DynamoDB, SQS, SNS, S3, Secrets Manager e evolução de ambiente local com Docker, LocalStack e Tilt com CI/CD.</li>
-                    </ul>
-                    <div class="project-tech" style="margin-top: auto;">
-                        <span class="tech-item">Node.js 24</span>
-                        <span class="tech-item">TypeScript</span>
-                        <span class="tech-item">NestJS</span>
-                        <span class="tech-item">AWS</span>
-                        <span class="tech-item">DynamoDB</span>
-                        <span class="tech-item">SQS</span>
-                        <span class="tech-item">SNS</span>
-                        <span class="tech-item">S3</span>
-                        <span class="tech-item">Secrets Manager</span>
-                        <span class="tech-item">Docker</span>
-                        <span class="tech-item">LocalStack</span>
-                        <span class="tech-item">Tilt</span>
+                <button class="carousel-btn left" disabled onclick="scrollCarousel(this, 'left')" aria-label="Previous">&#10094;</button>
+                <button class="carousel-btn right" onclick="scrollCarousel(this, 'right')" aria-label="Next">&#10095;</button>
+                <div class="services-grid portfolio-slider">
+                    <div class="portfolio-card">
+                        <div class="portfolio-header">
+                            <img src="enterprise-logos/casas-bahia.svg" alt="Casas Bahia Pay" class="portfolio-logo" style="object-fit: contain;">
+                            <div class="portfolio-title-wrap">
+                                <h3 class="portfolio-client-name">Casas Bahia Pay</h3>
+                                <span class="portfolio-niche-badge">Crédito &amp; FIDC (CDC)</span>
+                            </div>
+                        </div>
+                        <p class="portfolio-desc">Desenvolvimento e sustentação de microsserviços em ambiente distribuído para operações de crédito CDC e FIDC, modernização para Node.js 24 e migração AWS SDK v3.</p>
+                        <div class="portfolio-metrics">
+                            <span class="metric-pill highlight">Node.js 24</span><span class="metric-pill">NestJS</span><span class="metric-pill">AWS SDK v3</span><span class="metric-pill">DynamoDB</span><span class="metric-pill">SQS &amp; SNS</span>
+                        </div>
+                        <div class="portfolio-actions">
+                            <button class="btn-preview btn-tech" onclick="openTechModal('casas-bahia')">
+                                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
+                                <span>Detalhes Técnicos</span>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="portfolio-card">
+                        <div class="portfolio-header">
+                            <img src="enterprise-logos/fleury.svg" alt="Grupo Fleury" class="portfolio-logo" style="object-fit: contain;">
+                            <div class="portfolio-title-wrap">
+                                <h3 class="portfolio-client-name">Grupo Fleury</h3>
+                                <span class="portfolio-niche-badge">Saúde &amp; Streaming Kafka</span>
+                            </div>
+                        </div>
+                        <p class="portfolio-desc">Soluções backend escaláveis para produtos de saúde B2B e B2C. Criação da funcionalidade GAUS no Portal de Beneficiários e arquitetura orientada a eventos com Kafka.</p>
+                        <div class="portfolio-metrics">
+                            <span class="metric-pill highlight">Kafka</span><span class="metric-pill">NestJS</span><span class="metric-pill">PostgreSQL</span><span class="metric-pill">MongoDB</span><span class="metric-pill">Docker</span>
+                        </div>
+                        <div class="portfolio-actions">
+                            <button class="btn-preview btn-tech" onclick="openTechModal('fleury')">
+                                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
+                                <span>Detalhes Técnicos</span>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="portfolio-card">
+                        <div class="portfolio-header">
+                            <img src="enterprise-logos/crefisa.svg" alt="Banco Crefisa" class="portfolio-logo" style="object-fit: contain;">
+                            <div class="portfolio-title-wrap">
+                                <h3 class="portfolio-client-name">Banco Crefisa</h3>
+                                <span class="portfolio-niche-badge">Mobile Banking &amp; Push</span>
+                            </div>
+                        </div>
+                        <p class="portfolio-desc">Engenharia no app bancário Crefisa Mais com React Native e Node.js. Diagnóstico de causa-raiz e reativação do serviço de push notifications após 2 anos inoperante.</p>
+                        <div class="portfolio-metrics">
+                            <span class="metric-pill highlight">React Native</span><span class="metric-pill">Node.js</span><span class="metric-pill">TypeScript</span><span class="metric-pill">Oracle DB</span>
+                        </div>
+                        <div class="portfolio-actions">
+                            <button class="btn-preview btn-tech" onclick="openTechModal('crefisa')">
+                                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
+                                <span>Detalhes Técnicos</span>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="portfolio-card">
+                        <div class="portfolio-header">
+                            <img src="enterprise-logos/sas-brasil.svg" alt="SAS Brasil" class="portfolio-logo" style="object-fit: contain;">
+                            <div class="portfolio-title-wrap">
+                                <h3 class="portfolio-client-name">SAS Brasil</h3>
+                                <span class="portfolio-niche-badge">Telemedicina &amp; Cloud APIs</span>
+                            </div>
+                        </div>
+                        <p class="portfolio-desc">Gestão técnica e desenvolvimento de APIs em Node.js e aplicação web em Angular para saúde remota. Integrações de agendamento com Memed, Twilio e Zoom.</p>
+                        <div class="portfolio-metrics">
+                            <span class="metric-pill highlight">Angular</span><span class="metric-pill">Node.js</span><span class="metric-pill">PostgreSQL</span><span class="metric-pill">Twilio &amp; Zoom</span>
+                        </div>
+                        <div class="portfolio-actions">
+                            <button class="btn-preview btn-tech" onclick="openTechModal('sas-brasil')">
+                                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
+                                <span>Detalhes Técnicos</span>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="portfolio-card">
+                        <div class="portfolio-header">
+                            <img src="enterprise-logos/icontrolsmart.svg" alt="IControlSmart" class="portfolio-logo" style="object-fit: contain;">
+                            <div class="portfolio-title-wrap">
+                                <h3 class="portfolio-client-name">IControlSmart</h3>
+                                <span class="portfolio-niche-badge">IoT &amp; Serverless</span>
+                            </div>
+                        </div>
+                        <p class="portfolio-desc">Desenvolvimento Full Stack mobile (Ionic) e desktop (Electron) para controle de acesso remoto predial. Arquitetura serverless com AWS Lambda, SNS e Firebase (FCM).</p>
+                        <div class="portfolio-metrics">
+                            <span class="metric-pill highlight">AWS Lambda</span><span class="metric-pill">Ionic</span><span class="metric-pill">React &amp; Electron</span><span class="metric-pill">SQL Server</span>
+                        </div>
+                        <div class="portfolio-actions">
+                            <button class="btn-preview btn-tech" onclick="openTechModal('icontrolsmart')">
+                                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
+                                <span>Detalhes Técnicos</span>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="portfolio-card">
+                        <div class="portfolio-header">
+                            <img src="enterprise-logos/amc-fortaleza.svg" alt="AMC Fortaleza" class="portfolio-logo" style="object-fit: contain;">
+                            <div class="portfolio-title-wrap">
+                                <h3 class="portfolio-client-name">AMC Fortaleza</h3>
+                                <span class="portfolio-niche-badge">Smart City &amp; Mobile Offline</span>
+                            </div>
+                        </div>
+                        <p class="portfolio-desc">Desenvolvimento do app móvel oficial AMC Móvel ('Bateu') para fiscalização de acidentes. Transição ágil de PHP para Ionic/TypeScript com suporte offline via SQLite.</p>
+                        <div class="portfolio-metrics">
+                            <span class="metric-pill highlight">Ionic</span><span class="metric-pill">Angular</span><span class="metric-pill">SQLite Offline</span><span class="metric-pill">TypeScript</span>
+                        </div>
+                        <div class="portfolio-actions">
+                            <button class="btn-preview btn-tech" onclick="openTechModal('amc-fortaleza')">
+                                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
+                                <span>Detalhes Técnicos</span>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="portfolio-card">
+                        <div class="portfolio-header">
+                            <img src="enterprise-logos/enel.svg" alt="Eletropaulo, Light &amp; Enel" class="portfolio-logo" style="object-fit: contain;">
+                            <div class="portfolio-title-wrap">
+                                <h3 class="portfolio-client-name">Eletropaulo, Light &amp; Enel</h3>
+                                <span class="portfolio-niche-badge">Smart POS &amp; Utilities</span>
+                            </div>
+                        </div>
+                        <p class="portfolio-desc">Desenvolvimento do sistema Eco para sustentabilidade e reciclagem. Integração de terminais POS para conversão de resíduos em créditos e portais de alta criticidade.</p>
+                        <div class="portfolio-metrics">
+                            <span class="metric-pill highlight">PHP &amp; Laravel</span><span class="metric-pill">Smart POS IoT</span><span class="metric-pill">PostgreSQL</span><span class="metric-pill">AWS</span>
+                        </div>
+                        <div class="portfolio-actions">
+                            <button class="btn-preview btn-tech" onclick="openTechModal('enel')">
+                                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
+                                <span>Detalhes Técnicos</span>
+                            </button>
+                        </div>
                     </div>
                 </div>
-                <div class="service-card">
-                    <h3>Portal de Beneficiários &amp; Telemedicina <span class="project-subtitle">— Grupo Fleury</span></h3>
-                    <ul class="project-features">
-                        <li>Desenvolvimento e sustentação de soluções backend para produtos de saúde B2B e B2C de larga escala.</li>
-                        <li>Criação da funcionalidade GAUS (Gestão Automatizada de Utilização de Serviços: PA, APS e derivações) no Portal de Beneficiários.</li>
-                        <li>Integrações com Prontlife e Prontmed, além de evolução de serviços distribuídos orientados a eventos com Kafka.</li>
-                    </ul>
-                    <div class="project-tech" style="margin-top: auto;">
-                        <span class="tech-item">Kafka</span>
-                        <span class="tech-item">Node.js</span>
-                        <span class="tech-item">TypeScript</span>
-                        <span class="tech-item">NestJS</span>
-                        <span class="tech-item">PostgreSQL</span>
-                        <span class="tech-item">MongoDB</span>
-                        <span class="tech-item">TypeORM</span>
-                        <span class="tech-item">Mongoose</span>
-                        <span class="tech-item">Docker</span>
-                        <span class="tech-item">AWS</span>
-                        <span class="tech-item">Azure</span>
-                    </div>
-                </div>
-                <div class="service-card">
-                    <h3>Canais Digitais &amp; Push Notifications <span class="project-subtitle">— Banco Crefisa (Crefisa Mais)</span></h3>
-                    <ul class="project-features">
-                        <li>Engenharia de software no ecossistema mobile bancário com React Native e microsserviços em Node.js/TypeScript.</li>
-                        <li>Investigação ponta a ponta e reativação do recurso de push notifications, indisponível em produção havia dois anos.</li>
-                        <li>Diagnóstico e resolução integrando aplicação mobile, serviços e banco de dados corporativo Oracle.</li>
-                    </ul>
-                    <div class="project-tech" style="margin-top: auto;">
-                        <span class="tech-item">React Native</span>
-                        <span class="tech-item">Node.js</span>
-                        <span class="tech-item">TypeScript</span>
-                        <span class="tech-item">Oracle</span>
-                        <span class="tech-item">Node-OracleDB</span>
-                    </div>
-                </div>
-                <div class="service-card">
-                    <h3>Plataforma de Telemedicina <span class="project-subtitle">— SAS Brasil</span></h3>
-                    <ul class="project-features">
-                        <li>Gestão técnica e desenvolvimento de APIs em Node.js e aplicação web em Angular para atendimento remoto de saúde.</li>
-                        <li>Implantação de cultura ágil com Jira, organização de backlogs, sprints, estimativas e mentoria técnica.</li>
-                        <li>Desenvolvimento de agendamento de consultas com integrações com Memed, Zoom e Twilio.</li>
-                    </ul>
-                    <div class="project-tech" style="margin-top: auto;">
-                        <span class="tech-item">Angular</span>
-                        <span class="tech-item">Node.js</span>
-                        <span class="tech-item">PostgreSQL</span>
-                        <span class="tech-item">Sequelize</span>
-                        <span class="tech-item">AWS</span>
-                        <span class="tech-item">Twilio</span>
-                        <span class="tech-item">Zoom</span>
-                        <span class="tech-item">Jira</span>
-                    </div>
-                </div>
-                <div class="service-card">
-                    <h3>Portaria Eletrônica Remota &amp; IoT <span class="project-subtitle">— IControlSmart</span></h3>
-                    <ul class="project-features">
-                        <li>Desenvolvimento Full Stack mobile (Ionic) e complementar em web/desktop (React, Electron) para controle de acesso remoto.</li>
-                        <li>Arquitetura serverless com AWS Lambda, API Gateway, CloudWatch e notificações via Amazon SNS e Firebase (FCM).</li>
-                        <li>Publicação e manutenção oficial de aplicações móveis nas lojas App Store Connect e Google Play.</li>
-                    </ul>
-                    <div class="project-tech" style="margin-top: auto;">
-                        <span class="tech-item">Ionic</span>
-                        <span class="tech-item">React</span>
-                        <span class="tech-item">Electron</span>
-                        <span class="tech-item">Node.js</span>
-                        <span class="tech-item">AWS Lambda</span>
-                        <span class="tech-item">SQL Server</span>
-                        <span class="tech-item">Sequelize</span>
-                        <span class="tech-item">FCM</span>
-                        <span class="tech-item">Docker</span>
-                    </div>
-                </div>
-                <div class="service-card">
-                    <h3>AMC Móvel ("Bateu") <span class="project-subtitle">— Autarquia Municipal de Trânsito de Fortaleza</span></h3>
-                    <ul class="project-features">
-                        <li>Desenvolvimento de aplicativo móvel para suporte à fiscalização e atendimento a acidentes de trânsito em Fortaleza.</li>
-                        <li>Transição bem-sucedida do ecossistema PHP para TypeScript/Ionic com protótipo funcional em um mês.</li>
-                        <li>Persistência local SQLite para operação offline e publicação oficial pela Prefeitura de Fortaleza.</li>
-                    </ul>
-                    <div class="project-tech" style="margin-top: auto;">
-                        <span class="tech-item">Ionic</span>
-                        <span class="tech-item">Angular</span>
-                        <span class="tech-item">TypeScript</span>
-                        <span class="tech-item">SQLite</span>
-                        <span class="tech-item">Node.js</span>
-                        <span class="tech-item">App Store</span>
-                        <span class="tech-item">Google Play</span>
-                    </div>
-                </div>
-                <div class="service-card">
-                    <h3>Programas de Eficiência Energética <span class="project-subtitle">— Eletropaulo, Light &amp; Enel</span></h3>
-                    <ul class="project-features">
-                        <li>Desenvolvimento do sistema Eco para gestão de programas de incentivo à sustentabilidade e coleta de resíduos.</li>
-                        <li>Integração de equipamentos POS responsáveis pelo envio dos dados utilizados na conversão de resíduos em créditos.</li>
-                        <li>Manutenção de portais de alta criticidade e regras de negócio para apoio à tomada de decisão das concessionárias.</li>
-                    </ul>
-                    <div class="project-tech" style="margin-top: auto;">
-                        <span class="tech-item">PHP</span>
-                        <span class="tech-item">CodeIgniter</span>
-                        <span class="tech-item">Laravel</span>
-                        <span class="tech-item">PostgreSQL</span>
-                        <span class="tech-item">SQL Server</span>
-                        <span class="tech-item">MySQL</span>
-                        <span class="tech-item">MongoDB</span>
-                        <span class="tech-item">AWS</span>
-                    </div>
-                </div>
-                <div class="service-card">
-                    <h3>Engenharia Web &amp; Performance Digital <span class="project-subtitle">— Negócios &amp; Alta Conversão</span></h3>
-                    <ul class="project-features">
-                        <li>Desenvolvimento de plataformas web ultravelozes para conversão de leads e tráfego pago (Desentupidora São Bento, Beloton Luthieria, Kuro Neko Toys).</li>
-                        <li>Arquitetura estática pura sem CMS pesado: carregamento instantâneo no mobile com Core Web Vitals 100/100 e TTFB &lt; 50ms.</li>
-                        <li>SEO técnico avançado, dados estruturados Schema.org, OpenGraph dinâmico e integração direta ao WhatsApp.</li>
-                    </ul>
-                    <div class="project-tech" style="margin-top: auto;">
-                        <span class="tech-item">HTML5</span>
-                        <span class="tech-item">CSS3 Moderno</span>
-                        <span class="tech-item">Vanilla JS</span>
-                        <span class="tech-item">SEO Técnico</span>
-                        <span class="tech-item">OpenGraph</span>
-                        <span class="tech-item">Schema.org</span>
-                        <span class="tech-item">LiteSpeed CDN</span>
-                    </div>
-                </div>
-                  </div>
-              </div>
-          </section>
+            </div>
+        </div>
+    </section>
 
     <!-- SECTION: Showcase Interativo de Soluções Web -->
     <section id="portfolio" style="padding: 80px 0; border-top: 1px solid var(--border-color); background: #080808;">
@@ -2010,7 +2124,128 @@
                     border-left: 4px solid var(--cyan-accent) !important;
                 }
             }
-        </style>
+        
+        /* Technical Details Modal for Enterprise Cases */
+        .tech-modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: 99999;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 16px;
+            box-sizing: border-box;
+            opacity: 0;
+            transition: opacity 0.25s ease;
+        }
+
+        .tech-modal-overlay.open {
+            display: flex;
+            opacity: 1;
+        }
+
+        .tech-modal-content {
+            position: relative;
+            z-index: 10;
+            width: 100%;
+            max-width: 680px;
+            max-height: 90vh;
+            background: #141414;
+            border: 1px solid #282828;
+            border-radius: 16px;
+            box-shadow: 0 25px 70px rgba(0,0,0,0.9);
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        .tech-modal-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 14px 20px;
+            background: #181818;
+            border-bottom: 1px solid #262626;
+            gap: 16px;
+        }
+
+        .tech-modal-body {
+            padding: 24px;
+            overflow-y: auto;
+            -webkit-overflow-scrolling: touch;
+            color: var(--text-main);
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .tech-modal-section-title {
+            font-size: 0.82rem;
+            text-transform: uppercase;
+            letter-spacing: 1.2px;
+            color: var(--cyan-accent);
+            font-weight: 700;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .tech-modal-bullets {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .tech-modal-bullets li {
+            position: relative;
+            padding-left: 22px;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            color: #d1d5db;
+        }
+
+        .tech-modal-bullets li::before {
+            content: "▹";
+            position: absolute;
+            left: 2px;
+            top: 0;
+            color: var(--cyan-accent);
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+
+        .tech-modal-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .btn-preview.btn-tech {
+            flex: 1;
+            display: inline-flex !important;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        @media (max-width: 768px) {
+            .tech-modal-content {
+                max-height: 94vh;
+            }
+            .tech-modal-body {
+                padding: 18px 16px;
+                gap: 16px;
+            }
+        }
+
+</style>
         <div class="container">
             <h2 style="text-align: center; margin-bottom: 16px;">Sobre Mim</h2>
             
@@ -2131,7 +2366,128 @@
                 height: 400px;
             }
         }
-    </style>
+    
+        /* Technical Details Modal for Enterprise Cases */
+        .tech-modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: 99999;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 16px;
+            box-sizing: border-box;
+            opacity: 0;
+            transition: opacity 0.25s ease;
+        }
+
+        .tech-modal-overlay.open {
+            display: flex;
+            opacity: 1;
+        }
+
+        .tech-modal-content {
+            position: relative;
+            z-index: 10;
+            width: 100%;
+            max-width: 680px;
+            max-height: 90vh;
+            background: #141414;
+            border: 1px solid #282828;
+            border-radius: 16px;
+            box-shadow: 0 25px 70px rgba(0,0,0,0.9);
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        .tech-modal-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 14px 20px;
+            background: #181818;
+            border-bottom: 1px solid #262626;
+            gap: 16px;
+        }
+
+        .tech-modal-body {
+            padding: 24px;
+            overflow-y: auto;
+            -webkit-overflow-scrolling: touch;
+            color: var(--text-main);
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .tech-modal-section-title {
+            font-size: 0.82rem;
+            text-transform: uppercase;
+            letter-spacing: 1.2px;
+            color: var(--cyan-accent);
+            font-weight: 700;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .tech-modal-bullets {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .tech-modal-bullets li {
+            position: relative;
+            padding-left: 22px;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            color: #d1d5db;
+        }
+
+        .tech-modal-bullets li::before {
+            content: "▹";
+            position: absolute;
+            left: 2px;
+            top: 0;
+            color: var(--cyan-accent);
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+
+        .tech-modal-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .btn-preview.btn-tech {
+            flex: 1;
+            display: inline-flex !important;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        @media (max-width: 768px) {
+            .tech-modal-content {
+                max-height: 94vh;
+            }
+            .tech-modal-body {
+                padding: 18px 16px;
+                gap: 16px;
+            }
+        }
+
+</style>
         <div style="text-align: center;">
             <h2 style="margin-bottom: 32px;">Recomendações Profissionais</h2>
         </div>
@@ -2751,7 +3107,128 @@
             .sticky-footer-sub { display: none; }
             body { padding-bottom: 140px; }
         }
-    </style>
+    
+        /* Technical Details Modal for Enterprise Cases */
+        .tech-modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: 99999;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 16px;
+            box-sizing: border-box;
+            opacity: 0;
+            transition: opacity 0.25s ease;
+        }
+
+        .tech-modal-overlay.open {
+            display: flex;
+            opacity: 1;
+        }
+
+        .tech-modal-content {
+            position: relative;
+            z-index: 10;
+            width: 100%;
+            max-width: 680px;
+            max-height: 90vh;
+            background: #141414;
+            border: 1px solid #282828;
+            border-radius: 16px;
+            box-shadow: 0 25px 70px rgba(0,0,0,0.9);
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        .tech-modal-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 14px 20px;
+            background: #181818;
+            border-bottom: 1px solid #262626;
+            gap: 16px;
+        }
+
+        .tech-modal-body {
+            padding: 24px;
+            overflow-y: auto;
+            -webkit-overflow-scrolling: touch;
+            color: var(--text-main);
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .tech-modal-section-title {
+            font-size: 0.82rem;
+            text-transform: uppercase;
+            letter-spacing: 1.2px;
+            color: var(--cyan-accent);
+            font-weight: 700;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .tech-modal-bullets {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .tech-modal-bullets li {
+            position: relative;
+            padding-left: 22px;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            color: #d1d5db;
+        }
+
+        .tech-modal-bullets li::before {
+            content: "▹";
+            position: absolute;
+            left: 2px;
+            top: 0;
+            color: var(--cyan-accent);
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+
+        .tech-modal-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .btn-preview.btn-tech {
+            flex: 1;
+            display: inline-flex !important;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        @media (max-width: 768px) {
+            .tech-modal-content {
+                max-height: 94vh;
+            }
+            .tech-modal-body {
+                padding: 18px 16px;
+                gap: 16px;
+            }
+        }
+
+</style>
 
     <footer class="sticky-footer-bar">
         
@@ -2814,6 +3291,49 @@
             });
         });
     </script>
+
+        <!-- Enterprise Architecture & Technical Details Modal -->
+    <div id="tech-modal" class="tech-modal-overlay">
+        <div class="device-modal-backdrop" onclick="closeTechModal()"></div>
+        <div class="tech-modal-content">
+            <div class="tech-modal-header">
+                <div class="modal-client-info">
+                    <img id="tech-modal-logo" src="" alt="Client Logo" class="modal-client-logo" style="object-fit: contain;">
+                    <div>
+                        <div id="tech-modal-title" class="modal-client-title">Empresa</div>
+                        <span id="tech-modal-subtitle" class="modal-client-subtitle"></span>
+                    </div>
+                </div>
+                <div class="modal-controls">
+                    <button class="modal-icon-btn close-btn" onclick="closeTechModal()" title="Fechar (ESC)">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                    </button>
+                </div>
+            </div>
+            <div class="tech-modal-body">
+                <div>
+                    <div class="tech-modal-section-title">
+                        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+                        <span>Escopo &amp; Soluções Arquiteturais</span>
+                    </div>
+                    <ul id="tech-modal-bullets" class="tech-modal-bullets"></ul>
+                </div>
+                <div>
+                    <div class="tech-modal-section-title">
+                        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+                        <span>Stack Tecnológica &amp; Ferramentas</span>
+                    </div>
+                    <div id="tech-modal-tags" class="tech-modal-tags"></div>
+                </div>
+                <div style="margin-top: 4px; padding-top: 16px; border-top: 1px solid #262626; display: flex; justify-content: flex-end;">
+                    <a id="tech-modal-cta" href="#" target="_blank" class="cta-btn" style="padding: 10px 20px; font-size: 0.9rem; border-radius: 6px; display: inline-flex; align-items: center; gap: 8px; text-decoration: none;">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                        <span>Conversar sobre projeto similar</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- Interactive Device Preview Modal -->
     <div id="device-modal" class="device-modal-overlay">
@@ -2940,6 +3460,263 @@
                 }
             }
         }
+        
+        const enterpriseCasesData = {
+    "casas-bahia": {
+        "key": "casas-bahia",
+        "logo": "enterprise-logos/casas-bahia.svg",
+        "title": "Casas Bahia Pay",
+        "badge": "Crédito &amp; FIDC (CDC)",
+        "desc": "Desenvolvimento e sustentação de microsserviços em ambiente distribuído para operações de crédito CDC e FIDC, modernização para Node.js 24 e migração AWS SDK v3.",
+        "pills": [
+            "Node.js 24",
+            "NestJS",
+            "AWS SDK v3",
+            "DynamoDB",
+            "SQS &amp; SNS"
+        ],
+        "bullets": [
+            "Desenvolvimento e sustentação de microsserviços em ambiente distribuído para operações de crédito (CDC) e FIDC.",
+            "Modernização técnica de serviços incluindo migração para Node.js 24 e migração de integrações AWS SDK v2 para v3.",
+            "Uso de DynamoDB, SQS, SNS, S3, Secrets Manager e evolução de ambiente local com Docker, LocalStack e Tilt com CI/CD."
+        ],
+        "tags": [
+            "Node.js 24",
+            "TypeScript",
+            "NestJS",
+            "AWS",
+            "DynamoDB",
+            "SQS",
+            "SNS",
+            "S3",
+            "Secrets Manager",
+            "Docker",
+            "LocalStack",
+            "Tilt",
+            "CI/CD"
+        ],
+        "whatsappText": "Olá Fábio! Vi o case da Casas Bahia Pay (Crédito & FIDC) no seu portfólio e gostaria de conversar sobre uma arquitetura similar."
+    },
+    "fleury": {
+        "key": "fleury",
+        "logo": "enterprise-logos/fleury.svg",
+        "title": "Grupo Fleury",
+        "badge": "Saúde &amp; Streaming Kafka",
+        "desc": "Soluções backend escaláveis para produtos de saúde B2B e B2C. Criação da funcionalidade GAUS no Portal de Beneficiários e arquitetura orientada a eventos com Kafka.",
+        "pills": [
+            "Kafka",
+            "NestJS",
+            "PostgreSQL",
+            "MongoDB",
+            "Docker"
+        ],
+        "bullets": [
+            "Desenvolvimento e sustentação de soluções backend para produtos de saúde B2B e B2C de larga escala.",
+            "Criação da funcionalidade GAUS (Gestão Automatizada de Utilização de Serviços: PA, APS e derivações) no Portal de Beneficiários.",
+            "Integrações com Prontlife e Prontmed, além de evolução de serviços distribuídos orientados a eventos com Kafka."
+        ],
+        "tags": [
+            "Kafka",
+            "Node.js",
+            "TypeScript",
+            "NestJS",
+            "PostgreSQL",
+            "MongoDB",
+            "TypeORM",
+            "Mongoose",
+            "Docker",
+            "AWS",
+            "Azure"
+        ],
+        "whatsappText": "Olá Fábio! Vi o case do Grupo Fleury (Streaming Kafka & Telemedicina) no seu portfólio e gostaria de conversar."
+    },
+    "crefisa": {
+        "key": "crefisa",
+        "logo": "enterprise-logos/crefisa.svg",
+        "title": "Banco Crefisa",
+        "badge": "Mobile Banking &amp; Push",
+        "desc": "Engenharia no app bancário Crefisa Mais com React Native e Node.js. Diagnóstico de causa-raiz e reativação do serviço de push notifications após 2 anos inoperante.",
+        "pills": [
+            "React Native",
+            "Node.js",
+            "TypeScript",
+            "Oracle DB"
+        ],
+        "bullets": [
+            "Engenharia de software no ecossistema mobile bancário com React Native e microsserviços em Node.js/TypeScript.",
+            "Investigação ponta a ponta e reativação do recurso de push notifications, indisponível em produção havia dois anos.",
+            "Diagnóstico e resolução integrando aplicação mobile, serviços e banco de dados corporativo Oracle."
+        ],
+        "tags": [
+            "React Native",
+            "Node.js",
+            "TypeScript",
+            "Oracle",
+            "Node-OracleDB",
+            "REST APIs",
+            "Push Notifications (FCM/APNs)"
+        ],
+        "whatsappText": "Olá Fábio! Vi o case do Banco Crefisa (Push Notifications & Mobile) no seu portfólio e gostaria de conversar."
+    },
+    "sas-brasil": {
+        "key": "sas-brasil",
+        "logo": "enterprise-logos/sas-brasil.svg",
+        "title": "SAS Brasil",
+        "badge": "Telemedicina &amp; Cloud APIs",
+        "desc": "Gestão técnica e desenvolvimento de APIs em Node.js e aplicação web em Angular para saúde remota. Integrações de agendamento com Memed, Twilio e Zoom.",
+        "pills": [
+            "Angular",
+            "Node.js",
+            "PostgreSQL",
+            "Twilio &amp; Zoom"
+        ],
+        "bullets": [
+            "Gestão técnica e desenvolvimento de APIs em Node.js e aplicação web em Angular para atendimento remoto de saúde.",
+            "Implantação de cultura ágil com Jira, organização de backlogs, sprints, estimativas e mentoria técnica.",
+            "Desenvolvimento de agendamento de consultas com integrações com Memed, Zoom e Twilio."
+        ],
+        "tags": [
+            "Angular",
+            "Node.js",
+            "TypeScript",
+            "PostgreSQL",
+            "Sequelize",
+            "AWS",
+            "Twilio",
+            "Zoom",
+            "Memed",
+            "Jira",
+            "Scrum"
+        ],
+        "whatsappText": "Olá Fábio! Vi o case do SAS Brasil (Telemedicina & APIs) no seu portfólio e gostaria de conversar."
+    },
+    "icontrolsmart": {
+        "key": "icontrolsmart",
+        "logo": "enterprise-logos/icontrolsmart.svg",
+        "title": "IControlSmart",
+        "badge": "IoT &amp; Serverless",
+        "desc": "Desenvolvimento Full Stack mobile (Ionic) e desktop (Electron) para controle de acesso remoto predial. Arquitetura serverless com AWS Lambda, SNS e Firebase (FCM).",
+        "pills": [
+            "AWS Lambda",
+            "Ionic",
+            "React &amp; Electron",
+            "SQL Server"
+        ],
+        "bullets": [
+            "Desenvolvimento Full Stack mobile (Ionic) e complementar em web/desktop (React, Electron) para controle de acesso remoto.",
+            "Arquitetura serverless com AWS Lambda, API Gateway, CloudWatch e notificações via Amazon SNS e Firebase (FCM).",
+            "Publicação e manutenção oficial de aplicações móveis nas lojas App Store Connect e Google Play."
+        ],
+        "tags": [
+            "Ionic",
+            "React",
+            "Electron",
+            "Node.js",
+            "AWS Lambda",
+            "API Gateway",
+            "CloudWatch",
+            "SQL Server",
+            "Sequelize",
+            "Amazon SNS",
+            "Firebase (FCM)",
+            "Docker"
+        ],
+        "whatsappText": "Olá Fábio! Vi o case da IControlSmart (IoT & Serverless) no seu portfólio e gostaria de conversar."
+    },
+    "amc-fortaleza": {
+        "key": "amc-fortaleza",
+        "logo": "enterprise-logos/amc-fortaleza.svg",
+        "title": "AMC Fortaleza",
+        "badge": "Smart City &amp; Mobile Offline",
+        "desc": "Desenvolvimento do app móvel oficial AMC Móvel ('Bateu') para fiscalização de acidentes. Transição ágil de PHP para Ionic/TypeScript com suporte offline via SQLite.",
+        "pills": [
+            "Ionic",
+            "Angular",
+            "SQLite Offline",
+            "TypeScript"
+        ],
+        "bullets": [
+            "Desenvolvimento de aplicativo móvel para suporte à fiscalização e atendimento a acidentes de trânsito em Fortaleza.",
+            "Transição bem-sucedida do ecossistema PHP para TypeScript/Ionic com protótipo funcional em um mês.",
+            "Persistência local SQLite para operação offline e publicação oficial pela Prefeitura de Fortaleza."
+        ],
+        "tags": [
+            "Ionic",
+            "Angular",
+            "TypeScript",
+            "SQLite",
+            "Node.js",
+            "Mobile App Store",
+            "Google Play",
+            "Prefeitura de Fortaleza"
+        ],
+        "whatsappText": "Olá Fábio! Vi o case da AMC Fortaleza (Smart City & Mobile Offline) no seu portfólio e gostaria de conversar."
+    },
+    "enel": {
+        "key": "enel",
+        "logo": "enterprise-logos/enel.svg",
+        "title": "Eletropaulo, Light &amp; Enel",
+        "badge": "Smart POS &amp; Utilities",
+        "desc": "Desenvolvimento do sistema Eco para sustentabilidade e reciclagem. Integração de terminais POS para conversão de resíduos em créditos e portais de alta criticidade.",
+        "pills": [
+            "PHP &amp; Laravel",
+            "Smart POS IoT",
+            "PostgreSQL",
+            "AWS"
+        ],
+        "bullets": [
+            "Desenvolvimento do sistema Eco para gestão de programas de incentivo à sustentabilidade e coleta de resíduos.",
+            "Integração de equipamentos POS responsáveis pelo envio dos dados utilizados na conversão de resíduos em créditos.",
+            "Manutenção de portais de alta criticidade e regras de negócio para apoio à tomada de decisão das concessionárias."
+        ],
+        "tags": [
+            "PHP",
+            "CodeIgniter",
+            "Laravel",
+            "PostgreSQL",
+            "SQL Server",
+            "MySQL",
+            "MongoDB",
+            "AWS",
+            "Smart POS"
+        ],
+        "whatsappText": "Olá Fábio! Vi o case da Enel / Eletropaulo (Sistema Eco & POS) no seu portfólio e gostaria de conversar."
+    }
+};
+
+        function openTechModal(key) {
+            const data = enterpriseCasesData[key];
+            if (!data) return;
+            const modal = document.getElementById("tech-modal");
+            const logoEl = document.getElementById("tech-modal-logo");
+            const titleEl = document.getElementById("tech-modal-title");
+            const subtitleEl = document.getElementById("tech-modal-subtitle");
+            const bulletsContainer = document.getElementById("tech-modal-bullets");
+            const tagsContainer = document.getElementById("tech-modal-tags");
+            const ctaEl = document.getElementById("tech-modal-cta");
+
+            if (logoEl) logoEl.src = data.logo;
+            if (titleEl) titleEl.textContent = data.title;
+            if (subtitleEl) subtitleEl.textContent = data.badge.replace(/&amp;/g, '&');
+            if (bulletsContainer) {
+                bulletsContainer.innerHTML = data.bullets.map(b => `<li>${b}</li>`).join("");
+            }
+            if (tagsContainer) {
+                tagsContainer.innerHTML = data.tags.map(t => `<span class="tech-item">${t}</span>`).join("");
+            }
+            if (ctaEl) {
+                ctaEl.href = `https://wa.me/5585991634033?text=${encodeURIComponent(data.whatsappText)}`;
+            }
+            modal.classList.add("open");
+            document.body.style.overflow = "hidden";
+        }
+
+        function closeTechModal() {
+            const modal = document.getElementById("tech-modal");
+            if (modal) modal.classList.remove("open");
+            document.body.style.overflow = "";
+        }
+    
         function closeDeviceModal() {
             const modal = document.getElementById("device-modal");
             const iframeDesktop = document.getElementById("iframe-desktop");
@@ -2952,6 +3729,7 @@
         document.addEventListener("keydown", (e) => {
             if (e.key === "Escape") {
                 closeDeviceModal();
+                closeTechModal();
             }
         });
     </script>
