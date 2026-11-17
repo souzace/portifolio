@@ -1013,13 +1013,21 @@
             line-height: 1.2;
         }
 
-        .modal-simulated-url {
+        .modal-client-subtitle {
             font-size: 0.75rem;
+            font-weight: 600;
             color: var(--cyan-accent);
-            font-family: monospace;
-            opacity: 0.9;
-            display: block;
-            margin-top: 2px;
+            background: rgba(0, 229, 255, 0.08);
+            border: 1px solid rgba(0, 229, 255, 0.2);
+            padding: 1px 8px;
+            border-radius: 10px;
+            display: inline-block;
+            margin-top: 3px;
+            letter-spacing: 0.3px;
+            white-space: nowrap;
+            max-width: 260px;
+            overflow: hidden;
+            text-overflow: ellipsis;
         }
 
         .device-mode-switch {
@@ -1078,9 +1086,17 @@
             background: #333;
         }
 
+        .modal-icon-btn.close-btn {
+            background: rgba(239, 68, 68, 0.12);
+            border-color: rgba(239, 68, 68, 0.35);
+            color: #ef4444;
+        }
+
         .modal-icon-btn.close-btn:hover {
-            color: #ff5555;
-            border-color: rgba(255, 85, 85, 0.4);
+            background: rgba(239, 68, 68, 0.25);
+            border-color: #ef4444;
+            color: #ff6b6b;
+            transform: scale(1.05);
         }
 
         .device-stage {
@@ -1106,13 +1122,12 @@
         }
 
         .browser-header {
-            height: 42px;
+            height: 36px;
             background: #1f1f1f;
             border-bottom: 1px solid #2a2a2a;
             display: flex;
             align-items: center;
             padding: 0 14px;
-            justify-content: space-between;
             gap: 12px;
         }
 
@@ -1274,8 +1289,8 @@
             .modal-client-info {
                 min-width: auto;
             }
-            .modal-simulated-url {
-                display: none;
+            .modal-client-subtitle {
+                max-width: 150px;
             }
             .smartphone-frame {
                 width: 100%;
@@ -1691,11 +1706,11 @@
                             <span class="metric-pill highlight">100 Core Vitals</span><span class="metric-pill">TTFB &lt; 50ms</span><span class="metric-pill">SEO Local Schema.org</span><span class="metric-pill">Mobile-First</span>
                         </div>
                         <div class="portfolio-actions">
-                            <button class="btn-preview btn-desktop" onclick="openDevicePreview('desentupidora-sao-bento/', 'Desentupidora São Bento', 'desentupidora-sao-bento/logomark.jpeg', 'desktop')">
+                            <button class="btn-preview btn-desktop" onclick="openDevicePreview('desentupidora-sao-bento/', 'Desentupidora São Bento', 'desentupidora-sao-bento/logomark.jpeg', 'desktop', 'Desentupimento &amp; Saneamento Técnico')">
                                 <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
                                 Desktop
                         </button>
-                            <button class="btn-preview btn-mobile" onclick="openDevicePreview('desentupidora-sao-bento/', 'Desentupidora São Bento', 'desentupidora-sao-bento/logomark.jpeg', 'mobile')">
+                            <button class="btn-preview btn-mobile" onclick="openDevicePreview('desentupidora-sao-bento/', 'Desentupidora São Bento', 'desentupidora-sao-bento/logomark.jpeg', 'mobile', 'Desentupimento &amp; Saneamento Técnico')">
                                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg>
                                 Mobile
                         </button>
@@ -1717,11 +1732,11 @@
                             <span class="metric-pill highlight">100 Core Vitals</span><span class="metric-pill">Design Responsivo</span><span class="metric-pill">Zero CMS Bloat</span><span class="metric-pill">Estética Sonora</span>
                         </div>
                         <div class="portfolio-actions">
-                            <button class="btn-preview btn-desktop" onclick="openDevicePreview('beloton/', 'Beloton Luthieria', 'beloton/logomark_dark.png', 'desktop')">
+                            <button class="btn-preview btn-desktop" onclick="openDevicePreview('beloton/', 'Beloton Luthieria', 'beloton/logomark_dark.png', 'desktop', 'Luthieria &amp; Instrumentos Finos')">
                                 <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
                                 Desktop
                         </button>
-                            <button class="btn-preview btn-mobile" onclick="openDevicePreview('beloton/', 'Beloton Luthieria', 'beloton/logomark_dark.png', 'mobile')">
+                            <button class="btn-preview btn-mobile" onclick="openDevicePreview('beloton/', 'Beloton Luthieria', 'beloton/logomark_dark.png', 'mobile', 'Luthieria &amp; Instrumentos Finos')">
                                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg>
                                 Mobile
                         </button>
@@ -1743,11 +1758,11 @@
                             <span class="metric-pill">Catálogo Dinâmico</span><span class="metric-pill">Micro-interações</span><span class="metric-pill highlight">Mobile-Ready</span><span class="metric-pill">Carregamento Rápido</span>
                         </div>
                         <div class="portfolio-actions">
-                            <button class="btn-preview btn-desktop" onclick="openDevicePreview('kuroneko-toys/', 'Kuro Neko Toys', 'kuroneko-toys/official_avatar_fb.jpg', 'desktop')">
+                            <button class="btn-preview btn-desktop" onclick="openDevicePreview('kuroneko-toys/', 'Kuro Neko Toys', 'kuroneko-toys/official_avatar_fb.jpg', 'desktop', 'Colecionáveis &amp; Catálogo Geek')">
                                 <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
                                 Desktop
                         </button>
-                            <button class="btn-preview btn-mobile" onclick="openDevicePreview('kuroneko-toys/', 'Kuro Neko Toys', 'kuroneko-toys/official_avatar_fb.jpg', 'mobile')">
+                            <button class="btn-preview btn-mobile" onclick="openDevicePreview('kuroneko-toys/', 'Kuro Neko Toys', 'kuroneko-toys/official_avatar_fb.jpg', 'mobile', 'Colecionáveis &amp; Catálogo Geek')">
                                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg>
                                 Mobile
                         </button>
@@ -1769,11 +1784,11 @@
                             <span class="metric-pill">Cardápio Digital</span><span class="metric-pill">Mídia Otimizada</span><span class="metric-pill highlight">Funil WhatsApp</span><span class="metric-pill">UX Fluida</span>
                         </div>
                         <div class="portfolio-actions">
-                            <button class="btn-preview btn-desktop" onclick="openDevicePreview('picanha-do-savio/', 'Picanha do Sávio', 'picanha-do-savio/img/logo_original.jpg', 'desktop')">
+                            <button class="btn-preview btn-desktop" onclick="openDevicePreview('picanha-do-savio/', 'Picanha do Sávio', 'picanha-do-savio/img/logo_original.jpg', 'desktop', 'Gastronomia &amp; Delivery')">
                                 <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
                                 Desktop
                         </button>
-                            <button class="btn-preview btn-mobile" onclick="openDevicePreview('picanha-do-savio/', 'Picanha do Sávio', 'picanha-do-savio/img/logo_original.jpg', 'mobile')">
+                            <button class="btn-preview btn-mobile" onclick="openDevicePreview('picanha-do-savio/', 'Picanha do Sávio', 'picanha-do-savio/img/logo_original.jpg', 'mobile', 'Gastronomia &amp; Delivery')">
                                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg>
                                 Mobile
                         </button>
@@ -1795,11 +1810,11 @@
                             <span class="metric-pill">Tabela de Preços</span><span class="metric-pill">Equipe em Destaque</span><span class="metric-pill highlight">SEO Local</span><span class="metric-pill">Alta Conversão</span>
                         </div>
                         <div class="portfolio-actions">
-                            <button class="btn-preview btn-desktop" onclick="openDevicePreview('barba-shopping/', 'Barba Shopping', 'barba-shopping/img/avatar.jpg', 'desktop')">
+                            <button class="btn-preview btn-desktop" onclick="openDevicePreview('barba-shopping/', 'Barba Shopping', 'barba-shopping/img/avatar.jpg', 'desktop', 'Barbearia &amp; Estética Masculina')">
                                 <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
                                 Desktop
                         </button>
-                            <button class="btn-preview btn-mobile" onclick="openDevicePreview('barba-shopping/', 'Barba Shopping', 'barba-shopping/img/avatar.jpg', 'mobile')">
+                            <button class="btn-preview btn-mobile" onclick="openDevicePreview('barba-shopping/', 'Barba Shopping', 'barba-shopping/img/avatar.jpg', 'mobile', 'Barbearia &amp; Estética Masculina')">
                                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg>
                                 Mobile
                         </button>
@@ -1821,11 +1836,11 @@
                             <span class="metric-pill">Vitrine de Produtos</span><span class="metric-pill">Design Acolhedor</span><span class="metric-pill highlight">Zero Frameworks</span><span class="metric-pill">Navegação Leve</span>
                         </div>
                         <div class="portfolio-actions">
-                            <button class="btn-preview btn-desktop" onclick="openDevicePreview('emporio-linneo/', 'Empório Linnéo', 'emporio-linneo/logomark.jpg', 'desktop')">
+                            <button class="btn-preview btn-desktop" onclick="openDevicePreview('emporio-linneo/', 'Empório Linnéo', 'emporio-linneo/logomark.jpg', 'desktop', 'Confeitaria Artesanal &amp; Varejo')">
                                 <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
                                 Desktop
                         </button>
-                            <button class="btn-preview btn-mobile" onclick="openDevicePreview('emporio-linneo/', 'Empório Linnéo', 'emporio-linneo/logomark.jpg', 'mobile')">
+                            <button class="btn-preview btn-mobile" onclick="openDevicePreview('emporio-linneo/', 'Empório Linnéo', 'emporio-linneo/logomark.jpg', 'mobile', 'Confeitaria Artesanal &amp; Varejo')">
                                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg>
                                 Mobile
                         </button>
@@ -1847,11 +1862,11 @@
                             <span class="metric-pill highlight">28 Anos de Mercado</span><span class="metric-pill">Certificação ANVISA</span><span class="metric-pill">Orçamento B2B</span><span class="metric-pill">SEO Regional</span>
                         </div>
                         <div class="portfolio-actions">
-                            <button class="btn-preview btn-desktop" onclick="openDevicePreview('ideal/', 'Ideal Saúde Ambiental', 'ideal/assets/avatar.png', 'desktop')">
+                            <button class="btn-preview btn-desktop" onclick="openDevicePreview('ideal/', 'Ideal Saúde Ambiental', 'ideal/assets/avatar.png', 'desktop', 'Dedetização &amp; Saúde Ambiental')">
                                 <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
                                 Desktop
                         </button>
-                            <button class="btn-preview btn-mobile" onclick="openDevicePreview('ideal/', 'Ideal Saúde Ambiental', 'ideal/assets/avatar.png', 'mobile')">
+                            <button class="btn-preview btn-mobile" onclick="openDevicePreview('ideal/', 'Ideal Saúde Ambiental', 'ideal/assets/avatar.png', 'mobile', 'Dedetização &amp; Saúde Ambiental')">
                                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg>
                                 Mobile
                         </button>
@@ -1873,11 +1888,11 @@
                             <span class="metric-pill">Catálogo de Armações</span><span class="metric-pill highlight">Envio de Receitas</span><span class="metric-pill">Atendimento Ágil</span><span class="metric-pill">Mobile-First</span>
                         </div>
                         <div class="portfolio-actions">
-                            <button class="btn-preview btn-desktop" onclick="openDevicePreview('el-bethel/', 'Óptica El Bethel', 'el-bethel/logomark2.png', 'desktop')">
+                            <button class="btn-preview btn-desktop" onclick="openDevicePreview('el-bethel/', 'Óptica El Bethel', 'el-bethel/logomark2.png', 'desktop', 'Óptica &amp; Saúde Visual')">
                                 <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
                                 Desktop
                         </button>
-                            <button class="btn-preview btn-mobile" onclick="openDevicePreview('el-bethel/', 'Óptica El Bethel', 'el-bethel/logomark2.png', 'mobile')">
+                            <button class="btn-preview btn-mobile" onclick="openDevicePreview('el-bethel/', 'Óptica El Bethel', 'el-bethel/logomark2.png', 'mobile', 'Óptica &amp; Saúde Visual')">
                                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg>
                                 Mobile
                         </button>
@@ -1899,11 +1914,11 @@
                             <span class="metric-pill">Cardápio Visual</span><span class="metric-pill">Encomendas Rápidas</span><span class="metric-pill highlight">SEO de Bairro</span><span class="metric-pill">Zero Bloat</span>
                         </div>
                         <div class="portfolio-actions">
-                            <button class="btn-preview btn-desktop" onclick="openDevicePreview('dom-bolo/', 'Dom Bolo', 'dom-bolo/logomark.jpg', 'desktop')">
+                            <button class="btn-preview btn-desktop" onclick="openDevicePreview('dom-bolo/', 'Dom Bolo', 'dom-bolo/logomark.jpg', 'desktop', 'Bolos Caseiros &amp; Confeitaria')">
                                 <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
                                 Desktop
                         </button>
-                            <button class="btn-preview btn-mobile" onclick="openDevicePreview('dom-bolo/', 'Dom Bolo', 'dom-bolo/logomark.jpg', 'mobile')">
+                            <button class="btn-preview btn-mobile" onclick="openDevicePreview('dom-bolo/', 'Dom Bolo', 'dom-bolo/logomark.jpg', 'mobile', 'Bolos Caseiros &amp; Confeitaria')">
                                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg>
                                 Mobile
                         </button>
@@ -1925,11 +1940,11 @@
                             <span class="metric-pill highlight">Pedido em 1 Clique</span><span class="metric-pill">Alta Disponibilidade</span><span class="metric-pill">Performance 100</span><span class="metric-pill">Foco Local</span>
                         </div>
                         <div class="portfolio-actions">
-                            <button class="btn-preview btn-desktop" onclick="openDevicePreview('alo-agua/', 'Alô Água &amp; Gás', 'alo-agua/logo_mascote_moderno.jpg', 'desktop')">
+                            <button class="btn-preview btn-desktop" onclick="openDevicePreview('alo-agua/', 'Alô Água &amp; Gás', 'alo-agua/logo_mascote_moderno.jpg', 'desktop', 'Delivery Rápido &amp; Utilidades')">
                                 <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
                                 Desktop
                         </button>
-                            <button class="btn-preview btn-mobile" onclick="openDevicePreview('alo-agua/', 'Alô Água &amp; Gás', 'alo-agua/logo_mascote_moderno.jpg', 'mobile')">
+                            <button class="btn-preview btn-mobile" onclick="openDevicePreview('alo-agua/', 'Alô Água &amp; Gás', 'alo-agua/logo_mascote_moderno.jpg', 'mobile', 'Delivery Rápido &amp; Utilidades')">
                                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg>
                                 Mobile
                         </button>
@@ -1951,11 +1966,11 @@
                             <span class="metric-pill highlight">Catálogo Musical</span><span class="metric-pill">Partituras Digitais</span><span class="metric-pill">Áudio Integrado</span><span class="metric-pill">Design Sóbrio</span>
                         </div>
                         <div class="portfolio-actions">
-                            <button class="btn-preview btn-desktop" onclick="openDevicePreview('nilson-vieira/', 'Nilson Vieira', 'nilson-vieira/avatar2.png', 'desktop')">
+                            <button class="btn-preview btn-desktop" onclick="openDevicePreview('nilson-vieira/', 'Nilson Vieira', 'nilson-vieira/avatar2.png', 'desktop', 'Maestro, Arranjador &amp; Compositor')">
                                 <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
                                 Desktop
                         </button>
-                            <button class="btn-preview btn-mobile" onclick="openDevicePreview('nilson-vieira/', 'Nilson Vieira', 'nilson-vieira/avatar2.png', 'mobile')">
+                            <button class="btn-preview btn-mobile" onclick="openDevicePreview('nilson-vieira/', 'Nilson Vieira', 'nilson-vieira/avatar2.png', 'mobile', 'Maestro, Arranjador &amp; Compositor')">
                                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg>
                                 Mobile
                         </button>
@@ -2810,9 +2825,7 @@
                     <img id="modal-client-logo" src="" alt="Client Logo" class="modal-client-logo">
                     <div>
                         <div id="modal-client-title" class="modal-client-title">Cliente</div>
-                        <div class="modal-simulated-url">
-                            <span>🔒</span> <span id="modal-url-display">https://orkes.com.br/...</span>
-                        </div>
+                        <span id="modal-client-subtitle" class="modal-client-subtitle"></span>
                     </div>
                 </div>
                 <!-- Switcher: Desktop vs Mobile -->
@@ -2846,11 +2859,7 @@
                             <span class="dot yellow"></span>
                             <span class="dot green"></span>
                         </div>
-                        <div class="browser-bar">
-                            <span style="opacity: 0.6;">🔒</span>
-                            <span id="browser-url-text" class="browser-url-text">https://orkes.com.br/...</span>
-                        </div>
-                        <div style="width: 48px;"></div>
+                        
                     </div>
                     <div class="browser-content">
                         <iframe id="iframe-desktop" src="about:blank" title="Desktop Live Preview"></iframe>
@@ -2880,19 +2889,26 @@
     </div>
     <script>
         let currentPreviewUrl = "";
-        function openDevicePreview(url, title, logo, mode) {
+        function openDevicePreview(url, title, logo, mode, subtitle) {
             currentPreviewUrl = url;
             const modal = document.getElementById("device-modal");
             const modalTitle = document.getElementById("modal-client-title");
+            const modalSubtitle = document.getElementById("modal-client-subtitle");
             const modalLogo = document.getElementById("modal-client-logo");
-            const modalUrlDisplay = document.getElementById("modal-url-display");
             const modalOpenTab = document.getElementById("modal-open-tab");
-            const browserUrlText = document.getElementById("browser-url-text");
             if (modalTitle) modalTitle.textContent = title;
             if (modalLogo) modalLogo.src = logo;
-            const fullUrl = "https://orkes.com.br/" + url;
-            if (modalUrlDisplay) modalUrlDisplay.textContent = fullUrl;
-            if (browserUrlText) browserUrlText.textContent = fullUrl;
+            if (!subtitle && typeof event !== "undefined" && event) {
+                const btn = event.currentTarget || event.target;
+                if (btn && btn.closest) {
+                    const card = btn.closest(".portfolio-card");
+                    if (card) {
+                        const badge = card.querySelector(".portfolio-niche-badge");
+                        if (badge) subtitle = badge.textContent.trim();
+                    }
+                }
+            }
+            if (modalSubtitle) modalSubtitle.textContent = subtitle || "";
             if (modalOpenTab) modalOpenTab.href = url;
             const isMobile = window.innerWidth <= 768 || (window.matchMedia && window.matchMedia('(hover: none) and (pointer: coarse) and (max-width: 1024px)').matches);
             switchDeviceMode(isMobile ? "mobile" : (mode || "desktop"));
