@@ -1241,6 +1241,15 @@
             pointer-events: none;
         }
 
+        @media (max-width: 768px), (hover: none) and (pointer: coarse) and (max-width: 1024px) {
+            .btn-preview.btn-desktop {
+                display: none !important;
+            }
+            .device-mode-switch {
+                display: none !important;
+            }
+        }
+
         @media (max-width: 768px) {
             .device-modal-toolbar {
                 flex-wrap: wrap;
@@ -2871,7 +2880,8 @@
             if (modalUrlDisplay) modalUrlDisplay.textContent = fullUrl;
             if (browserUrlText) browserUrlText.textContent = fullUrl;
             if (modalOpenTab) modalOpenTab.href = url;
-            switchDeviceMode(mode || "desktop");
+            const isMobile = window.innerWidth <= 768 || (window.matchMedia && window.matchMedia('(hover: none) and (pointer: coarse) and (max-width: 1024px)').matches);
+            switchDeviceMode(isMobile ? "mobile" : (mode || "desktop"));
             modal.classList.add("open");
             document.body.style.overflow = "hidden";
         }
