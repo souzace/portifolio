@@ -1,9 +1,11 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120">
-  <rect width="120" height="120" rx="24" fill="#002444"/>
-  <circle cx="60" cy="60" r="48" fill="#002e57"/>
-  <!-- Crefisa signature wings & C -->
-  <path d="M42 42 c12-10 28-10 38-2 l-7 7 c-7-6-19-6-27 1 -8 8-8 20 0 28 8 7 20 7 27 1 l7 7 c-10 8-26 8-38-2 -12-11-12-29 0-40 z" fill="#ffffff"/>
-  <!-- Gold accent wings -->
-  <path d="M68 46 l16-8 -6 12 12-4 -10 12" fill="none" stroke="#fdb913" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/>
-  <circle cx="60" cy="60" r="5" fill="#fdb913"/>
+  <defs>
+    <linearGradient id="grad_BC" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#102838"/>
+      <stop offset="100%" stop-color="#08141d"/>
+    </linearGradient>
+  </defs>
+  <rect width="120" height="120" rx="28" fill="url(#grad_BC)" stroke="rgba(255,255,255,0.1)" stroke-width="1.5"/>
+  <circle cx="96" cy="24" r="4.5" fill="#f59e0b"/>
+  <text x="60" y="76" font-family="system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="42" font-weight="800" fill="#ffffff" text-anchor="middle" letter-spacing="-0.5">BC</text>
 </svg>

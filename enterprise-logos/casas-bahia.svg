@@ -1,11 +1,11 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120">
-  <rect width="120" height="120" rx="24" fill="#002b66"/>
-  <!-- Casas Bahia stylized B / ribbon -->
-  <circle cx="60" cy="60" r="48" fill="#003580"/>
-  <path d="M42 34 h22 c11 0 19 6 19 14 0 5-3 10-8 12 7 2 11 8 11 15 0 9-8 16-20 16 H42 V34 z" fill="#ffffff"/>
-  <path d="M54 44 v12 h9 c5 0 8-2 8-6s-3-6-8-6 H54 z" fill="#002b66"/>
-  <path d="M54 65 v16 h11 c6 0 9-3 9-8s-3-8-9-8 H54 z" fill="#002b66"/>
-  <!-- Signature brand curves in yellow and red -->
-  <path d="M34 86 c12 6 28 8 46 2" stroke="#fed100" stroke-width="4.5" stroke-linecap="round" fill="none"/>
-  <path d="M40 92 c10 4 22 5 36 1" stroke="#e31837" stroke-width="3" stroke-linecap="round" fill="none"/>
+  <defs>
+    <linearGradient id="grad_CB" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#10223d"/>
+      <stop offset="100%" stop-color="#091322"/>
+    </linearGradient>
+  </defs>
+  <rect width="120" height="120" rx="28" fill="url(#grad_CB)" stroke="rgba(255,255,255,0.1)" stroke-width="1.5"/>
+  <circle cx="96" cy="24" r="4.5" fill="#00e5ff"/>
+  <text x="60" y="76" font-family="system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="42" font-weight="800" fill="#ffffff" text-anchor="middle" letter-spacing="-0.5">CB</text>
 </svg>

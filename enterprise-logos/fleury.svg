@@ -1,13 +1,11 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120">
-  <rect width="120" height="120" rx="24" fill="#6d001e"/>
-  <circle cx="60" cy="60" r="48" fill="#7d0024"/>
-  <!-- Stylized Fleury Medical Cross / Blossom -->
-  <g fill="#ffffff">
-    <ellipse cx="60" cy="40" rx="9" ry="16" opacity="0.95"/>
-    <ellipse cx="60" cy="80" rx="9" ry="16" opacity="0.95"/>
-    <ellipse cx="40" cy="60" rx="16" ry="9" opacity="0.95"/>
-    <ellipse cx="80" cy="60" rx="16" ry="9" opacity="0.95"/>
-    <circle cx="60" cy="60" r="10" fill="#f4f4f4"/>
-    <circle cx="60" cy="60" r="5" fill="#7d0024"/>
-  </g>
+  <defs>
+    <linearGradient id="grad_GF" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2d121c"/>
+      <stop offset="100%" stop-color="#16080e"/>
+    </linearGradient>
+  </defs>
+  <rect width="120" height="120" rx="28" fill="url(#grad_GF)" stroke="rgba(255,255,255,0.1)" stroke-width="1.5"/>
+  <circle cx="96" cy="24" r="4.5" fill="#ff4d6d"/>
+  <text x="60" y="76" font-family="system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="42" font-weight="800" fill="#ffffff" text-anchor="middle" letter-spacing="-0.5">GF</text>
 </svg>
