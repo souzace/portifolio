@@ -8,9 +8,9 @@
  */
 
 const CATALOG_CONFIG = {
-    // Conectado ao WordPress / WooCommerce Headless Real (Docker na porta 8087)
-    USE_EXTERNAL_API: true,
-    API_ENDPOINT: 'http://localhost:8087/wp-json/kuroneko/v1/catalog',
+    // Modo Demonstração Standalone / MOCK (Ativo por padrão para evitar avisos de rede local/segurança no navegador)
+    USE_EXTERNAL_API: false,
+    API_ENDPOINT: '', // Exemplo para produção: 'https://api.orkes.com.br/wp-json/kuroneko/v1/catalog'
     WHATSAPP_NUMBER: '558592828087',
 };
 
@@ -127,9 +127,9 @@ class KuroNekoCatalog {
     }
 
     async loadProducts() {
-        if (CATALOG_CONFIG.USE_EXTERNAL_API) {
+        if (CATALOG_CONFIG.USE_EXTERNAL_API && CATALOG_CONFIG.API_ENDPOINT) {
             try {
-                // Chamada à API segura na Hostinger
+                // Chamada à API externa segura
                 const response = await fetch(CATALOG_CONFIG.API_ENDPOINT);
                 if (!response.ok) throw new Error('Falha ao carregar API');
                 const data = await response.json();
