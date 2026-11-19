@@ -975,6 +975,71 @@
             height: 90vh;
             display: flex;
             flex-direction: column;
+            transition: max-width 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .device-modal-content.mode-mobile {
+            max-width: 420px;
+        }
+
+        .device-modal-content.mode-mobile .device-modal-toolbar {
+            padding: 8px 12px;
+            margin-bottom: 10px;
+            gap: 8px;
+            border-radius: 10px;
+        }
+
+        .device-modal-content.mode-mobile .modal-client-info {
+            gap: 8px;
+            min-width: 0;
+            flex: 1;
+        }
+
+        .device-modal-content.mode-mobile .modal-client-logo {
+            width: 30px;
+            height: 30px;
+            border-radius: 6px;
+        }
+
+        .device-modal-content.mode-mobile .modal-client-title {
+            font-size: 0.82rem;
+            max-width: 140px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .device-modal-content.mode-mobile .modal-client-subtitle {
+            font-size: 0.68rem;
+            padding: 1px 6px;
+            max-width: 135px;
+            margin-top: 2px;
+        }
+
+        .device-modal-content.mode-mobile .device-mode-switch {
+            padding: 2px;
+            gap: 2px;
+        }
+
+        .device-modal-content.mode-mobile .mode-btn {
+            padding: 5px 9px;
+            font-size: 0.78rem;
+            gap: 4px;
+        }
+
+        .device-modal-content.mode-mobile .modal-controls {
+            gap: 6px;
+        }
+
+        .device-modal-content.mode-mobile .modal-icon-btn {
+            width: 32px;
+            height: 32px;
+            border-radius: 6px;
+        }
+
+        .device-modal-content.mode-mobile .modal-icon-btn svg {
+            width: 15px;
+            height: 15px;
         }
 
         .device-modal-toolbar {
@@ -988,6 +1053,7 @@
             margin-bottom: 12px;
             gap: 16px;
             box-shadow: 0 8px 24px rgba(0,0,0,0.6);
+            transition: padding 0.3s ease, margin 0.3s ease, gap 0.3s ease;
         }
 
         .modal-client-info {
@@ -1291,6 +1357,12 @@
             }
             .modal-client-subtitle {
                 max-width: 150px;
+            }
+            .device-modal-content.mode-mobile .modal-client-title {
+                max-width: 190px;
+            }
+            .device-modal-content.mode-mobile .modal-client-subtitle {
+                max-width: 180px;
             }
             .smartphone-frame {
                 width: 100%;
@@ -3436,6 +3508,8 @@
             document.body.style.overflow = "hidden";
         }
         function switchDeviceMode(mode) {
+            const modal = document.getElementById("device-modal");
+            const modalContent = modal ? modal.querySelector(".device-modal-content") : null;
             const frameDesktop = document.getElementById("frame-desktop");
             const frameMobile = document.getElementById("frame-mobile");
             const btnDesktop = document.getElementById("switch-desktop-btn");
@@ -3443,6 +3517,10 @@
             const iframeDesktop = document.getElementById("iframe-desktop");
             const iframeMobile = document.getElementById("iframe-mobile");
             if (mode === "desktop") {
+                if (modalContent) {
+                    modalContent.classList.remove("mode-mobile");
+                    modalContent.classList.add("mode-desktop");
+                }
                 frameDesktop.style.display = "flex";
                 frameMobile.style.display = "none";
                 btnDesktop.classList.add("active");
@@ -3451,6 +3529,10 @@
                     iframeDesktop.src = currentPreviewUrl;
                 }
             } else {
+                if (modalContent) {
+                    modalContent.classList.remove("mode-desktop");
+                    modalContent.classList.add("mode-mobile");
+                }
                 frameDesktop.style.display = "none";
                 frameMobile.style.display = "flex";
                 btnMobile.classList.add("active");
