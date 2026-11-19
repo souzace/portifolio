@@ -958,16 +958,25 @@
             height: 90vh;
             display: flex;
             flex-direction: column;
+            transition: max-width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .device-modal-content.mode-mobile {
+            max-width: 375px;
         }
 
         .device-modal-content.mode-mobile .device-modal-toolbar {
-            padding: 7px 16px;
+            flex-wrap: wrap;
+            padding: 10px 14px;
             margin-bottom: 10px;
-            gap: 12px;
-            border-radius: 10px;
+            gap: 10px 8px;
+            border-radius: 14px;
         }
 
         .device-modal-content.mode-mobile .modal-client-info {
+            order: 1;
+            flex: 1;
+            min-width: 0;
             gap: 10px;
         }
 
@@ -975,31 +984,31 @@
             width: 32px;
             height: 32px;
             border-radius: 7px;
+            flex-shrink: 0;
         }
 
         .device-modal-content.mode-mobile .modal-client-title {
-            font-size: 0.9rem;
+            font-size: 0.88rem;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            max-width: 220px;
         }
 
         .device-modal-content.mode-mobile .modal-client-subtitle {
-            font-size: 0.72rem;
+            font-size: 0.7rem;
             padding: 1px 7px;
             margin-top: 2px;
-        }
-
-        .device-modal-content.mode-mobile .device-mode-switch {
-            padding: 2px;
-            gap: 2px;
-        }
-
-        .device-modal-content.mode-mobile .mode-btn {
-            padding: 5px 12px;
-            font-size: 0.8rem;
-            gap: 5px;
+            max-width: 220px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
         }
 
         .device-modal-content.mode-mobile .modal-controls {
+            order: 2;
             gap: 6px;
+            flex-shrink: 0;
         }
 
         .device-modal-content.mode-mobile .modal-icon-btn {
@@ -1011,6 +1020,25 @@
         .device-modal-content.mode-mobile .modal-icon-btn svg {
             width: 15px;
             height: 15px;
+        }
+
+        .device-modal-content.mode-mobile .device-mode-switch {
+            order: 3;
+            width: 100%;
+            display: flex;
+            background: #000;
+            padding: 2px;
+            border-radius: 8px;
+            border: 1px solid #282828;
+            gap: 2px;
+        }
+
+        .device-modal-content.mode-mobile .mode-btn {
+            flex: 1;
+            justify-content: center;
+            padding: 5px 10px;
+            font-size: 0.78rem;
+            gap: 5px;
         }
 
         .device-modal-toolbar {
