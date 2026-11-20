@@ -8,9 +8,7 @@
  */
 
 const CATALOG_CONFIG = {
-    // Modo Demonstração Standalone / MOCK (Ativo por padrão para evitar avisos de rede local/segurança no navegador)
-    USE_EXTERNAL_API: false,
-    API_ENDPOINT: '', // Exemplo para produção: 'https://api.orkes.com.br/wp-json/kuroneko/v1/catalog'
+    // Catálogo 100% Autônomo e Seguro (Sem chamadas de rede externa para demonstração no portfólio)
     WHATSAPP_NUMBER: '558592828087',
 };
 
@@ -127,49 +125,8 @@ class KuroNekoCatalog {
     }
 
     async loadProducts() {
-        if (CATALOG_CONFIG.USE_EXTERNAL_API && CATALOG_CONFIG.API_ENDPOINT) {
-            try {
-                // Chamada à API externa segura
-                const response = await fetch(CATALOG_CONFIG.API_ENDPOINT);
-                if (!response.ok) throw new Error('Falha ao carregar API');
-                const data = await response.json();
-                
-                // Normaliza formato caso venha de WooCommerce
-                this.products = data.map(item => {
-                    const rawCat = (item.categories?.[0]?.name || 'Colecionável').replace(/&amp;/g, '&');
-                    const universe = this.mapCategoryToUniverse(rawCat);
-                    const badgeClass = universe === 'ghibli' ? 'anime-ghibli' : (universe === 'gamer' ? 'anime-gamer' : 'anime-shonen');
-                    const rawName = (item.name || '').replace(/&amp;/g, '&');
-                    const rawDesc = (item.short_description || item.description || '')
-                        .replace(/<[^>]+>/g, '')
-                        .replace(/&amp;/g, '&')
-                        .replace(/&#8211;/g, '—')
-                        .replace(/&#8212;/g, '—');
-
-                    return {
-                        id: item.id,
-                        name: rawName,
-                        category: rawCat,
-                        universe: universe,
-                        scale: item.attributes?.find(a => a.name === 'Escala')?.options?.[0] || 'Original',
-                        tag: item.tags?.[0]?.name || 'Colecionável',
-                        price: parseFloat(item.price || item.regular_price || 0),
-                        installments: 'em até 3x sem juros',
-                        badge: badgeClass,
-                        status: item.stock_quantity > 0 ? (item.stock_quantity <= 2 ? 'low_stock' : 'available') : 'out_of_stock',
-                        statusLabel: item.stock_quantity > 0 ? (item.stock_quantity <= 2 ? `Últimas ${item.stock_quantity} Unidades` : 'Pronta Entrega') : 'Esgotado',
-                        image: item.images?.[0]?.src || (universe === 'ghibli' ? '🍃' : (universe === 'gamer' ? '🎮' : '⚔️')),
-                        description: rawDesc
-                    };
-                });
-            } catch (err) {
-                console.warn('Fallback para produtos mock locais devido ao erro da API:', err);
-                this.products = MOCK_PRODUCTS;
-            }
-        } else {
-            // Modo Local Mock
-            this.products = MOCK_PRODUCTS;
-        }
+        // Catálogo local autônomo e de alta fidelidade para o portfólio (zero requisições de rede)
+        this.products = MOCK_PRODUCTS;
     }
 
     mapCategoryToUniverse(catName = '') {
